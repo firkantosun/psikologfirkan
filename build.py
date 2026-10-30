@@ -31,7 +31,7 @@ PAGES = {
     "blog": {"path": "/blog/", "title": "Blog: Psikoloji Yazıları | Psikolog Firkan",
              "desc": "Kaygı, panik, depresyon, stres ve gündelik hayata dair bilimsel temelli, Türkiye odaklı psikoloji yazıları. Psikolog Muhammed Furkan Tosun."},
     "randevu": {"path": "/randevu/", "title": "Randevu Al | Psikolog Muhammed Furkan Tosun",
-                "desc": "Psikolog Muhammed Furkan Tosun ile online ya da yüz yüze görüşme için randevu talebi oluştur. Hafta içi 17:00–21:00, pazar 10:00–16:00."},
+                "desc": "Psikolog Muhammed Furkan Tosun ile online ya da yüz yüze görüşme için randevu al. Hafta içi 17:00–21:00, pazar 10:00–16:00."},
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: e-posta ve Instagram."},
 }
@@ -261,7 +261,7 @@ def blog_post(p, posts):
       </div>
       {src_html}
       <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br>Son güncelleme: {fmt_date(upd)} · Editör: Psikolog {NAME} · {EMAIL}</p>
-      <div class="b-cta"><p>Bu konuda destek almak istersen randevu talebi oluşturabilirsin.</p><a class="btn primary dark" href="/randevu/">Randevu al</a></div>
+      <div class="b-cta"><p>Bu konuda destek almak istersen randevu alabilirsin.</p><a class="btn primary dark" href="/randevu/">Randevu al</a></div>
       {more}
     </article>
   </div>

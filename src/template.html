@@ -604,6 +604,22 @@ nav.top a[aria-current="page"] { color: var(--band-ink); text-decoration: underl
 .btn.ghost-dark { border: 1px solid var(--line); color: var(--ink); background: transparent; cursor: pointer; font: 600 15px var(--f-body); }
 @media (max-width: 900px) { .bk { grid-template-columns: 1fr; } .bk-form { position: static; } }
 
+
+.gcal { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: start; }
+.gcal-frame { background: #fff; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; min-width: 0; }
+.gcal-frame iframe { display: block; width: 100%; height: 920px; border: 0; }
+.gcal-side { display: grid; gap: 14px; position: sticky; top: 76px; }
+.gcal-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 10px; }
+.gcal-card p { color: var(--muted); font-size: 14px; }
+.gcal-hours { list-style: none; margin: 0; padding: 0; display: grid; }
+.gcal-hours li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.gcal-hours b { font-family: var(--f-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+.gcal-hours li.off { color: var(--muted); }
+.gcal-steps { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 15px; }
+.gcal-alt { font-size: 14px; color: var(--muted); }
+.gcal-alt a { color: var(--accent); }
+@media (max-width: 900px) { .gcal { grid-template-columns: 1fr; } .gcal-side { position: static; } .gcal-frame iframe { height: 1150px; } }
+
 /* film sonrası: özgeçmiş vb. */
 .sec { border-top: 1px solid var(--line); }
 .sec > .wrap { padding-block: 72px; }
@@ -1258,60 +1274,35 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   <div class="wrap">
     <div class="bk-head">
       <div class="label">Randevu</div>
-      <h1>Randevu talebi oluştur</h1>
-      <p>Görüşme türünü, gününü ve saatini seç; bilgilerini bırak. Talebin bana e-postayla ulaşır, uygunluğu kontrol edip seninle iletişime geçerim.</p>
+      <h1>Randevu al</h1>
+      <p>Takvimden sana uygun gün ve saati seç, bilgilerini gir. Randevun anında kaydedilir ve e-postana onay gelir.</p>
     </div>
-
-    <div class="bk" id="bk">
-      <div class="bk-main">
-        <div class="bk-block">
-          <div class="bk-step"><span>1</span>Görüşme türü</div>
-          <div class="bk-type" role="group" aria-label="Görüşme türü">
-            <button type="button" id="bkOnline" data-type="Online" aria-pressed="true"><b>Online</b><small>Görüntülü görüşme</small></button>
-            <button type="button" id="bkYuz" data-type="Yüz yüze" aria-pressed="false"><b>Yüz yüze</b><small>Adres onayla birlikte iletilir</small></button>
-          </div>
-        </div>
-
-        <div class="bk-block">
-          <div class="bk-step"><span>2</span>Gün</div>
-          <div class="bk-days-wrap">
-            <div class="bk-days" id="bkDays" role="listbox" aria-label="Günler"></div>
-          </div>
-          <p class="bk-hours">Hafta içi 17:00–21:00 · Pazar 10:00–16:00 · Cumartesi kapalı</p>
-        </div>
-
-        <div class="bk-block">
-          <div class="bk-step"><span>3</span>Saat <em id="bkDayLabel"></em></div>
-          <div class="bk-slots" id="bkSlots"></div>
-        </div>
+    <div class="gcal">
+      <div class="gcal-frame">
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2QtiW1AuVNJh30dgPlYD9J4f8jYjfkXLcr8Di_c-lTqbkTE7wNAwRsIR8rDDvbY_nDthUQO9sF?gv=true" title="Randevu takvimi" loading="lazy"></iframe>
       </div>
-
-      <form class="bk-form" id="bkForm" novalidate>
-        <div class="bk-step"><span>4</span>Bilgilerin</div>
-        <div class="bk-summary" id="bkSummary">Önce bir gün ve saat seç.</div>
-        <label for="bkName">Ad soyad</label>
-        <input id="bkName" name="name" autocomplete="name" required>
-        <label for="bkPhone">Telefon</label>
-        <input id="bkPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx" required>
-        <label for="bkEmail">E-posta</label>
-        <input id="bkEmail" name="email" type="email" autocomplete="email" required>
-        <label for="bkNote">Not <small>(isteğe bağlı)</small></label>
-        <textarea id="bkNote" name="note" rows="3" placeholder="Örn. ilk görüşme, tercih ettiğin iletişim yolu"></textarea>
-        <p class="bk-hint">Sağlıkla ilgili ayrıntıları buraya yazmana gerek yok; onları görüşmede konuşuruz.</p>
-        <input type="text" name="_honey" id="bkHoney" tabindex="-1" autocomplete="off" class="bk-hp" aria-hidden="true">
-        <label class="bk-check" for="bkKvkk"><input type="checkbox" id="bkKvkk" required> <span>Ad, telefon ve e-posta bilgilerimin randevu talebimin değerlendirilmesi ve benimle iletişime geçilmesi amacıyla işlenmesini kabul ediyorum.</span></label>
-        <p class="bk-msg" id="bkMsg" aria-live="polite"></p>
-        <button type="submit" class="btn primary dark bk-submit" id="bkSubmit">Randevu talebi oluştur</button>
-        <p class="bk-small">Bu bir talep formudur; randevu, onay e-postası ya da telefonuyla kesinleşir. Acil bir durumdaysan 112'yi ara.</p>
-      </form>
-
-      <div class="bk-done" id="bkDone" hidden>
-        <div class="bk-tick" aria-hidden="true">✓</div>
-        <h2>Randevu talebin alındı</h2>
-        <p id="bkDoneText"></p>
-        <p>En kısa sürede seninle iletişime geçeceğim. Talebin onaylanana kadar bu saat kesinleşmiş sayılmaz.</p>
-        <button type="button" class="btn ghost-dark" id="bkAgain">Yeni bir talep oluştur</button>
-      </div>
+      <aside class="gcal-side">
+        <div class="gcal-card">
+          <div class="label">Görüşme saatleri</div>
+          <ul class="gcal-hours">
+            <li><span>Pazartesi – Cuma</span><b>17:00 – 21:00</b></li>
+            <li><span>Pazar</span><b>10:00 – 16:00</b></li>
+            <li class="off"><span>Cumartesi</span><b>Kapalı</b></li>
+          </ul>
+          <p>Takvimde yalnızca boş saatler görünür; alınan saatler kendiliğinden kapanır.</p>
+        </div>
+        <div class="gcal-card">
+          <div class="label">Nasıl ilerler?</div>
+          <ol class="gcal-steps">
+            <li>Gün ve saati seç.</li>
+            <li>Adını, e-postanı ve telefonunu gir; görüşmenin online mı yüz yüze mi olacağını belirt.</li>
+            <li>E-postana onay gelir. Online görüşmelerde bağlantı, yüz yüze görüşmelerde adres seninle paylaşılır.</li>
+          </ol>
+          <p>Planın değişirse e-postayla haber vermen yeterli.</p>
+        </div>
+        <p class="gcal-alt">Takvim görünmüyorsa <a href="https://calendar.app.google/X8TZ34ssUAgwyevX9" target="_blank" rel="noopener">randevu sayfasını yeni sekmede aç</a>.</p>
+        <p class="bk-small">Acil bir durumdaysan 112'yi ara.</p>
+      </aside>
     </div>
   </div>
 </section>
