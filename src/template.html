@@ -86,6 +86,9 @@ body.autoplay .hud .i-play { display: none; }
 body.autoplay .hud .i-pause { display: block; }
 #hudPlay .i-play { fill: currentColor; stroke: none; }
 body.autoplay #hudPlay { color: var(--glow); }
+.hud-music .mute-x { display: none; }
+.hud-music[aria-pressed="false"] { color: var(--band-muted); }
+.hud-music[aria-pressed="false"] .mute-x { display: block; }
 .jumpfade { position: fixed; inset: 0; z-index: 40; background: var(--night); opacity: 0; pointer-events: none; transition: opacity .32s ease; }
 .jumpfade.on { opacity: 1; }
 .nav-hl { color: var(--glow) !important; }
@@ -726,7 +729,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   </div>
 </nav>
 
-<div class="hud" id="hud"><button type="button" class="hud-btn" id="hudHome" aria-label="Ana sayfaya dön"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/></svg><span>Ana sayfa</span></button><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudPlay" aria-label="Hikâyeyi otomatik oynat"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span id="hudPlayTxt">İzle</span></button><span class="hud-sep" aria-hidden="true"></span><b id="hudNum" aria-hidden="true">01 / 12</b><span id="hudName" aria-hidden="true">Çocukluk</span><i aria-hidden="true"></i><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudSkip" aria-label="Hikâyeyi atla, Terapi Yaklaşımım sayfasına geç"><span>Atla</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
+<div class="hud" id="hud"><button type="button" class="hud-btn" id="hudHome" aria-label="Ana sayfaya dön"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/></svg><span>Ana sayfa</span></button><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudPlay" aria-label="Hikâyeyi otomatik oynat"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span id="hudPlayTxt">İzle</span></button><button type="button" class="hud-btn hud-music" id="hudMusic" aria-pressed="true" aria-label="Müziği kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path class="mute-x" d="M3 3l18 18"/></svg></button><span class="hud-sep" aria-hidden="true"></span><b id="hudNum" aria-hidden="true">01 / 12</b><span id="hudName" aria-hidden="true">Çocukluk</span><i aria-hidden="true"></i><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudSkip" aria-label="Hikâyeyi atla, Terapi Yaklaşımım sayfasına geç"><span>Atla</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
 <div class="jumpfade" id="jumpfade" aria-hidden="true"></div>
 
 <div class="view" data-view="home">
@@ -1502,7 +1505,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   (function () {
     var heroBtn = document.getElementById('heroPlay'), hudBtn = document.getElementById('hudPlay'), txt = document.getElementById('hudPlayTxt');
     if (!hudBtn) return;
-    var playing = false, last = 0, pos = 0, SPEED = 0.17; // ekran yüksekliği / saniye
+    var playing = false, last = 0, pos = 0, SPEED = 0.32; // ekran yüksekliği / saniye
     function endY() { var l = film[film.length - 1].el; return l.offsetTop + l.offsetHeight - window.innerHeight; }
     function frame(t) {
       if (!playing) return;
@@ -1514,18 +1517,44 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       window.scrollTo(0, pos);
       requestAnimationFrame(frame);
     }
+    var audio = null, musicOn = true, fadeT = null;
+    function getAudio() { if (!audio) { audio = new Audio('muzik.mp3'); audio.preload = 'auto'; audio.volume = 0; } return audio; }
+    function fadeTo(v, ms, then) {
+      if (!audio) return; clearInterval(fadeT);
+      var from = audio.volume, t0 = performance.now();
+      fadeT = setInterval(function () {
+        var k = Math.min(1, (performance.now() - t0) / ms); audio.volume = Math.max(0, Math.min(1, from + (v - from) * k));
+        if (k >= 1) { clearInterval(fadeT); if (then) then(); }
+      }, 40);
+    }
+    function musicPlay(fromTop) {
+      if (!musicOn) return;
+      var a = getAudio(); if (fromTop) { try { a.currentTime = 0; } catch (x) {} }
+      var pr = a.play(); if (pr && pr.catch) pr.catch(function () {});
+      fadeTo(0.55, 1500);
+    }
+    function musicStop(ms) { if (audio && !audio.paused) fadeTo(0, ms || 600, function () { audio.pause(); }); }
+    var musicBtn = document.getElementById('hudMusic');
+    musicBtn.addEventListener('click', function () {
+      musicOn = !musicOn;
+      musicBtn.setAttribute('aria-pressed', musicOn ? 'true' : 'false');
+      musicBtn.setAttribute('aria-label', musicOn ? 'Müziği kapat' : 'Müziği aç');
+      if (musicOn && playing) musicPlay(false); else musicStop(400);
+    });
     function start(fromTop) {
       if (playing) return;
       playing = true; last = 0;
       pos = fromTop ? 0 : window.scrollY;
       if (fromTop) window.scrollTo(0, 0);
       document.body.classList.add('autoplay'); hud.classList.add('show');
+      musicPlay(fromTop);
       txt.textContent = 'Duraklat'; hudBtn.setAttribute('aria-label', 'Otomatik oynatmayı duraklat');
       requestAnimationFrame(frame);
     }
     function stop() {
       if (!playing) return;
       playing = false; document.body.classList.remove('autoplay');
+      musicStop(window.scrollY >= endY() - 5 ? 3000 : 700);
       txt.textContent = 'İzle'; hudBtn.setAttribute('aria-label', 'Hikâyeyi otomatik oynat');
       update();
     }
