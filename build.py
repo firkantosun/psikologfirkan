@@ -280,6 +280,10 @@ def main():
         shutil.rmtree(DIST)
     os.makedirs(os.path.join(DIST, "assets"))
     shutil.copytree(os.path.join(SRC, "img"), os.path.join(DIST, "img"))
+    static = os.path.join(SRC, "static")
+    if os.path.isdir(static):
+        for f in os.listdir(static):
+            shutil.copy(os.path.join(static, f), os.path.join(DIST, f))
     for f in ["favicon.svg", "apple-touch-icon.png"]:
         if os.path.exists(os.path.join(SRC, f)):
             shutil.copy(os.path.join(SRC, f), os.path.join(DIST, f))
