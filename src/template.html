@@ -1842,6 +1842,12 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       });
     });
     var first = days.findIndex(function (d) { return d.open.length; }); if (first >= 0) pickDay(first);
+    if (/[?&]talep=alindi/.test(location.search)) {
+      var last = ''; try { last = sessionStorage.getItem('bkLast') || ''; sessionStorage.removeItem('bkLast'); } catch (x) {}
+      $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
+      $('bkDoneText').textContent = last || 'Talebin e-postayla iletildi.';
+      try { history.replaceState(null, '', location.pathname); } catch (x) {}
+    }
     function fail(msg, withMail) {
       var m = $('bkMsg'); m.textContent = msg;
       if (withMail) { m.appendChild(document.createTextNode(' E-postayla da yazabilirsin: ')); var a = mk('a', null, TO); a.href = 'mailto:' + TO; m.appendChild(a); }
@@ -1859,24 +1865,34 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       if ($('bkHoney').value) return;
       var d = days[sel.day], when = label(d) + ', ' + hh(sel.hour) + '–' + hh(sel.hour + 1);
       var btn = $('bkSubmit'); btn.disabled = true; btn.textContent = 'Gönderiliyor…';
+      var payload = {
+        _subject: 'Yeni randevu talebi: ' + name + ' · ' + d.date.getUTCDate() + ' ' + MOL[d.date.getUTCMonth()] + ' ' + hh(sel.hour),
+        _template: 'table', _captcha: 'false', _replyto: email,
+        'Ad soyad': name, 'Telefon': phone, 'E-posta': email, 'Görüşme türü': sel.type,
+        'Tarih': label(d), 'Saat': hh(sel.hour) + '–' + hh(sel.hour + 1), 'Not': $('bkNote').value.trim() || '-',
+        'Kaynak': 'psikologfirkan.com/randevu'
+      };
+      function classic() {
+        try { sessionStorage.setItem('bkLast', when + ' · ' + sel.type); } catch (x) {}
+        var f = document.createElement('form'); f.method = 'POST'; f.action = 'https://formsubmit.co/' + TO; f.style.display = 'none';
+        payload._next = location.origin + location.pathname + '?talep=alindi';
+        Object.keys(payload).forEach(function (k) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = payload[k]; f.appendChild(i); });
+        document.body.appendChild(f); f.submit();
+      }
       fetch('https://formsubmit.co/ajax/' + TO, {
         method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: 'Yeni randevu talebi: ' + name + ' · ' + d.date.getUTCDate() + ' ' + MOL[d.date.getUTCMonth()] + ' ' + hh(sel.hour),
-          _template: 'table', _captcha: 'false', _replyto: email,
-          'Ad soyad': name, 'Telefon': phone, 'E-posta': email, 'Görüşme türü': sel.type,
-          'Tarih': label(d), 'Saat': hh(sel.hour) + '–' + hh(sel.hour + 1), 'Not': $('bkNote').value.trim() || '-',
-          'Kaynak': 'psikologfirkan.com/randevu'
-        })
+        body: JSON.stringify(payload)
       }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
           if (res.ok && String(res.j.success) === 'true') {
             $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
             $('bkDoneText').textContent = when + ' · ' + sel.type;
             window.scrollTo(0, Math.max(0, root.getBoundingClientRect().top + window.scrollY - 90));
-          } else fail('Talep şu an gönderilemedi.', true);
+          } else if (res.j && /activat/i.test(String(res.j.message || ''))) {
+            fail('Form henüz etkinleştirilmemiş. Site sahibinin e-postasına bir onay bağlantısı gönderildi; onaylandıktan sonra tekrar dene.', true);
+          } else classic();
         })
-        .catch(function () { fail('Bağlantı kurulamadı. Lütfen tekrar dene.', true); })
+        .catch(function () { classic(); })
         .then(function () { btn.disabled = false; btn.textContent = 'Randevu talebi oluştur'; });
     });
     $('bkAgain').addEventListener('click', function () {
