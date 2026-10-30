@@ -91,7 +91,8 @@ def build_js(js):
     home = cut("  /* harfler ve toz */", "  /* yöntem: bilişsel model */")
     yontem = cut("  /* yöntem: bilişsel model */", "  /* blog */")
     tr = cut("  /* düşünce kaydı (kısa) */", "  /* randevu */")
-    randevu = cut("  /* randevu */", "  /* kopyala */")
+    randevu = cut("  /* randevu */", "  /* anlat */")
+    anlat = cut("  /* anlat */", "  /* kopyala */")
     copy = cut("  /* kopyala */")
     copy = copy[:copy.rindex("})();")]
     lb_a = "  var lb = document.getElementById('lightbox')"
@@ -130,7 +131,9 @@ def build_js(js):
     var scTick = function () {{
       var past = window.scrollY > 480;
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
-      sc.classList.toggle('show', past && !nearEnd);
+      var anEl = document.getElementById('an'), inAn = false;
+      if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
+      sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
   }}
@@ -153,6 +156,7 @@ def build_js(js):
             "  if (PAGE === 'hikaye') {\n" + home + home_extra + "  }\n" +
             "  if (PAGE === 'yaklasim') {\n" + yontem + tr + "  }\n" +
             "  if (PAGE === 'randevu') {\n" + randevu + "  }\n" +
+            "  if (PAGE === 'home') {\n" + anlat + "  }\n" +
             copy + "})();\n")
 
 

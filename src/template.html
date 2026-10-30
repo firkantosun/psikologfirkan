@@ -761,6 +761,26 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 .sticky-cta small { font-weight: 500; opacity: .75; }
 .sticky-cta.show { transform: none; opacity: 1; }
 @media (max-width: 600px) { .sticky-cta { left: 16px; right: 16px; justify-content: center; } }
+.an-sec { border-top: 0; }
+.an { background: var(--band); color: var(--band-ink); border-radius: 6px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 22px; max-width: 860px; margin: 0 auto; }
+.an .label { color: var(--glow); }
+.an-head h2 { font-size: clamp(28px, 3.6vw, 42px); margin: 10px 0 8px; }
+.an-head p { color: var(--band-muted); margin: 0; font-size: 15px; }
+.an-step { display: grid; gap: 14px; }
+.an-q { font-family: var(--f-display); font-size: clamp(19px, 2vw, 23px); margin: 0; }
+.an-q small { font-family: var(--f-body); font-size: 14px; color: var(--band-muted); display: block; margin-top: 4px; }
+.an-q.small { font-size: 18px; margin-top: 6px; }
+.an textarea { width: 100%; box-sizing: border-box; font: 16px/1.5 var(--f-body); color: var(--band-ink); background: rgba(6,11,12,.3); border: 1px solid rgba(238,242,238,.25); border-radius: 4px; padding: 12px 14px; resize: vertical; }
+.an textarea:focus { outline: none; border-color: var(--glow); }
+.an-nav { display: flex; justify-content: space-between; align-items: center; }
+.an-next { margin-left: auto; font: 700 15px var(--f-body); background: var(--glow); color: #132526; border: 0; padding: 11px 22px; border-radius: 2px; cursor: pointer; }
+.an-next:disabled { opacity: .4; cursor: default; }
+.an-link { background: none; border: 0; color: var(--band-muted); font: 600 15px var(--f-body); cursor: pointer; padding: 0; }
+.an-res p { margin: 0; color: var(--band-muted); max-width: 40em; }
+.an-res .an-echo { font-family: var(--f-display); font-size: clamp(20px, 2.2vw, 26px); color: var(--band-ink); line-height: 1.4; }
+.an-res .an-quote { border-left: 2px solid var(--glow); padding-left: 14px; font-style: italic; color: var(--band-ink); }
+.an-res .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+.an-btn { background: transparent; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -807,6 +827,43 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
       <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Endüstri ve Örgüt Psikolojisi YL</span></figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="sec an-sec" id="anlat">
+  <div class="wrap">
+    <div class="an" id="an">
+      <div class="an-head">
+        <div class="label">Anlat · 1 dakika</div>
+        <h2>Seni ne zorluyor?</h2>
+        <p>Üç kısa soru. Yazdıkların hiçbir yere gönderilmez, yalnızca bu sayfada kalır.</p>
+      </div>
+      <div class="tr-crisis" id="anCrisis" hidden role="alert"><b>Bunu yazmak kolay değil.</b> Şu an kendine zarar verme ya da yaşamına son verme düşüncelerin varsa lütfen hemen <b>112</b>'yi ara ya da güvendiğin birine ulaş. Yalnız değilsin.</div>
+      <div class="an-step" data-s="0">
+        <p class="an-q">En çok hangisi sana yakın?</p>
+        <div class="tr-chips" id="anTopic" role="group" aria-label="Konu">
+          <button type="button" data-k="kaygi">Sürekli endişe</button><button type="button" data-k="panik">Ani korku, panik</button><button type="button" data-k="stres">Stres, tükenmişlik</button><button type="button" data-k="mod">Mutsuzluk, isteksizlik</button><button type="button" data-k="ozguven">Kendimi yetersiz hissetmek</button><button type="button" data-k="iliski">İlişkiler</button><button type="button" data-k="is">İş, kariyer</button><button type="button" data-k="uyku">Uyku</button><button type="button" data-k="diger">Başka bir şey</button>
+        </div>
+      </div>
+      <div class="an-step" data-s="1" hidden>
+        <label class="an-q" for="anText">Biraz anlatır mısın? <small>İstersen boş bırakabilirsin.</small></label>
+        <textarea id="anText" rows="3" placeholder="Aklından geçenleri nasıl geliyorsa öyle yaz."></textarea>
+        <p class="an-q small">Ne zamandır böyle?</p>
+        <div class="tr-chips" id="anTime" role="group" aria-label="Süre"><button type="button">Birkaç haftadır</button><button type="button">Birkaç aydır</button><button type="button">Bir yıldan fazla</button></div>
+      </div>
+      <div class="an-step" data-s="2" hidden>
+        <p class="an-q">Günlük hayatını ne kadar etkiliyor?</p>
+        <div class="tr-chips" id="anImpact" role="group" aria-label="Etki"><button type="button" data-v="1">Biraz</button><button type="button" data-v="2">Epey</button><button type="button" data-v="3">Çok, zorlanıyorum</button></div>
+      </div>
+      <div class="an-step an-res" data-s="3" hidden aria-live="polite">
+        <p class="an-quote" id="anQuote" hidden></p>
+        <p class="an-echo" id="anEcho"></p>
+        <p id="anInfo"></p>
+        <p id="anHow"></p>
+        <div class="cta"><a class="btn primary" href="#randevu">Randevu al</a><button type="button" class="btn ghost an-btn" id="anAgain">Baştan başla</button></div>
+      </div>
+      <div class="an-nav" id="anNav"><button type="button" class="an-link" id="anBack" hidden>← Geri</button><button type="button" class="an-next" id="anNext" disabled>Devam</button></div>
+    </div>
   </div>
 </section>
 
@@ -2166,6 +2223,60 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       $('bkForm').reset(); $('bkDone').hidden = true; $('bkForm').hidden = false; document.querySelector('.bk-main').hidden = false;
       if (first >= 0) pickDay(first);
     });
+  })();
+
+  /* anlat */
+  (function () {
+    var an = document.getElementById('an'); if (!an) return;
+    var steps = an.querySelectorAll('.an-step'), next = document.getElementById('anNext'), back = document.getElementById('anBack'), nav = document.getElementById('anNav');
+    var text = document.getElementById('anText'), crisis = document.getElementById('anCrisis');
+    var st = { s: 0, topic: null, label: '', time: '', impact: 0 };
+    var T = {
+      kaygi: ['Sürekli tetikte olmak, “ya kötü bir şey olursa” diye düşünmek insanı çok yorar. Kaygı aslında bizi korumaya çalışan bir sistem; sorun, alarmın gereğinden sık ve yüksek sesle çalması.', 'Birlikte, endişeyi besleyen düşünce kalıplarını fark eder, kaçınmaların kaygıyı nasıl büyüttüğüne bakar ve belirsizlikle daha rahat kalabilmeyi çalışırız.'],
+      panik: ['Kalbin çarpması, nefesin daralması, “bir şey oluyor” hissi… Panik atak çok korkutucu ama tehlikeli değildir; beden, olmayan bir tehlikeye karşı alarm verir.', 'Bedendeki belirtilerin nasıl yorumlandığını birlikte inceler, atak korkusunun döngüsünü adım adım kırmayı çalışırız. Panik, bilişsel davranışçı terapinin en iyi sonuç verdiği konulardan biri.'],
+      stres: ['Hep bir yerlere yetişmeye çalışıp hiç dinlenememek, bir noktadan sonra bedeni de zihni de tüketir. Bu bir zayıflık değil, uzun süre fazla yük taşımanın doğal sonucu.', 'Yükün nereden geldiğine, sınır koymayı neyin zorlaştırdığına ve kendine nasıl alan açabileceğine birlikte bakarız.'],
+      mod: ['Eskiden keyif aldığın şeylerden tat alamamak, her şeyin ağır gelmesi… Bu hâl, insana “hep böyle kalacak” diye fısıldar. Ama ruh hâli değişebilir.', 'Küçük, yapılabilir adımlarla hayatına yeniden canlılık katmayı ve seni aşağı çeken düşünceleri birlikte sorgulamayı çalışırız.'],
+      ozguven: ['İçimizdeki eleştirel ses çoğu zaman başkalarından çok daha acımasızdır. “Yeterince iyi değilim” bir gerçek değil, zamanla öğrenilmiş bir düşünce.', 'Bu sesin nereden geldiğini, hangi durumlarda yükseldiğini fark eder; kendine daha adil ve şefkatli bakmayı birlikte çalışırız.'],
+      iliski: ['İlişkilerdeki zorluklar en derin yerimize dokunur; yakınımızdaki insanlarla yaşanan çatışmalar ya da yalnızlık hissi bütün günü etkileyebilir.', 'İlişkilerde tekrar eden kalıpları, beklentileri ve kendini ifade etme biçimini birlikte ele alırız.'],
+      is: ['İş hayatı; performans baskısı, belirsizlik ve ilişkilerle birlikte hayatımızın büyük bir kısmını kaplıyor. Burada yaşanan zorluk sadece işte kalmıyor.', 'Endüstri ve örgüt psikolojisi birikimimle; iş yerindeki zorlanmaları, kararsızlıkları ve kariyer sorularını birlikte netleştiririz.'],
+      uyku: ['Gece zihnin susmaması, saatlerce dönüp durmak ertesi günü de etkiler. Uyku sorunları çoğu zaman düşünce ve alışkanlık döngüleriyle beslenir.', 'Uykusuzlukta bilişsel davranışçı yaklaşım ilk tercih edilen yöntemlerden; gece düşüncelerini ve uyku alışkanlıklarını birlikte düzenleriz.'],
+      diger: ['Yaşadığın şeyin bir adı olmak zorunda değil. Bazen sadece bir şeylerin yolunda gitmediğini hissederiz ve bu da konuşmak için yeterli bir sebep.', 'İlk görüşmede seni neyin zorladığını birlikte anlamaya çalışır, sonra nasıl bir yol izleyebileceğimize beraber karar veririz.']
+    };
+    var RISK = /intihar|kendimi öldür|ölmek istiyorum|yaşamak istemiyorum|canıma kıy|kendime zarar|bileklerimi|hayatıma son/i;
+    function pick(group, cb) {
+      group.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b) return;
+        Array.prototype.forEach.call(group.children, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        cb(b); upd();
+      });
+    }
+    pick(document.getElementById('anTopic'), function (b) { st.topic = b.getAttribute('data-k'); st.label = b.textContent; });
+    pick(document.getElementById('anTime'), function (b) { st.time = b.textContent; });
+    pick(document.getElementById('anImpact'), function (b) { st.impact = +b.getAttribute('data-v'); });
+    text.addEventListener('input', function () { crisis.hidden = !RISK.test(text.value); });
+    function ok() { return st.s === 0 ? !!st.topic : st.s === 1 ? !!st.time : st.s === 2 ? !!st.impact : true; }
+    function upd() { next.disabled = !ok(); }
+    function show() {
+      Array.prototype.forEach.call(steps, function (x, i) { x.hidden = i !== st.s; });
+      back.hidden = st.s === 0 || st.s === 3; nav.hidden = st.s === 3;
+      next.textContent = st.s === 2 ? 'Sonucu gör' : 'Devam'; upd();
+    }
+    function result() {
+      var own = text.value.trim(), t = T[st.topic];
+      var q = document.getElementById('anQuote'); q.hidden = !own; q.textContent = own ? '“' + (own.length > 220 ? own.slice(0, 217) + '…' : own) + '”' : '';
+      var echo = st.time + ' bunu taşıyorsun' + (st.impact === 3 ? ' ve seni gerçekten zorluyor.' : st.impact === 2 ? ' ve hayatını epey etkiliyor.' : '.');
+      document.getElementById('anEcho').textContent = echo + ' Bunu buraya yazman bile bir adım.';
+      document.getElementById('anInfo').textContent = t[0];
+      document.getElementById('anHow').textContent = t[1] + (st.impact >= 2 || st.time === 'Bir yıldan fazla' ? ' Bu kadar zamandır ve bu yoğunlukta yaşadığın bir şeyi tek başına taşımak zorunda değilsin; bir görüşmede konuşmak iyi gelebilir.' : ' Konuşmak istersen bir görüşmede birlikte bakabiliriz.');
+    }
+    next.addEventListener('click', function () { if (!ok()) return; st.s++; if (st.s === 3) result(); show(); an.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+    back.addEventListener('click', function () { if (st.s > 0) { st.s--; show(); } });
+    document.getElementById('anAgain').addEventListener('click', function () {
+      st = { s: 0, topic: null, label: '', time: '', impact: 0 }; text.value = ''; crisis.hidden = true;
+      an.querySelectorAll('[aria-pressed]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); show();
+    });
+    an.querySelectorAll('.tr-chips button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    show();
   })();
 
   /* kopyala */
