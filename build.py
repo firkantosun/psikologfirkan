@@ -23,7 +23,9 @@ MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağ
 
 PAGES = {
     "home": {"path": "/", "title": "Psikolog Muhammed Furkan Tosun | Psikolog Firkan",
-             "desc": "Psikolog Muhammed Furkan Tosun (@psikologfirkan). Okuma yazma belgesinden psikolojiye uzanan hikâyem, Bilişsel Davranışçı Terapi temelli çalışma, blog ve iletişim."},
+             "desc": "Psikolog Muhammed Furkan Tosun (@psikologfirkan). Kaygı, panik, stres, ruh hâli ve iş hayatına dair zorluklarda bilişsel davranışçı terapi temelli online ve yüz yüze görüşme."},
+    "hikaye": {"path": "/hikayem/", "title": "Hikâyem | Psikolog Muhammed Furkan Tosun",
+               "desc": "Yurtlarda geçen bir çocukluktan, okuma yazma kursundan psikolojiye uzanan yol: Psikolog Muhammed Furkan Tosun'un hikâyesi, kısa bir film gibi."},
     "yaklasim": {"path": "/terapi-yaklasimim/", "title": "Terapi Yaklaşımım: Bilişsel Davranışçı Terapi | Psikolog Firkan",
                  "desc": "Bilişsel Davranışçı Terapi (BDT) nedir, terapi nasıl ilerler, seanslarda neler yapılır? Psikolog Muhammed Furkan Tosun'un terapi yaklaşımı ve kısa bir düşünce çalışması."},
     "ozgecmis": {"path": "/ozgecmis/", "title": "Özgeçmiş | Psikolog Muhammed Furkan Tosun",
@@ -35,7 +37,7 @@ PAGES = {
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: e-posta ve Instagram."},
 }
-HREFS = {"#basla": "/", "#film": "/#film", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
+HREFS = {"#basla": "/", "#film": "/hikayem/", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
          "#blog": "/blog/", "#iletisim": "/iletisim/", "#randevu": "/randevu/"}
 
 esc = lambda s: html.escape(str(s), quote=True)
@@ -134,11 +136,11 @@ def build_js(js):
   }});
 """
     home_extra = """
-  document.getElementById('hudHome').addEventListener('click', function () { fadeThen(function () { window.scrollTo(0, 0); }); });
+  document.getElementById('hudHome').addEventListener('click', function () { fadeThen(function () { location.href = '/'; }); });
   document.getElementById('hudSkip').addEventListener('click', function () { fadeThen(function () { location.href = '/terapi-yaklasimim/'; }); });
 """
     return ("(function () {\n" + prelude + common +
-            "  if (PAGE === 'home') {\n" + home + home_extra + "  }\n" +
+            "  if (PAGE === 'hikaye') {\n" + home + home_extra + "  }\n" +
             "  if (PAGE === 'yaklasim') {\n" + yontem + tr + "  }\n" +
             "  if (PAGE === 'randevu') {\n" + randevu + "  }\n" +
             copy + "})();\n")
@@ -191,10 +193,10 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     navx = fix_links(nav)
     cur = PAGES[name]["path"]
     navx = navx.replace(f'<li><a href="{cur}"', f'<li><a aria-current="page" href="{cur}"', 1)
-    cls = "" if name == "home" else ' class="on-page"'
+    cls = "" if name == "hikaye" else ' class="on-page"'
     out = head(title, desc, path, ld or person_ld(), fonts, og_type, image)
     out += f'<body data-page="{name}"{cls}>\n' + navx + "\n"
-    out += fix_links(hud) if name == "home" else '<div class="jumpfade" id="jumpfade" aria-hidden="true"></div>\n'
+    out += fix_links(hud) if name == "hikaye" else '<div class="jumpfade" id="jumpfade" aria-hidden="true"></div>\n'
     out += fix_links(body_view) + fix_links(footer) + "\n" + lightbox
     out += '<script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
     return out
@@ -301,7 +303,9 @@ def main():
         os.makedirs(os.path.dirname(full), exist_ok=True)
         open(full, "w", encoding="utf-8").write(content)
 
-    write("/", page("home", views["home"], ctx))
+    latest = "".join(card(p) for p in posts[:3])
+    write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest), ctx))
+    write("/hikayem/", page("hikaye", views["hikaye"], ctx))
     write("/terapi-yaklasimim/", page("yaklasim", views["yaklasim"], ctx))
     write("/ozgecmis/", page("ozgecmis", views["ozgecmis"], ctx))
     write("/iletisim/", page("iletisim", views["iletisim"], ctx))
@@ -326,7 +330,7 @@ def main():
     open(os.path.join(DIST, "404.html"), "w", encoding="utf-8").write(nf)
 
     today = date.today().isoformat()
-    urls = [("/", today), ("/terapi-yaklasimim/", today), ("/ozgecmis/", today), ("/blog/", posts[0]["date"] if posts else today), ("/iletisim/", today), ("/randevu/", today)]
+    urls = [("/", today), ("/hikayem/", today), ("/terapi-yaklasimim/", today), ("/ozgecmis/", today), ("/blog/", posts[0]["date"] if posts else today), ("/iletisim/", today), ("/randevu/", today)]
     urls += [(f"/blog/{p['slug']}/", p.get("updated") or p["date"]) for p in posts]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls) + "</urlset>\n"

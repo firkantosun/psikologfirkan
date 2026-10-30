@@ -709,6 +709,43 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   .cv-item { grid-template-columns: 1fr; }
   .copy.bottom { bottom: 12vh; }
 }
+/* ana sayfa (danışan odaklı) */
+.page-home { padding-top: 0; }
+.h-hero { background: var(--band); color: var(--band-ink); padding-top: 56px; }
+.h-hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
+.h-hero .label { color: var(--glow); }
+.h-hero h1 { font-size: clamp(36px, 5.4vw, 62px); margin: 14px 0 18px; }
+.h-lead { color: var(--band-muted); font-size: clamp(17px, 1.5vw, 19px); max-width: 34em; margin: 0 0 26px; }
+.h-hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.h-facts { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 6px; color: var(--band-muted); font-size: 15px; }
+.h-facts li::before { content: "·"; color: var(--glow); margin-right: 8px; }
+.h-facts b { color: var(--band-ink); font-weight: 600; }
+.h-photo { margin: 0; position: relative; justify-self: end; width: min(400px, 100%); }
+.h-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; display: block; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.h-photo figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 12px 14px; background: rgba(6,11,12,.62); backdrop-filter: blur(6px); border-radius: 3px; display: grid; gap: 2px; }
+.h-photo figcaption b { font-family: var(--f-display); font-weight: 400; font-size: 18px; }
+.h-photo figcaption span { font-size: 13px; color: var(--band-muted); }
+.h-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.h-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: s; }
+.h-steps li { display: grid; gap: 8px; align-content: start; padding: 26px; border-top: 2px solid var(--accent); background: var(--surface); }
+.h-steps span { font-family: var(--f-mono); color: var(--warm); font-size: 13px; letter-spacing: .1em; }
+.h-steps h3 { font-size: 22px; }
+.h-steps p { color: var(--muted); font-size: 16px; margin: 0; }
+.h-about .wrap { display: grid; grid-template-columns: 220px 1fr; gap: clamp(24px, 4vw, 48px); align-items: center; }
+.h-about img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.h-about h2 { font-size: clamp(26px, 3.2vw, 38px); margin: 10px 0 14px; }
+.h-about p { color: var(--muted); max-width: 40em; margin: 0 0 22px; }
+.h-about .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.h-bhead { grid-template-columns: 1fr auto; align-items: end; }
+.h-bhead > div { display: grid; gap: 10px; }
+.h-bhead a { font-weight: 600; text-decoration: none; }
+@media (max-width: 860px) {
+  .h-hero .wrap, .h-about .wrap { grid-template-columns: 1fr; }
+  .h-photo { justify-self: start; width: min(320px, 100%); }
+  .h-about img { width: 140px; }
+  .h-topics, .h-steps { grid-template-columns: 1fr; }
+}
+@media (min-width: 861px) and (max-width: 1000px) { .h-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -735,7 +772,91 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 <div class="hud" id="hud"><button type="button" class="hud-btn" id="hudHome" aria-label="Ana sayfaya dön"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/></svg><span>Ana sayfa</span></button><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudPlay" aria-label="Hikâyeyi otomatik oynat"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span id="hudPlayTxt">Oynat</span></button><button type="button" class="hud-btn hud-music" id="hudMusic" aria-pressed="true" aria-label="Müziği kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path class="mute-x" d="M3 3l18 18"/></svg></button><span class="hud-sep" aria-hidden="true"></span><b id="hudNum" aria-hidden="true">01 / 12</b><span id="hudName" aria-hidden="true">Çocukluk</span><i aria-hidden="true"></i><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudSkip" aria-label="Hikâyeyi atla, Terapi Yaklaşımım sayfasına geç"><span>Atla</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
 <div class="jumpfade" id="jumpfade" aria-hidden="true"></div>
 
-<div class="view" data-view="home">
+<div class="view page page-home" data-view="home" hidden>
+<section class="h-hero">
+  <div class="wrap">
+    <div class="h-copy">
+      <div class="label">Psikolog · @psikologfirkan</div>
+      <h1>Zorlandığın yerden, birlikte bakalım.</h1>
+      <p class="h-lead">Kaygı, stres, panik, çökkün ruh hâli ya da iş hayatının yükü… Bilişsel davranışçı terapiyle, düşüncelerin, duyguların ve davranışların arasındaki bağı birlikte anlamaya çalışıyoruz. Seninle, senin hızında.</p>
+      <div class="cta">
+        <a class="btn primary" href="#randevu">Randevu al</a>
+        <a class="btn ghost" href="#yaklasim">Nasıl çalışıyorum?</a>
+      </div>
+      <ul class="h-facts">
+        <li><b>Online</b> ve <b>yüz yüze</b> görüşme</li>
+        <li>Hafta içi 17:00–21:00 · Pazar 10:00–16:00</li>
+      </ul>
+    </div>
+    <figure class="h-photo">
+      <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
+      <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Endüstri ve Örgüt Psikolojisi YL</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="label">Hangi konularda</div><h2>Birlikte çalışabileceğimiz konular</h2></div>
+    <div class="h-topics">
+      <div class="area"><h3>Kaygı ve panik</h3><p>Sürekli endişe, kötü bir şey olacak hissi, kalp çarpıntısıyla gelen ani korku atakları.</p></div>
+      <div class="area"><h3>Stres ve tükenmişlik</h3><p>Yetişememe, dinlenememe, işin ve hayatın temposunda kendini kaybetmiş gibi hissetmek.</p></div>
+      <div class="area"><h3>Ruh hâli ve motivasyon</h3><p>İsteksizlik, keyif alamama, içe kapanma ve “hiçbir şey değişmeyecek” düşüncesi.</p></div>
+      <div class="area"><h3>Özgüven ve öz eleştiri</h3><p>“Yeterince iyi değilim” sesi, başkalarının ne düşüneceği kaygısı, kendine karşı katılık.</p></div>
+      <div class="area"><h3>İş hayatı ve kariyer</h3><p>İş yerinde ilişkiler, performans baskısı, karar verme ve kariyer belirsizliği.</p></div>
+      <div class="area"><h3>Uyku ve gece düşünceleri</h3><p>Gece kapanmayan zihin, döngüye giren düşünceler ve bozulan uyku düzeni.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="label">Süreç</div><h2>Görüşmeler nasıl ilerliyor?</h2></div>
+    <ol class="h-steps">
+      <li><span>1</span><h3>Randevunu seç</h3><p>Takvimden sana uyan gün ve saati seç; online ya da yüz yüze görüşebiliriz.</p></li>
+      <li><span>2</span><h3>Tanışma görüşmesi</h3><p>Seni neyin zorladığını dinlerim, birlikte neyi değiştirmek istediğini konuşuruz.</p></li>
+      <li><span>3</span><h3>Birlikte çalışma</h3><p>Hedeflerine göre seanslar planlarız. Seans aralarında hayatına taşıyabileceğin küçük, uygulanabilir çalışmalar yaparız.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec h-about">
+  <div class="wrap">
+    <img src="img/portre.jpg" alt="" loading="lazy">
+    <div>
+      <div class="label">Hakkımda</div>
+      <h2>Değişimin mümkün olduğuna inanıyorum.</h2>
+      <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla çalışıyorum. Buraya gelmem kolay olmadı; merak edersen hikâyemi kısa bir film olarak anlattım.</p>
+      <div class="cta"><a class="btn primary dark" href="#film">Hikâyemi izle</a><a class="btn ghost-dark" href="#ozgecmis">Özgeçmiş</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head h-bhead"><div><div class="label">Blog</div><h2>Son yazılar</h2></div><a href="#blog">Tüm yazılar →</a></div>
+    <div class="b-grid"><!--SON-YAZILAR--></div>
+  </div>
+</section>
+
+<section class="contact">
+  <svg class="bigpsi" viewBox="0 0 100 120" aria-hidden="true"><path d="M50 12 V108 M20 26 V50 C20 78 80 78 80 50 V26 M34 108 H66"/></svg>
+  <div class="wrap">
+    <div>
+      <div class="label">İlk adım</div>
+      <h2>Hazır hissettiğinde buradayım.</h2>
+      <p>Randevunu takvimden kendin seçebilir ya da aklına takılanları önce e-postayla sorabilirsin. Acil bir durumdaysan 112'yi ara.</p>
+      <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
+    </div>
+    <div class="contact-list">
+      <div class="handle"><span class="hk">E-posta</span><span id="hMail">furkantosunoficial@gmail.com</span><button type="button" class="hc-copy" data-copy="hMail">Kopyala</button></div>
+      <div class="handle"><span class="hk">Instagram</span><span id="hHandle">@psikologfirkan</span><button type="button" class="hc-copy" data-copy="hHandle">Kopyala</button></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" data-view="hikaye">
 <!-- 0 · GİRİŞ: portre izleyiciye yakınlaşır -->
 <section class="scene s-hero" id="basla" data-scene="hero" style="--len: 230">
   <div class="stage" id="heroStage">
@@ -1026,8 +1147,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         <div class="eyebrow fade" data-t=".2 .3">Sahne 12 · Bugün</div>
         <p class="line up" data-t=".28 .42">Bugün psikoloğum.</p>
         <p class="sub up" data-t=".38 .5">2023’ten beri danışanlarımla çalışıyorum. Yol ne kadar uzun olursa olsun insan yeniden başlayabilir; bunu yaşayarak öğrendim.</p>
-        <p class="quote up" data-t=".46 .6">İnsanın değişebileceğini kitaplardan önce kendi hayatımdan öğrendim.</p>
-        <div class="cta up" data-t=".62 .74"><a class="btn primary" href="#ozgecmis">Özgeçmişimi gör</a><a class="btn ghost" href="#randevu">Randevu al</a></div>
+        <p class="quote up" data-t=".46 .6">Bu yolda öğrendiğim şey şu: kimsenin hikâyesi başladığı yerde bitmiyor. Seninki de.</p>
+        <div class="cta up" data-t=".62 .74"><a class="btn primary" href="#randevu">Randevu al</a><a class="btn ghost" href="#yaklasim">Nasıl çalışıyorum?</a></div>
       </div>
     </div>
   </div>
