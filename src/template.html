@@ -746,6 +746,21 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   .h-topics, .h-steps { grid-template-columns: 1fr; }
 }
 @media (min-width: 861px) and (max-width: 1000px) { .h-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.h-nudge { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; padding: 20px 24px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--glow); border-radius: 3px; }
+.h-nudge p { margin: 0; font-family: var(--f-display); font-size: clamp(17px, 1.6vw, 20px); max-width: 38em; }
+.faq { display: grid; gap: 10px; max-width: 820px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; }
+.faq summary { cursor: pointer; list-style: none; padding: 18px 22px; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--warm); font-size: 20px; line-height: 1; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0; padding: 0 22px 20px; color: var(--muted); }
+.b-cta p { margin: 0 0 4px; }
+.b-cta span { color: var(--muted); font-size: 15px; }
+.sticky-cta { position: fixed; right: max(20px, env(safe-area-inset-right, 0px)); bottom: max(20px, env(safe-area-inset-bottom, 0px)); z-index: 40; display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px; background: var(--glow); color: #132526; font: 700 15px var(--f-body); text-decoration: none; box-shadow: 0 12px 30px -10px rgba(0,0,0,.45); transform: translateY(140%); opacity: 0; transition: transform .35s ease, opacity .35s ease; }
+.sticky-cta small { font-weight: 500; opacity: .75; }
+.sticky-cta.show { transform: none; opacity: 1; }
+@media (max-width: 600px) { .sticky-cta { left: 16px; right: 16px; justify-content: center; } }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -806,6 +821,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="area"><h3>İş hayatı ve kariyer</h3><p>İş yerinde ilişkiler, performans baskısı, karar verme ve kariyer belirsizliği.</p></div>
       <div class="area"><h3>Uyku ve gece düşünceleri</h3><p>Gece kapanmayan zihin, döngüye giren düşünceler ve bozulan uyku düzeni.</p></div>
     </div>
+    <div class="h-nudge"><p>Bunlardan biri sana tanıdık geldiyse, her şeyin “yeterince kötü” olmasını beklemene gerek yok. Konuşmaya başlamak için iyi bir zaman.</p><a class="btn primary dark" href="#randevu">Uygun saatleri gör</a></div>
   </div>
 </section>
 
@@ -817,6 +833,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <li><span>2</span><h3>Tanışma görüşmesi</h3><p>Seni neyin zorladığını dinlerim, birlikte neyi değiştirmek istediğini konuşuruz.</p></li>
       <li><span>3</span><h3>Birlikte çalışma</h3><p>Hedeflerine göre seanslar planlarız. Seans aralarında hayatına taşıyabileceğin küçük, uygulanabilir çalışmalar yaparız.</p></li>
     </ol>
+    <div class="h-nudge"><p>Takvimde sadece boş saatler görünür. Seçtiğin saat anında senin olur, onay e-postan gelir.</p><a class="btn primary dark" href="#randevu">Randevu al</a></div>
   </div>
 </section>
 
@@ -836,6 +853,20 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   <div class="wrap">
     <div class="sec-head h-bhead"><div><div class="label">Blog</div><h2>Son yazılar</h2></div><a href="#blog">Tüm yazılar →</a></div>
     <div class="b-grid"><!--SON-YAZILAR--></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap h-faq">
+    <div class="sec-head"><div class="label">Sık sorulanlar</div><h2>Aklına takılabilecekler</h2></div>
+    <div class="faq">
+      <details><summary>Terapiye başlamak için durumumun çok ağır olması mı gerekiyor?</summary><p>Hayır. Birçok kişi “bu kadarı için gidilir mi?” diye düşünüp yıllarca bekliyor. Seni zorlayan, günlük hayatını etkileyen ya da bir süredir aklından çıkmayan bir şey varsa bu, konuşmak için yeterli bir sebep.</p></details>
+      <details><summary>İlk görüşmede ne olacak?</summary><p>Tanışırız. Seni neyin getirdiğini, hayatının nasıl gittiğini ve neyin değişmesini istediğini konuşuruz. Hazır olmadığın hiçbir şeyi anlatmak zorunda değilsin. Sonunda nasıl bir yol izleyebileceğimizi birlikte konuşuruz.</p></details>
+      <details><summary>Online görüşme yüz yüze kadar işe yarar mı?</summary><p>Araştırmalar, bilişsel davranışçı terapinin online yürütüldüğünde de etkili olabildiğini gösteriyor. Sessiz ve rahat konuşabileceğin bir ortam, iyi bir internet bağlantısı yeterli. Yüz yüzeyi tercih edersen o da mümkün.</p></details>
+      <details><summary>Konuştuklarımız gizli kalır mı?</summary><p>Evet. Görüşmelerde konuşulanlar meslek etiği gereği gizli tutulur. Yalnızca senin ya da bir başkasının hayatının ciddi risk altında olduğu durumlar ve yasal zorunluluklar bunun istisnasıdır; bunu ilk görüşmede de açıkça konuşuruz.</p></details>
+      <details><summary>Kaç seans sürer?</summary><p>Kişiden kişiye değişir. Bilişsel davranışçı terapi hedef odaklı bir yaklaşım; hedeflerini birlikte belirler, belli aralıklarla nerede olduğumuza birlikte bakarız. Ne zaman bırakacağına sen karar verirsin.</p></details>
+      <details><summary>Ücret ve randevu değişikliği</summary><p>Güncel seans ücreti için e-posta ile yazabilirsin. Randevunu değiştirmen gerekirse onay e-postandaki bağlantıyı kullanabilir ya da bana yazabilirsin.</p></details>
+    </div>
   </div>
 </section>
 

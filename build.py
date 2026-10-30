@@ -124,6 +124,16 @@ def build_js(js):
   var navCur = document.querySelector('nav.top ul [aria-current]');
   if (navCur) {{ var ul = navCur.closest('ul'); ul.scrollLeft = Math.max(0, navCur.offsetLeft - ul.offsetLeft - 24); }}
   window.addEventListener('pageshow', function () {{ if (fade) fade.classList.remove('on'); }});
+  var sc = document.getElementById('stickyCta');
+  if (sc) {{
+    var scEnd = document.querySelector('.contact, .b-cta');
+    var scTick = function () {{
+      var past = window.scrollY > 480;
+      var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
+      sc.classList.toggle('show', past && !nearEnd);
+    }};
+    window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
+  }}
   var bf = document.getElementById('bFilters');
   if (bf) bf.addEventListener('click', function (e) {{
     var b = e.target.closest('button'); if (!b) return;
@@ -198,6 +208,8 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     out += f'<body data-page="{name}"{cls}>\n' + navx + "\n"
     out += fix_links(hud) if name == "hikaye" else '<div class="jumpfade" id="jumpfade" aria-hidden="true"></div>\n'
     out += fix_links(body_view) + fix_links(footer) + "\n" + lightbox
+    if name not in ("randevu", "hikaye"):
+        out += '<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n'
     out += '<script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
     return out
 
@@ -263,7 +275,7 @@ def blog_post(p, posts):
       </div>
       {src_html}
       <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br>Son güncelleme: {fmt_date(upd)} · Editör: Psikolog {NAME} · {EMAIL}</p>
-      <div class="b-cta"><p>Bu konuda destek almak istersen randevu alabilirsin.</p><a class="btn primary dark" href="/randevu/">Randevu al</a></div>
+      <div class="b-cta"><div><p>Bunu okurken kendini tanıdın mı?</p><span>Bu konuda birlikte çalışabiliriz. Takvimden sana uygun saati seçmen yeterli; online ya da yüz yüze.</span></div><a class="btn primary dark" href="/randevu/">Uygun saatleri gör</a></div>
       {more}
     </article>
   </div>
