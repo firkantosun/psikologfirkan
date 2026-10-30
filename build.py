@@ -30,11 +30,13 @@ PAGES = {
                  "desc": "Psikolog Muhammed Furkan Tosun'un eğitimi ve deneyimi: İstanbul Kent Üniversitesi Psikoloji, Marmara Üniversitesi Endüstri ve Örgüt Psikolojisi Yüksek Lisansı, BDT uygulayıcı sertifikası."},
     "blog": {"path": "/blog/", "title": "Blog: Psikoloji Yazıları | Psikolog Firkan",
              "desc": "Kaygı, panik, depresyon, stres ve gündelik hayata dair bilimsel temelli, Türkiye odaklı psikoloji yazıları. Psikolog Muhammed Furkan Tosun."},
+    "randevu": {"path": "/randevu/", "title": "Randevu Al | Psikolog Muhammed Furkan Tosun",
+                "desc": "Psikolog Muhammed Furkan Tosun ile online ya da yüz yüze görüşme için randevu talebi oluştur. Hafta içi 17:00–21:00, pazar 10:00–16:00."},
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: e-posta ve Instagram."},
 }
 HREFS = {"#basla": "/", "#film": "/#film", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
-         "#blog": "/blog/", "#iletisim": "/iletisim/"}
+         "#blog": "/blog/", "#iletisim": "/iletisim/", "#randevu": "/randevu/"}
 
 esc = lambda s: html.escape(str(s), quote=True)
 
@@ -86,7 +88,8 @@ def build_js(js):
     prelude = js[:js.index("  /* harfler ve toz */")].replace("(function () {", "", 1)
     home = cut("  /* harfler ve toz */", "  /* yöntem: bilişsel model */")
     yontem = cut("  /* yöntem: bilişsel model */", "  /* blog */")
-    tr = cut("  /* düşünce kaydı (kısa) */", "  /* kopyala */")
+    tr = cut("  /* düşünce kaydı (kısa) */", "  /* randevu */")
+    randevu = cut("  /* randevu */", "  /* kopyala */")
     copy = cut("  /* kopyala */")
     copy = copy[:copy.rindex("})();")]
     lb_a = "  var lb = document.getElementById('lightbox')"
@@ -96,7 +99,7 @@ def build_js(js):
     dsrc = re.search(r"  document\.querySelectorAll\('\[data-src\]'\)[^\n]*\n", home).group(0)
     home = home.replace(dsrc, "")
     home = home.replace("img.src = 'img/'", "img.src = '/img/'")
-    tr = tr.replace("l.href = '#iletisim'", "l.href = '/iletisim/'")
+    tr = tr.replace("l.href = '#randevu'", "l.href = '/randevu/'")
     mk = "  function mk(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }\n"
     common = f"""
   var PAGE = document.body.getAttribute('data-page');
@@ -137,6 +140,7 @@ def build_js(js):
     return ("(function () {\n" + prelude + common +
             "  if (PAGE === 'home') {\n" + home + home_extra + "  }\n" +
             "  if (PAGE === 'yaklasim') {\n" + yontem + tr + "  }\n" +
+            "  if (PAGE === 'randevu') {\n" + randevu + "  }\n" +
             copy + "})();\n")
 
 
@@ -257,7 +261,7 @@ def blog_post(p, posts):
       </div>
       {src_html}
       <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br>Son güncelleme: {fmt_date(upd)} · Editör: Psikolog {NAME} · {EMAIL}</p>
-      <div class="b-cta"><p>Bu konuda destek almak istersen yazabilirsin.</p><a class="btn primary dark" href="/iletisim/">İletişime geç</a></div>
+      <div class="b-cta"><p>Bu konuda destek almak istersen randevu talebi oluşturabilirsin.</p><a class="btn primary dark" href="/randevu/">Randevu al</a></div>
       {more}
     </article>
   </div>
@@ -301,6 +305,7 @@ def main():
     write("/terapi-yaklasimim/", page("yaklasim", views["yaklasim"], ctx))
     write("/ozgecmis/", page("ozgecmis", views["ozgecmis"], ctx))
     write("/iletisim/", page("iletisim", views["iletisim"], ctx))
+    write("/randevu/", page("randevu", views["randevu"], ctx))
     blog_ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Psikolog Firkan Blog", "url": SITE + "/blog/",
                "author": person_ld()}
     write("/blog/", page("blog", blog_list(posts), ctx, ld=blog_ld))
@@ -321,7 +326,7 @@ def main():
     open(os.path.join(DIST, "404.html"), "w", encoding="utf-8").write(nf)
 
     today = date.today().isoformat()
-    urls = [("/", today), ("/terapi-yaklasimim/", today), ("/ozgecmis/", today), ("/blog/", posts[0]["date"] if posts else today), ("/iletisim/", today)]
+    urls = [("/", today), ("/terapi-yaklasimim/", today), ("/ozgecmis/", today), ("/blog/", posts[0]["date"] if posts else today), ("/iletisim/", today), ("/randevu/", today)]
     urls += [(f"/blog/{p['slug']}/", p.get("updated") or p["date"]) for p in posts]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls) + "</urlset>\n"

@@ -540,6 +540,66 @@ nav.top a[aria-current="page"] { color: var(--band-ink); text-decoration: underl
 .b-more { margin-top: 24px; }
 @media (max-width: 860px) { .b-grid, .b-grid.two { grid-template-columns: 1fr; } .b-body { font-size: 17px; } }
 
+
+/* randevu */
+.nav-cta { background: var(--glow); color: #132526 !important; padding: 5px 12px; border-radius: 999px; font-weight: 600; text-decoration: none !important; }
+.booking .wrap { padding-block: 72px 88px; }
+.bk-head { display: grid; gap: 10px; margin-bottom: 30px; max-width: 44em; }
+.bk-head h1 { font-size: clamp(30px, 4.4vw, 48px); }
+.bk-head p { color: var(--muted); font-size: 18px; }
+.bk { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.bk-main { display: grid; gap: 26px; min-width: 0; }
+.bk-block { display: grid; gap: 12px; min-width: 0; }
+.bk-step { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-size: 21px; }
+.bk-step span { width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: var(--bg); display: grid; place-items: center; font: 600 13px var(--f-mono); flex: none; }
+.bk-step em { font-style: normal; font-family: var(--f-body); font-size: 15px; color: var(--muted); }
+.bk-type { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.bk-type button { display: grid; gap: 2px; text-align: left; padding: 14px 16px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; cursor: pointer; color: var(--ink); font: inherit; }
+.bk-type button b { font-family: var(--f-display); font-weight: 400; font-size: 19px; }
+.bk-type button small { color: var(--muted); font-size: 13px; }
+.bk-type button[aria-pressed="true"] { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); padding: 13px 15px; }
+.bk-days-wrap { overflow-x: auto; margin: 0 -4px; padding: 4px 4px 8px; scrollbar-width: thin; }
+.bk-days { display: flex; gap: 8px; width: max-content; }
+.bk-day { width: 74px; flex: none; display: grid; justify-items: center; gap: 2px; padding: 10px 4px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; cursor: pointer; color: var(--ink); font: inherit; }
+.bk-day .w { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.bk-day .d { font-family: var(--f-display); font-size: 26px; line-height: 1.1; }
+.bk-day .m { font-size: 12px; color: var(--muted); }
+.bk-day .s { font-size: 11px; margin-top: 4px; padding: 1px 8px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+.bk-day.bk-full { cursor: not-allowed; background: transparent; opacity: .55; }
+.bk-day.bk-full .s { background: transparent; color: var(--muted); text-decoration: line-through; }
+.bk-day[aria-selected="true"] { border: 2px solid var(--accent); padding: 9px 3px; background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.bk-hours { font-size: 13px; color: var(--muted); }
+.bk-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.bk-slot { padding: 11px 6px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; cursor: pointer; font: 600 16px var(--f-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+.bk-slot:hover:not(:disabled) { border-color: var(--accent); }
+.bk-slot[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.bk-slot:disabled { cursor: not-allowed; color: var(--muted); background: transparent; text-decoration: line-through; opacity: .6; }
+.bk-empty { color: var(--muted); font-size: 15px; grid-column: 1 / -1; }
+.bk-form { position: sticky; top: 76px; display: grid; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(18px, 2.6vw, 28px); min-width: 0; }
+.bk-form label { font-size: 14px; font-weight: 600; margin-top: 6px; }
+.bk-form label small { font-weight: 400; color: var(--muted); }
+.bk-form input:not([type=checkbox]), .bk-form textarea { width: 100%; font: 16px var(--f-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
+.bk-form input:focus, .bk-form textarea:focus { outline: none; border-color: var(--accent); }
+.bk-form input[aria-invalid="true"] { border-color: #B4483A; }
+.bk-summary { margin: 4px 0 6px; padding: 12px 14px; border-radius: 4px; background: var(--bg); border: 1px dashed var(--line); color: var(--muted); font-size: 15px; }
+.bk-summary.ok { border: 1px solid var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 8%, var(--bg)); }
+.bk-summary b { font-family: var(--f-display); font-weight: 400; font-size: 18px; display: block; }
+.bk-hint, .bk-small { font-size: 12.5px; color: var(--muted); }
+.bk-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.bk-check { display: flex !important; gap: 10px; align-items: flex-start; font-weight: 400 !important; font-size: 13px !important; color: var(--muted); margin-top: 8px !important; }
+.bk-check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
+.bk-msg { color: #B4483A; font-size: 14px; min-height: 1em; }
+.bk-msg a { color: inherit; }
+.bk-submit { width: 100%; text-align: center; border: 0; cursor: pointer; font-size: 16px; padding: 14px; }
+.bk-submit:disabled { opacity: .6; cursor: wait; }
+.bk-done { grid-column: 1 / -1; background: var(--surface); border: 1px solid var(--accent); border-radius: 6px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 12px; justify-items: start; }
+.bk-tick { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; font-size: 26px; }
+.bk-done h2 { font-size: clamp(26px, 3.4vw, 36px); }
+.bk-done p { color: var(--muted); max-width: 40em; }
+.bk-done #bkDoneText { color: var(--ink); font-family: var(--f-display); font-size: 20px; }
+.btn.ghost-dark { border: 1px solid var(--line); color: var(--ink); background: transparent; cursor: pointer; font: 600 15px var(--f-body); }
+@media (max-width: 900px) { .bk { grid-template-columns: 1fr; } .bk-form { position: static; } }
+
 /* film sonrası: özgeçmiş vb. */
 .sec { border-top: 1px solid var(--line); }
 .sec > .wrap { padding-block: 72px; }
@@ -629,6 +689,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <li><a href="#ozgecmis">Özgeçmiş</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#iletisim">İletişim</a></li>
+      <li><a href="#randevu" class="nav-cta">Randevu al</a></li>
     </ul>
   </div>
 </nav>
@@ -648,7 +709,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         <p class="role">Psikolog · Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</p>
         <p class="lead">İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi okudum. Bilişsel davranışçı terapi temelli çalışıyorum. Ama hikâyem çok daha önce başladı.</p>
         <div class="cta">
-          <a class="btn primary" href="#iletisim">İletişime geç</a>
+          <a class="btn primary" href="#randevu">Randevu al</a>
           <a class="btn ghost" href="#film">Hikâyemi izle</a>
           <a class="btn ghost" href="#yaklasim">Terapide neler yapıyoruz?</a>
         </div>
@@ -927,7 +988,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         <p class="line up" data-t=".28 .42">Bugün psikoloğum.</p>
         <p class="sub up" data-t=".38 .5">2023’ten beri psikolog olarak çalışıyorum.</p>
         <p class="quote up" data-t=".46 .6">İnsanın değişebileceğini kitaplardan önce kendi hayatımdan öğrendim.</p>
-        <div class="cta up" data-t=".62 .74"><a class="btn primary" href="#ozgecmis">Özgeçmişimi gör</a><a class="btn ghost" href="#iletisim">İletişime geç</a></div>
+        <div class="cta up" data-t=".62 .74"><a class="btn primary" href="#ozgecmis">Özgeçmişimi gör</a><a class="btn ghost" href="#randevu">Randevu al</a></div>
       </div>
     </div>
   </div>
@@ -1094,7 +1155,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         <details id="faq4"><summary>Seans arası çalışmalar zorunlu mu?</summary><p>Zorunlu değil, ama BDT'de değişimin önemli bir kısmı seanslar arasında olur. Çalışmaları senin hayatına ve temposuna uyacak şekilde birlikte belirleriz.</p></details>
       </div>
       <p class="m-disclaimer">Bu sayfa bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.</p>
-      <div class="cta"><a class="btn primary dark" href="#iletisim">İletişime geç</a></div>
+      <div class="cta"><a class="btn primary dark" href="#randevu">Randevu al</a></div>
     </div>
   </div>
 </section>
@@ -1181,9 +1242,73 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="b-body" id="bBody"></div>
       <div class="b-src" id="bSrc" hidden><div class="label">Kaynaklar</div><ol id="bSrcList"></ol></div>
       <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br><span id="bUpd"></span> · Editör: Psikolog Muhammed Furkan Tosun · furkantosunoficial@gmail.com</p>
-      <div class="b-cta"><p>Bu konuda destek almak istersen yazabilirsin.</p><a class="btn primary dark" href="#iletisim">İletişime geç</a></div>
+      <div class="b-cta"><p>Bu konuda destek almak istersen yazabilirsin.</p><a class="btn primary dark" href="#randevu">Randevu al</a></div>
       <div class="b-more" id="bMore"></div>
     </article>
+  </div>
+</section>
+</div>
+
+<div class="view page" data-view="randevu" hidden>
+<section class="booking" id="p-randevu">
+  <div class="wrap">
+    <div class="bk-head">
+      <div class="label">Randevu</div>
+      <h1>Randevu talebi oluştur</h1>
+      <p>Görüşme türünü, gününü ve saatini seç; bilgilerini bırak. Talebin bana e-postayla ulaşır, uygunluğu kontrol edip seninle iletişime geçerim.</p>
+    </div>
+
+    <div class="bk" id="bk">
+      <div class="bk-main">
+        <div class="bk-block">
+          <div class="bk-step"><span>1</span>Görüşme türü</div>
+          <div class="bk-type" role="group" aria-label="Görüşme türü">
+            <button type="button" id="bkOnline" data-type="Online" aria-pressed="true"><b>Online</b><small>Görüntülü görüşme</small></button>
+            <button type="button" id="bkYuz" data-type="Yüz yüze" aria-pressed="false"><b>Yüz yüze</b><small>Adres onayla birlikte iletilir</small></button>
+          </div>
+        </div>
+
+        <div class="bk-block">
+          <div class="bk-step"><span>2</span>Gün</div>
+          <div class="bk-days-wrap">
+            <div class="bk-days" id="bkDays" role="listbox" aria-label="Günler"></div>
+          </div>
+          <p class="bk-hours">Hafta içi 17:00–21:00 · Pazar 10:00–16:00 · Cumartesi kapalı</p>
+        </div>
+
+        <div class="bk-block">
+          <div class="bk-step"><span>3</span>Saat <em id="bkDayLabel"></em></div>
+          <div class="bk-slots" id="bkSlots"></div>
+        </div>
+      </div>
+
+      <form class="bk-form" id="bkForm" novalidate>
+        <div class="bk-step"><span>4</span>Bilgilerin</div>
+        <div class="bk-summary" id="bkSummary">Önce bir gün ve saat seç.</div>
+        <label for="bkName">Ad soyad</label>
+        <input id="bkName" name="name" autocomplete="name" required>
+        <label for="bkPhone">Telefon</label>
+        <input id="bkPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx" required>
+        <label for="bkEmail">E-posta</label>
+        <input id="bkEmail" name="email" type="email" autocomplete="email" required>
+        <label for="bkNote">Not <small>(isteğe bağlı)</small></label>
+        <textarea id="bkNote" name="note" rows="3" placeholder="Örn. ilk görüşme, tercih ettiğin iletişim yolu"></textarea>
+        <p class="bk-hint">Sağlıkla ilgili ayrıntıları buraya yazmana gerek yok; onları görüşmede konuşuruz.</p>
+        <input type="text" name="_honey" id="bkHoney" tabindex="-1" autocomplete="off" class="bk-hp" aria-hidden="true">
+        <label class="bk-check" for="bkKvkk"><input type="checkbox" id="bkKvkk" required> <span>Ad, telefon ve e-posta bilgilerimin randevu talebimin değerlendirilmesi ve benimle iletişime geçilmesi amacıyla işlenmesini kabul ediyorum.</span></label>
+        <p class="bk-msg" id="bkMsg" aria-live="polite"></p>
+        <button type="submit" class="btn primary dark bk-submit" id="bkSubmit">Randevu talebi oluştur</button>
+        <p class="bk-small">Bu bir talep formudur; randevu, onay e-postası ya da telefonuyla kesinleşir. Acil bir durumdaysan 112'yi ara.</p>
+      </form>
+
+      <div class="bk-done" id="bkDone" hidden>
+        <div class="bk-tick" aria-hidden="true">✓</div>
+        <h2>Randevu talebin alındı</h2>
+        <p id="bkDoneText"></p>
+        <p>En kısa sürede seninle iletişime geçeceğim. Talebin onaylanana kadar bu saat kesinleşmiş sayılmaz.</p>
+        <button type="button" class="btn ghost-dark" id="bkAgain">Yeni bir talep oluştur</button>
+      </div>
+    </div>
   </div>
 </section>
 </div>
@@ -1196,6 +1321,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="label">İletişim</div>
       <h2>Bir sohbetle başlayalım.</h2>
       <p>Randevu, iş birliği ya da okul ve kurum atölyeleri için e-posta veya Instagram üzerinden ulaşabilirsin.</p>
+      <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
     </div>
     <div class="contact-list">
       <div class="handle"><span class="hk">E-posta</span><span id="cMail">furkantosunoficial@gmail.com</span><button type="button" class="hc-copy" data-copy="cMail">Kopyala</button></div>
@@ -1513,7 +1639,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   /* sayfalar: hash ile yönlendirme */
   var fade = document.getElementById('jumpfade');
   var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
-  var PAGES = { yaklasim: 1, ozgecmis: 1, iletisim: 1, blog: 1 };
+  var PAGES = { yaklasim: 1, ozgecmis: 1, iletisim: 1, blog: 1, randevu: 1 };
   function pageOf(h) { return PAGES[h] ? h : (/^blog-/.test(h) ? 'blog' : 'home'); }
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav.top a[href^="#"]'));
   function route() {
@@ -1632,7 +1758,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       else if (diff > 0) msg = 'Küçük bir değişim oldu: ' + diff + ' puan. Bu çok değerli. Bazı düşünceler tek seferde gevşemez; terapide altta yatan inançlara birlikte bakarız.';
       else msg = 'Değişmediyse sorun yok. Bazı düşünceler daha derin bir inanca bağlıdır ve tek bir çalışmayla gevşemez. Terapide bu katmanlara senin hızında ineriz.';
       r.appendChild(mk('p', 'tr-closing', msg));
-      var cta = mk('div', 'cta'); var l = mk('a', 'btn primary dark', 'Benimle iletişime geç'); l.href = '#iletisim'; cta.appendChild(l); r.appendChild(cta);
+      var cta = mk('div', 'cta'); var l = mk('a', 'btn primary dark', 'Randevu al'); l.href = '#randevu'; cta.appendChild(l); r.appendChild(cta);
       r.appendChild(mk('p', 'tr-help', 'Bu çalışma bir terapi değildir; kendini tanımana yardımcı olacak küçük bir örnektir.'));
     }
     function reset() {
@@ -1643,6 +1769,120 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       $('trCrisis').hidden = true; show(0);
     }
     show(0);
+  })();
+
+  /* randevu */
+  (function () {
+    var root = document.getElementById('bk'); if (!root) return;
+    var $ = function (id) { return document.getElementById(id); };
+    var TO = 'psikologfurkantosun@gmail.com';
+    var DAYS_AHEAD = 28;
+    var WD = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
+    var WDL = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+    var MO = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+    var MOL = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    function nowIst() {
+      var p = {}; new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+        .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+      return { y: +p.year, m: +p.month - 1, d: +p.day, h: +p.hour, min: +p.minute };
+    }
+    function hoursFor(wd) { return wd === 6 ? [] : wd === 0 ? [10, 11, 12, 13, 14, 15] : [17, 18, 19, 20]; }
+    var now = nowIst(), days = [];
+    for (var i = 0; i < DAYS_AHEAD; i++) {
+      var dt = new Date(Date.UTC(now.y, now.m, now.d + i, 12));
+      var wd = dt.getUTCDay(), hs = hoursFor(wd);
+      var open = hs.filter(function (h) { return i > 0 || h * 60 > now.h * 60 + now.min + 60; });
+      days.push({ date: dt, wd: wd, hours: hs, open: open, iso: dt.toISOString().slice(0, 10) });
+    }
+    var sel = { type: 'Online', day: null, hour: null };
+    function label(d) { return d.date.getUTCDate() + ' ' + MOL[d.date.getUTCMonth()] + ' ' + d.date.getUTCFullYear() + ', ' + WDL[d.wd]; }
+    function hh(h) { return (h < 10 ? '0' : '') + h + ':00'; }
+    var daysBox = $('bkDays');
+    days.forEach(function (d, i) {
+      var b = mk('button', 'bk-day' + (d.open.length ? '' : ' bk-full')); b.type = 'button'; b.setAttribute('role', 'option'); b.id = 'bkDay' + i;
+      b.setAttribute('aria-selected', 'false');
+      b.appendChild(mk('span', 'w', i === 0 ? 'Bugün' : i === 1 ? 'Yarın' : WD[d.wd]));
+      b.appendChild(mk('span', 'd', String(d.date.getUTCDate())));
+      b.appendChild(mk('span', 'm', MO[d.date.getUTCMonth()]));
+      b.appendChild(mk('span', 's', d.open.length ? d.open.length + ' saat' : 'Dolu'));
+      if (!d.open.length) { b.disabled = true; b.setAttribute('aria-label', label(d) + ', dolu'); }
+      else b.setAttribute('aria-label', label(d) + ', ' + d.open.length + ' uygun saat');
+      b.addEventListener('click', function () { pickDay(i); });
+      daysBox.appendChild(b);
+    });
+    function pickDay(i) {
+      sel.day = i; sel.hour = null;
+      Array.prototype.forEach.call(daysBox.children, function (x, k) { x.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      var d = days[i]; $('bkDayLabel').textContent = '· ' + label(d);
+      var box = $('bkSlots'); box.textContent = '';
+      d.hours.forEach(function (h) {
+        var b = mk('button', 'bk-slot', hh(h)); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+        if (d.open.indexOf(h) < 0) { b.disabled = true; b.setAttribute('aria-label', hh(h) + ', dolu'); }
+        b.addEventListener('click', function () {
+          sel.hour = h; Array.prototype.forEach.call(box.children, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); summary();
+        });
+        box.appendChild(b);
+      });
+      summary();
+    }
+    function summary() {
+      var s = $('bkSummary'); s.textContent = '';
+      if (sel.day == null || sel.hour == null) { s.className = 'bk-summary'; s.textContent = sel.day == null ? 'Önce bir gün ve saat seç.' : 'Şimdi bir saat seç.'; return; }
+      s.className = 'bk-summary ok';
+      s.appendChild(mk('b', null, label(days[sel.day])));
+      s.appendChild(document.createTextNode(hh(sel.hour) + '–' + hh(sel.hour + 1) + ' · ' + sel.type));
+    }
+    ['bkName', 'bkPhone', 'bkEmail'].forEach(function (id) { $(id).addEventListener('input', function () { this.setAttribute('aria-invalid', 'false'); $('bkMsg').textContent = ''; }); });
+    $('bkSlots').appendChild(mk('p', 'bk-empty', 'Yukarıdan bir gün seç; uygun saatler burada görünecek.'));
+    Array.prototype.forEach.call(document.querySelectorAll('.bk-type button'), function (b) {
+      b.addEventListener('click', function () {
+        sel.type = b.getAttribute('data-type');
+        Array.prototype.forEach.call(document.querySelectorAll('.bk-type button'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        summary();
+      });
+    });
+    var first = days.findIndex(function (d) { return d.open.length; }); if (first >= 0) pickDay(first);
+    function fail(msg, withMail) {
+      var m = $('bkMsg'); m.textContent = msg;
+      if (withMail) { m.appendChild(document.createTextNode(' E-postayla da yazabilirsin: ')); var a = mk('a', null, TO); a.href = 'mailto:' + TO; m.appendChild(a); }
+    }
+    $('bkForm').addEventListener('submit', function (e) {
+      e.preventDefault(); $('bkMsg').textContent = '';
+      if (sel.day == null || sel.hour == null) { fail('Lütfen bir gün ve saat seç.'); return; }
+      var name = $('bkName').value.trim(), phone = $('bkPhone').value.trim(), email = $('bkEmail').value.trim();
+      var bad = [];
+      [['bkName', name.length >= 3], ['bkPhone', phone.replace(/\D/g, '').length >= 10], ['bkEmail', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)]].forEach(function (x) {
+        $(x[0]).setAttribute('aria-invalid', x[1] ? 'false' : 'true'); if (!x[1]) bad.push(x[0]);
+      });
+      if (bad.length) { fail('Lütfen ad soyad, telefon ve e-posta alanlarını kontrol et.'); $(bad[0]).focus(); return; }
+      if (!$('bkKvkk').checked) { fail('Devam etmek için onay kutusunu işaretle.'); return; }
+      if ($('bkHoney').value) return;
+      var d = days[sel.day], when = label(d) + ', ' + hh(sel.hour) + '–' + hh(sel.hour + 1);
+      var btn = $('bkSubmit'); btn.disabled = true; btn.textContent = 'Gönderiliyor…';
+      fetch('https://formsubmit.co/ajax/' + TO, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Yeni randevu talebi: ' + name + ' · ' + d.date.getUTCDate() + ' ' + MOL[d.date.getUTCMonth()] + ' ' + hh(sel.hour),
+          _template: 'table', _captcha: 'false', _replyto: email,
+          'Ad soyad': name, 'Telefon': phone, 'E-posta': email, 'Görüşme türü': sel.type,
+          'Tarih': label(d), 'Saat': hh(sel.hour) + '–' + hh(sel.hour + 1), 'Not': $('bkNote').value.trim() || '-',
+          'Kaynak': 'psikologfirkan.com/randevu'
+        })
+      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok && String(res.j.success) === 'true') {
+            $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
+            $('bkDoneText').textContent = when + ' · ' + sel.type;
+            window.scrollTo(0, Math.max(0, root.getBoundingClientRect().top + window.scrollY - 90));
+          } else fail('Talep şu an gönderilemedi.', true);
+        })
+        .catch(function () { fail('Bağlantı kurulamadı. Lütfen tekrar dene.', true); })
+        .then(function () { btn.disabled = false; btn.textContent = 'Randevu talebi oluştur'; });
+    });
+    $('bkAgain').addEventListener('click', function () {
+      $('bkForm').reset(); $('bkDone').hidden = true; $('bkForm').hidden = false; document.querySelector('.bk-main').hidden = false;
+      if (first >= 0) pickDay(first);
+    });
   })();
 
   /* kopyala */
