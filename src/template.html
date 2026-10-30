@@ -590,6 +590,10 @@ nav.top a[aria-current="page"] { color: var(--band-ink); text-decoration: underl
 .bk-check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
 .bk-msg { color: #B4483A; font-size: 14px; min-height: 1em; }
 .bk-msg a { color: inherit; }
+.bk-msg { display: grid; gap: 10px; }
+.bk-fallback { display: grid; gap: 8px; }
+.bk-fallback .btn { text-align: center; width: 100%; }
+.bk-fallback small { color: var(--muted); font-size: 12px; }
 .bk-submit { width: 100%; text-align: center; border: 0; cursor: pointer; font-size: 16px; padding: 14px; }
 .bk-submit:disabled { opacity: .6; cursor: wait; }
 .bk-done { grid-column: 1 / -1; background: var(--surface); border: 1px solid var(--accent); border-radius: 6px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 12px; justify-items: start; }
@@ -1776,6 +1780,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     var root = document.getElementById('bk'); if (!root) return;
     var $ = function (id) { return document.getElementById(id); };
     var TO = 'psikologfurkantosun@gmail.com';
+    var W3F_KEY = ''; // Web3Forms erişim anahtarı (web3forms.com); boşsa FormSubmit denenir
+
     var DAYS_AHEAD = 28;
     var WD = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
     var WDL = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
@@ -1842,12 +1848,6 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       });
     });
     var first = days.findIndex(function (d) { return d.open.length; }); if (first >= 0) pickDay(first);
-    if (/[?&]talep=alindi/.test(location.search)) {
-      var last = ''; try { last = sessionStorage.getItem('bkLast') || ''; sessionStorage.removeItem('bkLast'); } catch (x) {}
-      $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
-      $('bkDoneText').textContent = last || 'Talebin e-postayla iletildi.';
-      try { history.replaceState(null, '', location.pathname); } catch (x) {}
-    }
     function fail(msg, withMail) {
       var m = $('bkMsg'); m.textContent = msg;
       if (withMail) { m.appendChild(document.createTextNode(' E-postayla da yazabilirsin: ')); var a = mk('a', null, TO); a.href = 'mailto:' + TO; m.appendChild(a); }
@@ -1872,27 +1872,37 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         'Tarih': label(d), 'Saat': hh(sel.hour) + '–' + hh(sel.hour + 1), 'Not': $('bkNote').value.trim() || '-',
         'Kaynak': 'psikologfirkan.com/randevu'
       };
-      function classic() {
-        try { sessionStorage.setItem('bkLast', when + ' · ' + sel.type); } catch (x) {}
-        var f = document.createElement('form'); f.method = 'POST'; f.action = 'https://formsubmit.co/' + TO; f.style.display = 'none';
-        payload._next = location.origin + location.pathname + '?talep=alindi';
-        Object.keys(payload).forEach(function (k) { var i = document.createElement('input'); i.type = 'hidden'; i.name = k; i.value = payload[k]; f.appendChild(i); });
-        document.body.appendChild(f); f.submit();
+      function done() {
+        $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
+        $('bkDoneText').textContent = when + ' · ' + sel.type;
+        window.scrollTo(0, Math.max(0, root.getBoundingClientRect().top + window.scrollY - 90));
       }
-      fetch('https://formsubmit.co/ajax/' + TO, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+      function mailFallback() {
+        var lines = ['Ad soyad: ' + name, 'Telefon: ' + phone, 'E-posta: ' + email, 'Görüşme türü: ' + sel.type, 'Tarih: ' + label(d), 'Saat: ' + hh(sel.hour) + '–' + hh(sel.hour + 1), 'Not: ' + (payload['Not'])];
+        var text = lines.join('\n');
+        var m = $('bkMsg'); m.textContent = '';
+        m.appendChild(mk('span', null, 'Talep şu an otomatik gönderilemedi. Aşağıdaki butonla e-posta uygulamandan tek dokunuşla gönderebilirsin; bilgilerin hazır.'));
+        var box = mk('div', 'bk-fallback');
+        var a = mk('a', 'btn primary dark', 'E-posta uygulamamla gönder');
+        a.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(text + '\n');
+        var c = mk('button', 'btn ghost-dark', 'Bilgileri kopyala'); c.type = 'button';
+        c.addEventListener('click', function () {
+          var t = 'Alıcı: ' + TO + '\n' + text;
+          try { navigator.clipboard.writeText(t).then(function () { c.textContent = 'Kopyalandı'; }, function () { c.textContent = TO; }); } catch (x) { c.textContent = TO; }
+        });
+        box.appendChild(a); box.appendChild(c); box.appendChild(mk('small', null, 'Alıcı adres: ' + TO));
+        m.appendChild(box);
+      }
+      var req = W3F_KEY
+        ? fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(Object.assign({ access_key: W3F_KEY, subject: payload._subject, from_name: 'psikologfirkan.com', replyto: email, botcheck: '' }, payload, { _subject: undefined, _template: undefined, _captcha: undefined, _replyto: undefined })) })
+        : fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+      req.then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok && String(res.j.success) === 'true') {
-            $('bkForm').hidden = true; document.querySelector('.bk-main').hidden = true; $('bkDone').hidden = false;
-            $('bkDoneText').textContent = when + ' · ' + sel.type;
-            window.scrollTo(0, Math.max(0, root.getBoundingClientRect().top + window.scrollY - 90));
-          } else if (res.j && /activat/i.test(String(res.j.message || ''))) {
-            fail('Form henüz etkinleştirilmemiş. Site sahibinin e-postasına bir onay bağlantısı gönderildi; onaylandıktan sonra tekrar dene.', true);
-          } else classic();
+          if (res.ok && String(res.j.success) === 'true') done();
+          else mailFallback();
         })
-        .catch(function () { classic(); })
+        .catch(function () { mailFallback(); })
         .then(function () { btn.disabled = false; btn.textContent = 'Randevu talebi oluştur'; });
     });
     $('bkAgain').addEventListener('click', function () {
