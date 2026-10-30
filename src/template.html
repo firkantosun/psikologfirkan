@@ -71,7 +71,8 @@ body.past-film nav.top { background: var(--band); }
 .copy.center { top: 50%; transform: translateY(-50%); text-align: center; justify-items: center; }
 .eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--glow); }
 .line { font-family: var(--f-display); font-size: clamp(30px, 5vw, 64px); line-height: 1.12; text-wrap: balance; max-width: 16em; }
-.sub { font-size: clamp(16px, 1.6vw, 20px); color: var(--band-muted); max-width: 34em; }
+.sub { font-family: var(--f-display); font-size: clamp(19px, 2.2vw, 28px); line-height: 1.4; color: #E9E4D9; max-width: 30em; text-shadow: 0 2px 18px rgba(0,0,0,.55); text-wrap: pretty; }
+.qby { display: block; margin-top: 10px; font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--band-muted); font-style: normal; }
 .hud { position: fixed; z-index: 19; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-radius: 999px; background: rgba(6,11,12,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(238,242,238,.14); color: var(--band-ink); font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; opacity: 0; transition: opacity .4s; pointer-events: none; white-space: nowrap; max-width: calc(100vw - 32px); }
 .hud.show { opacity: 1; pointer-events: auto; }
 .hud-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 0; color: var(--band-ink); font: 500 12px var(--f-mono); letter-spacing: .06em; padding: 4px 8px; margin: -4px -6px; border-radius: 999px; cursor: pointer; }
@@ -163,7 +164,7 @@ body.autoplay #hudPlay { color: var(--glow); }
 .hem-grid { position: absolute; inset: 0; max-width: 1120px; margin: 0 auto; padding: 90px max(28px, env(safe-area-inset-right, 0px)) 80px calc(max(28px, 7vw) + 28px); display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px 48px; align-content: center; align-items: center; }
 .hem-grid .eyebrow { color: #8A5A1C; }
 .hem-grid .line { color: var(--paper-ink); font-size: clamp(28px, 4.2vw, 54px); }
-.hem-grid .sub { color: #4D5D5D; }
+.hem-grid .sub { color: #3A4747; text-shadow: none; }
 .letters { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--f-display); font-size: clamp(26px, 3.4vw, 42px); color: var(--accent); margin-top: 6px; }
 .letters span { display: inline-block; opacity: var(--t, 0); transform: translateY(calc((1 - var(--t, 0)) * 26px)) rotate(calc((1 - var(--t, 0)) * -18deg)); }
 .hand { width: 100%; max-width: 520px; height: auto; overflow: visible; }
@@ -317,7 +318,7 @@ body.autoplay #hudPlay { color: var(--glow); }
 @media (max-width: 860px) {
   .pc-grid { grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 14px; padding-top: 72px; align-items: start; }
   .pc-logo { width: 60px; }
-  .s-pc .sub { font-size: 14px; }
+  .s-pc .sub { font-size: 16px; }
   .pc-chips span { font-size: 12px; padding: 4px 10px; }
   .phone { width: 27vw; border-width: 4px; border-radius: 18px; }
   .phone.mid { width: 31vw; }
@@ -729,7 +730,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   </div>
 </nav>
 
-<div class="hud" id="hud"><button type="button" class="hud-btn" id="hudHome" aria-label="Ana sayfaya dön"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/></svg><span>Ana sayfa</span></button><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudPlay" aria-label="Hikâyeyi otomatik oynat"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span id="hudPlayTxt">İzle</span></button><button type="button" class="hud-btn hud-music" id="hudMusic" aria-pressed="true" aria-label="Müziği kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path class="mute-x" d="M3 3l18 18"/></svg></button><span class="hud-sep" aria-hidden="true"></span><b id="hudNum" aria-hidden="true">01 / 12</b><span id="hudName" aria-hidden="true">Çocukluk</span><i aria-hidden="true"></i><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudSkip" aria-label="Hikâyeyi atla, Terapi Yaklaşımım sayfasına geç"><span>Atla</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
+<div class="hud" id="hud"><button type="button" class="hud-btn" id="hudHome" aria-label="Ana sayfaya dön"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5"/></svg><span>Ana sayfa</span></button><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudPlay" aria-label="Hikâyeyi otomatik oynat"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span id="hudPlayTxt">Oynat</span></button><button type="button" class="hud-btn hud-music" id="hudMusic" aria-pressed="true" aria-label="Müziği kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path class="mute-x" d="M3 3l18 18"/></svg></button><span class="hud-sep" aria-hidden="true"></span><b id="hudNum" aria-hidden="true">01 / 12</b><span id="hudName" aria-hidden="true">Çocukluk</span><i aria-hidden="true"></i><span class="hud-sep" aria-hidden="true"></span><button type="button" class="hud-btn" id="hudSkip" aria-label="Hikâyeyi atla, Terapi Yaklaşımım sayfasına geç"><span>Atla</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></button></div>
 <div class="jumpfade" id="jumpfade" aria-hidden="true"></div>
 
 <div class="view" data-view="home">
@@ -742,10 +743,10 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
         <div class="label">@psikologfirkan</div>
         <h1>Muhammed Furkan Tosun</h1>
         <p class="role">Psikolog · Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</p>
-        <p class="lead">İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi okudum. Bilişsel davranışçı terapi temelli çalışıyorum. Ama hikâyem çok daha önce başladı.</p>
+        <p class="lead">İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi okudu. Bilişsel davranışçı terapiyle çalışıyor. Ama bu hikâye bir üniversite sınıfında değil, bir yurt odasında başlıyor.</p>
         <div class="cta">
           <a class="btn primary" href="#randevu">Randevu al</a>
-          <button type="button" class="btn ghost play-btn" id="heroPlay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg>Hikâyemi film gibi izle</button>
+          <button type="button" class="btn ghost play-btn" id="heroPlay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg>Videoyu oynat</button>
           <a class="btn ghost" href="#yaklasim">Terapide neler yapıyoruz?</a>
         </div>
         <div class="hero-contact" aria-label="İletişim bilgileri">
@@ -791,8 +792,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     </svg>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".05 .14">Sahne 1 · Çocukluk</div>
-      <p class="line up" data-t=".18 .32">Yurtlarda büyüdüm.</p>
-      <p class="sub up" data-t=".4 .54">Okula hiç gitmedim. İlkokul, ortaokul, lise; hiçbiri hayatımda yoktu.</p>
+      <p class="line up" data-t=".18 .32">Yurtlarda büyüdü.</p>
+      <p class="sub up" data-t=".4 .54">Okul sırası, karne, teneffüs zili. Yaşıtlarının sıradan saydığı bu şeylerin hiçbiri onun çocukluğunda yoktu.</p>
     </div>
     <div class="curtain" data-t=".86 1"></div>
   </div>
@@ -810,10 +811,10 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     </svg>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".04 .12">Sahne 2 · Karar</div>
-      <p class="line up" data-t=".16 .3 .48 .56">Bir gün kabuğumu kırdım.</p>
+      <p class="line up" data-t=".16 .3 .48 .56">Bir gün kabuğunu kırdı.</p>
     </div>
     <div class="copy center">
-      <p class="line soft" data-t=".6 .74" style="color:#132526">Okumaya karar verdim.</p>
+      <p class="line soft" data-t=".6 .74" style="color:#132526">Okumaya karar verdi.</p>
     </div>
     <div class="curtain" data-t=".88 1"></div>
   </div>
@@ -826,10 +827,10 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div class="hem-grid">
       <div style="display:grid; gap:14px">
         <div class="eyebrow fade" data-t=".04 .12">Sahne 3 · Halk Eğitim Merkezi</div>
-        <p class="line up" data-t=".1 .22">Sıfırdan başladım. Önce harfler.</p>
+        <p class="line up" data-t=".1 .22">Sıfırdan başladı. Önce harfler.</p>
         <div class="letters" id="letters" aria-label="A B C Ç D E F G"></div>
         <svg class="hand" viewBox="0 0 560 150" aria-label="okumak" data-t=".42 .62" data-u=".58 .68"><text x="4" y="118">okumak</text></svg>
-        <p class="sub up" data-t=".74 .86">Bir halk eğitim merkezinde okuma yazma öğrendim. Eğitim hayatımın ilk belgesi buydu.</p>
+        <p class="sub up" data-t=".74 .86">Bir halk eğitim merkezinin sırasında, harf harf okumayı öğrendi. Eline aldığı ilk resmî belge buydu.</p>
       </div>
       <div class="cert" data-t=".6 .76">
         <div class="seal">HEM</div>
@@ -848,7 +849,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div class="veil" data-t="0 .08"></div>
     <div class="copy" style="top: 13vh">
       <div class="eyebrow fade" data-t=".04 .12">Sahne 4 · Açık öğretim</div>
-      <p class="line up" data-t=".08 .2" style="font-size: clamp(26px, 4vw, 48px)">Her basamağı tek tek çıktım.</p>
+      <p class="line up" data-t=".08 .2" style="font-size: clamp(26px, 4vw, 48px)">Her basamağı tek tek çıktı.</p>
     </div>
     <div class="stamp-grid">
       <div class="stamp" data-t=".22 .3" style="--rot:-6deg"><b>İLKOKUL</b><span>Açık öğretim</span></div>
@@ -856,7 +857,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="stamp" data-t=".46 .54" style="--rot:-3deg"><b>LİSE</b><span>Açık öğretim</span></div>
     </div>
     <div class="copy bottom">
-      <p class="sub up" data-t=".62 .74">Okula gitmeden, üç kademeyi de açık öğretimle bitirdim.</p>
+      <p class="sub up" data-t=".62 .74">İlkokul, ortaokul, lise. Bir okul binasına girmeden, üçünü de açık öğretimle bitirdi.</p>
     </div>
     <div class="curtain" data-t=".9 1"></div>
   </div>
@@ -877,8 +878,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     </div>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".04 .12">Sahne 5 · Askerlik · 2017</div>
-      <p class="line up" data-t=".08 .2">2017. Bir yıl er olarak askerlik yaptım.</p>
-      <p class="sub up" data-t=".62 .74">Dağlarda, nöbetlerde, koğuşlarda insanı ve dayanıklılığı başka bir yerden tanıdım.</p>
+      <p class="line up" data-t=".08 .2">2017. Bir yıl er olarak askerlik.</p>
+      <p class="sub up" data-t=".62 .74">Soğuk nöbetlerde ve kalabalık koğuşlarda, insanların zor zamanlarda birbirine nasıl tutunduğunu gördü.</p>
     </div>
     <div class="curtain" data-t=".9 1"></div>
   </div>
@@ -891,12 +892,12 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div class="full fit fade" data-t=".5 .62" style="--bgimg: url('img/ders.jpg')"><img src="img/ders.jpg" alt="Kaygı bozuklukları dersinden sonra öğretim görevlisiyle"></div>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".1 .18 .46 .52">Sahne 6 · Hazırlık</div>
-      <p class="line up" data-t=".14 .26 .44 .52">Askerden döndüm. Gece gündüz, bazen mum ışığında çalıştım.</p>
+      <p class="line up" data-t=".14 .26 .44 .52">Askerden döndü. Geceleri, elektrik olmadığında mum ışığında çalıştı.</p>
     </div>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".58 .64">Sahne 6 · İstanbul Kent Üniversitesi · 2019</div>
-      <p class="line up" data-t=".6 .7">2019’da psikolojiyi kazandım.</p>
-      <p class="sub up" data-t=".7 .8">İstanbul Kent Üniversitesi, Psikoloji. Sıfırdan başlayan biri için bir sınıfta oturmak bile başlı başına anlamlıydı.</p>
+      <p class="line up" data-t=".6 .7">2019. Psikoloji bölümünü kazandı.</p>
+      <p class="sub up" data-t=".7 .8">İstanbul Kent Üniversitesi. Okulu hiç görmemiş biri için bir sınıfta oturmak bile küçük bir mucizeydi.</p>
     </div>
     <div class="curtain" data-t=".9 1"></div>
   </div>
@@ -910,9 +911,9 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="club-copy">
         <div class="eyebrow fade" data-t=".04 .1">Sahne 7 · Psikoloji Kulübü</div>
         <div class="swap">
-          <div class="up" data-t=".08 .18 .4 .46"><p class="line">Kulübün başkanı oldum.</p><p class="sub">III. Psikoloji Günleri “Sarmaşık”, 20–21 Mayıs 2023.</p></div>
-          <div class="up" data-t=".46 .54 .7 .76"><p class="line">Kalabalıklaştık.</p><p class="sub">Konuklar, ödüller, 10 Mayıs Psikologlar Günü ve elle boyanan pankartlar.</p></div>
-          <div class="up" data-t=".76 .84"><p class="line">Anlattım, dinledim, birlikte ürettik.</p><p class="sub">Seminerler ve atölyelerle psikolojiyi kampüsün her yerine taşıdık.</p></div>
+          <div class="up" data-t=".08 .18 .4 .46"><p class="line">Öğrencilik yılları dolu dolu geçti.</p><p class="sub">Psikoloji kulübünün başkanı olarak seminerler, söyleşiler ve III. Psikoloji Günleri “Sarmaşık”ı (20–21 Mayıs 2023) düzenledi.</p></div>
+          <div class="up" data-t=".46 .54 .7 .76"><p class="line">Kalabalıklaştılar.</p><p class="sub">Konuklar, söyleşiler, ödüller, 10 Mayıs Psikologlar Günü ve elle boyanan pankartlar.</p></div>
+          <div class="up" data-t=".76 .84"><p class="line">Anlattı, dinledi, birlikte ürettiler.</p><p class="sub">Seminerler ve atölyelerle psikolojiyi derslikten çıkarıp kampüsün her köşesine taşıdılar.</p></div>
         </div>
       </div>
       <div class="collage">
@@ -940,7 +941,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div class="veil" data-t="0 .03"></div>
     <div class="web-head">
       <div class="eyebrow">Sahne 8 · Gönüllü saha çalışması</div>
-      <h2>Okula hiç gidemeyen çocuk, köy okullarının kapısından girdi.</h2>
+      <h2>Okula hiç gidemeyen çocuk, bu kez köy okullarının kapısından girdi.</h2>
       <p>Artvin, Kahramanmaraş, Erzurum, Bursa · Çocukların yüzleri gizlilik için bulanıklaştırılmıştır.</p>
     </div>
     <div class="world" id="world"><svg class="links" id="links" aria-hidden="true"></svg></div>
@@ -961,8 +962,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     </svg>
     <div class="copy bottom">
       <div class="eyebrow fade" data-t=".05 .14">Sahne 9 · Klinik</div>
-      <p class="line up" data-t=".3 .44">İstanbul Üniversitesi Çapa Tıp Fakültesi'nde staj yaptım.</p>
-      <p class="sub up" data-t=".52 .64">Derste okuduklarımı klinikte, gerçek insanların hikâyelerinde gördüm.</p>
+      <p class="line up" data-t=".3 .44">Çapa'da, klinikte.</p>
+      <p class="sub up" data-t=".52 .64">İstanbul Üniversitesi Çapa Tıp Fakültesi'ndeki stajında, kitaplardaki her kavramın arkasında bir insan hikâyesi olduğunu gördü.</p>
       <div class="loc up" data-t=".58 .68"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>İstanbul Tıp Fakültesi (Çapa), Fatih · İstanbul</div>
     </div>
     <div class="curtain" data-t=".88 1"></div>
@@ -977,10 +978,10 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div class="grad-grid">
       <div style="display:grid; gap:12px">
         <div class="eyebrow fade" data-t=".04 .12">Sahne 10 · Mezuniyet</div>
-        <p class="line up" data-t=".1 .22">Mezun oldum ama durmadım.</p>
+        <p class="line up" data-t=".1 .22">Mezun oldu ama durmadı.</p>
       </div>
       <div class="gcards">
-        <div class="gcard up" data-t=".24 .34"><small>Psikolog · 2023’ten beri</small><h3>İstanbul Kent Üniversitesi, Psikoloji</h3><p>2019’da girdim, 2023’te mezun oldum.</p></div>
+        <div class="gcard up" data-t=".24 .34"><small>Psikolog · 2023’ten beri</small><h3>İstanbul Kent Üniversitesi, Psikoloji</h3><p>2019’da girdi, 2023’te mezun oldu.</p></div>
         <div class="gcard up" data-t=".32 .42"><small>Yüksek lisans · 2024–2025</small><h3>Endüstri ve Örgüt Psikolojisi</h3><p>Marmara Üniversitesi</p></div>
         <button type="button" class="gcard up has-img" data-t=".42 .52" data-src="img/savunma.jpg" data-cap="Köprüören tesisi önünde · savunma sanayi danışmanlığı"><img src="img/savunma.jpg" alt="Köprüören tesisi önünde" loading="lazy"><small>Danışmanlık · 6 ay</small><h3>Köprüören · savunma sanayi</h3><p>Fabrikada kurumsal psikoloji danışmanlığı</p></button>
         <button type="button" class="gcard up has-img" data-t=".52 .62" data-src="img/bdt-sertifika.jpg" data-cap="Bilişsel Davranışçı Terapi Uygulayıcı Sertifikası"><img src="img/bdt-sertifika.jpg" alt="BDT uygulayıcı sertifikası" loading="lazy" style="object-position: 50% 40%"><small>Uygulayıcı sertifikası</small><h3>Bilişsel Davranışçı Terapi</h3><p>İstanbul Psikoterapi Akademisi · Genç Psikologlar Dayanışma Platformu</p></button>
@@ -998,8 +999,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="pc-copy">
         <div class="eyebrow fade" data-t=".04 .12">Sahne 11 · Girişim</div>
         <img class="pc-logo soft" data-t=".08 .2" src="img/psyconnect-logo.png" alt="PSYCONNECT logosu">
-        <p class="line up" data-t=".14 .26">Ve PSYCONNECT'i kurdum.</p>
-        <p class="sub up" data-t=".26 .38">Psikolojik destek arayan insanlar için online terapi ve grup terapisi platformu. Kişi uygulamadan uzman psikologları inceleyip kendine uygun olanla seans planlayabiliyor ya da bir grup terapisine katılabiliyor.</p>
+        <p class="line up" data-t=".14 .26">Ve PSYCONNECT'i kurdu.</p>
+        <p class="sub up" data-t=".26 .38">Amacı basitti. Destek arayan herkes bir psikoloğa kolayca ulaşabilsin. Uygulamada online bireysel seans planlanabiliyor ya da bir grup terapisine katılınabiliyor.</p>
         <div class="pc-chips up" data-t=".36 .46"><span>Online bireysel terapi</span><span>Grup terapileri</span><span>Uzman psikologlar</span></div>
       </div>
       <div class="phones">
@@ -1020,9 +1021,9 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <div class="today-photo" data-t=".04 .5"><img src="img/portre.jpg" alt="Muhammed Furkan Tosun" loading="lazy"></div>
       <div class="today-copy">
         <div class="eyebrow fade" data-t=".2 .3">Sahne 12 · Bugün</div>
-        <p class="line up" data-t=".28 .42">Bugün psikoloğum.</p>
-        <p class="sub up" data-t=".38 .5">2023’ten beri psikolog olarak çalışıyorum.</p>
-        <p class="quote up" data-t=".46 .6">İnsanın değişebileceğini kitaplardan önce kendi hayatımdan öğrendim.</p>
+        <p class="line up" data-t=".28 .42">Bugün o çocuk bir psikolog.</p>
+        <p class="sub up" data-t=".38 .5">2023’ten beri danışanlarıyla çalışıyor. Yol ne kadar uzun olursa olsun, insanın yeniden başlayabileceğine inanarak.</p>
+        <p class="quote up" data-t=".46 .6">“İnsanın değişebileceğini kitaplardan önce kendi hayatımdan öğrendim.”<span class="qby">Muhammed Furkan Tosun</span></p>
         <div class="cta up" data-t=".62 .74"><a class="btn primary" href="#ozgecmis">Özgeçmişimi gör</a><a class="btn ghost" href="#randevu">Randevu al</a></div>
       </div>
     </div>
@@ -1505,16 +1506,18 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   (function () {
     var heroBtn = document.getElementById('heroPlay'), hudBtn = document.getElementById('hudPlay'), txt = document.getElementById('hudPlayTxt');
     if (!hudBtn) return;
-    var playing = false, last = 0, pos = 0, SPEED = 0.32; // ekran yüksekliği / saniye
+    var playing = false, last = 0, pos = 0, SPEED = 0.3, held = 0, seen = new WeakSet(); // ekran yüksekliği / saniye
     function endY() { var l = film[film.length - 1].el; return l.offsetTop + l.offsetHeight - window.innerHeight; }
     function frame(t) {
       if (!playing) return;
       if (Math.abs(window.scrollY - Math.round(pos)) > 60) { stop(); return; }
       var dt = last ? Math.min(60, t - last) : 16; last = t;
+      if (held > 0) { held -= dt; requestAnimationFrame(frame); return; }
       pos += window.innerHeight * SPEED * dt / 1000;
       var e = endY();
       if (pos >= e) { window.scrollTo(0, e); stop(); return; }
       window.scrollTo(0, pos);
+      held = textHold();
       requestAnimationFrame(frame);
     }
     var audio = null, musicOn = true, fadeT = null;
@@ -1541,8 +1544,25 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       musicBtn.setAttribute('aria-label', musicOn ? 'Müziği kapat' : 'Müziği aç');
       if (musicOn && playing) musicPlay(false); else musicStop(400);
     });
+    function textHold() {
+      var vh = window.innerHeight;
+      for (var i = 0; i < scenes.length; i++) {
+        var r = scenes[i].el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) continue;
+        var its = scenes[i].items;
+        for (var j = 0; j < its.length; j++) {
+          var n = its[j].n; if (seen.has(n) || !n.matches('.line, .sub, .quote, .swap > div')) continue;
+          if ((parseFloat(n.style.getPropertyValue('--t')) || 0) >= 0.97) {
+            seen.add(n); var len = n.textContent.trim().length;
+            return Math.max(2200, Math.min(6500, 1200 + len * 60));
+          }
+        }
+      }
+      return 0;
+    }
     function start(fromTop) {
       if (playing) return;
+      if (fromTop) seen = new WeakSet();
+      held = 0;
       playing = true; last = 0;
       pos = fromTop ? 0 : window.scrollY;
       if (fromTop) window.scrollTo(0, 0);
@@ -1555,7 +1575,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       if (!playing) return;
       playing = false; document.body.classList.remove('autoplay');
       musicStop(window.scrollY >= endY() - 5 ? 3000 : 700);
-      txt.textContent = 'İzle'; hudBtn.setAttribute('aria-label', 'Hikâyeyi otomatik oynat');
+      txt.textContent = 'Oynat'; hudBtn.setAttribute('aria-label', 'Hikâyeyi otomatik oynat');
       update();
     }
     if (heroBtn) heroBtn.addEventListener('click', function () { start(window.scrollY < 10 || window.scrollY >= endY() - 5); });
