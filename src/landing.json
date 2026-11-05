@@ -4,11 +4,11 @@
    "key": "kadikoy",
    "path": "/kadikoy-psikolog/",
    "crumb": "Kadıköy psikolog",
-   "title": "Kadıköy Psikolog | Psikolog Muhammed Furkan Tosun",
-   "desc": "Kadıköy Koşuyolu'nda bilişsel davranışçı terapi temelli yüz yüze psikolojik danışmanlık: görüşme saatleri, ulaşım, ilk görüşme ve randevu.",
-   "label": "Kadıköy · yüz yüze görüşme",
-   "h1": "Kadıköy'de yüz yüze psikolojik danışmanlık",
-   "lead": "Kadıköy Koşuyolu'ndaki ofisimde, bilişsel davranışçı terapi temelli yüz yüze görüşmeler yapıyorum. Bu sayfada nasıl çalıştığımı, ilk görüşmenin nasıl geçtiğini ve ofise nasıl ulaşabileceğini bulabilirsin.",
+   "title": "Kadıköy Psikolog | Koşuyolu'nda Yüz Yüze Görüşme",
+   "desc": "Kadıköy'e komşu Koşuyolu'nda (Üsküdar) bilişsel davranışçı terapi temelli yüz yüze psikolojik danışmanlık: saatler, ulaşım, ilk görüşme.",
+   "label": "Kadıköy · Koşuyolu · yüz yüze görüşme",
+   "h1": "Kadıköy'e yakın, Koşuyolu'nda yüz yüze psikolojik danışmanlık",
+   "lead": "Kadıköy sınırına komşu Koşuyolu'ndaki ofisimde, bilişsel davranışçı terapi temelli yüz yüze görüşmeler yapıyorum. Bu sayfada nasıl çalıştığımı, ilk görüşmenin nasıl geçtiğini ve ofise nasıl ulaşabileceğini bulabilirsin.",
    "map": true,
    "body": [
     {
@@ -18,7 +18,7 @@
      "p": "Bazı insanlar için terapinin bir parçası da o odaya gelmektir. Evden çıkmak, yolda düşünmek, kapıyı kapatıp bir saatliğine yalnızca kendine ayrılmış bir alanda oturmak… Özellikle evde rahat konuşabileceğin sessiz bir köşe yoksa, ekran karşısında dikkatin kolay dağılıyorsa ya da karşındaki insanla aynı odada olmak sana daha güvenli hissettiriyorsa yüz yüze görüşme iyi bir seçenek olabilir."
     },
     {
-     "p": "Yüz yüze görüşmeler Kadıköy Koşuyolu'ndaki ofisimde yapılıyor. Anadolu yakasında yaşıyor, Kadıköy'de çalışıyor ya da okuyorsan, görüşmeyi günlük rotana eklemek çoğu zaman zor olmuyor. Karşı yakadan gelenler için de online görüşme her zaman bir seçenek olarak duruyor; ikisini dönem dönem birlikte kullanmak da mümkün."
+     "p": "Yüz yüze görüşmeler, Kadıköy ile Üsküdar'ın birleştiği Koşuyolu'ndaki ofisimde yapılıyor. Anadolu yakasında yaşıyor, Kadıköy'de ya da Üsküdar'da çalışıyor ya da okuyorsan, görüşmeyi günlük rotana eklemek çoğu zaman zor olmuyor. Karşı yakadan gelenler için de online görüşme her zaman bir seçenek olarak duruyor; ikisini dönem dönem birlikte kullanmak da mümkün."
     },
     {
      "h": "Hangi konularda birlikte çalışabiliriz?"
@@ -71,12 +71,12 @@
      "h": "Konum ve ulaşım"
     },
     {
-     "p": "Ofis, Kadıköy'ün Koşuyolu semtinde. Danışanların gizliliğini korumak için açık adresi sitede paylaşmıyorum; randevun onaylandığında adres ve binaya giriş bilgisi sana ayrıca iletilir. Aşağıdaki harita semtin konumunu gösteriyor. Koşuyolu, Kadıköy merkezine ve Anadolu yakasının ana ulaşım akslarına yakın bir semt; adres elindeyken harita uygulamasından kendi konumuna göre toplu taşıma ya da araçla en uygun rotayı kolayca bulabilirsin."
+     "p": "Ofis, Kadıköy sınırında, Üsküdar'a bağlı Koşuyolu semtinde. Danışanların gizliliğini korumak için açık adresi sitede paylaşmıyorum; randevun onaylandığında adres ve binaya giriş bilgisi sana ayrıca iletilir. Aşağıdaki harita semtin konumunu gösteriyor. Koşuyolu, Kadıköy ve Üsküdar merkezlerine ve Anadolu yakasının ana ulaşım akslarına yakın bir semt; adres elindeyken harita uygulamasından kendi konumuna göre toplu taşıma ya da araçla en uygun rotayı kolayca bulabilirsin."
     }
    ],
    "faq": [
     {
-     "q": "Kadıköy'deki yüz yüze görüşmelerin saatleri nedir?",
+     "q": "Koşuyolu'ndaki yüz yüze görüşmelerin saatleri nedir?",
      "a": "Görüşmeler hafta içi 17:00–21:00 ve pazar 10:00–16:00 saatleri arasında yapılıyor; cumartesi kapalı. Boş saatleri randevu takviminde görebilirsin."
     },
     {
@@ -189,10 +189,10 @@
    "path": "/istanbul-psikolog/",
    "crumb": "İstanbul psikolog",
    "title": "İstanbul Psikolog | Yüz Yüze ve Online | Psikolog Firkan",
-   "desc": "İstanbul'da psikolojik danışmanlık: Kadıköy'de yüz yüze ya da online görüşme seçenekleri, çalışılan konular, ilk görüşme süreci ve randevu.",
+   "desc": "İstanbul'da psikolojik danışmanlık: Koşuyolu'nda (Üsküdar) yüz yüze ya da online görüşme seçenekleri, çalışılan konular, ilk görüşme süreci ve randevu.",
    "label": "İstanbul",
    "h1": "İstanbul'da psikolojik danışmanlık: yüz yüze ya da online",
-   "lead": "İstanbul'da yaşıyorsan görüşmeleri Kadıköy'deki ofisimde yüz yüze ya da bulunduğun yerden online yapabiliriz. Bu sayfa, sana hangi seçeneğin uygun olabileceğine ve sürecin nasıl ilerlediğine karar vermene yardımcı olmak için.",
+   "lead": "İstanbul'da yaşıyorsan görüşmeleri Koşuyolu'ndaki ofisimde yüz yüze ya da bulunduğun yerden online yapabiliriz. Bu sayfa, sana hangi seçeneğin uygun olabileceğine ve sürecin nasıl ilerlediğine karar vermene yardımcı olmak için.",
    "map": false,
    "body": [
     {
@@ -202,7 +202,7 @@
      "p": "İstanbul'da yaşamak çoğu zaman yetişmeye çalışmak demek: uzun iş günleri, trafikte geçen saatler, kalabalık, yüksek yaşam maliyeti ve bitmeyen bir koşturma. Bu tempo içinde kendine zaman ayırmak, hele haftada bir saatlik bir görüşmeyi düzenli sürdürmek zor görünebilir. Terapiyi hayatına sığdırabilmenin yolu, sana uyan görüşme biçimini seçmekten geçiyor."
     },
     {
-     "p": "Bu yüzden iki seçenek sunuyorum: Kadıköy Koşuyolu'ndaki ofiste yüz yüze görüşme ve görüntülü görüşmeyle online görüşme. Hangisiyle başlarsan başla, gerektiğinde diğerine geçebilir ya da ikisini dönem dönem birlikte kullanabilirsin."
+     "p": "Bu yüzden iki seçenek sunuyorum: Kadıköy sınırındaki Koşuyolu'nda (Üsküdar) ofiste yüz yüze görüşme ve görüntülü görüşmeyle online görüşme. Hangisiyle başlarsan başla, gerektiğinde diğerine geçebilir ya da ikisini dönem dönem birlikte kullanabilirsin."
     },
     {
      "h": "Yüz yüze mi, online mı?"
@@ -212,14 +212,14 @@
     },
     {
      "ul": [
-      "Kadıköy'e ulaşımın kolay mı? Anadolu yakasında yaşıyor ya da çalışıyorsan yüz yüze görüşme çoğu zaman pratik olur.",
+      "Koşuyolu'na ulaşımın kolay mı? Anadolu yakasında yaşıyor ya da çalışıyorsan yüz yüze görüşme çoğu zaman pratik olur.",
       "Evde ya da işte, sesinin duyulmayacağı sessiz bir alan bulabiliyor musun? Bulamıyorsan ofis daha rahat olabilir.",
       "Mesai saatlerin, çocuk bakımı ya da yol süresi düzenli gelmeni zorlaştırıyor mu? Öyleyse online görüşme sürdürülebilirliği artırır.",
       "Aynı odada biriyle konuşmak sana daha mı güvenli hissettiriyor, yoksa kendi ortamında mı daha rahatsın?"
      ]
     },
     {
-     "p": "Her iki seçenekte de görüşmeler aynı yaklaşımla, aynı özenle ve aynı gizlilik ilkeleriyle yürür. Yüz yüze görüşme ayrıntıları için Kadıköy sayfasına, online seansın nasıl işlediği için online görüşme sayfasına bakabilirsin."
+     "p": "Her iki seçenekte de görüşmeler aynı yaklaşımla, aynı özenle ve aynı gizlilik ilkeleriyle yürür. Yüz yüze görüşme ayrıntıları için Kadıköy/Koşuyolu sayfasına, online seansın nasıl işlediği için online görüşme sayfasına bakabilirsin."
     },
     {
      "h": "Hangi konularda destek veriyorum?"
@@ -267,7 +267,7 @@
    "faq": [
     {
      "q": "Avrupa yakasında yaşıyorum, nasıl görüşebiliriz?",
-     "a": "Kadıköy'deki ofise gelebilir ya da online görüşmeyi seçebilirsin. Yol süresi uzunsa online görüşme genellikle daha sürdürülebilir olur."
+     "a": "Koşuyolu'ndaki ofise gelebilir ya da online görüşmeyi seçebilirsin. Yol süresi uzunsa online görüşme genellikle daha sürdürülebilir olur."
     },
     {
      "q": "Görüşme saatleri nedir?",
