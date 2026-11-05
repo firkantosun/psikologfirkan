@@ -305,6 +305,7 @@ body.autoplay #hudPlay { color: var(--glow); }
 .contact .handle .hk { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--glow); min-width: 84px; }
 .contact .handle span { overflow-wrap: anywhere; }
 .contact .hc-copy { margin-left: 0; }
+.contact .handle a, .hc-row a.hc-v { color: var(--band-ink); text-decoration: none; overflow-wrap: anywhere; }
 /* PSYCONNECT */
 .s-pc .stage { background: radial-gradient(circle at 75% 45%, #2C4A2C, #142218 55%, var(--night) 90%); }
 .pc-grid { position: absolute; inset: 0; max-width: 1180px; margin: 0 auto; padding: 84px max(24px, env(safe-area-inset-right, 0px)) 80px max(24px, env(safe-area-inset-left, 0px)); display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; }
@@ -343,7 +344,7 @@ body.autoplay #hudPlay { color: var(--glow); }
 .method { background: var(--bg); color: var(--ink); }
 .method .wrap { padding-block: 96px 80px; display: grid; gap: 72px; }
 .m-head { display: grid; gap: 14px; max-width: 46em; }
-.m-head h2 { font-size: clamp(30px, 4.4vw, 50px); }
+.m-head h1, .m-head h2 { font-size: clamp(30px, 4.4vw, 50px); }
 .m-lead { font-size: clamp(17px, 1.7vw, 19px); color: var(--muted); }
 .m-sub { display: grid; gap: 8px; margin-bottom: 26px; }
 .m-sub h3 { font-size: clamp(24px, 2.8vw, 32px); }
@@ -642,7 +643,7 @@ nav.top a[aria-current="page"] { color: var(--band-ink); text-decoration: underl
 .sec { border-top: 1px solid var(--line); }
 .sec > .wrap { padding-block: 72px; }
 .sec-head { display: grid; gap: 10px; margin-bottom: 36px; }
-.sec-head h2 { font-size: clamp(28px, 3.6vw, 42px); }
+.sec-head h1, .sec-head h2 { font-size: clamp(28px, 3.6vw, 42px); }
 .cv { display: grid; gap: 44px; }
 .cv-group { display: grid; grid-template-columns: 190px 1fr; gap: 12px 40px; }
 .cv-group > h3 { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--warm); padding-top: 4px; }
@@ -663,14 +664,14 @@ nav.top a[aria-current="page"] { color: var(--band-ink); text-decoration: underl
 .contact { background: var(--band); color: var(--band-ink); position: relative; overflow: hidden; }
 .contact .wrap { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: end; padding-block: 80px; }
 .contact .label { color: var(--glow); }
-.contact h2 { font-size: clamp(30px, 4vw, 46px); margin: 10px 0 12px; }
+.contact h1, .contact h2 { font-size: clamp(30px, 4vw, 46px); margin: 10px 0 12px; }
 .contact p { color: var(--band-muted); max-width: 30em; }
 .contact .bigpsi { position: absolute; right: -40px; bottom: -80px; width: 360px; opacity: .08; }
 .contact .bigpsi path { fill: none; stroke: var(--band-ink); stroke-width: 6; stroke-linecap: round; }
 .handle { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-family: var(--f-mono); font-size: 19px; }
 .handle button { font: 600 14px var(--f-body); background: var(--glow); color: #132526; border: 0; padding: 9px 16px; border-radius: 2px; cursor: pointer; }
 footer { background: var(--band); color: var(--band-muted); border-top: 1px solid rgba(238,242,238,.12); }
-footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; font-size: 13px; }
+footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-between; gap: 10px 24px; flex-wrap: wrap; font-size: 14px; }
 
 .lightbox[hidden] { display: none; }
 .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,15,16,.92); display: grid; place-items: center; padding: max(20px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); cursor: zoom-out; }
@@ -781,6 +782,42 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 .an-res .an-quote { border-left: 2px solid var(--glow); padding-left: 14px; font-style: italic; color: var(--band-ink); }
 .an-res .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
 .an-btn { background: transparent; cursor: pointer; }
+.h-where { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.h-wcard { text-decoration: none; color: var(--ink); }
+@media (max-width: 860px) { .h-where { grid-template-columns: 1fr; } }
+footer .f-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px 32px; padding-block: 34px 30px; }
+footer .f-nap, footer .f-links, footer .f-meta { display: grid; gap: 4px; align-content: start; }
+footer .f-nap b { color: var(--band-ink); font-family: var(--f-display); font-weight: 400; font-size: 17px; }
+footer a { color: var(--band-muted); text-decoration: none; }
+footer a:hover { color: var(--glow); }
+footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+@media (max-width: 600px) { footer .f-grid { grid-template-columns: 1fr; } }
+/* açılış sayfaları */
+.lp { padding-block: 40px 72px; }
+.lp .crumbs { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.lp .crumbs a { color: var(--muted); }
+.lp-head { max-width: 46em; display: grid; gap: 12px; margin-bottom: 34px; }
+.lp-head h1 { font-size: clamp(30px, 4.4vw, 48px); }
+.lp-head p { color: var(--muted); font-size: 18px; }
+.lp-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
+.lp-body h2 { font-size: clamp(22px, 2.4vw, 28px); margin: 34px 0 10px; }
+.lp-body p, .lp-body li { color: var(--ink); }
+.lp-body p { margin: 0 0 14px; }
+.lp-note { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+.lp-body ul { padding-left: 20px; display: grid; gap: 6px; }
+.lp-side { position: sticky; top: 76px; display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 22px; font-size: 15px; }
+.lp-side h2 { font-size: 20px; margin: 0; }
+.lp-side dl { margin: 0; display: grid; gap: 8px; }
+.lp-side dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--warm); }
+.lp-side dd { margin: 0 0 4px; }
+.lp-map { margin-top: 18px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; aspect-ratio: 16 / 10; }
+.lp-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+.lp-more { margin-top: 40px; display: grid; gap: 10px; }
+.lp-more a { font-weight: 600; }
+@media (max-width: 900px) { .lp-grid { grid-template-columns: 1fr; } .lp-side { position: static; } }
+.b-rel { margin-top: 26px; padding: 20px 22px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; background: var(--surface); display: grid; gap: 6px; }
+.b-rel p { margin: 0; color: var(--muted); font-size: 15px; }
+.b-rel a { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -896,12 +933,23 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 
 <section class="sec h-about">
   <div class="wrap">
-    <img src="img/portre.jpg" alt="" loading="lazy">
+    <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy">
     <div>
       <div class="label">Hakkımda</div>
       <h2>Değişimin mümkün olduğuna inanıyorum.</h2>
       <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla çalışıyorum. Buraya gelmem kolay olmadı; merak edersen hikâyemi kısa bir film olarak anlattım.</p>
       <div class="cta"><a class="btn primary dark" href="#film">Hikâyemi izle</a><a class="btn ghost-dark" href="#ozgecmis">Özgeçmiş</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="label">Nerede görüşüyoruz</div><h2>Kadıköy'de yüz yüze ya da online</h2></div>
+    <div class="h-where">
+      <a class="area h-wcard" href="/kadikoy-psikolog/"><h3>Kadıköy'de yüz yüze</h3><p>Koşuyolu'ndaki ofiste görüşme; saatler, ilk görüşme ve ulaşım.</p><span class="b-read">Kadıköy psikolog →</span></a>
+      <a class="area h-wcard" href="/online-psikolog/"><h3>Online görüşme</h3><p>Görüntülü görüşmeyle terapi; nasıl yürüdüğü ve nasıl hazırlanılacağı.</p><span class="b-read">Online psikolog →</span></a>
+      <a class="area h-wcard" href="/istanbul-psikolog/"><h3>İstanbul'dan görüşmek</h3><p>Şehrin neresinde olursan ol, sana uygun görüşme biçimini seçmek için.</p><span class="b-read">İstanbul psikolog →</span></a>
     </div>
   </div>
 </section>
@@ -933,11 +981,12 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
     <div>
       <div class="label">İlk adım</div>
       <h2>Hazır hissettiğinde buradayım.</h2>
-      <p>Randevunu takvimden kendin seçebilir ya da aklına takılanları önce e-postayla sorabilirsin. Acil bir durumdaysan 112'yi ara.</p>
+      <p>Randevunu takvimden kendin seçebilir ya da aklına takılanları önce telefon veya e-postayla sorabilirsin. Acil bir durumdaysan 112'yi ara.</p>
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
     </div>
     <div class="contact-list">
-      <div class="handle"><span class="hk">E-posta</span><span id="hMail">furkantosunoficial@gmail.com</span><button type="button" class="hc-copy" data-copy="hMail">Kopyala</button></div>
+      <div class="handle"><span class="hk">E-posta</span><span id="hMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="hMail">Kopyala</button></div>
+      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="hTel">0538 484 01 41</a><button type="button" class="hc-copy" data-copy="hTel">Kopyala</button></div>
       <div class="handle"><span class="hk">Instagram</span><span id="hHandle">@psikologfirkan</span><button type="button" class="hc-copy" data-copy="hHandle">Kopyala</button></div>
     </div>
   </div>
@@ -961,7 +1010,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
           <a class="btn ghost" href="#yaklasim">Terapide neler yapıyoruz?</a>
         </div>
         <div class="hero-contact" aria-label="İletişim bilgileri">
-          <div class="hc-row"><span class="hc-k">E-posta</span><span class="hc-v" id="hcMail">furkantosunoficial@gmail.com</span><button type="button" class="hc-copy" data-copy="hcMail">Kopyala</button></div>
+          <div class="hc-row"><span class="hc-k">E-posta</span><span class="hc-v" id="hcMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="hcMail">Kopyala</button></div>
+          <div class="hc-row"><span class="hc-k">Telefon</span><a class="hc-v" href="tel:+905384840141">0538 484 01 41</a></div>
           <div class="hc-row"><span class="hc-k">Instagram</span><span class="hc-v">@psikologfirkan</span></div>
         </div>
         <div class="scroll-hint">Kaydır, film başlasın</div>
@@ -1249,7 +1299,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   <div class="wrap">
     <div class="m-head">
       <div class="label">Terapi yaklaşımım</div>
-      <h2>Bilişsel Davranışçı Terapi ile nasıl çalışıyorum?</h2>
+      <h1>Bilişsel Davranışçı Terapi ile nasıl çalışıyorum?</h1>
       <p class="m-lead">Bilişsel Davranışçı Terapi (BDT), yaşadığımız olaylardan çok, o olaylara yüklediğimiz anlamların duygularımızı ve davranışlarımızı etkilediği fikrine dayanır. Terapide bu anlamları birlikte fark eder, kanıtlarına bakar ve sana daha iyi hizmet eden düşünme ve davranma biçimleri üzerinde çalışırız.</p>
     </div>
 
@@ -1413,7 +1463,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 <div class="view page" data-view="ozgecmis" hidden>
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
-    <div class="sec-head"><div class="label">Özgeçmiş</div><h2>Eğitim ve deneyim</h2></div>
+    <div class="sec-head"><div class="label">Özgeçmiş</div><h1>Eğitim ve deneyim</h1></div>
     <div class="cv">
       <div class="cv-group">
         <h3>Eğitim</h3>
@@ -1486,10 +1536,10 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
       <a class="b-back" href="#blog">← Tüm yazılar</a>
       <div class="b-meta" id="bMeta"></div>
       <h1 id="bTitle"></h1>
-      <div class="b-by"><img src="img/portre.jpg" alt=""><span>Psikolog Muhammed Furkan Tosun</span></div>
+      <div class="b-by"><img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun"><span>Psikolog Muhammed Furkan Tosun</span></div>
       <div class="b-body" id="bBody"></div>
       <div class="b-src" id="bSrc" hidden><div class="label">Kaynaklar</div><ol id="bSrcList"></ol></div>
-      <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br><span id="bUpd"></span> · Editör: Psikolog Muhammed Furkan Tosun · furkantosunoficial@gmail.com</p>
+      <p class="b-disc">Bu yazı bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.<br><span id="bUpd"></span> · Editör: Psikolog Muhammed Furkan Tosun · psikologfurkantosun@gmail.com</p>
       <div class="b-cta"><p>Bu konuda destek almak istersen yazabilirsin.</p><a class="btn primary dark" href="#randevu">Randevu al</a></div>
       <div class="b-more" id="bMore"></div>
     </article>
@@ -1542,19 +1592,24 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   <div class="wrap">
     <div>
       <div class="label">İletişim</div>
-      <h2>Bir sohbetle başlayalım.</h2>
-      <p>Randevu, iş birliği ya da okul ve kurum atölyeleri için e-posta veya Instagram üzerinden ulaşabilirsin.</p>
+      <h1>Bir sohbetle başlayalım.</h1>
+      <p>Randevu, iş birliği ya da okul ve kurum atölyeleri için telefon, e-posta veya Instagram üzerinden ulaşabilirsin. Yüz yüze görüşmeler Kadıköy Koşuyolu'nda, online görüşmeler görüntülü olarak yapılıyor.</p>
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
     </div>
     <div class="contact-list">
-      <div class="handle"><span class="hk">E-posta</span><span id="cMail">furkantosunoficial@gmail.com</span><button type="button" class="hc-copy" data-copy="cMail">Kopyala</button></div>
+      <div class="handle"><span class="hk">E-posta</span><span id="cMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="cMail">Kopyala</button></div>
+      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="cTel">0538 484 01 41</a><button type="button" class="hc-copy" data-copy="cTel">Kopyala</button></div>
       <div class="handle"><span class="hk">Instagram</span><span id="handle">@psikologfirkan</span><button type="button" class="hc-copy" data-copy="handle">Kopyala</button></div>
     </div>
   </div>
 </section>
 </div>
 
-<footer><div class="wrap"><span>© 2026 Muhammed Furkan Tosun · Psikolog Firkan</span><span>Fotoğraflardaki çocukların yüzleri gizlilik için bulanıklaştırılmıştır.</span></div></footer>
+<footer><div class="wrap f-grid">
+  <div class="f-nap"><b>Psikolog Muhammed Furkan Tosun</b><span>Koşuyolu, Kadıköy / İstanbul</span><span>Yüz yüze ve online görüşme</span><a href="tel:+905384840141">0538 484 01 41</a><a href="mailto:psikologfurkantosun@gmail.com">psikologfurkantosun@gmail.com</a><span>Hafta içi 17:00–21:00 · Pazar 10:00–16:00</span></div>
+  <nav class="f-links" aria-label="Görüşme seçenekleri"><a href="/kadikoy-psikolog/">Kadıköy psikolog</a><a href="/online-psikolog/">Online psikolog</a><a href="/istanbul-psikolog/">İstanbul psikolog</a><a href="#blog">Blog</a><a href="#randevu">Randevu al</a></nav>
+  <div class="f-meta"><span>© 2026 Muhammed Furkan Tosun · Psikolog Firkan</span><span>Fotoğraflardaki çocukların yüzleri gizlilik için bulanıklaştırılmıştır.</span><span>Acil bir durumdaysan 112'yi ara.</span></div>
+</div></footer>
 
 <div class="lightbox" id="lightbox" hidden><div><img id="lbImg" alt=""><p id="lbCap"></p></div></div>
 
