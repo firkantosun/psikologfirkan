@@ -127,8 +127,15 @@ def build_js(js):
     if (u.pathname === location.pathname) return;
     e.preventDefault(); fadeThen(function () {{ location.href = a.href; }});
   }});
-  var navCur = document.querySelector('nav.top ul [aria-current]');
-  if (navCur) {{ var ul = navCur.closest('ul'); ul.scrollLeft = Math.max(0, navCur.offsetLeft - ul.offsetLeft - 24); }}
+  var nt = document.getElementById('navToggle');
+  if (nt) {{
+    var setNav = function (o) {{ document.body.classList.toggle('nav-open', o); nt.setAttribute('aria-expanded', o ? 'true' : 'false'); nt.setAttribute('aria-label', o ? 'Menüyü kapat' : 'Menüyü aç'); }};
+    nt.addEventListener('click', function () {{ setNav(!document.body.classList.contains('nav-open')); }});
+    document.querySelectorAll('#navMenu a').forEach(function (a) {{ a.addEventListener('click', function () {{ setNav(false); }}); }});
+    document.addEventListener('keydown', function (e) {{ if (e.key === 'Escape') setNav(false); }});
+  }}
+  var anStart = document.getElementById('anStart');
+  if (anStart) anStart.addEventListener('click', function () {{ document.getElementById('anBody').hidden = false; anStart.hidden = true; }});
   window.addEventListener('pageshow', function () {{ if (fade) fade.classList.remove('on'); }});
   var sc = document.getElementById('stickyCta');
   if (sc) {{
@@ -424,7 +431,7 @@ def main():
         os.makedirs(os.path.dirname(full), exist_ok=True)
         open(full, "w", encoding="utf-8").write(content)
 
-    latest = "".join(card(p) for p in posts[:3])
+    latest = "".join(f'<a class="h-post" href="/blog/{esc(p["slug"])}/"><small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>' for p in posts[:3])
     home_faq = [(html.unescape(re.sub(r"<[^>]+>", "", q)), html.unescape(re.sub(r"<[^>]+>", "", a)))
                 for q, a in re.findall(r"<details><summary>(.*?)</summary><p>(.*?)</p></details>", views["home"], re.S)]
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": "Psikolog Firkan", "url": SITE + "/", "inLanguage": "tr-TR"}
