@@ -733,7 +733,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 .h-steps h3 { font-size: 22px; }
 .h-steps p { color: var(--muted); font-size: 16px; margin: 0; }
 .h-about .wrap { display: grid; grid-template-columns: 220px 1fr; gap: clamp(24px, 4vw, 48px); align-items: center; }
-.h-about img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.h-about .wrap > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
 .h-about h2 { font-size: clamp(26px, 3.2vw, 38px); margin: 10px 0 14px; }
 .h-about p { color: var(--muted); max-width: 40em; margin: 0 0 22px; }
 .h-about .cta { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -840,6 +840,46 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 .h-post { display: grid; gap: 6px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; text-decoration: none; color: var(--ink); }
 .h-post small { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--warm); }
 .h-post b { font-family: var(--f-display); font-weight: 400; font-size: 18px; line-height: 1.3; }
+/* görsel katman */
+.ic { width: 1em; height: 1em; flex: none; }
+.h-chips li, .h-chips a { display: inline-flex; align-items: center; gap: 6px; }
+.h-chips .ic { width: 15px; height: 15px; color: var(--glow); }
+.h-tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.h-tiles li { display: grid; grid-template-columns: 52px 1fr; column-gap: 14px; align-items: center; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.h-tiles .ic { grid-row: span 2; width: 52px; height: 52px; padding: 13px; border-radius: 50%; color: #fff; background: var(--c1); }
+.h-tiles b { font-family: var(--f-display); font-weight: 400; font-size: 19px; line-height: 1.2; }
+.h-tiles span { color: var(--muted); font-size: 14px; }
+.h-flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: fl; position: relative; }
+.h-flow::before { content: ""; position: absolute; top: 32px; left: 16%; right: 16%; border-top: 2px dashed color-mix(in srgb, var(--warm) 55%, transparent); }
+.h-flow li { counter-increment: fl; display: grid; justify-items: center; text-align: center; gap: 6px; position: relative; }
+.h-flow .ic { width: 64px; height: 64px; padding: 17px; border-radius: 50%; background: var(--band); color: var(--glow); box-shadow: 0 0 0 6px var(--bg); }
+.h-flow li::after { content: counter(fl); position: absolute; top: -2px; left: calc(50% + 18px); width: 22px; height: 22px; border-radius: 50%; background: var(--warm); color: #1d1406; font: 600 12px/22px var(--f-mono); }
+.h-flow b { font-family: var(--f-display); font-weight: 400; font-size: 19px; margin-top: 6px; }
+.h-flow span { color: var(--muted); font-size: 14px; max-width: 18em; }
+.h-strip { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(20px, calc((100vw - 1120px) / 2)) 6px; margin-top: 30px; scrollbar-width: none; }
+.h-strip::-webkit-scrollbar { display: none; }
+.h-strip figure { margin: 0; flex: 0 0 200px; scroll-snap-align: start; position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--band); }
+.h-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.h-strip .fit img { object-fit: contain; padding: 10px; background: #f4f1ea; }
+.h-strip figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 12px 10px; font-size: 13px; color: #fff; background: linear-gradient(transparent, rgba(6,11,12,.75)); }
+.h-about { padding-bottom: 10px; }
+.h-post { grid-template-columns: 64px 1fr; column-gap: 14px; align-items: center; }
+.h-post .b-cov { grid-row: span 2; aspect-ratio: 1; border-radius: 8px; }
+.h-post .b-cov .cv-big { display: none; }
+.h-post .b-cov .cv-dot { position: static; width: 100%; height: 100%; background: none; border: 0; display: grid; place-items: center; }
+.h-post .b-cov .cv-dot .ic { width: 30px; height: 30px; }
+.b-cov { position: relative; overflow: hidden; aspect-ratio: 16 / 7; border-radius: 6px; background: linear-gradient(135deg, var(--c1), var(--c2)); color: #fff; }
+.b-cov .cv-big { position: absolute; right: -6%; top: -18%; width: 62%; height: auto; aspect-ratio: 1; opacity: .16; stroke-width: 1.1; }
+.b-cov .cv-dot { position: absolute; left: 16px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); }
+.b-cov .cv-dot .ic { width: 24px; height: 24px; }
+.b-card { padding: 0; overflow: hidden; gap: 0; }
+.b-card .b-cov { border-radius: 0; }
+.b-tx { display: grid; gap: 10px; align-content: start; padding: 20px 22px 22px; }
+.b-card.lead { padding: 0; display: grid; grid-template-columns: 1fr 1.3fr; }
+.b-card.lead .b-cov { aspect-ratio: auto; min-height: 100%; }
+.b-card.lead .b-tx { padding: clamp(22px, 4vw, 40px); }
+.b-cov-post { aspect-ratio: 16 / 5; margin: 6px 0 18px; border-radius: 10px; }
+.c-acts { display: none; }
 @media (max-width: 860px) {
   nav.top .wrap { flex-wrap: nowrap; gap: 10px; padding-block: 10px; }
   nav.top ul#navMenu { display: none; }
@@ -875,7 +915,7 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .an { padding: 22px; gap: 16px; }
   .an-head h2 { font-size: 26px; }
   .h-about .wrap { grid-template-columns: 72px 1fr; gap: 16px; align-items: start; }
-  .h-about img { width: 72px; }
+  .h-about .wrap > img { width: 72px; }
   .h-about h2 { font-size: 22px; margin: 6px 0 8px; }
   .h-about p { font-size: 15px; margin-bottom: 14px; }
   .h-about .cta .btn { padding: 9px 14px; font-size: 14px; }
@@ -894,6 +934,43 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .b-filters button { flex: none; }
   .lp-side .lp-map { display: none; }
   .sticky-cta { padding: 10px 18px; font-size: 15px; bottom: max(14px, env(safe-area-inset-bottom, 0px)); }
+  .h-hero .wrap { padding-top: 0; }
+  .h-photo { display: block; order: -1; justify-self: stretch; width: auto; margin: 0 -20px 4px; position: relative; }
+  .h-photo img { aspect-ratio: 5 / 4; object-position: 50% 30%; border-radius: 0; box-shadow: none; -webkit-mask-image: linear-gradient(#000 62%, transparent); mask-image: linear-gradient(#000 62%, transparent); }
+  .h-photo figcaption { display: none; }
+  .h-hero h1 { margin-top: -6px; }
+  .h-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .h-tiles li { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 8px; padding: 14px 6px; }
+  .h-tiles .ic { grid-row: auto; width: 48px; height: 48px; padding: 12px; }
+  .h-tiles b { font-family: var(--f-body, inherit); font-size: 14px; font-weight: 600; }
+  .h-tiles span { display: none; }
+  .h-flow { gap: 6px; }
+  .h-flow::before { top: 26px; }
+  .h-flow .ic { width: 52px; height: 52px; padding: 14px; }
+  .h-flow li::after { left: calc(50% + 14px); }
+  .h-flow b { font-family: var(--f-body, inherit); font-size: 14px; font-weight: 600; }
+  .h-flow span { display: none; }
+  .h-about p { display: none; }
+  .h-about .wrap { padding-bottom: 0; }
+  .h-strip { margin-top: 20px; padding-inline: 20px; gap: 10px; padding-bottom: 36px; }
+  .h-strip figure { flex-basis: 150px; }
+  .b-card { padding: 0; display: grid; grid-template-columns: 92px 1fr; }
+  .b-card .b-cov { aspect-ratio: auto; height: 100%; min-height: 100%; }
+  .b-card .b-cov .cv-big { display: none; }
+  .b-card .b-cov .cv-dot { left: 50%; top: 50%; bottom: auto; transform: translate(-50%, -50%); }
+  .b-tx { padding: 14px 16px; gap: 6px; }
+  .b-card .b-cm span:last-child { display: none; }
+  .b-card.lead { grid-template-columns: 1fr; padding: 0; }
+  .b-card.lead .b-cov { aspect-ratio: 16 / 7; height: auto; min-height: 0; }
+  .b-card.lead .b-cov .cv-big { display: block; }
+  .b-card.lead .b-cov .cv-dot { left: 16px; top: auto; bottom: 14px; transform: none; }
+  .b-card.lead .b-tx { padding: 18px 20px 20px; }
+  .b-card.lead .b-cm span:last-child { display: inline; }
+  .b-cov-post { aspect-ratio: 16 / 6; }
+  .c-acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+  .c-acts a { display: grid; justify-items: center; gap: 6px; padding: 14px 6px; border-radius: 10px; border: 1px solid rgba(238,242,238,.2); background: rgba(238,242,238,.06); color: var(--band-ink); text-decoration: none; font-size: 13px; }
+  .c-acts .ic { width: 26px; height: 26px; color: var(--glow); }
+  .contact .contact-list { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
@@ -927,23 +1004,22 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 <section class="h-hero">
   <div class="wrap">
     <div class="h-copy">
-      <div class="h-id"><img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" class="h-avatar"><div><b>Muhammed Furkan Tosun</b><span>Psikolog · Bilişsel davranışçı terapi</span></div></div>
       <div class="label h-label">Psikolog · @psikologfirkan</div>
       <h1>Zorlandığın yerden, birlikte bakalım.</h1>
-      <p class="h-lead">Kaygı, stres, panik, çökkün ruh hâli ya da iş hayatının yükü… Bilişsel davranışçı terapiyle, seninle, senin hızında.</p>
+      <p class="h-lead">Bilişsel davranışçı terapiyle, seninle, senin hızında.</p>
       <div class="cta">
         <a class="btn primary" href="#randevu">Randevu al</a>
         <a class="btn ghost" href="tel:+905384840141">Ara</a>
       </div>
       <ul class="h-chips">
-        <li><a href="/kadikoy-psikolog/">Yüz yüze · Koşuyolu</a></li>
-        <li><a href="/online-psikolog/">Online görüşme</a></li>
-        <li>Hafta içi 17–21 · Pazar 10–16</li>
+        <li><a href="/kadikoy-psikolog/"><i data-ic="konum"></i>Koşuyolu</a></li>
+        <li><a href="/online-psikolog/"><i data-ic="video"></i>Online</a></li>
+        <li><i data-ic="saat"></i>Hft. içi 17–21 · Pz 10–16</li>
       </ul>
     </div>
     <figure class="h-photo">
       <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
-      <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Endüstri ve Örgüt Psikolojisi YL</span></figcaption>
+      <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Bilişsel davranışçı terapi</span></figcaption>
     </figure>
   </div>
 </section>
@@ -951,13 +1027,13 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 <section class="sec h-sec">
   <div class="wrap">
     <div class="sec-head"><div class="label">Hangi konularda</div><h2>Birlikte çalışabileceğimiz konular</h2></div>
-    <ul class="h-list">
-      <li><b>Kaygı ve panik</b><span>Sürekli endişe, ani korku atakları</span></li>
-      <li><b>Stres ve tükenmişlik</b><span>Yetişememe, dinlenememe</span></li>
-      <li><b>Ruh hâli</b><span>İsteksizlik, keyif alamama</span></li>
-      <li><b>Özgüven</b><span>“Yeterince iyi değilim” sesi</span></li>
-      <li><b>İş hayatı ve kariyer</b><span>Performans baskısı, kararlar</span></li>
-      <li><b>Uyku</b><span>Gece kapanmayan zihin</span></li>
+    <ul class="h-tiles">
+      <li style="--c1:#2f6f6a"><i data-ic="kaygi"></i><b>Kaygı ve panik</b><span>Sürekli endişe, ani korku atakları</span></li>
+      <li style="--c1:#c0703a"><i data-ic="stres"></i><b>Stres ve tükenmişlik</b><span>Yetişememe, dinlenememe</span></li>
+      <li style="--c1:#4a5f86"><i data-ic="mod"></i><b>Ruh hâli</b><span>İsteksizlik, keyif alamama</span></li>
+      <li style="--c1:#c08a2e"><i data-ic="ozguven"></i><b>Özgüven</b><span>“Yeterince iyi değilim” sesi</span></li>
+      <li style="--c1:#6b7341"><i data-ic="is"></i><b>İş ve kariyer</b><span>Performans baskısı, kararlar</span></li>
+      <li style="--c1:#45457f"><i data-ic="uyku"></i><b>Uyku</b><span>Gece kapanmayan zihin</span></li>
     </ul>
   </div>
 </section>
@@ -1005,10 +1081,10 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 <section class="sec h-sec">
   <div class="wrap">
     <div class="sec-head"><div class="label">Süreç</div><h2>Görüşmeler nasıl ilerliyor?</h2></div>
-    <ol class="h-list h-steps2">
-      <li><b>Randevunu seç</b><span>Takvimde yalnızca boş saatler görünür; online ya da yüz yüze.</span></li>
-      <li><b>Tanışma görüşmesi</b><span>Seni neyin zorladığını ve neyin değişmesini istediğini konuşuruz.</span></li>
-      <li><b>Birlikte çalışma</b><span>Hedeflerine göre seanslar ve hayatına taşıyabileceğin küçük adımlar.</span></li>
+    <ol class="h-flow">
+      <li><i data-ic="takvim"></i><b>Randevunu seç</b><span>Takvimde boş saatler; online ya da yüz yüze.</span></li>
+      <li><i data-ic="terapi"></i><b>Tanışalım</b><span>Seni neyin zorladığını konuşuruz.</span></li>
+      <li><i data-ic="yol"></i><b>Adım adım</b><span>Hedeflerine göre küçük, somut adımlar.</span></li>
     </ol>
     <a class="btn primary dark h-more" href="#randevu">Uygun saatleri gör</a>
   </div>
@@ -1023,6 +1099,14 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
       <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla çalışıyorum.</p>
       <div class="cta"><a class="btn primary dark" href="#film">Hikâyemi izle</a><a class="btn ghost-dark" href="#ozgecmis">Özgeçmiş</a></div>
     </div>
+  </div>
+  <div class="h-strip" aria-label="Fotoğraflar">
+    <figure><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
+    <figure><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
+    <figure><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
+    <figure class="fit"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
+    <figure><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
+    <figure><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
   </div>
 </section>
 
@@ -1055,6 +1139,11 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
       <h2>Hazır hissettiğinde buradayım.</h2>
       <p>Randevunu takvimden kendin seçebilir ya da aklına takılanları önce telefon veya e-postayla sorabilirsin. Acil bir durumdaysan 112'yi ara.</p>
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
+      <div class="c-acts">
+        <a href="tel:+905384840141"><i data-ic="tel"></i><span>Ara</span></a>
+        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>E-posta</span></a>
+        <a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener"><i data-ic="insta"></i><span>Instagram</span></a>
+      </div>
     </div>
     <div class="contact-list">
       <div class="handle"><span class="hk">E-posta</span><span id="hMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="hMail">Kopyala</button></div>
@@ -1667,6 +1756,11 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
       <h1>Bir sohbetle başlayalım.</h1>
       <p>Randevu, iş birliği ya da okul ve kurum atölyeleri için telefon, e-posta veya Instagram üzerinden ulaşabilirsin. Yüz yüze görüşmeler Koşuyolu'nda (Üsküdar), online görüşmeler görüntülü olarak yapılıyor.</p>
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
+      <div class="c-acts">
+        <a href="tel:+905384840141"><i data-ic="tel"></i><span>Ara</span></a>
+        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>E-posta</span></a>
+        <a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener"><i data-ic="insta"></i><span>Instagram</span></a>
+      </div>
     </div>
     <div class="contact-list">
       <div class="handle"><span class="hk">E-posta</span><span id="cMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="cMail">Kopyala</button></div>

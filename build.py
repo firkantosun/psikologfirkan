@@ -80,10 +80,61 @@ def parse_template():
     return css, fonts, nav, hud, views, footer, lightbox, js
 
 
+CLOUD = "M7 17h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 10 3.5 3.5 0 0 0 7 17z"
+ICONS = {
+    "kaygi": [CLOUD, "M8 20.5h8"],
+    "panik": ["M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z", "M7.5 11h2.5l1.5-2.5 2 4.5 1.5-2h1.5"],
+    "mod": ["M7 14h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 7 3.5 3.5 0 0 0 7 14z", "M9 17.5l-1 2.5M13 17.5l-1 2.5M17 17.5l-1 2.5"],
+    "ozguven": ["M12 3.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"],
+    "uyku": ["M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z", "M16 4h3l-3 3h3"],
+    "is": ["M4 8h16v11H4z", "M9 8V5.5h6V8", "M4 13h16", "M11 13v2h2v-2"],
+    "stres": ["M3 8h15v8H3z", "M21 11v2", "M6 11v2"],
+    "iliski": ["M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z", "M18.5 9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z", "M3 19c0-3 2.2-5 5-5s5 2 5 5", "M14 14.5c3 0 5.5 1.8 5.5 4.5"],
+    "bagimlilik": ["M8 3h8v18H8z", "M11 18h2", "M8 6h8"],
+    "yas": ["M12 21v-8", "M12 13C12 8 8.5 6 4 6c0 4 3.5 7 8 7z", "M12 11c0-4 3-6 7.5-6 0 4-3 6-7.5 6z"],
+    "egitim": ["M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z", "M12 6v13.5"],
+    "ofke": ["M12 21c-3.6 0-6-2.4-6-5.6 0-3.6 3-5.4 3.6-9.4 2.4 1.6 3 3.6 2.6 5.6 1.2-.6 2-1.8 2.2-3.2 2 1.6 3.6 4 3.6 7 0 3.2-2.4 5.6-6 5.6z"],
+    "terapi": ["M3.5 5h11v8h-7l-4 3z", "M17.5 9h3v8l-3-2h-6v-2"],
+    "okb": ["M20 12a8 8 0 1 1-2.3-5.6", "M20 4v4h-4"],
+    "takvim": ["M4 6h16v14H4z", "M4 10h16", "M8 3v4M16 3v4", "M8 14h3v3H8z"],
+    "yol": ["M4 19h4v-4h4v-4h4V7h4"],
+    "tel": ["M6.5 3.5h3l1.5 4-2 1.2a11 11 0 0 0 6.3 6.3l1.2-2 4 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"],
+    "mail": ["M3.5 6h17v12h-17z", "M3.5 6.5 12 13l8.5-6.5"],
+    "insta": ["M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z", "M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z", "M17.3 6.7h.01"],
+    "video": ["M3.5 7h12v10h-12z", "M15.5 10.5 20.5 8v8l-5-2.5"],
+    "konum": ["M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z", "M14.2 10a2.2 2.2 0 1 1-4.4 0 2.2 2.2 0 0 1 4.4 0z"],
+    "saat": ["M20.5 12a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z", "M12 7.5V12l3 2"],
+}
+# kategori → (ikon, renk1, renk2)
+CAT_STYLE = {
+    "Kaygı": ("kaygi", "#2f6f6a", "#173d3b"), "Sosyal kaygı": ("kaygi", "#2f6f6a", "#173d3b"), "Sağlık kaygısı": ("kaygi", "#2f6f6a", "#173d3b"),
+    "Panik": ("panik", "#b4584a", "#6b2f27"), "Depresyon": ("mod", "#4a5f86", "#26324d"), "Erkek ruh sağlığı": ("mod", "#4a5f86", "#26324d"),
+    "Özgüven": ("ozguven", "#c08a2e", "#7a5313"), "Uyku": ("uyku", "#45457f", "#22224a"),
+    "Kariyer": ("is", "#6b7341", "#3c4122"), "İş yaşamı": ("is", "#6b7341", "#3c4122"), "Stres": ("stres", "#c0703a", "#6f3d1a"),
+    "İlişkiler": ("iliski", "#a2546f", "#5b2a3c"), "Yalnızlık": ("iliski", "#a2546f", "#5b2a3c"), "Ebeveynlik": ("iliski", "#a2546f", "#5b2a3c"),
+    "Çocuk": ("iliski", "#a2546f", "#5b2a3c"), "Şiddet": ("iliski", "#a2546f", "#5b2a3c"),
+    "Bağımlılık": ("bagimlilik", "#6c4d8a", "#38264c"), "Travma": ("yas", "#4f7a52", "#28432a"), "Yas": ("yas", "#4f7a52", "#28432a"),
+    "Eğitim": ("egitim", "#3d6f96", "#1e3b54"), "Gençlik": ("egitim", "#3d6f96", "#1e3b54"), "Öfke": ("ofke", "#b04a3a", "#5e221a"),
+    "OKB": ("okb", "#5d5795", "#2f2b56"), "Terapi": ("terapi", "#2f6f6a", "#173d3b"),
+}
+CAT_DEFAULT = ("terapi", "#2f6f6a", "#173d3b")
+
+
+def ic(name, cls="ic"):
+    paths = "".join(f'<path d="{d}"/>' for d in ICONS[name])
+    return f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths}</svg>'
+
+
+def cover(cat, cls="b-cov"):
+    name, c1, c2 = CAT_STYLE.get(cat, CAT_DEFAULT)
+    return f'<div class="{cls}" style="--c1:{c1};--c2:{c2}" aria-hidden="true">{ic(name, "cv-big")}<span class="cv-dot">{ic(name)}</span></div>'
+
+
 def fix_links(s):
     for k, v in HREFS.items():
         s = s.replace(f'href="{k}"', f'href="{v}"')
     s = s.replace('src="img/', 'src="/img/').replace('data-src="img/', 'data-src="/img/')
+    s = re.sub(r'<i data-ic="([a-z]+)"></i>', lambda m: ic(m.group(1)), s)
     return s
 
 
@@ -270,8 +321,9 @@ def block_html(b):
 
 def card(p, lead=False):
     return (f'<a class="b-card{" lead" if lead else ""}" href="/blog/{esc(p["slug"])}/" data-cat="{esc(p["category"])}">'
+            f'{cover(p["category"])}<div class="b-tx">'
             f'<div class="b-cm"><span class="b-cat">{esc(p["category"])}</span><span>{fmt_date(p["date"])} · {int(p["minutes"])} dk</span></div>'
-            f'<h3>{esc(p["title"])}</h3><p>{esc(p["excerpt"])}</p><span class="b-read">Oku →</span></a>')
+            f'<h3>{esc(p["title"])}</h3><p>{esc(p["excerpt"])}</p><span class="b-read">Oku →</span></div></a>')
 
 
 def blog_list(posts):
@@ -316,6 +368,7 @@ def blog_post(p, posts):
       <a class="b-back" href="/blog/">← Tüm yazılar</a>
       <div class="b-meta"><span class="b-cat">{esc(p["category"])}</span><span><time datetime="{p["date"]}">{fmt_date(p["date"])}</time> · {int(p["minutes"])} dk okuma</span></div>
       <h1>{esc(p["title"])}</h1>
+      {cover(p["category"], "b-cov b-cov-post")}
       <div class="b-by"><img src="/img/portre.jpg" alt=""><span>Psikolog {NAME}</span></div>
       <div class="b-body">
 {body}
@@ -431,7 +484,7 @@ def main():
         os.makedirs(os.path.dirname(full), exist_ok=True)
         open(full, "w", encoding="utf-8").write(content)
 
-    latest = "".join(f'<a class="h-post" href="/blog/{esc(p["slug"])}/"><small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>' for p in posts[:3])
+    latest = "".join(f'<a class="h-post" href="/blog/{esc(p["slug"])}/">{cover(p["category"])}<small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>' for p in posts[:3])
     home_faq = [(html.unescape(re.sub(r"<[^>]+>", "", q)), html.unescape(re.sub(r"<[^>]+>", "", a)))
                 for q, a in re.findall(r"<details><summary>(.*?)</summary><p>(.*?)</p></details>", views["home"], re.S)]
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": "Psikolog Firkan", "url": SITE + "/", "inLanguage": "tr-TR"}
