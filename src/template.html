@@ -1063,6 +1063,89 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   footer .f-nap { grid-column: 1 / -1; }
   .h-about .h-badge { display: none; }
 }
+/* görsel alan sayfası */
+.ca-by { display: flex; align-items: center; gap: 12px; margin-top: 26px; font-size: 15px; color: var(--band-ink); }
+.ca-by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--glow); }
+.ca-by span { display: grid; }
+.ca-by small { color: var(--band-muted); font-size: 13px; }
+.ca-sec { margin-bottom: 8px; }
+.ca-sec > h2 { margin-top: 38px; }
+.ca-checks { list-style: none; padding: 0 !important; margin: 18px 0 8px; display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px !important; }
+.ca-checks li { display: flex; gap: 10px; align-items: flex-start; padding: 13px 14px; background: color-mix(in srgb, var(--warm) 9%, var(--surface)); border: 1px solid color-mix(in srgb, var(--warm) 25%, var(--line)); border-radius: 8px; font-size: 15px; line-height: 1.45; }
+.ca-checks .ck { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--warm); }
+.ca-tools { list-style: none; padding: 0 !important; margin: 18px 0 10px; display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px !important; }
+.ca-tools li { display: grid; gap: 4px; align-content: start; padding: 16px 16px 16px 58px; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.ca-tools .tn { position: absolute; left: 14px; top: 14px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--band); color: var(--glow); font: 600 12px var(--f-mono); }
+.ca-tools b { font-family: var(--f-display); font-weight: 400; font-size: 18px; line-height: 1.25; }
+.ca-tools li > span:last-child:not(.tn) { color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.cyc { position: relative; width: min(100%, 460px); aspect-ratio: 1; margin: 22px auto 10px; }
+.cyc-ring { position: absolute; inset: 15%; border: 2px dashed color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 50%; }
+.cyc-c { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 26%; aspect-ratio: 1; border-radius: 50%; background: var(--band); color: var(--glow); display: grid; place-items: center; align-content: center; gap: 2px; }
+.cyc-c .ic { width: 34px; height: 34px; }
+.cyc-c small { font: 600 11px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--band-muted); }
+.cyc-n { position: absolute; width: 40%; transform: translate(-50%, -50%); text-align: center; display: grid; gap: 3px; padding: 12px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 24px -18px rgba(0,0,0,.4); }
+.cyc-n b { font-family: var(--f-display); font-weight: 400; font-size: 18px; color: var(--accent); }
+.cyc-n span { font-size: 13px; color: var(--muted); line-height: 1.35; }
+.cyc-0 { left: 50%; top: 13%; } .cyc-1 { left: 85%; top: 50%; } .cyc-2 { left: 50%; top: 87%; } .cyc-3 { left: 15%; top: 50%; }
+.ca-modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 10px; }
+.ca-modes > div { display: grid; gap: 4px; justify-items: start; padding: 16px; border-radius: 10px; background: var(--band); color: var(--band-ink); }
+.ca-modes .ic { width: 26px; height: 26px; color: var(--glow); margin-bottom: 4px; }
+.ca-modes b { font-family: var(--f-display); font-weight: 400; font-size: 19px; }
+.ca-modes span { font-size: 14px; color: var(--band-muted); line-height: 1.45; }
+.ca-note { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 10px; border-left: 4px solid var(--warm); background: color-mix(in srgb, var(--warm) 10%, var(--surface)); }
+.ca-note > .ic { flex: none; width: 34px; height: 34px; color: var(--warm); }
+.ca-note p:last-of-type { margin-bottom: 0; }
+.ca-mbtn { background: none; border: 0; padding: 0; margin: 0 0 10px; color: var(--accent); font: 600 15px var(--f-body, inherit); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.ca-more[hidden] { display: none; }
+.ca-flow { margin: 40px 0 10px; padding: 28px 22px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+.ca-flow h2 { margin: 0 0 24px !important; text-align: center; }
+.ca-flow .h-flow .ic { box-shadow: 0 0 0 6px var(--surface); }
+.ca-pn { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.ca-pn a { display: grid; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); text-decoration: none; color: var(--ink); }
+.ca-pn a:last-child { text-align: right; }
+.ca-pn small { font: 600 11px var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--warm); }
+.ca-pn b { font-family: var(--f-display); font-weight: 400; font-size: 19px; }
+.ca-box-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; border-radius: 8px; }
+/* ana sayfa görsel */
+.h-photo::before { content: ""; position: absolute; inset: -14px 14px 14px -14px; border: 1px solid color-mix(in srgb, var(--glow) 55%, transparent); border-radius: 6px; pointer-events: none; }
+.h-photo .h-stamp { position: absolute; right: -18px; top: 28px; background: var(--glow); color: #132526; padding: 12px 16px; border-radius: 4px; font-family: var(--f-display); font-size: 24px; line-height: 1; display: grid; gap: 4px; box-shadow: 0 16px 30px -16px rgba(0,0,0,.6); }
+.h-photo .h-stamp small { font: 600 11px var(--f-body, inherit); letter-spacing: .04em; }
+.h-blog { background: var(--band); color: var(--band-ink); }
+.h-blog .sec-head h2 { color: var(--band-ink); }
+.h-blog .h-bhead a { color: var(--glow); }
+.h-blog .h-post { background: rgba(238,242,238,.05); border-color: rgba(238,242,238,.14); color: var(--band-ink); }
+.cv-item.has-img { grid-template-columns: 130px 1fr 120px; }
+.cv-img { width: 120px; height: 90px; object-fit: cover; border-radius: 8px; grid-row: span 1; }
+.ed-photos { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin: 6px 0 40px; }
+.ed-photos img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; display: block; }
+@media (max-width: 860px) {
+  .ca-checks, .ca-tools, .ca-modes, .ca-pn { grid-template-columns: 1fr; }
+  .ca-checks li { padding: 11px 12px; font-size: 14.5px; }
+  .cyc { aspect-ratio: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+  .cyc-ring, .cyc-c { display: none; }
+  .cyc-n { position: static; transform: none; width: auto; padding: 12px 8px; }
+  .cyc-1 { order: 1; } .cyc-3 { order: 3; } .cyc-2 { order: 2; }
+  .cyc-n b { font-size: 15px; }
+  .cyc-n span { font-size: 11.5px; }
+  .ca-flow { padding: 22px 12px; }
+  .ca-pn a:last-child { text-align: left; }
+  .ca-box-img { display: none; }
+  .ca-by { margin-top: 20px; }
+  .cv-item.has-img { grid-template-columns: 1fr 88px; }
+  .cv-item.has-img .when { grid-column: 1; }
+  .cv-item.has-img .what { grid-column: 1; }
+  .cv-img { grid-column: 2; grid-row: 1 / span 2; width: 88px; height: 88px; }
+  .ed-photos { grid-template-columns: 1fr 1fr; }
+  .ed-photos img { height: 140px; }
+  .ed-photos img:first-child { grid-column: 1 / -1; height: 200px; }
+}
+.h-about .wrap { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+.h-about .wrap > img.h-about-img { aspect-ratio: 4 / 5; border-radius: 4px; object-position: 50% 35%; box-shadow: 16px 16px 0 -1px var(--bg), 16px 16px 0 0 var(--warm); max-height: 520px; }
+@media (max-width: 860px) {
+  .h-about .wrap { grid-template-columns: 1fr; }
+  .h-about .wrap > img.h-about-img { width: calc(100% - 12px); aspect-ratio: 4 / 3; box-shadow: 10px 10px 0 -1px var(--bg), 10px 10px 0 0 var(--warm); margin-bottom: 10px; }
+  .h-photo::before, .h-photo .h-stamp { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -1110,6 +1193,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     </div>
     <figure class="h-photo">
       <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
+      <span class="h-stamp">2023<small>'ten beri danışanlarla</small></span>
       <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Bilişsel davranışçı terapi</span></figcaption>
     </figure>
   </div>
@@ -1117,7 +1201,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 
 <section class="sec h-about">
   <div class="wrap">
-    <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy">
+    <img src="img/tarim-atolyesi.jpg" alt="Psikolog Muhammed Furkan Tosun bir atölyede konuşurken" loading="lazy" class="h-about-img">
     <div>
       <div class="label">Hakkımda</div>
       <span class="h-badge">2023'ten beri danışanlarla</span>
@@ -1197,7 +1281,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 </section>
 
 
-<section class="sec h-sec">
+<section class="sec h-sec h-blog">
   <div class="wrap">
     <div class="sec-head h-bhead"><div><div class="label">Blog</div><h2>Son yazılar</h2></div><a href="#blog">Tümü →</a></div>
     <div class="h-posts"><!--SON-YAZILAR--></div>
@@ -1411,26 +1495,27 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
     <div class="sec-head"><div class="label">Hakkımda</div><h1>Eğitim ve deneyim</h1><p class="ed-lead">Psikoloji eğitimim, klinik ve kurumsal deneyimim, sertifikalarım.</p></div>
+    <div class="ed-photos"><img src="img/hero.jpg" alt="Psikoloji Günleri'nde konuşurken" loading="lazy" style="object-position:50% 60%"><img src="img/mezuniyet.jpg" alt="Mezuniyet töreninde" loading="lazy"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></div>
     <div class="cv">
       <div class="cv-group">
         <h3>Eğitim</h3>
         <ul class="cv-list">
           <li class="cv-item"><div class="when">2024–2025</div><div class="what"><div class="title">Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</div><div class="org">Marmara Üniversitesi</div><div class="desc">İş yaşamı, çalışan psikolojisi, ekipler ve kurumlar üzerine uzmanlaşma.</div></div></li>
-          <li class="cv-item"><div class="when">2019–2023</div><div class="what"><div class="title">Psikoloji Lisansı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Psikoloji Kulübü Başkanı. Çapa Tıp Fakültesi'nde staj.</div></div></li>
+          <li class="cv-item has-img"><div class="when">2019–2023</div><div class="what"><div class="title">Psikoloji Lisansı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Psikoloji Kulübü Başkanı. Çapa Tıp Fakültesi'nde staj.</div></div><img class="cv-img" src="img/mezuniyet.jpg" alt="Mezuniyet töreni" loading="lazy"></li>
         </ul>
       </div>
       <div class="cv-group">
         <h3>Deneyim</h3>
         <ul class="cv-list">
-          <li class="cv-item"><div class="when">6 ay</div><div class="what"><div class="title">Kurumsal psikoloji danışmanlığı</div><div class="org">Köprüören · savunma sanayi</div><div class="desc">Bir savunma sanayi fabrikasında endüstri ve örgüt psikolojisi alanında danışmanlık.</div></div></li>
-          <li class="cv-item"><div class="when">Staj</div><div class="what"><div class="title">Psikoloji stajyeri</div><div class="org">İstanbul Üniversitesi Çapa Tıp Fakültesi</div><div class="desc">Klinik ortamda gözlem ve uygulama deneyimi.</div></div></li>
-          <li class="cv-item"><div class="when">2023 – günümüz</div><div class="what"><div class="title">Psikolog</div><div class="org">Bilişsel davranışçı terapi temelli çalışma</div><div class="desc">Danışanlarla bireysel çalışma; @psikologfirkan hesabında bilimsel temelli psikoloji içerikleri.</div></div></li>
+          <li class="cv-item has-img"><div class="when">6 ay</div><div class="what"><div class="title">Kurumsal psikoloji danışmanlığı</div><div class="org">Köprüören · savunma sanayi</div><div class="desc">Bir savunma sanayi fabrikasında endüstri ve örgüt psikolojisi alanında danışmanlık.</div></div><img class="cv-img" src="img/savunma.jpg" alt="Köprüören tesisi önünde" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">Staj</div><div class="what"><div class="title">Psikoloji stajyeri</div><div class="org">İstanbul Üniversitesi Çapa Tıp Fakültesi</div><div class="desc">Klinik ortamda gözlem ve uygulama deneyimi.</div></div><img class="cv-img" src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">2023 – günümüz</div><div class="what"><div class="title">Psikolog</div><div class="org">Bilişsel davranışçı terapi temelli çalışma</div><div class="desc">Danışanlarla bireysel çalışma; @psikologfirkan hesabında bilimsel temelli psikoloji içerikleri.</div></div><img class="cv-img" src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"></li>
         </ul>
       </div>
       <div class="cv-group">
         <h3>Girişimler</h3>
         <ul class="cv-list">
-          <li class="cv-item"><div class="when">Kurucu</div><div class="what"><div class="title">PSYCONNECT</div><div class="org">Online terapi ve grup terapisi platformu</div><div class="desc">Psikolojik destek arayan insanları psikologlarla online bireysel seans ve grup terapisi için buluşturan mobil uygulama.</div></div></li>
+          <li class="cv-item has-img"><div class="when">Kurucu</div><div class="what"><div class="title">PSYCONNECT</div><div class="org">Online terapi ve grup terapisi platformu</div><div class="desc">Psikolojik destek arayan insanları psikologlarla online bireysel seans ve grup terapisi için buluşturan mobil uygulama.</div></div><img class="cv-img" src="img/pc-home.jpg" alt="PSYCONNECT uygulaması" loading="lazy"></li>
         </ul>
       </div>
       <div class="cv-group">
@@ -1442,8 +1527,8 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="cv-group">
         <h3>Liderlik ve gönüllülük</h3>
         <ul class="cv-list">
-          <li class="cv-item"><div class="when">2022–2023</div><div class="what"><div class="title">Psikoloji Kulübü Başkanı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Etkinlik ve seminerler; III. Psikoloji Günleri “Sarmaşık” (20–21 Mayıs 2023).</div></div></li>
-          <li class="cv-item"><div class="when">Lisans dönemi</div><div class="what"><div class="title">Gönüllü psikososyal destek</div><div class="org">Sosyal girişim · köy okulları</div><div class="desc">Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuk ve gençlerle atölye ve psikososyal destek çalışmaları.</div></div></li>
+          <li class="cv-item has-img"><div class="when">2022–2023</div><div class="what"><div class="title">Psikoloji Kulübü Başkanı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Etkinlik ve seminerler; III. Psikoloji Günleri “Sarmaşık” (20–21 Mayıs 2023).</div></div><img class="cv-img" src="img/kulup-ekip.jpg" alt="Psikoloji kulübü ekibi" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">Lisans dönemi</div><div class="what"><div class="title">Gönüllü psikososyal destek</div><div class="org">Sosyal girişim · köy okulları</div><div class="desc">Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuk ve gençlerle atölye ve psikososyal destek çalışmaları.</div></div><img class="cv-img" src="img/sinif-grup.jpg" alt="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır" loading="lazy"></li>
         </ul>
       </div>
     </div>

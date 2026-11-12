@@ -211,6 +211,7 @@ def build_js(js):
     document.querySelectorAll('#navMenu a').forEach(function (a) {{ a.addEventListener('click', function () {{ setNav(false); }}); }});
     document.addEventListener('keydown', function (e) {{ if (e.key === 'Escape') setNav(false); }});
   }}
+  document.querySelectorAll('.ca-mbtn').forEach(function (b) {{ b.addEventListener('click', function () {{ var m = b.previousElementSibling; var o = m.hidden; m.hidden = !o; b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.textContent = o ? 'Daha az göster' : 'Devamını oku'; }}); }});
   var anStart = document.getElementById('anStart');
   if (anStart) anStart.addEventListener('click', function () {{ document.getElementById('anBody').hidden = false; anStart.hidden = true; }});
   window.addEventListener('pageshow', function () {{ if (fade) fade.classList.remove('on'); }});
@@ -485,14 +486,88 @@ def h_post(p):
     return f'<a class="h-post" href="/blog/{esc(p["slug"])}/">{cover(p["category"])}<small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>'
 
 
+CHECK = '<svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+
+
+def sections(body):
+    out = []
+    for b in body:
+        if "h" in b or not out:
+            out.append({"h": b.get("h", ""), "items": []})
+            if "h" in b:
+                continue
+        out[-1]["items"].append(b)
+    return out
+
+
+def paras(items, keep=1):
+    ps = [b for b in items if "p" in b]
+    first = "".join(f"<p>{esc(b['p'])}</p>" for b in ps[:keep])
+    rest = "".join(f"<p>{esc(b['p'])}</p>" for b in ps[keep:])
+    if rest:
+        rest = f'<div class="ca-more" hidden>{rest}</div><button type="button" class="ca-mbtn" aria-expanded="false">Devamını oku</button>'
+    return first + rest
+
+
+def checks(items):
+    uls = [x for b in items if "ul" in b for x in b["ul"]]
+    return ('<ul class="ca-checks">' + "".join(f"<li>{CHECK}<span>{esc(x)}</span></li>" for x in uls) + "</ul>") if uls else ""
+
+
+def tools(items):
+    uls = [x for b in items if "ul" in b for x in b["ul"]]
+    cards = ""
+    for i, x in enumerate(uls):
+        if ":" in x:
+            h, d = x.split(":", 1)
+        else:
+            h, d = x, ""
+        cards += f'<li><span class="tn">{i + 1:02d}</span><b>{esc(h.strip())}</b>{f"<span>{esc(d.strip())}</span>" if d else ""}</li>'
+    return f'<ol class="ca-tools">{cards}</ol>' if cards else ""
+
+
+def cycle(icon):
+    nodes = [("Düşünce", "“Bir şeyler çok yanlış gidiyor.”"), ("Duygu", "Korku, endişe, üzüntü"), ("Beden", "Çarpıntı, gerginlik, yorgunluk"), ("Davranış", "Kaçınma, kontrol etme")]
+    n = "".join(f'<div class="cyc-n cyc-{i}"><b>{a}</b><span>{b}</span></div>' for i, (a, b) in enumerate(nodes))
+    return f'<div class="cyc" aria-label="Bilişsel davranışçı modelde düşünce, duygu, beden ve davranış döngüsü"><div class="cyc-ring"></div><div class="cyc-c">{ic(icon)}<small>Durum</small></div>{n}</div>'
+
+
 def area_page(a, posts):
     c1, c2 = area_colors(a)
-    body = "\n".join(block_html(b) for b in a["body"])
+    secs = sections(a["body"])
+    html_s = []
+    for i, s in enumerate(secs):
+        h = f"<h2>{esc(s['h'])}</h2>" if s["h"] else ""
+        has_ul = any("ul" in b for b in s["items"])
+        if "BDT" in s["h"] or "bilişsel" in s["h"].lower() or (i == 2 and not any("ul" in b for b in s["items"])):
+            inner = paras(s["items"]) + cycle(a["icon"])
+        elif has_ul and i >= 3:
+            inner = paras([b for b in s["items"] if "p" in b][:0]) + tools(s["items"]) + paras(s["items"], 0)
+        elif has_ul:
+            inner = paras(s["items"]) + checks(s["items"])
+        elif "online" in s["h"].lower() or "yüz yüze" in s["h"].lower():
+            inner = (f'<div class="ca-modes"><div>{ic("konum")}<b>Yüz yüze</b><span>Koşuyolu, Üsküdar · Kadıköy sınırı</span></div>'
+                     f'<div>{ic("video")}<b>Online</b><span>Görüntülü görüşme, Türkiye\'nin her yerinden</span></div>'
+                     f'<div>{ic("saat")}<b>Saatler</b><span>Hafta içi 17:00–21:00 · Pazar 10:00–16:00</span></div></div>') + paras(s["items"], 0)
+        elif i == len(secs) - 1:
+            inner = f'<div class="ca-note">{ic("terapi")}<div>{paras(s["items"])}</div></div>'
+        else:
+            inner = paras(s["items"])
+        html_s.append(f'<section class="ca-sec">{h}{inner}</section>')
+    body = "\n".join(html_s)
     faq = "".join(f"<details><summary>{esc(f['q'])}</summary><p>{esc(f['a'])}</p></details>" for f in a["faq"])
     cats = a.get("cats", [])
     rel = sorted([p for p in posts if p["category"] in cats], key=lambda p: cats.index(p["category"]))[:3]
     rel_html = ('<div class="ca-rel"><h2>Bu konudaki yazılar</h2><div class="h-posts">' + "".join(h_post(p) for p in rel) + '</div></div>') if rel else ""
     lst = "".join(f'<a href="/calisma-alanlari/{x["slug"]}/"{" aria-current=\"page\"" if x["slug"] == a["slug"] else ""}>{ic(x["icon"])}{esc(x["name"])}</a>' for x in AREAS)
+    k = [x["slug"] for x in AREAS].index(a["slug"])
+    pv, nx = AREAS[k - 1], AREAS[(k + 1) % len(AREAS)]
+    pn = (f'<nav class="ca-pn" aria-label="Diğer çalışma alanları"><a href="/calisma-alanlari/{pv["slug"]}/"><small>← Önceki alan</small><b>{esc(pv["name"])}</b></a>'
+          f'<a href="/calisma-alanlari/{nx["slug"]}/"><small>Sonraki alan →</small><b>{esc(nx["name"])}</b></a></nav>')
+    flow = ('<div class="ca-flow"><h2>Süreç nasıl işler?</h2><ol class="h-flow">'
+            f'<li>{ic("takvim")}<b>Randevunu seç</b><span>Takvimde boş saatler; online ya da yüz yüze.</span></li>'
+            f'<li>{ic("terapi")}<b>Tanışalım</b><span>Neler yaşadığını ve neyin değişmesini istediğini konuşuruz.</span></li>'
+            f'<li>{ic("yol")}<b>Adım adım</b><span>Hedeflerine göre küçük, somut adımlarla ilerleriz.</span></li></ol></div>')
     return f"""<div class="view page" data-view="alan">
 <section class="ca-hero" style="--c1:{c1};--c2:{c2}">
   {ic(a["icon"], "cv-big")}
@@ -502,20 +577,23 @@ def area_page(a, posts):
     <h1>{esc(a["h1"])}</h1>
     <p>{esc(a["intro"])}</p>
     <div class="cta"><a class="btn primary" href="/randevu/">Randevu al</a><a class="btn ghost" href="tel:{PHONE}">Ara: {PHONE_TXT}</a></div>
+    <div class="ca-by"><img src="/img/portre.jpg" alt="" width="44" height="44"><span>Psikolog Muhammed Furkan Tosun<small>Bilişsel davranışçı terapi · yüz yüze ve online</small></span></div>
   </div>
 </section>
 <section class="ca-wrap">
   <div class="wrap lp-grid">
     <div class="ca-body">
 {body}
+      {flow}
       <h2>Sık sorulan sorular</h2>
       <div class="faq">{faq}</div>
       {rel_html}
       <div class="ca-cta"><div><b>{esc(a["name"])} için ilk adım</b><span>Takvimden sana uygun saati seç; Koşuyolu'nda yüz yüze ya da online.</span></div><a class="btn primary" href="/randevu/">Uygun saatleri gör</a></div>
+      {pn}
       <p class="b-disc">Bu sayfa bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.</p>
     </div>
     <aside class="ca-side">
-      <div class="ca-box"><h2>Randevu ve iletişim</h2><p>{esc(a["name"])} konusunda görüşme planlayabiliriz. Hafta içi 17:00–21:00, pazar 10:00–16:00.</p><a class="ca-tel" href="tel:{PHONE}">{PHONE_TXT}</a><a class="btn primary" href="/randevu/">Randevu al</a><p>Koşuyolu, Üsküdar · yüz yüze ve online</p></div>
+      <div class="ca-box"><img class="ca-box-img" src="/img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"><h2>Randevu ve iletişim</h2><p>{esc(a["name"])} konusunda görüşme planlayabiliriz. Hafta içi 17:00–21:00, pazar 10:00–16:00.</p><a class="ca-tel" href="tel:{PHONE}">{PHONE_TXT}</a><a class="btn primary" href="/randevu/">Randevu al</a><p>Koşuyolu, Üsküdar · yüz yüze ve online</p></div>
       <nav class="ca-list" aria-label="Çalışma alanları"><h2>Çalışma alanları</h2>{lst}</nav>
     </aside>
   </div>
