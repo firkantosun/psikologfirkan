@@ -715,7 +715,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 .h-hero { background: var(--band); color: var(--band-ink); padding-top: 56px; }
 .h-hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
 .h-hero .label { color: var(--glow); }
-.h-hero h1 { font-size: clamp(36px, 5.4vw, 62px); margin: 14px 0 18px; }
+.h-hero h1.h-seo { font-size: 12px; margin: 0; line-height: 1.6; max-width: 46em; color: var(--glow); }
+.h-display { font-family: var(--f-display); font-size: clamp(36px, 5.4vw, 62px); line-height: 1.08; margin: 14px 0 18px; color: var(--band-ink); }
 .h-lead { color: var(--band-muted); font-size: clamp(17px, 1.5vw, 19px); max-width: 34em; margin: 0 0 26px; }
 .h-hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .h-facts { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 6px; color: var(--band-muted); font-size: 15px; }
@@ -900,7 +901,8 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .h-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--glow); }
   .h-id b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 17px; }
   .h-id span { font-size: 13px; color: var(--band-muted); }
-  .h-hero h1 { font-size: 34px; margin: 0 0 12px; }
+  .h-display { font-size: 34px; margin: 8px 0 12px; }
+  .h-hero h1.h-seo { font-size: 10.5px; letter-spacing: .1em; }
   .h-lead { font-size: 16px; margin-bottom: 20px; }
   .h-hero .cta .btn { flex: 1; text-align: center; }
   .sec > .wrap { padding-block: 40px; }
@@ -938,7 +940,7 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .h-photo { display: block; order: -1; justify-self: stretch; width: auto; margin: 0 -20px 4px; position: relative; }
   .h-photo img { aspect-ratio: 5 / 4; object-position: 50% 30%; border-radius: 0; box-shadow: none; -webkit-mask-image: linear-gradient(#000 62%, transparent); mask-image: linear-gradient(#000 62%, transparent); }
   .h-photo figcaption { display: none; }
-  .h-hero h1 { margin-top: -6px; }
+
   .h-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .h-tiles li { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 8px; padding: 14px 6px; }
   .h-tiles .ic { grid-row: auto; width: 48px; height: 48px; padding: 12px; }
@@ -972,6 +974,95 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .c-acts .ic { width: 26px; height: 26px; color: var(--glow); }
   .contact .contact-list { display: none; }
 }
+/* kurumsal yapı */
+.h-badge { display: inline-block; justify-self: start; margin: 8px 0 0; padding: 4px 10px; border-radius: 999px; background: color-mix(in srgb, var(--warm) 16%, transparent); color: var(--warm); font-size: 13px; font-weight: 600; }
+.h-about .wrap > div { display: grid; align-content: start; }
+.ca-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ca-card { display: grid; grid-template-columns: 52px 1fr; gap: 6px 14px; align-content: start; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--ink); text-decoration: none; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.ca-card:hover { transform: translateY(-3px); border-color: var(--c1); box-shadow: 0 14px 30px -22px rgba(0,0,0,.45); }
+.ca-card .ic { grid-row: span 3; width: 52px; height: 52px; padding: 13px; border-radius: 50%; color: #fff; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+.ca-card b { font-family: var(--f-display); font-weight: 400; font-size: 21px; line-height: 1.2; }
+.ca-card span { color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.ca-card em { font-style: normal; font-weight: 600; font-size: 14px; color: var(--accent); }
+.ca-hero { background: var(--band); color: var(--band-ink); padding: 104px 0 44px; position: relative; overflow: hidden; }
+.ca-hero .cv-big { position: absolute; right: -40px; top: 30px; width: 340px; height: 340px; opacity: .08; color: #fff; stroke-width: 1; }
+.ca-hero .crumbs { font-size: 13.5px; color: var(--band-muted); margin-bottom: 22px; }
+.ca-hero .crumbs a { color: var(--band-muted); }
+.ca-hero h1 { font-size: clamp(30px, 4.4vw, 50px); max-width: 20em; margin: 10px 0 14px; }
+.ca-hero p { color: var(--band-muted); font-size: 18px; max-width: 40em; margin: 0 0 24px; }
+.ca-hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.ca-wrap { padding-block: 44px 72px; }
+.ca-side { position: sticky; top: 76px; display: grid; gap: 16px; }
+.ca-list { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+.ca-list h2 { font-size: 20px; margin: 0 0 8px; }
+.ca-list a { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 15px; }
+.ca-list a:last-child { border-bottom: 0; }
+.ca-list a .ic { width: 18px; height: 18px; color: var(--muted); }
+.ca-list a[aria-current] { font-weight: 600; color: var(--accent); }
+.ca-list a[aria-current] .ic { color: var(--accent); }
+.ca-box { background: var(--band); color: var(--band-ink); border-radius: 10px; padding: 22px; display: grid; gap: 10px; }
+.ca-box h2 { font-size: 21px; margin: 0; color: var(--band-ink); }
+.ca-box p { margin: 0; color: var(--band-muted); font-size: 15px; }
+.ca-box .ca-tel { font-family: var(--f-display); font-size: 24px; color: var(--glow); text-decoration: none; }
+.ca-box .btn { text-align: center; }
+.ca-body h2 { font-size: clamp(22px, 2.4vw, 28px); margin: 34px 0 10px; }
+.ca-body > p:first-child { font-size: 18px; }
+.ca-body p { margin: 0 0 14px; }
+.ca-body ul { padding-left: 20px; display: grid; gap: 6px; margin: 0 0 14px; }
+.ca-rel { margin-top: 36px; }
+.ca-rel .h-posts { grid-template-columns: 1fr; }
+.ca-cta { margin-top: 36px; display: flex; justify-content: space-between; align-items: center; gap: 16px 24px; flex-wrap: wrap; padding: 24px 26px; border-radius: 10px; background: var(--band); color: var(--band-ink); }
+.ca-cta > div { display: grid; gap: 4px; }
+.ca-cta b { font-family: var(--f-display); font-weight: 400; font-size: 22px; }
+.ca-cta span { color: var(--band-muted); font-size: 15px; }
+.ca-index { padding-block: 44px 72px; }
+.nav-dd { position: relative; }
+.nav-dd .dd { display: none; }
+@media (min-width: 861px) {
+  .nav-dd .dd { position: absolute; top: 100%; left: -16px; padding-top: 12px; min-width: 260px; }
+  .nav-dd .dd > div { display: grid; background: var(--band); border: 1px solid rgba(238,242,238,.12); border-radius: 8px; padding: 8px; box-shadow: 0 24px 40px -20px rgba(0,0,0,.6); }
+  .nav-dd .dd a { padding: 8px 10px; border-radius: 5px; white-space: nowrap; }
+  .nav-dd .dd a:hover { background: rgba(238,242,238,.07); }
+  .nav-dd:hover .dd, .nav-dd:focus-within .dd { display: block; }
+}
+.ed-lead { color: var(--muted); font-size: 18px; max-width: 40em; margin: 0; }
+.ed-h { font-size: clamp(24px, 2.8vw, 32px); margin: 10px 0 22px; }
+.tl { list-style: none; padding: 0; margin: 0 0 56px; display: grid; gap: 0; position: relative; }
+.tl::before { content: ""; position: absolute; left: 39px; top: 10px; bottom: 10px; border-left: 2px solid var(--line); }
+.tl li { display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: start; padding: 14px 0; position: relative; }
+.tl figure { margin: 0; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--line); background: var(--band); position: relative; z-index: 1; display: grid; place-items: center; }
+.tl figure img { width: 100%; height: 100%; object-fit: cover; }
+.tl-ic .ic { width: 34px; height: 34px; color: var(--glow); }
+.tl-when { font-family: var(--f-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--warm); }
+.tl h3 { font-size: 21px; margin: 4px 0 6px; }
+.tl p { margin: 0; color: var(--muted); max-width: 44em; }
+footer .f-grid { grid-template-columns: 1.3fr 1fr 1fr; }
+footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+@media (max-width: 860px) {
+  .ca-grid { grid-template-columns: 1fr; gap: 10px; }
+  .h-areas .ca-grid { grid-template-columns: 1fr 1fr; }
+  .h-areas .ca-card { grid-template-columns: 1fr; justify-items: start; padding: 14px; gap: 8px; }
+  .h-areas .ca-card .ic { grid-row: auto; width: 44px; height: 44px; padding: 11px; }
+  .h-areas .ca-card b { font-size: 17px; }
+  .h-areas .ca-card span, .h-areas .ca-card em { display: none; }
+  .ca-card { padding: 16px; }
+  .ca-card b { font-size: 19px; }
+  .ca-hero { padding: 84px 0 30px; }
+  .ca-hero .cv-big { width: 200px; height: 200px; right: -50px; top: 60px; }
+  .ca-hero p { font-size: 16px; }
+  .ca-wrap .lp-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ca-side { position: static; }
+  .ca-list { display: none; }
+  .tl::before { left: 27px; }
+  .tl li { grid-template-columns: 56px 1fr; gap: 14px; padding: 10px 0; }
+  .tl figure { width: 56px; height: 56px; }
+  .tl-ic .ic { width: 26px; height: 26px; }
+  .tl h3 { font-size: 18px; }
+  .tl p { font-size: 15px; }
+  footer .f-grid { grid-template-columns: 1fr 1fr; }
+  footer .f-nap { grid-column: 1 / -1; }
+  .h-about .h-badge { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -987,9 +1078,9 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
     <ul id="navMenu">
       <li><a href="#basla">Ana sayfa</a></li>
-      <li><a href="#film">Hikâyem</a></li>
-      <li><a href="#yaklasim" class="nav-hl">Terapi Yaklaşımım</a></li>
-      <li><a href="#ozgecmis">Özgeçmiş</a></li>
+      <li class="nav-dd"><a href="/calisma-alanlari/">Çalışma Alanları</a><!--NAV-ALANLAR--></li>
+      <li><a href="#ozgecmis">Eğitim ve Deneyim</a></li>
+      <li><a href="#yaklasim">Terapi Yaklaşımı</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#iletisim">İletişim</a></li>
       <li><a href="#randevu" class="nav-cta">Randevu al</a></li>
@@ -1004,12 +1095,12 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 <section class="h-hero">
   <div class="wrap">
     <div class="h-copy">
-      <div class="label h-label">Psikolog · @psikologfirkan</div>
-      <h1>Zorlandığın yerden, birlikte bakalım.</h1>
-      <p class="h-lead">Bilişsel davranışçı terapiyle, seninle, senin hızında.</p>
+      <h1 class="label h-seo">Psikolog Muhammed Furkan Tosun · Koşuyolu (Üsküdar) ve online psikolojik danışmanlık</h1>
+      <p class="h-display">Zorlandığın yerden, birlikte bakalım.</p>
+      <p class="h-lead">Kaygı, panik, depresyon ve stres gibi zorluklarda bilişsel davranışçı terapiyle; seninle, senin hızında.</p>
       <div class="cta">
         <a class="btn primary" href="#randevu">Randevu al</a>
-        <a class="btn ghost" href="tel:+905384840141">Ara</a>
+        <a class="btn ghost" href="/calisma-alanlari/">Çalışma alanları</a>
       </div>
       <ul class="h-chips">
         <li><a href="/kadikoy-psikolog/"><i data-ic="konum"></i>Koşuyolu</a></li>
@@ -1024,17 +1115,32 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   </div>
 </section>
 
-<section class="sec h-sec">
+<section class="sec h-about">
   <div class="wrap">
-    <div class="sec-head"><div class="label">Hangi konularda</div><h2>Birlikte çalışabileceğimiz konular</h2></div>
-    <ul class="h-tiles">
-      <li style="--c1:#2f6f6a"><i data-ic="kaygi"></i><b>Kaygı ve panik</b><span>Sürekli endişe, ani korku atakları</span></li>
-      <li style="--c1:#c0703a"><i data-ic="stres"></i><b>Stres ve tükenmişlik</b><span>Yetişememe, dinlenememe</span></li>
-      <li style="--c1:#4a5f86"><i data-ic="mod"></i><b>Ruh hâli</b><span>İsteksizlik, keyif alamama</span></li>
-      <li style="--c1:#c08a2e"><i data-ic="ozguven"></i><b>Özgüven</b><span>“Yeterince iyi değilim” sesi</span></li>
-      <li style="--c1:#6b7341"><i data-ic="is"></i><b>İş ve kariyer</b><span>Performans baskısı, kararlar</span></li>
-      <li style="--c1:#45457f"><i data-ic="uyku"></i><b>Uyku</b><span>Gece kapanmayan zihin</span></li>
-    </ul>
+    <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy">
+    <div>
+      <div class="label">Hakkımda</div>
+      <span class="h-badge">2023'ten beri danışanlarla</span>
+      <h2>Değişimin mümkün olduğuna inanıyorum.</h2>
+      <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. Okuma yazmayı yetişkinken öğrenmiş biri olarak, insanın yeniden başlayabileceğini yaşayarak biliyorum.</p>
+      <div class="cta"><a class="btn primary dark" href="#ozgecmis">Eğitim ve deneyimim</a><a class="btn ghost-dark" href="#yaklasim">Terapi yaklaşımım</a></div>
+    </div>
+  </div>
+  <div class="h-strip" aria-label="Fotoğraflar">
+    <figure><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
+    <figure><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
+    <figure><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
+    <figure class="fit"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
+    <figure><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
+    <figure><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec h-sec h-areas">
+  <div class="wrap">
+    <div class="sec-head h-bhead"><div><div class="label">Çalışma alanları</div><h2>Birlikte çalışabileceğimiz konular</h2></div><a href="/calisma-alanlari/">Tümünü gör →</a></div>
+    <!--ALAN-KARTLARI-->
+    <a class="btn primary dark h-more" href="/calisma-alanlari/">Tüm çalışma alanları</a>
   </div>
 </section>
 
@@ -1090,25 +1196,6 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   </div>
 </section>
 
-<section class="sec h-about">
-  <div class="wrap">
-    <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy">
-    <div>
-      <div class="label">Hakkımda</div>
-      <h2>Değişimin mümkün olduğuna inanıyorum.</h2>
-      <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla çalışıyorum.</p>
-      <div class="cta"><a class="btn primary dark" href="#film">Hikâyemi izle</a><a class="btn ghost-dark" href="#ozgecmis">Özgeçmiş</a></div>
-    </div>
-  </div>
-  <div class="h-strip" aria-label="Fotoğraflar">
-    <figure><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
-    <figure><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
-    <figure><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
-    <figure class="fit"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
-    <figure><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
-    <figure><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
-  </div>
-</section>
 
 <section class="sec h-sec">
   <div class="wrap">
@@ -1624,7 +1711,22 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 <div class="view page" data-view="ozgecmis" hidden>
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
-    <div class="sec-head"><div class="label">Özgeçmiş</div><h1>Eğitim ve deneyim</h1></div>
+    <div class="sec-head"><div class="label">Hakkımda</div><h1>Eğitim ve deneyim</h1><p class="ed-lead">Okuma yazma kursundan psikolojiye uzanan yolum, eğitimim ve çalışma deneyimim.</p></div>
+    <h2 class="ed-h" id="hikayem">Yolculuğum</h2>
+    <ol class="tl">
+      <li><figure><img src="img/cocukluk.jpg" alt="Muhammed Furkan Tosun çocukken" loading="lazy"></figure><div><span class="tl-when">Çocukluk</span><h3>Yurtlarda geçen yıllar</h3><p>Çocukluğum yurtlarda geçti. Okul nedir bilmedim; ilkokul, ortaokul, lise hiçbiri hayatımda yoktu.</p></div></li>
+      <li><figure class="tl-ic"><i data-ic="egitim"></i></figure><div><span class="tl-when">Başlangıç</span><h3>Halk Eğitim Merkezi · okuma yazma</h3><p>Bir gün okumaya karar verdim ve sıfırdan, harflerden başladım. Elime aldığım ilk belge okuma yazma belgesiydi.</p></div></li>
+      <li><figure class="tl-ic"><i data-ic="yol"></i></figure><div><span class="tl-when">Açık öğretim</span><h3>İlkokul, ortaokul ve lise</h3><p>Basamak basamak; üçünü de açık öğretimden, bir okul binasına girmeden bitirdim.</p></div></li>
+      <li><figure><img src="img/asker-agri.jpg" alt="Askerlikte Ağrı Dağı önünde" loading="lazy"></figure><div><span class="tl-when">2017</span><h3>Askerlik</h3><p>Bir yıl er olarak görev yaptım. Zor zamanda insanın insana nasıl tutunduğunu orada gördüm.</p></div></li>
+      <li><figure><img src="img/mum.jpg" alt="Mum ışığında ders çalışırken" loading="lazy"></figure><div><span class="tl-when">2019</span><h3>Psikoloji · İstanbul Kent Üniversitesi</h3><p>Askerden dönünce sınava hazırlandım, bazen mum ışığında. 2019'da psikolojiyi kazandım ve ilk kez bir sınıfa girdim.</p></div></li>
+      <li><figure><img src="img/kulup-ekip.jpg" alt="Psikoloji kulübü ekibi" loading="lazy"></figure><div><span class="tl-when">2022–2023</span><h3>Psikoloji Kulübü Başkanlığı</h3><p>Seminerler, söyleşiler ve III. Psikoloji Günleri “Sarmaşık”ı (20–21 Mayıs 2023) düzenledik.</p></div></li>
+      <li><figure><img src="img/sinif-grup.jpg" alt="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır" loading="lazy"></figure><div><span class="tl-when">Lisans dönemi</span><h3>Köy okullarında gönüllü destek</h3><p>Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuklarla atölyeler yaptım, gönüllü psikososyal destek verdim.</p></div></li>
+      <li><figure><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></figure><div><span class="tl-when">Staj</span><h3>İstanbul Üniversitesi Çapa Tıp Fakültesi</h3><p>Kitapta okuduklarımı ilk kez klinik ortamda, gerçek hayatta gördüm.</p></div></li>
+      <li><figure><img src="img/mezuniyet.jpg" alt="Mezuniyet töreninde" loading="lazy"></figure><div><span class="tl-when">2023</span><h3>Mezuniyet ve psikologluk</h3><p>Mezun oldum ve danışanlarımla çalışmaya başladım; ardından Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım.</p></div></li>
+      <li><figure><img src="img/pc-home.jpg" alt="PSYCONNECT uygulaması" loading="lazy"></figure><div><span class="tl-when">Girişim</span><h3>PSYCONNECT</h3><p>Destek almak isteyen herkes bir psikoloğa kolayca ulaşabilsin diye online seans ve grup terapisi uygulaması kurdum.</p></div></li>
+      <li><figure><img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"></figure><div><span class="tl-when">Bugün</span><h3>Psikolog</h3><p>Kimsenin hikâyesi başladığı yerde bitmiyor. Bunu yaşayarak öğrendim; seninki de bitmiyor.</p></div></li>
+    </ol>
+    <h2 class="ed-h">Eğitim, deneyim ve sertifikalar</h2>
     <div class="cv">
       <div class="cv-group">
         <h3>Eğitim</h3>
@@ -1667,16 +1769,8 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   </div>
 </section>
 
-<section class="sec" id="alanlar">
-  <div class="wrap">
-    <div class="sec-head"><div class="label">Çalışma alanları</div><h2>Neler yapıyorum</h2></div>
-    <div class="areas">
-      <div class="area"><svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="18" r="11"/><path d="M15 30 L13 40 M29 30 L31 40 M17 18 h10 M22 13 v10"/></svg><h3>Bilişsel Davranışçı Terapi temelli çalışma</h3><p>Düşünce, duygu ve davranış arasındaki bağı birlikte görünür kılmak.</p></div>
-      <div class="area"><svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="14" width="32" height="22" rx="2"/><path d="M16 14 V9 h12 v5 M6 23 h32"/></svg><h3>Kurumsal psikoloji ve danışmanlık</h3><p>Endüstri ve örgüt psikolojisi birikimiyle çalışanlar ve ekipler için destek.</p></div>
-      <div class="area"><svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><path d="M4 18 L22 9 L40 18 L22 27 Z M11 22 v9 c0 3 22 3 22 0 v-9"/></svg><h3>Okul ve gençlik atölyeleri</h3><p>Sahada edinilen deneyimle öğrencilere yönelik seminer ve atölyeler.</p></div>
-      <div class="area"><svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="10" width="32" height="24" rx="3"/><path d="M19 17 L27 22 L19 27 Z"/></svg><h3>Psikoloji içerikleri</h3><p>@psikologfirkan hesabında bilimsel temelli, anlaşılır videolar.</p></div>
-    </div>
-  </div>
+<section class="sec ed-cta">
+  <div class="wrap"><div class="ca-cta"><div><b>Hangi konularda çalışıyorum?</b><span>Kaygı, panik, depresyon, stres, özgüven ve daha fazlası.</span></div><a class="btn primary" href="/calisma-alanlari/">Çalışma alanları</a></div></div>
 </section>
 
 </div>
@@ -1773,7 +1867,8 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
 
 <footer><div class="wrap f-grid">
   <div class="f-nap"><b>Psikolog Muhammed Furkan Tosun</b><span>Koşuyolu, Üsküdar / İstanbul</span><span>Yüz yüze ve online görüşme</span><a href="tel:+905384840141">0538 484 01 41</a><a href="mailto:psikologfurkantosun@gmail.com">psikologfurkantosun@gmail.com</a><span>Hafta içi 17:00–21:00 · Pazar 10:00–16:00</span></div>
-  <nav class="f-links" aria-label="Görüşme seçenekleri"><a href="/kadikoy-psikolog/">Kadıköy psikolog</a><a href="/online-psikolog/">Online psikolog</a><a href="/istanbul-psikolog/">İstanbul psikolog</a><a href="#blog">Blog</a><a href="#randevu">Randevu al</a></nav>
+  <nav class="f-links" aria-label="Çalışma alanları"><b>Çalışma alanları</b><!--FOOT-ALANLAR--></nav>
+  <nav class="f-links" aria-label="Sayfalar"><b>Sayfalar</b><a href="#ozgecmis">Eğitim ve deneyim</a><a href="#yaklasim">Terapi yaklaşımı</a><a href="/kadikoy-psikolog/">Kadıköy psikolog</a><a href="/online-psikolog/">Online psikolog</a><a href="/istanbul-psikolog/">İstanbul psikolog</a><a href="#blog">Blog</a><a href="#iletisim">İletişim</a><a href="#randevu">Randevu al</a></nav>
   <div class="f-meta"><span>© 2026 Muhammed Furkan Tosun · Psikolog Firkan</span><span>Fotoğraflardaki çocukların yüzleri gizlilik için bulanıklaştırılmıştır.</span><span>Acil bir durumdaysan 112'yi ara.</span></div>
 </div></footer>
 

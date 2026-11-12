@@ -33,8 +33,10 @@ PAGES = {
                "desc": "Yurtlarda geçen bir çocukluktan, okuma yazma kursundan psikolojiye uzanan yol: Psikolog Muhammed Furkan Tosun'un hikâyesi, kısa bir film gibi."},
     "yaklasim": {"path": "/terapi-yaklasimim/", "title": "Terapi Yaklaşımım: Bilişsel Davranışçı Terapi (BDT)",
                  "desc": "Bilişsel davranışçı terapi (BDT) nedir, terapi nasıl ilerler, seanslarda neler yapılır? Terapi yaklaşımım ve kısa bir düşünce çalışması."},
-    "ozgecmis": {"path": "/ozgecmis/", "title": "Özgeçmiş | Psikolog Muhammed Furkan Tosun",
-                 "desc": "Psikolog Muhammed Furkan Tosun'un eğitimi ve deneyimi: İstanbul Kent Üniversitesi Psikoloji, Marmara Üniversitesi Endüstri ve Örgüt Psikolojisi YL."},
+    "ozgecmis": {"path": "/ozgecmis/", "title": "Eğitim ve Deneyim | Psikolog Muhammed Furkan Tosun",
+                 "desc": "Okuma yazma kursundan psikolojiye: Psikolog Muhammed Furkan Tosun'un yolculuğu, eğitimi (İstanbul Kent Ü., Marmara Ü.) ve deneyimi."},
+    "alanlar": {"path": "/calisma-alanlari/", "title": "Çalışma Alanları | Psikolog Muhammed Furkan Tosun",
+                "desc": "Kaygı, panik atak, depresyon, stres, özgüven, OKB, uyku ve ilişki sorunlarında BDT temelli yüz yüze (Koşuyolu) ve online görüşme."},
     "blog": {"path": "/blog/", "title": "Blog: Psikoloji Yazıları | Psikolog Firkan",
              "desc": "Kaygı, panik, depresyon, stres ve gündelik hayata dair bilimsel temelli, Türkiye odaklı psikoloji yazıları. Psikolog Muhammed Furkan Tosun."},
     "randevu": {"path": "/randevu/", "title": "Randevu Al | Psikolog Muhammed Furkan Tosun",
@@ -42,7 +44,7 @@ PAGES = {
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: telefon, e-posta ve Instagram. Koşuyolu'nda (Üsküdar) yüz yüze ve online görüşme."},
 }
-HREFS = {"#basla": "/", "#film": "/hikayem/", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
+HREFS = {"#basla": "/", "#film": "/ozgecmis/#hikayem", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
          "#blog": "/blog/", "#iletisim": "/iletisim/", "#randevu": "/randevu/"}
 
 esc = lambda s: html.escape(str(s), quote=True)
@@ -130,11 +132,37 @@ def cover(cat, cls="b-cov"):
     return f'<div class="{cls}" style="--c1:{c1};--c2:{c2}" aria-hidden="true">{ic(name, "cv-big")}<span class="cv-dot">{ic(name)}</span></div>'
 
 
+AREAS = []
+AREA_FOR = {}
+
+
+def area_colors(a):
+    for cat, (icn, c1, c2) in CAT_STYLE.items():
+        if icn == a["icon"]:
+            return c1, c2
+    return CAT_DEFAULT[1], CAT_DEFAULT[2]
+
+
+def area_card(a):
+    c1, c2 = area_colors(a)
+    return (f'<a class="ca-card" href="/calisma-alanlari/{a["slug"]}/" style="--c1:{c1};--c2:{c2}">{ic(a["icon"])}'
+            f'<b>{esc(a["name"])}</b><span>{esc(a["short"])}</span><em>Detaylı bilgi →</em></a>')
+
+
+def area_lists():
+    nav = '<div class="dd"><div>' + "".join(f'<a href="/calisma-alanlari/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS) + '<a href="/calisma-alanlari/">Tümünü gör →</a></div></div>'
+    foot = "".join(f'<a href="/calisma-alanlari/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:8]) + '<a href="/calisma-alanlari/">Tümü →</a>'
+    return nav, foot
+
+
 def fix_links(s):
     for k, v in HREFS.items():
         s = s.replace(f'href="{k}"', f'href="{v}"')
     s = s.replace('src="img/', 'src="/img/').replace('data-src="img/', 'data-src="/img/')
     s = re.sub(r'<i data-ic="([a-z]+)"></i>', lambda m: ic(m.group(1)), s)
+    if AREAS:
+        nav, foot = area_lists()
+        s = s.replace("<!--NAV-ALANLAR-->", nav).replace("<!--FOOT-ALANLAR-->", foot)
     return s
 
 
@@ -297,7 +325,7 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     title, desc, path = title or p["title"], desc or p["desc"], path or p["path"]
     navx = fix_links(nav)
     cur = p.get("path", path)
-    navx = navx.replace(f'<li><a href="{cur}"', f'<li><a aria-current="page" href="{cur}"', 1)
+    navx = re.sub(r'(<li(?: class="nav-dd")?><a) href="' + re.escape(cur) + '"', r'\1 aria-current="page" href="' + cur + '"', navx, count=1)
     cls = "" if name == "hikaye" else ' class="on-page"'
     out = head(title, desc, path, ld or person_ld(), fonts, og_type, image)
     out += f'<body data-page="{name}"{cls}>\n' + navx + "\n"
@@ -358,7 +386,12 @@ def blog_post(p, posts):
     rest = [x for x in posts if x["slug"] != p["slug"]]
     others = ([x for x in rest if x["category"] == p["category"]] + [x for x in rest if x["category"] != p["category"]])[:3]
     lp = LANDING_FOR.get(p["category"], LANDING_DEFAULT)
-    rel = (f'<div class="b-rel"><div class="label">Görüşme</div><a href="{lp[0]}">{esc(lp[1])}</a><p>{esc(lp[2])}</p></div>')
+    ar = AREA_FOR.get(p["category"])
+    if ar:
+        rel = (f'<div class="b-rel"><div class="label">Çalışma alanı</div><a href="/calisma-alanlari/{ar["slug"]}/">{esc(ar["name"])}: birlikte nasıl çalışıyoruz?</a>'
+               f'<p>{esc(ar["short"])} Yüz yüze (Koşuyolu) ya da online görüşme.</p></div>')
+    else:
+        rel = (f'<div class="b-rel"><div class="label">Görüşme</div><a href="{lp[0]}">{esc(lp[1])}</a><p>{esc(lp[2])}</p></div>')
     more = ('<div class="b-more"><div class="label">İlgili yazılar</div><div class="b-grid">' + "".join(card(x) for x in others) + "</div></div>") if others else ""
     upd = p.get("updated") or p["date"]
     return f"""<div class="view page" data-view="blog">
@@ -450,11 +483,81 @@ def landing_html(pg, all_pages):
 """
 
 
+def h_post(p):
+    return f'<a class="h-post" href="/blog/{esc(p["slug"])}/">{cover(p["category"])}<small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>'
+
+
+def area_page(a, posts):
+    c1, c2 = area_colors(a)
+    body = "\n".join(block_html(b) for b in a["body"])
+    faq = "".join(f"<details><summary>{esc(f['q'])}</summary><p>{esc(f['a'])}</p></details>" for f in a["faq"])
+    cats = a.get("cats", [])
+    rel = sorted([p for p in posts if p["category"] in cats], key=lambda p: cats.index(p["category"]))[:3]
+    rel_html = ('<div class="ca-rel"><h2>Bu konudaki yazılar</h2><div class="h-posts">' + "".join(h_post(p) for p in rel) + '</div></div>') if rel else ""
+    lst = "".join(f'<a href="/calisma-alanlari/{x["slug"]}/"{" aria-current=\"page\"" if x["slug"] == a["slug"] else ""}>{ic(x["icon"])}{esc(x["name"])}</a>' for x in AREAS)
+    return f"""<div class="view page" data-view="alan">
+<section class="ca-hero" style="--c1:{c1};--c2:{c2}">
+  {ic(a["icon"], "cv-big")}
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Sayfa yolu"><a href="/">Ana sayfa</a> / <a href="/calisma-alanlari/">Çalışma alanları</a> / <span>{esc(a["name"])}</span></nav>
+    <div class="label">Çalışma alanları</div>
+    <h1>{esc(a["h1"])}</h1>
+    <p>{esc(a["intro"])}</p>
+    <div class="cta"><a class="btn primary" href="/randevu/">Randevu al</a><a class="btn ghost" href="tel:{PHONE}">Ara: {PHONE_TXT}</a></div>
+  </div>
+</section>
+<section class="ca-wrap">
+  <div class="wrap lp-grid">
+    <div class="ca-body">
+{body}
+      <h2>Sık sorulan sorular</h2>
+      <div class="faq">{faq}</div>
+      {rel_html}
+      <div class="ca-cta"><div><b>{esc(a["name"])} için ilk adım</b><span>Takvimden sana uygun saati seç; Koşuyolu'nda yüz yüze ya da online.</span></div><a class="btn primary" href="/randevu/">Uygun saatleri gör</a></div>
+      <p class="b-disc">Bu sayfa bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.</p>
+    </div>
+    <aside class="ca-side">
+      <div class="ca-box"><h2>Randevu ve iletişim</h2><p>{esc(a["name"])} konusunda görüşme planlayabiliriz. Hafta içi 17:00–21:00, pazar 10:00–16:00.</p><a class="ca-tel" href="tel:{PHONE}">{PHONE_TXT}</a><a class="btn primary" href="/randevu/">Randevu al</a><p>Koşuyolu, Üsküdar · yüz yüze ve online</p></div>
+      <nav class="ca-list" aria-label="Çalışma alanları"><h2>Çalışma alanları</h2>{lst}</nav>
+    </aside>
+  </div>
+</section>
+</div>
+"""
+
+
+def area_index():
+    cards = "".join(area_card(a) for a in AREAS)
+    return f"""<div class="view page" data-view="alanlar">
+<section class="ca-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Sayfa yolu"><a href="/">Ana sayfa</a> / <span>Çalışma alanları</span></nav>
+    <div class="label">Çalışma alanları</div>
+    <h1>Hangi konularda birlikte çalışıyoruz?</h1>
+    <p>Bilişsel davranışçı terapi temelli görüşmelerde en sık çalıştığım konular. Her başlıkta neler yaşanabileceğini ve birlikte neler yapabileceğimizi anlattım.</p>
+    <div class="cta"><a class="btn primary" href="/randevu/">Randevu al</a><a class="btn ghost" href="tel:{PHONE}">Ara: {PHONE_TXT}</a></div>
+  </div>
+</section>
+<section class="ca-index">
+  <div class="wrap">
+    <div class="ca-grid">{cards}</div>
+    <div class="ca-cta"><div><b>Listede kendini bulamadın mı?</b><span>Seni zorlayan şey bu başlıkların dışında da olabilir; ilk görüşmede birlikte konuşabiliriz.</span></div><a class="btn primary" href="/randevu/">Randevu al</a></div>
+  </div>
+</section>
+</div>
+"""
+
+
 def main():
     ctx = parse_template()
     css, fonts, nav, hud, views, footer, lightbox, js = ctx
     posts = json.load(open(os.path.join(SRC, "posts.json"), encoding="utf-8"))["posts"]
     posts.sort(key=lambda p: p["date"], reverse=True)
+    AREAS[:] = json.load(open(os.path.join(SRC, "areas.json"), encoding="utf-8"))["areas"]
+    for a in AREAS:
+        assert re.fullmatch(r"[a-z0-9-]+", a["slug"])
+        for c in a.get("cats", []):
+            AREA_FOR.setdefault(c, a)
     slugs = [p["slug"] for p in posts]
     assert len(slugs) == len(set(slugs)), "Aynı slug iki kez kullanılmış"
     for p in posts:
@@ -484,14 +587,28 @@ def main():
         os.makedirs(os.path.dirname(full), exist_ok=True)
         open(full, "w", encoding="utf-8").write(content)
 
-    latest = "".join(f'<a class="h-post" href="/blog/{esc(p["slug"])}/">{cover(p["category"])}<small>{esc(p["category"])} · {int(p["minutes"])} dk</small><b>{esc(p["title"])}</b></a>' for p in posts[:3])
+    latest = "".join(h_post(p) for p in posts[:3])
+    home_cards = '<div class="ca-grid">' + "".join(area_card(a) for a in AREAS[:6]) + "</div>"
     home_faq = [(html.unescape(re.sub(r"<[^>]+>", "", q)), html.unescape(re.sub(r"<[^>]+>", "", a)))
                 for q, a in re.findall(r"<details><summary>(.*?)</summary><p>(.*?)</p></details>", views["home"], re.S)]
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": "Psikolog Firkan", "url": SITE + "/", "inLanguage": "tr-TR"}
-    write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest), ctx,
+    write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest).replace("<!--ALAN-KARTLARI-->", home_cards), ctx,
                     ld=[person_ld(), business_ld(), website] + ([faq_ld(home_faq)] if home_faq else [])))
-    for key, crumb in [("hikaye", "Hikâyem"), ("yaklasim", "Terapi yaklaşımım"), ("ozgecmis", "Özgeçmiş"), ("iletisim", "İletişim"), ("randevu", "Randevu al")]:
+    for key, crumb in [("yaklasim", "Terapi yaklaşımım"), ("ozgecmis", "Eğitim ve deneyim"), ("iletisim", "İletişim"), ("randevu", "Randevu al")]:
         write(PAGES[key]["path"], page(key, views[key], ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), (crumb, PAGES[key]["path"])])]))
+    write("/calisma-alanlari/", page("alanlar", area_index(), ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), ("Çalışma alanları", "/calisma-alanlari/")]),
+          {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": a["name"], "url": f"{SITE}/calisma-alanlari/{a['slug']}/"} for i, a in enumerate(AREAS)]}]))
+    for a in AREAS:
+        path = f"/calisma-alanlari/{a['slug']}/"
+        svc = {"@context": "https://schema.org", "@type": "Service", "name": a["name"] + " için psikolojik danışmanlık", "serviceType": "Bilişsel davranışçı terapi temelli psikolojik danışmanlık",
+               "provider": {"@id": SITE + "/#isletme"}, "areaServed": [{"@type": "City", "name": "İstanbul"}], "url": SITE + path, "description": a["desc"]}
+        write(path, page("alanlar", area_page(a, posts), ctx, title=a["title"], desc=a["desc"], path=path,
+                         ld=[svc, business_ld(), crumbs_ld([("Ana sayfa", "/"), ("Çalışma alanları", "/calisma-alanlari/"), (a["name"], path)]), faq_ld([(f["q"], f["a"]) for f in a["faq"]])]))
+    os.makedirs(os.path.join(DIST, "hikayem"), exist_ok=True)
+    open(os.path.join(DIST, "hikayem", "index.html"), "w", encoding="utf-8").write(
+        '<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Eğitim ve Deneyim</title><meta name="description" content="Bu sayfa Eğitim ve Deneyim sayfasına taşındı."><meta name="robots" content="noindex">'
+        f'<link rel="canonical" href="{SITE}/ozgecmis/"><meta http-equiv="refresh" content="0; url=/ozgecmis/#hikayem"></head>'
+        '<body><a href="/ozgecmis/#hikayem">Eğitim ve Deneyim sayfasına git</a></body></html>\n')
     landing = json.load(open(os.path.join(SRC, "landing.json"), encoding="utf-8"))["pages"]
     for pg in landing:
         lds = [person_ld(), crumbs_ld([("Ana sayfa", "/"), (pg["crumb"], pg["path"])]), faq_ld([(f["q"], f["a"]) for f in pg["faq"]])]
