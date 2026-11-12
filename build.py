@@ -29,12 +29,10 @@ MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağ
 PAGES = {
     "home": {"path": "/", "title": "Psikolog Muhammed Furkan Tosun | Psikolog Firkan",
              "desc": "Psikolog Muhammed Furkan Tosun: kaygı, panik, stres ve iş hayatına dair zorluklarda BDT temelli yüz yüze (Koşuyolu) ve online görüşme."},
-    "hikaye": {"path": "/hikayem/", "title": "Hikâyem | Psikolog Muhammed Furkan Tosun",
-               "desc": "Yurtlarda geçen bir çocukluktan, okuma yazma kursundan psikolojiye uzanan yol: Psikolog Muhammed Furkan Tosun'un hikâyesi, kısa bir film gibi."},
     "yaklasim": {"path": "/terapi-yaklasimim/", "title": "Terapi Yaklaşımım: Bilişsel Davranışçı Terapi (BDT)",
                  "desc": "Bilişsel davranışçı terapi (BDT) nedir, terapi nasıl ilerler, seanslarda neler yapılır? Terapi yaklaşımım ve kısa bir düşünce çalışması."},
     "ozgecmis": {"path": "/ozgecmis/", "title": "Eğitim ve Deneyim | Psikolog Muhammed Furkan Tosun",
-                 "desc": "Okuma yazma kursundan psikolojiye: Psikolog Muhammed Furkan Tosun'un yolculuğu, eğitimi (İstanbul Kent Ü., Marmara Ü.) ve deneyimi."},
+                 "desc": "Psikolog Muhammed Furkan Tosun'un eğitimi ve deneyimi: İstanbul Kent Üniversitesi Psikoloji, Marmara Üniversitesi Endüstri ve Örgüt Psikolojisi YL, BDT."},
     "alanlar": {"path": "/calisma-alanlari/", "title": "Çalışma Alanları | Psikolog Muhammed Furkan Tosun",
                 "desc": "Kaygı, panik atak, depresyon, stres, özgüven, OKB, uyku ve ilişki sorunlarında BDT temelli yüz yüze (Koşuyolu) ve online görüşme."},
     "blog": {"path": "/blog/", "title": "Blog: Psikoloji Yazıları | Psikolog Firkan",
@@ -44,7 +42,7 @@ PAGES = {
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: telefon, e-posta ve Instagram. Koşuyolu'nda (Üsküdar) yüz yüze ve online görüşme."},
 }
-HREFS = {"#basla": "/", "#film": "/ozgecmis/#hikayem", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
+HREFS = {"#basla": "/", "#film": "/ozgecmis/", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
          "#blog": "/blog/", "#iletisim": "/iletisim/", "#randevu": "/randevu/"}
 
 esc = lambda s: html.escape(str(s), quote=True)
@@ -607,8 +605,8 @@ def main():
     os.makedirs(os.path.join(DIST, "hikayem"), exist_ok=True)
     open(os.path.join(DIST, "hikayem", "index.html"), "w", encoding="utf-8").write(
         '<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Eğitim ve Deneyim</title><meta name="description" content="Bu sayfa Eğitim ve Deneyim sayfasına taşındı."><meta name="robots" content="noindex">'
-        f'<link rel="canonical" href="{SITE}/ozgecmis/"><meta http-equiv="refresh" content="0; url=/ozgecmis/#hikayem"></head>'
-        '<body><a href="/ozgecmis/#hikayem">Eğitim ve Deneyim sayfasına git</a></body></html>\n')
+        f'<link rel="canonical" href="{SITE}/ozgecmis/"><meta http-equiv="refresh" content="0; url=/ozgecmis/"></head>'
+        '<body><a href="/ozgecmis/">Eğitim ve Deneyim sayfasına git</a></body></html>\n')
     landing = json.load(open(os.path.join(SRC, "landing.json"), encoding="utf-8"))["pages"]
     for pg in landing:
         lds = [person_ld(), crumbs_ld([("Ana sayfa", "/"), (pg["crumb"], pg["path"])]), faq_ld([(f["q"], f["a"]) for f in pg["faq"]])]
