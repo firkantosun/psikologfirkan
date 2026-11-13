@@ -1,6 +1,288 @@
 {
  "posts": [
   {
+   "slug": "yapay-zekaya-dert-anlatmak-terapi-yerine-gecer-mi",
+   "date": "2026-11-13",
+   "updated": "2026-11-13",
+   "category": "Terapi",
+   "title": "Yapay zekâya dert anlatmak terapi yerine geçer mi? ChatGPT ile dertleşmenin iyi ve riskli yanları",
+   "excerpt": "Gece yarısı içini bir sohbet botuna döküyorsan yalnız değilsin. Yapay zekâyla dertleşmenin işe yarayan ve riskli yanları, bağımlılık işaretleri, sağlıklı kullanım için öneriler ve ne zaman bir insanla konuşman gerektiği.",
+   "minutes": 8,
+   "body": [
+    {
+     "p": "Saat gece biri geçiyor. Gün içinde yaşadığın bir tartışma hâlâ kafanda dönüyor ama kimseyi aramak istemiyorsun; “bu saatte rahatsız etmeyeyim” diyorsun, biraz da “yine aynı şeyleri anlatacağım, sıkılırlar” diye düşünüyorsun. Telefonu açıp bir sohbet botuna yazmaya başlıyorsun. Cevap hızlı, kibar ve anlayışlı geliyor. Bir süre sonra omuzlarının gevşediğini fark ediyorsun. Ertesi gece yine yazıyorsun. Sonraki gece de."
+    },
+    {
+     "p": "Bu sahne bugün pek çok insan için tanıdık. Yapay zekâyla dertleşmek ne bir tuhaflık ne de bir ayıp; çoğu zaman yalnız kalmamak, düşünceleri toparlamak ya da sadece birine “duyulmak” için yapılan çok insani bir hamle. Yine de akla şu soru geliyor: Bu bana gerçekten iyi geliyor mu, yoksa sadece o anı mı geçiştiriyorum? Bu yazıda bu soruyu, bilişsel davranışçı terapinin (BDT) bakış açısından birlikte ele alalım."
+    },
+    {
+     "h": "Bu kadar yaygınlaşmasının bir nedeni var"
+    },
+    {
+     "p": "Euronews Türkçe'nin Temmuz 2026'da yayımladığı bir haberde, özellikle gençlerin ayrılıkları konuşmak, önemli kararlar öncesi fikir almak ve kaygılarını yatıştırmak için ChatGPT gibi araçlara giderek daha çok başvurduğu aktarılıyor. Aynı haberde, Harvard Business Review'da yer alan bir değerlendirmeye göre duygusal destek ve arkadaşlığın üretken yapay zekânın en yaygın kullanım amaçları arasında ilk sırada yer aldığı belirtiliyor. Türkiye'de de son aylarda “yapay zekâyla dertleşmek” sağlık sayfalarında ve dergilerde sıkça tartışılan bir başlık haline geldi."
+    },
+    {
+     "p": "Bunu anlamak zor değil. Sohbet botu gece yarısı da açık, beklemen gerekmiyor, ücret ödemen gerekmeyebiliyor ve en önemlisi seni yargılamıyor gibi görünüyor. Bizim kültürümüzde “dert anlatmak” çoğu zaman bir yakına yük olmakla, “elâlem ne der” kaygısıyla ya da “sen de hep bir şeye takılıyorsun” cevabıyla karşılaşma riskiyle iç içe. Bir ekranın karşısında bu risk yok gibi hissettiriyor. Utanç duygusunun yoğun olduğu konularda ilk kelimeleri bir makineye yazmak, bazı insanlar için insana söylemekten çok daha kolay."
+    },
+    {
+     "h": "Gerçekten işe yarayan tarafları"
+    },
+    {
+     "p": "Haksızlık etmeyelim: Bir şeyi yazıya dökmek başlı başına düzenleyici bir eylemdir. Kafanda birbirine karışmış düşünceleri cümle haline getirdiğinde, neyin seni gerçekten rahatsız ettiğini daha net görebilirsin. Bazı insanlar bu araçları zor bir konuşmaya hazırlanmak, sınır koyan bir mesaj taslağı yazmak, gününü planlamak ya da bir konuyu farklı bir açıdan görmek için kullanıyor ve bunu faydalı buluyor."
+    },
+    {
+     "p": "Ancak burada önemli bir ayrım var: Kısa süreli rahatlama ile kalıcı değişim aynı şey değil. Amerikan Psikoloji Derneği (APA), Kasım 2025'te yayımladığı sağlık uyarısında üretken yapay zekâ sohbet botlarının ve sağlıklı yaşam uygulamalarının, ruh sağlığı alanında etkili ve güvenli olduklarını gösterecek yeterli bilimsel kanıta ve düzenlemeye henüz sahip olmadığını vurguladı. Aynı uyarıda bu araçların nitelikli bir ruh sağlığı profesyonelinin yerine kullanılmaması, özellikle çocuklar ve ergenler için ek korumalar geliştirilmesi gerektiği ifade edildi."
+    },
+    {
+     "h": "Riskli taraf: Sürekli onaylanmak ve yavaş yavaş yalnızlaşmak"
+    },
+    {
+     "p": "Sohbet botlarının önemli bir özelliği, genellikle uzlaşmacı ve onaylayıcı olmaları. Bu ilk anda çok iyi gelir; ama bazen ihtiyacın olan şey onaylanmak değil, nazikçe sorgulanmaktır. Terapide değişim çoğu zaman “Bu düşüncenin kanıtı ne?”, “Başka nasıl bakılabilir?”, “Kaçındığın şey ne?” gibi biraz rahatsız edici soruların ardından gelir. Her söylediğini anlayışla karşılayan bir muhatap, farkında olmadan seni aynı düşünce kalıbının içinde tutabilir."
+    },
+    {
+     "p": "İkinci risk yalnızlıkla ilgili. MIT Media Lab ve OpenAI'ın Mart 2025'te paylaştığı ortak çalışmada, yaklaşık bin katılımcının dört hafta boyunca ChatGPT kullandığı randomize bir deney yürütüldü. Bulgulara göre günlük kullanım süresi uzadıkça daha olumsuz sonuçlar görüldü; yapay zekâyı bir arkadaş gibi görme ve güçlü bağlanma eğilimi de daha olumsuz etkilerle ilişkiliydi. Araştırmacılar bu sonuçların büyük ölçüde ilişkisel olduğunu, yani neden-sonuç kanıtlamadığını ve genellenirken dikkatli olunması gerektiğini özellikle belirtiyor. Yine de verdiği mesaj düşündürücü: Rahatlatan bir alışkanlık, gerçek ilişkilerin yerini almaya başladığında yalnızlığı azaltmak yerine derinleştirebilir."
+    },
+    {
+     "p": "Üçüncü risk kriz anlarıyla ilgili. APA'nın uyarısında, sohbet botlarının kriz içindeki birine güvenli biçimde yol gösterme kapasitesinin “sınırlı ve öngörülemez” olduğu belirtiliyor. Bir makine senin sesindeki titremeyi, yüzündeki ifadeyi, günlerdir yemek yemediğini ya da tehlikede olup olmadığını bir insan gibi fark edemez."
+    },
+    {
+     "h": "Sağlıklı kullanım mı, kaçış mı? Kendine sorabileceğin sorular"
+    },
+    {
+     "p": "Yapay zekâyla konuşmak tek başına sorun değil. Önemli olan, bu alışkanlığın hayatında nasıl bir yer tuttuğu. Aşağıdaki işaretler, kullanımın destek olmaktan çıkıp bir kaçış ya da bağımlılık biçimine dönmeye başladığını düşündürebilir:"
+    },
+    {
+     "ul": [
+      "Zor bir duygu geldiğinde aklına ilk ve tek seçenek olarak sohbet botu geliyorsa",
+      "Arkadaşlarınla, ailenle ya da partnerinle konuşmak yerine giderek daha çok ekrana yazıyorsan",
+      "Aynı konuyu tekrar tekrar sorup her seferinde kısa bir rahatlama, ardından yeniden huzursuzluk yaşıyorsan",
+      "Bir karar vermeden önce mutlaka “onay” almadan adım atamaz hale geldiysen",
+      "Uygulamayı kullanamadığında belirgin bir boşluk, gerginlik ya da yalnızlık hissediyorsan",
+      "Gece saatlerce yazışıp uykundan feragat ediyorsan"
+     ]
+    },
+    {
+     "p": "Bu işaretlerden birkaçını kendinde görmek seni “bağımlı” yapmaz; ama alışkanlığına daha bilinçli bakman için iyi bir davet olabilir."
+    },
+    {
+     "h": "Döngüyü görmek: Bir BDT örneği"
+    },
+    {
+     "p": "BDT'de bir yaşantıyı durum, düşünce, duygu, beden ve davranış basamaklarıyla inceleriz. Şöyle bir örnek düşünelim:"
+    },
+    {
+     "ul": [
+      "Durum: İş arkadaşın toplantıda fikrini dinlemeden sözünü kesti.",
+      "Düşünce: “Beni ciddiye almıyorlar. Söylediğim hiçbir şey önemli değil.”",
+      "Duygu: Kırgınlık, utanç, biraz da öfke.",
+      "Beden: Midede sıkışma, çene kasılması, akşam uykuya dalmakta güçlük.",
+      "Davranış: Gece sohbet botuna uzun uzun olanları anlatmak, “Haklı mıyım?” diye sormak, onay gelince rahatlamak; ertesi gün iş arkadaşıyla konuşmaktan kaçınmak."
+     ]
+    },
+    {
+     "p": "Bu döngüde sohbet botu kısa vadede duyguyu yatıştırıyor; ama “Beni ciddiye almıyorlar” düşüncesi hiç sınanmıyor ve asıl adım olan iş arkadaşıyla konuşma ertelenmiş oluyor. Kaçınma ne kadar tekrar ederse, inanç da o kadar güçlenir. Aynı aracı farklı kullanmak mümkün: “Bu düşüncenin lehine ve aleyhine kanıtlar neler olabilir?” diye sormak, ya da yarın söyleyeceğin cümleyi birlikte hazırlamak. Böylece ekran bir sığınak olmaktan çıkıp gerçek hayattaki bir adıma hazırlık aracına dönüşür."
+    },
+    {
+     "h": "Yapay zekâyı destek olarak kullanırken 5 öneri"
+    },
+    {
+     "ul": [
+      "Amacını baştan belirle: Yazmaya başlamadan önce kendine “Şu an rahatlamak mı, düşüncelerimi düzenlemek mi, yoksa bir karar mı istiyorum?” diye sor. Amacı belli olan bir konuşma, sonsuz bir döngüye dönüşmez.",
+      "Onay değil, soru iste: Sadece “Haklı mıyım?” diye sormak yerine “Bu duruma başka nasıl bakılabilir?” ya da “Gözden kaçırdığım ne olabilir?” diye sormayı dene. Kendi düşüncelerini sınamak, onaylatmaktan çok daha fazla işine yarar.",
+      "Süre ve saat sınırı koy: Özellikle gece saatlerinde konuşmaları kısa tut. Uykudan çalınan saatler ertesi günün duygusal yükünü artırır.",
+      "Her konuşmanın sonuna bir insan ekle: Ekranda düşüncelerini toparladıktan sonra bunun küçük bir kısmını güvendiğin biriyle paylaşmayı hedefle. Bir mesaj, kısa bir telefon ya da bir kahve, makinenin veremeyeceği bir şey verir: karşılıklılık.",
+      "Mahremiyetini koru: Kimlik bilgilerini, sağlık geçmişini ya da başkalarına ait özel ayrıntıları paylaşmadan önce iki kez düşün. Yazdıklarının nasıl saklandığını her zaman bilemeyebilirsin."
+     ]
+    },
+    {
+     "h": "Çocuğun ya da gencin dertlerini bir sohbet botuna anlatıyorsa"
+    },
+    {
+     "p": "Ebeveyn olarak bunu fark etmek önce endişe, sonra kırgınlık uyandırabilir: “Neden bana değil de bir uygulamaya anlatıyor?” Bu soruyu suçlama yerine merakla sormak önemli. Yasaklamak çoğu zaman konuyu gizli bir alana iter. Bunun yerine sakin bir anda, “Son zamanlarda neler konuşuyorsun onunla, sana nasıl geliyor?” diye sorabilirsin. Yargılamadan dinlemek, çocuğa evde de güvenli bir konuşma alanı olduğunu gösterir. Uyku düzeninde bozulma, arkadaşlardan çekilme, okul başarısında belirgin düşüş ya da umutsuzluk ifadeleri varsa, konuyu bir ruh sağlığı profesyoneliyle değerlendirmek iyi olur."
+    },
+    {
+     "h": "Bir insanla konuşmanın vakti geldiğini gösteren durumlar"
+    },
+    {
+     "p": "Terapi, sadece doğru cümleleri duymak değil; zaman içinde kurulan güvenli bir ilişkinin içinde kendini tanımak, kaçındığın şeylerle adım adım yüzleşmek ve yeni davranışları denemektir. Bir terapist ses tonunu, sessizliklerini, anlattıkların arasındaki bağlantıları fark eder; gerektiğinde seni nazikçe zorlar ve ilerlemeni birlikte değerlendirir. Şu durumlarda bir ruh sağlığı profesyoneline başvurmayı ciddi biçimde düşünmeni öneririm:"
+    },
+    {
+     "ul": [
+      "Mutsuzluk, kaygı ya da huzursuzluk iki haftadan uzun sürüyor ve günlük hayatını etkiliyorsa",
+      "İşe, okula, ilişkilere ya da uykuya dair işlevselliğin belirgin şekilde azaldıysa",
+      "Aynı sorunu aylardır konuşup durduğun halde hiçbir şey değişmiyorsa",
+      "Yaşadığın bir travma, kayıp ya da şiddet deneyimi hâlâ peşini bırakmıyorsa",
+      "Yalnızlığın, insanlarla bağ kurmanı zorlaştıracak kadar derinleştiyse"
+     ]
+    },
+    {
+     "p": "Eğer kendine zarar verme ya da yaşamına son verme düşünceleri yaşıyorsan, bunu bir sohbet botuyla değil, bir insanla paylaşman gerekir. Bu düşünceler geçici bir dönemin parçası olabilir ve yardım almak mümkündür. Hemen güvendiğin birine haber ver; acil bir durumda 112'yi arayabilir ya da en yakın acil servise başvurabilirsin."
+    },
+    {
+     "p": "Teknoloji hayatımıza girdikçe dertleşme biçimlerimiz de değişecek. Ekrana yazdığın cümleler sana bir başlangıç noktası sunabilir; ama anlaşılmak, karşılık görmek ve değişmek çoğu zaman bir insanla kurulan bağın içinde gerçekleşir. İçinde biriktirdiklerini artık bir insanla konuşmaya hazır hissediyorsan, bir uzmandan destek almak sana iyi bir alan açabilir."
+    }
+   ],
+   "sources": [
+    {
+     "title": "APA: Use of generative AI chatbots and wellness applications for mental health (Kasım 2025 basın açıklaması)",
+     "url": "https://www.apa.org/news/press/releases/2025/11/ai-wellness-apps-mental-health"
+    },
+    {
+     "title": "MIT Media Lab: OpenAI-MIT research collaboration, affective use and emotional wellbeing in ChatGPT (2025)",
+     "url": "https://www.media.mit.edu/posts/openai-mit-research-collaboration-affective-use-and-emotional-wellbeing-in-chatgpt/"
+    },
+    {
+     "title": "Euronews Türkçe: ChatGPT'yi terapist olarak kullananların sayısı neden artıyor? (Temmuz 2026)",
+     "url": "https://tr.euronews.com/2026/07/24/chatgptyi-psikolog-gibi-kullananlarin-sayisi-artti-uzmanlar-nedeni-anlatti"
+    },
+    {
+     "title": "İndigo Dergisi: Yapay zeka ile dertleşmek iyi gelir mi? (Ekim 2026)",
+     "url": "https://indigodergisi.com/2026/10/yapay-zeka-ile-dertlesmek/"
+    }
+   ]
+  },
+  {
+   "slug": "evcil-hayvan-kaybi-yasi-kedim-kopegim-oldu-normal-mi",
+   "date": "2026-11-13",
+   "updated": "2026-11-13",
+   "category": "Yas",
+   "title": "Evcil hayvan kaybı: Kedim ya da köpeğim öldü, üzüntüm geçmiyor; bu yas normal mi?",
+   "excerpt": "Evcil hayvanını kaybettikten sonra yaşadığın derin üzüntü, suçluluk ve boşluk duygusu normal mi? Evcil hayvan yasının belirtileri, ne kadar sürebileceği, baş etme yolları ve destek almanın zamanı.",
+   "minutes": 7,
+   "body": [
+    {
+     "p": "Kapıyı açıyorsun ve alışkanlıkla aşağı bakıyorsun. Ayaklarına dolanan, mama kabının başında seni bekleyen, kanepede hep aynı köşeye kıvrılan o küçük beden yok. Mama kabı hâlâ mutfakta duruyor; kaldırmaya elin varmıyor. Gece yatağın ayak ucunda o tanıdık ağırlığı arıyorsun. Bir yandan da içinden bir ses fısıldıyor: “Bir hayvan için bu kadar üzülmek normal mi?”"
+    },
+    {
+     "p": "Evet, normal. Yıllarını paylaştığın bir canlıyı kaybetmek gerçek bir kayıptır ve bu kaybın ardından yaşanan acı gerçek bir yastır. Bu yazıda evcil hayvan yasının neden bu kadar derin olabildiğini, hangi tepkilerin beklenen olduğunu ve bu dönemi nasıl daha az yalnız geçirebileceğini konuşalım."
+    },
+    {
+     "h": "“Alt tarafı bir kedi” cümlesinin bıraktığı iz"
+    },
+    {
+     "p": "Evcil hayvan kaybını zorlaştıran şeylerden biri, çevrenin bu kaybı her zaman ciddiye almaması. “Üzülme, yenisini alırsın”, “Alt tarafı bir köpek”, “Bu kadar abartma” gibi cümleler, iyi niyetle söylense bile insanı yasını saklamaya iter. Psikolojide buna “tanınmayan yas” denir: Kaybın toplum tarafından yeterince meşru görülmediği, bu yüzden yas tutan kişinin desteğe ulaşmakta zorlandığı durumlar."
+    },
+    {
+     "p": "Bizde de durum çok farklı değil. İnsan kaybına karşı taziye, helva, ziyaret gibi güçlü ritüellerimiz varken, bir kedi ya da köpek öldüğünde çoğu zaman kimse kapını çalmaz. İşe ertesi gün gitmen beklenir. Belki ağladığını kimseye söyleyemezsin. Oysa Amerikan Veteriner Hekimleri Birliği'nin (AVMA) evcil hayvan kaybına dair rehberinde de vurgulandığı gibi, başkaları “sadece bir hayvandı” dese bile yaşadığın yas geçerlidir ve bir kaybın acısı başka bir kayıpla kıyaslanarak ölçülemez."
+    },
+    {
+     "h": "Bu yas neden bu kadar derin olabiliyor?"
+    },
+    {
+     "p": "Evcil hayvanınla kurduğun bağ, günlük hayatının dokusuna işlenmiş bir bağdır. Sabah uyandıran, akşam kapıda karşılayan, zor günlerde yanına sokulan, hiçbir koşul öne sürmeden yanında olan bir varlık. Onu kaybettiğinde yalnızca bir canlıyı değil, bir rutini, bir sorumluluğu, evin sesini ve belki de kendinle ilgili bir rolü de kaybedersin: “Onun bakımını yapan kişi” olmak, birden boşlukta kalır."
+    },
+    {
+     "p": "Hughes ve Lewis Harkin'in 2022'de Omega dergisinde yayımlanan sistematik derlemesi, evcil hayvan kaybını inceleyen 37 çalışmayı bir araya getirdi. Derlemeye göre yasın yoğunluğu çalışmalarda genellikle kayıptan sonraki 2 ile 6 ay arasında zirve yapıyor, bazı kişilerde bir yıla kadar uzayabiliyor; sahiplerin yüzde 20'ye varan bir kısmı kayıptan bir yıl sonra hâlâ yas belirtileri bildiriyordu. Hayvanını aile üyesi olarak görenler, yalnız yaşayanlar ve ani bir ölümle karşılaşanlarda yasın daha yoğun yaşandığı görüldü. Aynı derlemede sosyal destek ve kendine şefkatli yaklaşmanın baş etmeyi kolaylaştırdığı da aktarılıyor."
+    },
+    {
+     "h": "Beklenen tepkiler: Neler hissedebilirsin?"
+    },
+    {
+     "p": "Yasın tek bir doğru biçimi, sabit bir takvimi ya da sırayla geçilen basamakları yoktur. Duygular dalgalar halinde gelir; bir gün iyi hissedip ertesi gün bir fotoğrafla yeniden yıkılmak çok olağandır. Kayıptan sonraki haftalarda şunları yaşaman beklenen tepkiler arasındadır:"
+    },
+    {
+     "ul": [
+      "Şok, uyuşukluk ya da “gerçek değilmiş” gibi hissetmek",
+      "Sık ağlamak, beklenmedik anlarda gözlerinin dolması",
+      "Evde onun sesini duyduğunu sanmak, gözünün onu araması",
+      "Yorgunluk, iştahta ve uykuda değişiklikler",
+      "Öfke: veterinere, kendine, hatta hayata",
+      "Yoğun suçluluk ve “keşke”lerle dolu düşünceler"
+     ]
+    },
+    {
+     "p": "Özellikle uyutma (ötanazi) kararı vermek zorunda kalanlar ya da hastalığı geç fark ettiğini düşünenler için suçluluk, yasın en ağır parçası olabilir. Bu duygunun bu kadar güçlü olması, ona ne kadar değer verdiğinin bir göstergesidir; ama her zaman olanların doğru bir değerlendirmesi değildir."
+    },
+    {
+     "h": "Suçluluk düşüncesine yakından bakmak: Bir BDT örneği"
+    },
+    {
+     "p": "BDT'de bir anı; durum, düşünce, duygu, beden ve davranış zinciri olarak ele alırız. Şöyle bir örnek düşünelim:"
+    },
+    {
+     "ul": [
+      "Durum: Kedin birkaç gündür az yemek yiyordu, hafta sonunu bekleyip veterinere götürdün. Hastalık ilerlemişti ve kısa süre sonra kaybettin.",
+      "Düşünce: “Daha erken götürseydim yaşardı. Onu ben öldürdüm.”",
+      "Duygu: Yoğun suçluluk, utanç, çaresizlik.",
+      "Beden: Göğüste ağırlık, uykuya dalamamak, iştahsızlık.",
+      "Davranış: Kimseyle konuşmamak, onun fotoğraflarına bakmaktan kaçınmak ya da tam tersine saatlerce internette belirtileri araştırıp kendini suçlayacak yeni kanıtlar aramak."
+     ]
+    },
+    {
+     "p": "Burada zihnin “geriye dönük netlik” yanılgısına düşüyor: Bugün bildiklerini, o günkü haline yüklüyorsun. O gün elinde ne vardı? Birkaç gün süren iştahsızlık, belki daha önce de yaşanıp geçmiş benzer dönemler, iş, yorgunluk ve hafta sonuna kadar bekleyebileceğini düşündüren makul bir değerlendirme. Kendine şu soruyu sorabilirsin: “Aynı durumu bir arkadaşım yaşasaydı, ona ‘sen öldürdün’ der miydim?” Muhtemelen ona, elindeki bilgiyle elinden geleni yaptığını söylerdin. Daha dengeli bir düşünce şöyle olabilir: “Keşke daha erken fark etseydim; ama o gün bildiklerimle bir karar verdim. Onu sevdiğim için bu kadar acı çekiyorum.” Bu düşünce acıyı yok etmez, ama acının üzerine eklenen cezalandırıcı yükü hafifletir."
+    },
+    {
+     "h": "Bu dönemi taşımana yardımcı olabilecek 5 adım"
+    },
+    {
+     "ul": [
+      "Yasına izin ver: Ağlamak, onun adını anmak, onunla ilgili konuşmak zayıflık değil. Duyguları bastırmak çoğu zaman onları ortadan kaldırmaz, sadece başka bir kapıdan geri döndürür.",
+      "Bir veda ritüeli oluştur: Onun için bir mektup yazmak, en sevdiğin fotoğraflarını bir albümde toplamak, adına bir fidan dikmek ya da bir hayvan barınağına onun anısına mama bağışlamak gibi küçük bir ritüel, kaybı anlamlandırmana yardım eder. Araştırmalar, anıları ve ritüelleri sürdürmenin bazı kişilerde yalnızlık duygusunu hafifletebildiğini gösteriyor.",
+      "Eşyalarını kendi hızında topla: Mama kabını, tasmasını ya da yatağını hemen kaldırmak zorunda değilsin. Ama tamamen dokunulmaz bir alan haline gelmesi de yasını dondurabilir. Hazır hissettiğinde bir kısmını sakla, bir kısmını paylaş.",
+      "Günlük düzenini yeniden kur: Onunla birlikte kaybolan rutinlerin yerine küçük yenilerini koy. Sabah yürüyüşlerini sürdürmek, akşam saatlerine bir arkadaş buluşması eklemek, düzenli yemek ve uyku, bedenini bu yükü taşıyabilecek halde tutar.",
+      "Seni anlayacak insanları bul: Herkes bu kaybın ağırlığını anlamayabilir; bu yüzden hayvan seven bir arkadaşın, aynı kaybı yaşamış biri ya da çevrimiçi destek toplulukları iyi gelebilir. Acıyı alkol, kumar ya da madde kullanımıyla bastırmaya çalışmak ise kısa vadede rahatlatsa da uzun vadede yükü ağırlaştırır."
+     ]
+    },
+    {
+     "h": "Yeni bir hayvan sahiplenmek için acele etmeli misin?"
+    },
+    {
+     "p": "Çevrenden en sık duyacağın önerilerden biri “hemen yenisini al” olabilir. Bazı insanlar için yeni bir canlıya yuva olmak gerçekten iyileştirici olur; ama bu karar, kaybın acısını örtmek için değil, yeni bir ilişkiye hazır olduğun için verildiğinde daha sağlıklıdır. Yeni gelen dostunu sürekli kaybettiğinle karşılaştırıyorsan ya da ona bağlanmakta zorlanıyorsan, biraz daha zamana ihtiyacın olabilir. Doğru zamanın evrensel bir ölçüsü yok; kendine bu konuda baskı yapmamaya çalış."
+    },
+    {
+     "h": "Çocuklar ve evdeki diğer hayvanlar da yas tutar"
+    },
+    {
+     "p": "Evde çocuk varsa, onu üzmemek için “kaçtı” ya da “uzaklara gitti” demek cazip gelebilir. Ancak çoğu zaman çocuklar için yaşlarına uygun, sade ve dürüst bir açıklama daha koruyucudur: “Çok hastaydı, bedeni artık çalışmıyor ve geri gelmeyecek.” Çocuğunun soru sormasına, resim çizmesine, veda etmesine alan açmak; senin de üzüldüğünü görmesine izin vermek, ona duyguların konuşulabilir olduğunu öğretir. Evdeki diğer hayvanlarda da bir süre huzursuzluk, iştahsızlık ya da arkadaşını arama davranışları görülebilir; onlara biraz daha fazla ilgi ve rutin sunmak ikiniz için de iyi gelebilir."
+    },
+    {
+     "h": "Sevdiğin biri evcil hayvanını kaybettiyse"
+    },
+    {
+     "p": "En değerli desteğin çoğu zaman en basit olanıdır: “Çok üzüldüm, onu çok severdin” demek. Kaybı küçültmekten, hemen yeni bir hayvan önermekten ya da “artık geçmesi lazım” gibi süre koymaktan kaçın. Onun adını anmak, birlikte bir anısını hatırlamak, birkaç hafta sonra “Nasılsın, hâlâ zor mu?” diye sormak, yas tutan kişiye yalnız olmadığını hissettirir."
+    },
+    {
+     "h": "Yas ne zaman tek başına taşınamayacak kadar ağırlaşır?"
+    },
+    {
+     "p": "Acının zamanla yumuşaması beklenir; tamamen kaybolmasa bile hayatına yeniden yer açmaya başlarsın. Ancak İngiltere Ulusal Sağlık Servisi'nin (NHS) yasla ilgili rehberinde de belirtildiği gibi, bazı durumlarda destek almak önemlidir. Şu işaretleri fark edersen bir ruh sağlığı profesyoneliyle görüşmeyi düşünebilirsin:"
+    },
+    {
+     "ul": [
+      "Aylar geçmesine rağmen yoğun üzüntü ve suçluluk hiç hafiflemiyorsa",
+      "Kaybı kabullenmekte ciddi zorluk yaşıyor, günlük işlerine dönemiyorsan",
+      "Çökkün ruh hali iki haftadan uzun sürüyor ve kendi denediklerin işe yaramıyorsa",
+      "Bu kayıp, geçmişte yaşadığın başka kayıpları ya da travmaları yeniden canlandırdıysa",
+      "Acıyla baş etmek için alkol ya da başka maddelere yönelmeye başladıysan"
+     ]
+    },
+    {
+     "p": "Eğer bu süreçte yaşamına son vermeyi ya da kendine zarar vermeyi düşündüğün anlar oluyorsa, bu düşüncelerle yalnız kalmamalısın. Bu duygular geçebilir ve yardım istemek mümkündür. Hemen güvendiğin birine ulaş; acil bir durumda 112'yi arayabilir ya da en yakın acil servise başvurabilirsin."
+    },
+    {
+     "p": "Onunla geçirdiğin yıllar, bugün hissettiğin acıdan çok daha büyük bir şeyi anlatıyor: sevmeyi ve bakım vermeyi. Bu sevgi kaybolmuyor; zamanla acıdan ziyade şefkatli bir anıya dönüşebiliyor. Bu yolda yükün ağır geliyorsa, duygularını bir uzmanla paylaşmak sana iyi gelebilir."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Hughes B, Lewis Harkin B. The Impact of Continuing Bonds Between Pet Owners and Their Pets Following the Death of Their Pet: A Systematic Narrative Synthesis. Omega (2022)",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11776356/"
+    },
+    {
+     "title": "AVMA: Coping with the loss of a pet",
+     "url": "https://avma.org/public/PetCare/Pages/pet-loss.aspx"
+    },
+    {
+     "title": "NHS: Grief after bereavement or loss",
+     "url": "https://www.nhs.uk/conditions/stress-anxiety-depression/coping-with-bereavement/"
+    },
+    {
+     "title": "American Humane: Pet loss and grief",
+     "url": "https://americanhumane.org/fact-sheet/pet-loss-grief/"
+    }
+   ]
+  },
+  {
    "slug": "diyabet-ve-ruh-sagligi-diyabet-tukenmisligi",
    "date": "2026-11-12",
    "updated": "2026-11-12",
