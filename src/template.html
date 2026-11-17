@@ -1196,6 +1196,22 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   .h-photo { animation: none; }
 }
 @media (prefers-reduced-motion: reduce) { .h-bg i, .h-bg .fl, .h-wave, .h-copy > *, .h-photo, .h-chip { animation: none !important; } .h-bg .fl { display: none; } }
+.ed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.ed-col h3 { font: 600 12px var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--warm); margin: 0 0 12px; }
+.ed-item { display: flex; gap: 14px; align-items: center; padding: 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); margin-bottom: 10px; }
+.ed-ic { width: 46px; height: 46px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 22px; background: color-mix(in srgb, var(--warm) 15%, var(--surface)); }
+.ed-item small { font: 600 12px var(--f-mono); color: var(--muted); }
+.ed-item b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 20px; line-height: 1.25; margin: 2px 0; }
+.ed-item span { color: var(--accent); font-weight: 600; font-size: 15px; }
+.ed-cert { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; width: 100%; text-align: left; padding: 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); font: inherit; color: inherit; cursor: zoom-in; }
+.ed-cert img { width: 100%; border-radius: 8px; display: block; }
+.ed-cert b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 19px; line-height: 1.3; }
+.ed-cert span { display: block; color: var(--muted); font-size: 14px; margin: 4px 0 8px; }
+.ed-cert em { font-style: normal; color: var(--accent); font-weight: 600; font-size: 14px; }
+@media (max-width: 860px) { .ed-grid { grid-template-columns: 1fr; gap: 18px; } .ed-cert { grid-template-columns: 100px 1fr; } }
+.m-integ { display: flex; gap: 14px; align-items: flex-start; margin-top: 18px; padding: 16px 18px; border-radius: 14px; background: color-mix(in srgb, var(--warm) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--warm) 30%, var(--line)); max-width: 52em; }
+.m-integ > span { font-size: 26px; line-height: 1; }
+.m-integ p { margin: 0; font-size: 16px; }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -1254,17 +1270,9 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="label">Hakkımda</div>
       <span class="h-badge">2023'ten beri danışanlarla</span>
       <h2>Değişimin mümkün olduğuna inanıyorum.</h2>
-      <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla bireysel olarak çalışıyorum.</p>
+      <p>İstanbul Kent Üniversitesi'nde psikoloji, Marmara Üniversitesi'nde endüstri ve örgüt psikolojisi yüksek lisansı yaptım; bilişsel davranışçı terapi uygulayıcı sertifikam var. 2023'ten beri danışanlarımla bireysel olarak çalışıyorum. BDT'yi temel alıyor, gerektiğinde psikodinamik yaklaşımdan da destek alarak bütüncül çalışıyorum.</p>
       <div class="cta"><a class="btn primary dark" href="#ozgecmis">Eğitim ve deneyimim</a><a class="btn ghost-dark" href="#yaklasim">Terapi yaklaşımım</a></div>
     </div>
-  </div>
-  <div class="h-strip" aria-label="Fotoğraflar">
-    <figure data-full="/img/hero.jpg" data-cap="Seminerler" tabindex="0" role="button"><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
-    <figure data-full="/img/tarim-atolyesi.jpg" data-cap="Atölyeler" tabindex="0" role="button"><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
-    <figure data-full="/img/capa.jpg" data-cap="Klinik staj · Çapa" tabindex="0" role="button"><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
-    <figure class="fit" data-full="/img/bdt-sertifika.jpg" data-cap="BDT sertifikası" tabindex="0" role="button"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
-    <figure data-full="/img/kulup-odul2.jpg" data-cap="Psikoloji kulübü" tabindex="0" role="button"><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
-    <figure data-full="/img/mezuniyet.jpg" data-cap="Mezuniyet" tabindex="0" role="button"><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
   </div>
 </section>
 
@@ -1341,7 +1349,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     <div class="sec-head"><div class="label">Sık sorulanlar</div><h2>Aklına takılabilecekler</h2></div>
     <div class="faq">
       <details><summary>Terapiye başlamak için durumumun çok ağır olması mı gerekiyor?</summary><p>Hayır. Birçok kişi “bu kadarı için gidilir mi?” diye düşünüp yıllarca bekliyor. Seni zorlayan, günlük hayatını etkileyen ya da bir süredir aklından çıkmayan bir şey varsa bu, konuşmak için yeterli bir sebep.</p></details>
-      <details><summary>İlk görüşmede ne olacak?</summary><p>İlk görüşme yaklaşık 50 dakika sürer ve bir değerlendirme görüşmesidir. Seni bugün buraya getiren şeyi, ne zamandır sürdüğünü, uykun, işin, ilişkilerin gibi hayatının hangi alanlarını etkilediğini ve görüşmelerden ne beklediğini konuşuruz. Hazır olmadığın hiçbir konuyu anlatmak zorunda değilsin. Görüşmenin sonunda sana neyin iyi gelebileceğine dair ilk izlenimimi paylaşır, hedefleri ve görüşme sıklığını birlikte belirleriz. Gizlilik ve randevu kurallarını da bu görüşmede netleştiririz.</p></details>
+      <details><summary>İlk görüşmede ne olacak?</summary><p>İlk görüşme yaklaşık 45 dakika sürer ve bir değerlendirme görüşmesidir. Seni bugün buraya getiren şeyi, ne zamandır sürdüğünü, uykun, işin, ilişkilerin gibi hayatının hangi alanlarını etkilediğini ve görüşmelerden ne beklediğini konuşuruz. Hazır olmadığın hiçbir konuyu anlatmak zorunda değilsin. Görüşmenin sonunda sana neyin iyi gelebileceğine dair ilk izlenimimi paylaşır, hedefleri ve görüşme sıklığını birlikte belirleriz. Gizlilik ve randevu kurallarını da bu görüşmede netleştiririz.</p></details>
       <details><summary>Online görüşme yüz yüze kadar işe yarar mı?</summary><p>Araştırmalar, bilişsel davranışçı terapinin online yürütüldüğünde de etkili olabildiğini gösteriyor. Sessiz ve rahat konuşabileceğin bir ortam, iyi bir internet bağlantısı yeterli. Yüz yüzeyi tercih edersen o da mümkün.</p></details>
       <details><summary>Konuştuklarımız gizli kalır mı?</summary><p>Evet. Görüşmelerde konuşulanlar meslek etiği gereği gizli tutulur. Yalnızca senin ya da bir başkasının hayatının ciddi risk altında olduğu durumlar ve yasal zorunluluklar bunun istisnasıdır; bunu ilk görüşmede de açıkça konuşuruz.</p></details>
       <details><summary>Kaç seans sürer?</summary><p>Seans sayısı kişiden kişiye değişir; yaşadığın zorluğa, ne zamandır sürdüğüne ve hedeflerine göre farklılık gösterir. Bilişsel davranışçı terapi hedef odaklı bir yaklaşım olduğu için belli aralıklarla nerede olduğumuza birlikte bakar, gerekirse planı güncelleriz. Görüşmeleri ne zaman bitireceğine sen karar verirsin.</p></details>
@@ -1380,87 +1388,30 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="label">Terapi yaklaşımım</div>
       <h1>Bilişsel Davranışçı Terapi ile nasıl çalışıyorum?</h1>
       <p class="m-lead">Bilişsel Davranışçı Terapi (BDT), yaşadığımız olaylardan çok, o olaylara yüklediğimiz anlamların duygularımızı ve davranışlarımızı etkilediği fikrine dayanır. Terapide bu anlamları birlikte fark eder, kanıtlarına bakar ve sana daha iyi hizmet eden düşünme ve davranma biçimleri üzerinde çalışırız.</p>
+      <div class="m-integ"><span>🧩</span><p><b>Bütüncül bir yaklaşım.</b> Temel çerçevem BDT olsa da yalnızca ona bağlı kalmıyorum. Gerektiğinde psikodinamik yaklaşımdan da destek alıyorum: bugünkü zorlukların geçmiş deneyimlerle, ilişki örüntüleriyle ve fark edilmemiş duygularla bağını birlikte anlamaya çalışıyorum. Her insanı kendi hikâyesiyle, bir bütün olarak ele alıyorum.</p></div>
     </div>
 
     <!--GAME-YAKLASIM-->
 
     <!-- düşünce kaydı: kısa, 3 soru -->
-    <div class="tr" id="tr">
-      <div class="tr-head">
-        <div>
-          <div class="label">Şimdi sen dene · 1 dakika</div>
-          <h3>Bir düşünceye arkadaş gözüyle bak</h3>
-          <p>Üç kısa soru. Sonunda seni yoran düşünceye nasıl daha şefkatli ve gerçekçi bakabileceğini gör.</p>
-        </div>
-        <div class="tr-tools">
-          <p class="tr-privacy">Yazdıkların hiçbir yere gönderilmez ve kaydedilmez.</p>
-        </div>
-      </div>
-
-      <div class="tr-crisis" id="trCrisis" hidden role="alert">
-        <b>Bunu yazmak kolay değil.</b> Şu an kendine zarar verme ya da yaşamına son verme düşüncelerin varsa lütfen bu çalışmayı bırak, hemen <b>112</b>'yi ara ya da güvendiğin biriyle konuş. Yalnız değilsin.
-      </div>
-
-      <ol class="tr-dots four" id="trDots" aria-label="Adımlar">
-        <li>Düşünce</li><li>Arkadaş gözü</li><li>Yeniden bak</li><li>Sonuç</li>
-      </ol>
-
-      <div class="tr-body">
-        <section class="tr-step" data-step="0">
-          <label for="trDusunce" class="tr-q">Şu sıralar seni yoran bir düşünce ne?</label>
-          <div class="tr-chips" id="trPicks" role="group" aria-label="Hazır düşünceler">
-            <button type="button" aria-pressed="false">Yeterince iyi değilim</button>
-            <button type="button" aria-pressed="false">Herkes beni yargılıyor</button>
-            <button type="button" aria-pressed="false">Her şey kötü gidecek</button>
-            <button type="button" aria-pressed="false">Kimse beni umursamıyor</button>
-          </div>
-          <textarea id="trDusunce" rows="2" placeholder="Birini seç ya da kendi cümleni yaz."></textarea>
-          <label for="trYog1" class="tr-q small">Bu düşünceye ne kadar inanıyorsun? <output id="trYog1Out">70</output></label>
-          <input type="range" id="trYog1" min="0" max="100" step="5" value="70">
-          <div class="tr-scale"><span>Hiç</span><span>Tamamen</span></div>
-        </section>
-
-        <section class="tr-step" data-step="1" hidden>
-          <p class="tr-quote" id="trEcho"></p>
-          <label for="trArkadas" class="tr-q">Çok sevdiğin bir arkadaşın bunu sana söylese, ona ne derdin?</label>
-          <textarea id="trArkadas" rows="3" placeholder="Ona söyleyeceğin cümleyi yaz."></textarea>
-          <button type="button" class="tr-ghost" id="trSuggest">Bir fikir ver</button>
-        </section>
-
-        <section class="tr-step" data-step="2" hidden>
-          <p class="tr-q">Şimdi aynı cümleyi kendine söyle.</p>
-          <p class="tr-quote new" id="trSelf"></p>
-          <label for="trYog2" class="tr-q small">Bunu okuyunca ilk düşünceye şimdi ne kadar inanıyorsun? <output id="trYog2Out">70</output></label>
-          <input type="range" id="trYog2" min="0" max="100" step="5" value="70">
-          <div class="tr-scale"><span>Hiç</span><span>Tamamen</span></div>
-        </section>
-
-        <section class="tr-step" data-step="3" hidden>
-          <div class="tr-result" id="trResult"></div>
-        </section>
-      </div>
-
-      <div class="tr-nav">
-        <button type="button" class="tr-ghost" id="trBack">Geri</button>
-        <p class="tr-msg" id="trMsg" aria-live="polite"></p>
-        <button type="button" class="tr-next" id="trNext">Devam</button>
-      </div>
+    <div class="tk" id="tk" data-tk>
+      <div class="game-head"><div class="label">Şimdi sen dene · 3 dakika</div><h2>Düşünce kaydı: bir düşünceyi birlikte inceleyelim</h2><p>BDT'de en sık kullandığımız araçlardan biri. Bir anı seç, o anki düşünceni yakala, kanıtlara bak ve daha dengeli bir düşünceye ulaş. Sonunda düşüncene ve duygana ne olduğunu gör.</p><p class="tk-priv">🔒 Yazdıkların hiçbir yere gönderilmez ve kaydedilmez.</p></div>
+      <div class="tk-crisis" id="tkCrisis" hidden role="alert"><b>Bunu yazmak kolay değil.</b> Şu an kendine zarar verme ya da yaşamına son verme düşüncelerin varsa lütfen bu çalışmayı bırak, hemen <b>112</b>'yi ara ya da güvendiğin biriyle konuş. Yalnız değilsin.</div>
+      <div class="tk-box" id="tkBox"></div>
     </div>
 
     <!--GAME-DEDEKTIF-->
 
-    <!-- süreç -->
-    <div class="m-block">
-      <div class="m-sub"><div class="label">Süreç</div><h3>Terapi adım adım nasıl ilerler?</h3></div>
-      <ol class="steps">
-        <li><span class="n">01</span><h4>Tanışma ve değerlendirme</h4><p>İlk görüşmelerde ne yaşadığını, ne zamandır sürdüğünü ve hayatının hangi alanlarını etkilediğini birlikte anlarız.</p></li>
-        <li><span class="n">02</span><h4>Vaka formülasyonu</h4><p>Sorunun nasıl başladığını ve bugün neyin sürdürdüğünü gösteren kişisel bir harita çıkarırız: otomatik düşünceler, ara inançlar ve temel inançlar.</p></li>
-        <li><span class="n">03</span><h4>Hedefler</h4><p>“Daha iyi hissetmek” yerine somut hedefler koyarız. Örneğin “toplantıda söz alabilmek” ya da “haftada üç gün dışarı çıkmak”.</p></li>
-        <li><span class="n">04</span><h4>Yapılandırılmış seanslar</h4><p>Her seansın bir gündemi vardır. Önceki haftayı değerlendirir, tek bir odak üzerinde çalışır ve seans arası çalışmayı birlikte belirleriz.</p></li>
-        <li><span class="n">05</span><h4>Seans arası çalışmalar</h4><p>Düşünce kayıtları ve küçük davranışsal deneylerle seansta öğrendiklerini gerçek hayatta denersin. Değişimin önemli bir kısmı burada olur.</p></li>
-        <li><span class="n">06</span><h4>Sonlandırma ve nüks önleme</h4><p>Öğrendiklerini pekiştirir, zorlanma işaretleri için bir plan yaparız. Amaç, zamanla kendi terapistin olabilmen.</p></li>
-      </ol>
-    </div>
+    </div></section>
+    <section class="pr" aria-label="Terapi adım adım nasıl ilerler?">
+      <div class="sx-head"><div class="label">Süreç · kaydır ve izle</div><h2>Terapi adım adım nasıl ilerler?</h2><p>Aşağı kaydırdıkça yol ilerler; her durakta o aşamada neler yaptığımızı anlatıyorum.</p></div>
+      <div class="sx-in"><div class="pr-stage" data-s="0" aria-hidden="true">
+        <svg class="pr-road" viewBox="0 0 400 600" preserveAspectRatio="none"><path class="pr-base" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/><path class="pr-done" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/></svg>
+        <div class="pr-m pr-m0"><span>01</span></div><div class="pr-m pr-m1"><span>02</span></div><div class="pr-m pr-m2"><span>03</span></div><div class="pr-m pr-m3"><span>04</span></div><div class="pr-m pr-m4"><span>05</span></div><div class="pr-m pr-m5"><span>06</span></div>
+        <div class="pr-big"><span class="pr-e">🤝</span><b class="pr-t">Tanışma ve değerlendirme</b><small class="pr-w">İlk görüşmeler</small></div>
+      </div><div class="sx-steps"><div class="sx-step pr-step" data-e="🤝" data-w="İlk görüşmeler"><div class="sx-card"><small>01 · İlk görüşmeler</small><h3>Tanışma ve değerlendirme</h3><p>İlk görüşmelerde ne yaşadığını, ne zamandır sürdüğünü ve hayatının hangi alanlarını etkilediğini birlikte anlarız. Hazır olmadığın hiçbir şeyi anlatmak zorunda değilsin.</p></div></div><div class="sx-step pr-step" data-e="🗺️" data-w="Başlangıç"><div class="sx-card"><small>02 · Başlangıç</small><h3>Kişisel harita</h3><p>Zorluğun nasıl başladığını ve bugün neyin sürdürdüğünü gösteren bir harita çıkarırız: tetikleyiciler, otomatik düşünceler, inançlar ve davranışlar. Gerektiğinde geçmiş deneyimlerin ve ilişki örüntülerinin izine de bakarız.</p></div></div><div class="sx-step pr-step" data-e="🎯" data-w="Başlangıç"><div class="sx-card"><small>03 · Başlangıç</small><h3>Somut hedefler</h3><p>“Daha iyi hissetmek” yerine ölçülebilir hedefler koyarız: “toplantıda söz alabilmek”, “haftada üç gün dışarı çıkmak” gibi. Hedefler senin önceliklerine göre belirlenir.</p></div></div><div class="sx-step pr-step" data-e="🗓️" data-w="Süreç boyunca"><div class="sx-card"><small>04 · Süreç boyunca</small><h3>Yapılandırılmış seanslar</h3><p>Her seansın bir gündemi vardır: geçen haftaya bakar, tek bir odakta derinleşir, öğrendiklerini pekiştiririz. Seans 45 dakika sürer.</p></div></div><div class="sx-step pr-step" data-e="📝" data-w="Süreç boyunca"><div class="sx-card"><small>05 · Süreç boyunca</small><h3>Seans arası çalışmalar</h3><p>Düşünce kayıtları ve küçük davranışsal deneylerle seansta konuştuklarını gerçek hayatta denersin. Değişimin önemli bir kısmı burada, senin hayatının içinde olur.</p></div></div><div class="sx-step pr-step" data-e="🌱" data-w="Son aşama"><div class="sx-card"><small>06 · Son aşama</small><h3>Sonlandırma ve nüks önleme</h3><p>Öğrendiklerini pekiştirir, zorlanma işaretleri için bir plan yaparız. Amaç, zamanla kendi terapistin olabilmen. Görüşmeleri ne zaman bitireceğine birlikte karar veririz.</p></div></div></div></div>
+    </section>
+    <section class="method method-2"><div class="wrap">
 
     <!-- teknikler -->
     <div class="m-block">
@@ -1524,42 +1475,17 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 </section>
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
-    <div class="sec-head"><div class="label">Hakkımda</div><h2>Eğitim ve deneyim</h2><p class="ed-lead">Psikoloji eğitimim, klinik ve kurumsal deneyimim, sertifikalarım.</p></div>
+    <div class="sec-head"><div class="label">Hakkımda</div><h2>Eğitim ve deneyim</h2></div>
 
-    <div class="cv">
-      <div class="cv-group">
+    <div class="ed-grid">
+      <div class="ed-col">
         <h3>Eğitim</h3>
-        <ul class="cv-list">
-          <li class="cv-item"><div class="when">2024–2025</div><div class="what"><div class="title">Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</div><div class="org">Marmara Üniversitesi</div><div class="desc">İş yaşamı, çalışan psikolojisi, ekipler ve kurumlar üzerine uzmanlaşma.</div></div></li>
-          <li class="cv-item has-img"><div class="when">2019–2023</div><div class="what"><div class="title">Psikoloji Lisansı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Psikoloji Kulübü Başkanı. Çapa Tıp Fakültesi'nde staj.</div></div><button type="button" class="cv-img zoomable" data-full="/img/mezuniyet.jpg" data-cap="Mezuniyet töreni"><img src="img/mezuniyet.jpg" alt="Mezuniyet töreni" loading="lazy"></button></li>
-        </ul>
+        <div class="ed-item"><span class="ed-ic">🎓</span><div><small>2024–2025</small><b>Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</b><span>Marmara Üniversitesi</span></div></div>
+        <div class="ed-item"><span class="ed-ic">🎓</span><div><small>2019–2023</small><b>Psikoloji Lisansı</b><span>İstanbul Kent Üniversitesi</span></div></div>
       </div>
-      <div class="cv-group">
-        <h3>Deneyim</h3>
-        <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">6 ay</div><div class="what"><div class="title">Kurumsal psikoloji danışmanlığı</div><div class="org">Köprüören · savunma sanayi</div><div class="desc">Bir savunma sanayi fabrikasında endüstri ve örgüt psikolojisi alanında danışmanlık.</div></div><button type="button" class="cv-img zoomable" data-full="/img/savunma.jpg" data-cap="Köprüören tesisi önünde"><img src="img/savunma.jpg" alt="Köprüören tesisi önünde" loading="lazy"></button></li>
-          <li class="cv-item has-img"><div class="when">Staj</div><div class="what"><div class="title">Psikoloji stajyeri</div><div class="org">İstanbul Üniversitesi Çapa Tıp Fakültesi</div><div class="desc">Klinik ortamda gözlem ve uygulama deneyimi.</div></div><button type="button" class="cv-img zoomable" data-full="/img/capa.jpg" data-cap="İstanbul Tıp Fakültesi önünde"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></button></li>
-          <li class="cv-item has-img"><div class="when">2023 – günümüz</div><div class="what"><div class="title">Psikolog</div><div class="org">Bilişsel davranışçı terapi temelli çalışma</div><div class="desc">Danışanlarla bireysel çalışma; @psikologfirkan hesabında bilimsel temelli psikoloji içerikleri.</div></div><button type="button" class="cv-img zoomable" data-full="/img/portre.jpg" data-cap="Psikolog Muhammed Furkan Tosun"><img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"></button></li>
-        </ul>
-      </div>
-      <div class="cv-group">
-        <h3>Girişimler</h3>
-        <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">Kurucu</div><div class="what"><div class="title">PSYCONNECT</div><div class="org">Online terapi ve grup terapisi platformu</div><div class="desc">Psikolojik destek arayan insanları psikologlarla online bireysel seans ve grup terapisi için buluşturan mobil uygulama.</div></div><button type="button" class="cv-img zoomable" data-full="/img/pc-home.jpg" data-cap="PSYCONNECT uygulaması"><img src="img/pc-home.jpg" alt="PSYCONNECT uygulaması" loading="lazy"></button></li>
-        </ul>
-      </div>
-      <div class="cv-group">
-        <h3>Sertifikalar</h3>
-        <ul class="cv-list">
-          <li class="cv-item"><div class="when">14 Ekim – 25 Kasım</div><div class="what"><div class="title">Bilişsel Davranışçı Terapi · Uygulayıcı Sertifikası</div><div class="org">İstanbul Psikoterapi Akademisi · Genç Psikologlar Dayanışma Platformu</div><div class="desc">Eğitmen: Klinik Psikolog Dr. Barkan Eskiili.</div><button type="button" class="doc-thumb" data-src="img/bdt-sertifika.jpg" data-cap="Bilişsel Davranışçı Terapi Uygulayıcı Sertifikası"><img src="img/bdt-sertifika.jpg" alt="Bilişsel Davranışçı Terapi uygulayıcı sertifikası" loading="lazy"><span>Sertifikayı görüntüle</span></button></div></li>
-        </ul>
-      </div>
-      <div class="cv-group">
-        <h3>Liderlik ve gönüllülük</h3>
-        <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">2022–2023</div><div class="what"><div class="title">Psikoloji Kulübü Başkanı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Etkinlik ve seminerler; III. Psikoloji Günleri “Sarmaşık” (20–21 Mayıs 2023).</div></div><button type="button" class="cv-img zoomable" data-full="/img/kulup-ekip.jpg" data-cap="Psikoloji kulübü ekibi"><img src="img/kulup-ekip.jpg" alt="Psikoloji kulübü ekibi" loading="lazy"></button></li>
-          <li class="cv-item has-img"><div class="when">Lisans dönemi</div><div class="what"><div class="title">Gönüllü psikososyal destek</div><div class="org">Sosyal girişim · köy okulları</div><div class="desc">Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuk ve gençlerle atölye ve psikososyal destek çalışmaları.</div></div><button type="button" class="cv-img zoomable" data-full="/img/sinif-grup.jpg" data-cap="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır"><img src="img/sinif-grup.jpg" alt="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır" loading="lazy"></button></li>
-        </ul>
+      <div class="ed-col">
+        <h3>Sertifika</h3>
+        <button type="button" class="ed-cert" data-full="/img/bdt-sertifika.jpg" data-cap="Bilişsel Davranışçı Terapi Uygulayıcı Sertifikası"><img src="img/bdt-sertifika.jpg" alt="Bilişsel Davranışçı Terapi uygulayıcı sertifikası" loading="lazy"><div><b>Bilişsel Davranışçı Terapi Uygulayıcı Sertifikası</b><span>İstanbul Psikoterapi Akademisi · Genç Psikologlar Dayanışma Platformu</span><em>Sertifikayı görüntüle ⤢</em></div></button>
       </div>
     </div>
   </div>
@@ -1605,6 +1531,11 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="label">Randevu</div>
       <h1>Randevu al</h1>
       <p>Takvimden sana uygun gün ve saati seç, bilgilerini gir. Randevun anında kaydedilir ve e-postana onay gelir.</p>
+    </div>
+    <div class="occ" id="occ" hidden aria-live="polite">
+      <div class="occ-head"><div><div class="label">Bu haftanın doluluk durumu</div><b class="occ-sum" id="occSum"></b></div><div class="occ-leg"><span class="f">Boş</span><span class="d">Dolu</span></div></div>
+      <div class="occ-grid" id="occGrid"></div>
+      <p class="occ-note">Takvimden canlı alınır; boş saatler alındıkça kapanır.</p>
     </div>
     <div class="gcal">
       <div class="gcal-frame">

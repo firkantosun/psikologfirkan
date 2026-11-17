@@ -1,0 +1,182 @@
+{
+ "evidence": [
+  {
+   "slug": "travma-sonrasi-stres",
+   "facts": [
+    {
+     "t": "İngiltere'nin ulusal sağlık kılavuzu NICE, travma sonrası stres bozukluğu tanısı alan yetişkinlere bireysel travma odaklı BDT önerir; belirli durumlarda EMDR de önerilen seçenekler arasındadır.",
+     "src": "NICE NG116, 2018",
+     "url": "https://www.nice.org.uk/guidance/ng116"
+    },
+    {
+     "t": "Amerikan Psikoloji Derneği'nin TSSB kılavuzu, BDT, bilişsel işleme terapisi, bilişsel terapi ve uzun süreli maruz bırakma terapisini güçlü düzeyde önerir.",
+     "src": "APA TSSB Klinik Uygulama Kılavuzu, 2017",
+     "url": "https://www.apa.org/monitor/2017/11/ptsd-guideline"
+    }
+   ],
+   "lead": "Yani travmanın izleri kalıcı olmak zorunda değil; doğru destekle toparlanmak mümkün."
+  },
+  {
+   "slug": "iliski-sorunlari",
+   "facts": [
+    {
+     "t": "58 çalışmayı ve 2.000'i aşkın çifti kapsayan bir meta-analizde çift terapisinin ilişki doyumu üzerinde büyük bir etkisi olduğu, kazanımların izlem dönemlerinde de genellikle korunduğu bulunmuştur.",
+     "src": "Roddy ve ark., J Consult Clin Psychol, 2020",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32551734/"
+    }
+   ],
+   "lead": "Yani zorlanan bir ilişki, birlikte emek verildiğinde yeniden güçlenebilir."
+  },
+  {
+   "slug": "kaygi-bozukluklari",
+   "facts": [
+    {
+     "t": "Dünya Sağlık Örgütü'ne göre kaygı bozuklukları için oldukça etkili tedaviler vardır ve psikolojik müdahaleler bu tedavilerin temel parçasıdır; en güçlü kanıt BDT temelli yaklaşımlardadır.",
+     "src": "DSÖ Kaygı Bozuklukları Bilgi Notu",
+     "url": "https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders"
+    },
+    {
+     "t": "NICE, yaygın anksiyete bozukluğunda yoğun psikolojik müdahale olarak BDT ya da uygulamalı gevşeme önerir; bu çalışma genellikle 12-15 haftalık seanstan oluşur.",
+     "src": "NICE CG113, 2011",
+     "url": "https://nice.org.uk/guidance/cg113/chapter/1-guidance"
+    }
+   ],
+   "lead": "Yani kaygı yönetilebilir bir sorun; doğru yöntemlerle hayatınızdaki ağırlığı azalabilir."
+  },
+  {
+   "slug": "panik-atak",
+   "facts": [
+    {
+     "t": "NICE, panik bozuklukta BDT kullanılmasını önerir; önerilen toplam süre genellikle 7-14 saattir ve çoğu kişide en fazla 4 ay içinde tamamlanır.",
+     "src": "NICE CG113, 2011",
+     "url": "https://nice.org.uk/guidance/cg113/chapter/1-guidance"
+    },
+    {
+     "t": "İskoçya ulusal sağlık sisteminin psikolojik terapiler kanıt özeti, panik bozuklukta BDT'yi en yüksek kanıt düzeyinde (A) değerlendirir.",
+     "src": "NHS Education for Scotland, Psychological Therapies Matrix",
+     "url": "https://matrix.nhs.scot/evidence-summaries/mental-health-difficulties-across-the-lifespan/panic-disorder"
+    }
+   ],
+   "lead": "Yani panik ataklar korkutucu olsa da öğrenilebilir becerilerle kontrol altına alınabilir."
+  },
+  {
+   "slug": "depresyon",
+   "facts": [
+    {
+     "t": "Dünya Sağlık Örgütü'ne göre hafif, orta ve ağır depresyon için etkili tedaviler vardır; psikolojik tedaviler depresyonda ilk başvurulan tedavilerdir ve BDT bunlar arasında yer alır.",
+     "src": "DSÖ Depresyon Bilgi Notu",
+     "url": "https://www.who.int/News-Room/Fact-Sheets/Detail/Depression"
+    },
+    {
+     "t": "NICE, hem daha hafif hem daha ağır depresyonda bireysel BDT'yi ilk basamak tedavi seçenekleri arasında sayar.",
+     "src": "NICE NG222, 2022",
+     "url": "https://www.nice.org.uk/guidance/NG222/chapter/recommendations"
+    }
+   ],
+   "lead": "Yani depresyon bir karakter zayıflığı değil, tedavi edilebilir bir durum; yeniden iyi hissetmek mümkün."
+  },
+  {
+   "slug": "stres-ve-tukenmislik",
+   "facts": [
+    {
+     "t": "36 deneysel çalışmayı inceleyen bir meta-analizde iş stresi yönetimi programlarının anlamlı etkisi bulunmuş; bilişsel-davranışçı programlar diğer yaklaşımlara göre tutarlı biçimde daha büyük etkiler göstermiştir.",
+     "src": "Richardson ve Rothstein, J Occup Health Psychol, 2008",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18211170/"
+    },
+    {
+     "t": "Öğretmenlerde tükenmişlik müdahalelerini inceleyen bir meta-analizde bilişsel-davranışçı müdahaleler, incelenen yaklaşımlar arasında en iyi etkiyi göstermiş ve duygusal tükenmeyi azaltmıştır.",
+     "src": "Li ve ark., Behavioral Sciences, 2023",
+     "url": "https://mdpi.com/2076-328X/13/10/803"
+    }
+   ],
+   "lead": "Yani tükenmişlik bir son değil, bir uyarı; yükü hafifletmeyi öğrenmek mümkün."
+  },
+  {
+   "slug": "ozguven-sorunlari",
+   "facts": [
+    {
+     "t": "Düşük benlik saygısına yönelik BDT müdahalelerini inceleyen bir meta-analiz, bu müdahalelerin benlik saygısını artırmada etkili olabileceğini göstermiştir; araştırma alanı henüz gelişmektedir.",
+     "src": "Kolubinski ve ark., Psychiatry Research, 2018",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30201116/"
+    }
+   ],
+   "lead": "Yani kendinize bakışınız sabit değil; adım adım daha şefkatli bir hale gelebilir."
+  },
+  {
+   "slug": "obsesif-kompulsif-bozukluk",
+   "facts": [
+    {
+     "t": "NICE, obsesif kompulsif bozukluğu olan yetişkinlere maruz bırakma ve tepki önleme (ERP) içeren BDT önerir; orta düzeyde etkilenmede BDT, ilaç tedavisiyle birlikte seçenekler arasındadır.",
+     "src": "NICE CG31, 2005",
+     "url": "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations"
+    }
+   ],
+   "lead": "Yani takıntılar sizi tanımlamaz; doğru yöntemle onlarla aranıza mesafe koymak mümkün."
+  },
+  {
+   "slug": "sosyal-kaygi",
+   "facts": [
+    {
+     "t": "NICE, sosyal anksiyete bozukluğu olan yetişkinlere ilk seçenek olarak, bu soruna özgü geliştirilmiş bireysel BDT önerir.",
+     "src": "NICE CG159, 2013",
+     "url": "https://www.nice.org.uk/guidance/CG159/chapter/Key-priorities-for-implementation"
+    }
+   ],
+   "lead": "Yani insanların arasında daha rahat hissetmek öğrenilebilir bir beceri."
+  },
+  {
+   "slug": "uyku-sorunlari",
+   "facts": [
+    {
+     "t": "Amerikan Uyku Tıbbı Akademisi (AASM), yetişkinlerde kronik uykusuzluk tedavisinde çok bileşenli uykusuzluk için BDT'yi (BDT-I) güçlü düzeyde önerir.",
+     "src": "AASM Klinik Uygulama Kılavuzu, 2021",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203"
+    }
+   ],
+   "lead": "Yani dinlendirici uyku yeniden öğrenilebilir; ilaçsız yöntemler de güçlü bir seçenek."
+  },
+  {
+   "slug": "is-ve-kariyer",
+   "facts": [
+    {
+     "t": "57 çalışmayı inceleyen bir meta-analizde kariyer müdahalelerinin en belirgin etkisi karar verme öz-yeterliğinde görülmüş; danışman desteği kritik unsurlardan biri olarak öne çıkmıştır.",
+     "src": "Whiston ve ark., 2017 (Wang ve ark. 2024 derlemesinde)",
+     "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1461503/full"
+    },
+    {
+     "t": "İş stresi yönetimi programlarını inceleyen bir meta-analizde bilişsel-davranışçı programların diğer müdahale türlerine göre tutarlı biçimde daha büyük etkiler ürettiği bulunmuştur.",
+     "src": "Richardson ve Rothstein, J Occup Health Psychol, 2008",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18211170/"
+    }
+   ],
+   "lead": "Yani iş hayatındaki tıkanıklıklar, doğru destekle yeni bir yön bulmanın başlangıcı olabilir."
+  },
+  {
+   "slug": "yas-ve-kayip",
+   "facts": [
+    {
+     "t": "22 çalışmayı ve 2.602 yas tutan yetişkini kapsayan bir meta-analiz, yasa odaklı BDT'lerin uzamış yas belirtilerini azaltmada etkili olduğunu ve etkinin izlemde de sürdüğünü göstermiştir.",
+     "src": "Komischke-Konnerup ve ark., J Consult Clin Psychol, 2024",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38573714/"
+    }
+   ],
+   "lead": "Yani kaybın acısı unutulmasa da taşınabilir hale gelebilir; bu yolda yalnız değilsiniz."
+  },
+  {
+   "slug": "ofke-kontrolu",
+   "facts": [
+    {
+     "t": "96 çalışmayı birleştiren bir meta-analiz, psikolojik tedavilerin öfke sorunlarında genel olarak etkili olduğunu ortaya koymuştur.",
+     "src": "Saini, J Am Acad Psychiatry Law, 2009",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20018996/"
+    },
+    {
+     "t": "Öfkeye yönelik BDT üzerine 42 çalışmayı inceleyen sistematik bir derleme, bulguların BDT'nin etkinliğini ve klinik uygulamada işe yaradığını desteklediğini bildirmiştir.",
+     "src": "Fernandez ve ark., Behav Cogn Psychother, 2018",
+     "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/21st-century-cognitive-behavioural-therapy-for-anger-a-systematic-review-of-research-design-methodology-and-outcome/B50841332C2F33B666BA18A53DF11892"
+    }
+   ],
+   "lead": "Yani öfke bastırılması gereken değil, yönetilmeyi öğrenilebilen bir duygu."
+  }
+ ]
+}

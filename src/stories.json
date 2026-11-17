@@ -2,53 +2,53 @@
  "stories": [
   {
    "slug": "bdt",
-   "title": "Bir düşünce, bir günü nasıl değiştirir?",
-   "emoji": "📱",
-   "emotion": "Kırgınlık",
-   "level": 70,
-   "low": 30,
-   "thought": "Önerim kimsenin umurunda değil, beni istemiyorlar",
-   "alt": "Herkes gün içinde meşgul olabilir; akşam bir kez daha yazarım.",
+   "title": "Tek bir hata, bütün bir güne nasıl yayılır?",
+   "emoji": "💼",
+   "emotion": "Çaresizlik",
+   "level": 85,
+   "low": 40,
+   "thought": "Yine beceremedim; her şey kötü gidecek.",
+   "alt": "Bir hata yaptım; bu her şeyin kötü gideceği anlamına gelmez.",
    "body": [
-    "Midede sıkışma",
-    "Omuzlarda gerginlik",
-    "Boğazda düğüm"
+    "Göğüste ağırlık",
+    "Derin yorgunluk",
+    "Odaklanamama"
    ],
    "beats": [
     {
      "k": "intro",
      "h": "BDT neye bakar?",
-     "p": "Bilişsel Davranışçı Terapi, olayın kendisinden çok onu nasıl yorumladığına bakar. Düşünce, duygu, beden ve davranış birbirine bağlıdır; biri değişince ötekiler de değişir."
+     "p": "Bilişsel Davranışçı Terapi, yaşadığımız olaydan çok ona yüklediğimiz anlama bakar. Düşünce, duygu, beden ve davranış birbirini besleyen bir döngü kurar; terapide bu döngüyü birlikte görünür kılarız."
     },
     {
      "k": "scene",
-     "h": "Görüldü ama cevap yok",
-     "p": "Arkadaş grubuna hafta sonu için bir buluşma önerdin. Mesajın görüldü, saatler geçti ama kimse yazmadı."
+     "h": "Bir pazartesi sabahı",
+     "p": "Aylardır kendini yorgun ve isteksiz hissediyorsun. Toplantıda hazırladığın raporda bir hata çıkıyor ve yöneticin bunu herkesin önünde düzeltiyor."
     },
     {
      "k": "thought",
-     "h": "Zihin boşluğu doldurur",
-     "p": "Sessizlik belirsizdir ve zihin onu hızla bir anlamla doldurur: 'Önerim kimsenin umurunda değil.' Bu düşünce kendiliğinden gelir, gerçek gibi hissettirir."
+     "h": "Zihin hemen bir hüküm verir",
+     "p": "“Yine beceremedim; her şey kötü gidecek.” Tek bir hata, bütün geleceğe dair bir kehanete dönüşür. BDT'de buna felaketleştirme ve aşırı genelleme diyoruz."
     },
     {
      "k": "feel",
      "h": "Duygu ve beden eşlik eder",
-     "p": "Düşünceyle birlikte kırgınlık yükselir. Midende bir sıkışma, omuzlarında gerginlik belirir; beden, düşünceyi doğru kabul etmiş gibi tepki verir."
+     "p": "Çaresizlik ve üzüntü çöker; göğsünde bir ağırlık, bedeninde derin bir yorgunluk hissedersin. Odaklanmak zorlaşır, her iş gözünde büyür."
     },
     {
      "k": "act",
      "h": "Geri çekilirsin",
-     "p": "Mesajı sileyim mi diye düşünür, sonra gruba bir daha yazmamaya karar verirsin. Böylece reddedilme ihtimalinden uzaklaşır, kısa bir an rahatlarsın."
+     "p": "Öğle yemeğine çıkmaz, akşamki planını iptal eder ve erkenden yatağa girersin. O an dinlenmek gibi gelir."
     },
     {
      "k": "loop",
-     "h": "Döngü kendini besler",
-     "p": "Sen yazmadıkça grupla temasın azalır, davetler seyrekleşir. Bu da ilk düşünceyi doğruluyormuş gibi görünür ve bir sonraki sessizlikte kırgınlık daha hızlı gelir."
+     "h": "Döngü kendini doğrular",
+     "p": "Geri çekildikçe keyif aldığın şeyler azalır, işler birikir. Ertesi sabah “Gerçekten de her şey kötü gidiyor” düşüncesi daha da inandırıcı görünür."
     },
     {
      "k": "break",
-     "h": "Döngüyü gevşetmek",
-     "p": "BDT'de önce düşünceyi fark eder, ardından kanıtlarına bakar ve daha dengeli bir yorumu küçük bir davranışla sınarız. Görüşmelerde kendi döngülerini bu şekilde birlikte çalışıyoruz."
+     "h": "BDT ile döngüyü gevşetmek",
+     "p": "Önce düşünceyi yakalar, lehine ve aleyhine kanıtlara bakarız; sonra küçük, yapılabilir adımlarla davranışı değiştiririz. Görüşmelerde bunu senin hızında, birlikte çalışırız."
     }
    ]
   },

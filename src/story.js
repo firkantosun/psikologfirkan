@@ -81,6 +81,34 @@
     window.addEventListener('resize', tick); tick();
   });
 
+  /* süreç yolu */
+  document.querySelectorAll('.pr').forEach(function (pr) {
+    var stage = pr.querySelector('.pr-stage'), steps = pr.querySelectorAll('.pr-step'), done = pr.querySelector('.pr-done'), L = done.getTotalLength(), cur = -1;
+    var e = pr.querySelector('.pr-e'), tt = pr.querySelector('.pr-t'), w = pr.querySelector('.pr-w'), big = pr.querySelector('.pr-big');
+    done.style.strokeDasharray = L; done.style.strokeDashoffset = L;
+    var road = pr.querySelector('.pr-road'), ms = pr.querySelectorAll('.pr-m');
+    function place() {
+      var sr = stage.getBoundingClientRect(), rr = road.getBoundingClientRect();
+      Array.prototype.forEach.call(ms, function (m, i) { var pt = done.getPointAtLength(L * i / (ms.length - 1)); m.style.left = (rr.left - sr.left + pt.x / 400 * rr.width) + 'px'; m.style.top = (rr.top - sr.top + pt.y / 600 * rr.height) + 'px'; });
+    }
+    place(); window.addEventListener('resize', place);
+    function tick() {
+      var vh = window.innerHeight, mid = vh * (window.innerWidth < 861 ? .78 : .55), s = 0, f = 0;
+      for (var i = 0; i < steps.length; i++) { var r = steps[i].getBoundingClientRect(); if (r.top < mid) { s = i; f = Math.min(1, (mid - r.top) / Math.max(1, r.height)); } }
+      var prog = Math.min(1, (s + Math.min(1, f)) / steps.length);
+      done.style.strokeDashoffset = (L * (1 - prog)).toFixed(1);
+      if (s !== cur) {
+        cur = s; stage.setAttribute('data-s', s);
+        Array.prototype.forEach.call(steps, function (x, i) { x.classList.toggle('on', i === s); });
+        pr.querySelectorAll('.pr-m').forEach(function (m, i) { m.classList.toggle('done', i < s); m.classList.toggle('now', i === s); });
+        e.textContent = steps[s].getAttribute('data-e'); tt.textContent = steps[s].querySelector('h3').textContent; w.textContent = steps[s].getAttribute('data-w');
+        big.classList.remove('pop'); void big.offsetWidth; big.classList.add('pop');
+      }
+    }
+    var raf = 0; window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; tick(); }); }, { passive: true });
+    window.addEventListener('resize', tick); tick();
+  });
+
   /* fotoğraf hikâyesi */
   document.querySelectorAll('.ps').forEach(function (ps) {
     var imgs = ps.querySelectorAll('.ps-stage img'), steps = ps.querySelectorAll('.ps-step'), num = ps.querySelector('.ps-count b'), bar = ps.querySelector('.ps-bar i'), cur = -1;
@@ -93,6 +121,44 @@
     var raf = 0; window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; tick(); }); }, { passive: true });
     window.addEventListener('resize', tick); tick();
   });
+
+  /* randevu: canlı doluluk (Cal.com) */
+  var occ = document.getElementById('occ');
+  if (occ && window.fetch) {
+    var DAYS = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
+    var now = new Date(), start = new Date(now.getFullYear(), now.getMonth(), now.getDate()), end = new Date(start.getTime() + 7 * 864e5);
+    function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+    fetch('https://api.cal.com/v2/slots?eventTypeSlug=randevu&username=muhammed-furkan-tosun-9pauv1&timeZone=Europe/Istanbul&start=' + ymd(start) + '&end=' + ymd(end), { headers: { 'cal-api-version': '2024-09-04' } })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) {
+        var data = (j && j.data) || {}, free = {}, step = 45;
+        Object.keys(data).forEach(function (d) {
+          var arr = data[d].map(function (s) { var x = typeof s === 'string' ? s : s.start; return x.slice(11, 16); });
+          free[d] = arr;
+          for (var i = 1; i < arr.length; i++) { var a = arr[i - 1].split(':'), b = arr[i].split(':'), df = (b[0] * 60 + +b[1]) - (a[0] * 60 + +a[1]); if (df > 0 && df < step) step = df; }
+        });
+        var grid = document.getElementById('occGrid'), tot = 0, busy = 0;
+        for (var k = 0; k < 7; k++) {
+          var day = new Date(start.getTime() + k * 864e5), wd = day.getDay();
+          if (wd === 6) continue;
+          var o = wd === 0 ? [600, 960] : [1020, 1260], key = ymd(day), col = document.createElement('div'); col.className = 'occ-day';
+          var h = document.createElement('b'); h.textContent = (k === 0 ? 'Bugün' : DAYS[wd]) + ' ' + day.getDate(); col.appendChild(h);
+          for (var m = o[0]; m + 45 <= o[1]; m += step) {
+            var hh = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+            var past = k === 0 && (now.getHours() * 60 + now.getMinutes()) > m;
+            var isFree = (free[key] || []).indexOf(hh) >= 0, s = document.createElement('span');
+            s.textContent = hh;
+            if (past) { s.className = 'p'; } else { tot++; if (isFree) s.className = 'f'; else { s.className = 'd'; busy++; } }
+            col.appendChild(s);
+          }
+          grid.appendChild(col);
+        }
+        if (!tot) return;
+        var left = tot - busy;
+        document.getElementById('occSum').textContent = left <= 0 ? 'Bu hafta boş saat kalmadı; gelecek haftaya bakabilirsin.' : 'Bu hafta ' + tot + ' saatin ' + busy + ' tanesi dolu, ' + left + ' boş saat kaldı.';
+        occ.hidden = false;
+      }).catch(function () {});
+  }
 
   /* ana sayfa: dönen kelime */
   var rw = document.querySelector('.h-rot');

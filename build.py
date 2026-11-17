@@ -254,7 +254,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
-      document.querySelectorAll('.game, .sx, .ps, .jr').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
+      document.querySelectorAll('.game, .sx, .ps, .jr, .pr, .tk').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -276,7 +276,7 @@ def build_js(js):
 """
     return ("(function () {\n" + prelude + common +
             "  if (PAGE === 'hikaye') {\n" + home + home_extra + "  }\n" +
-            "  if (PAGE === 'yaklasim') {\n" + tr + "  }\n" +
+
             "  if (PAGE === 'randevu') {\n" + randevu + "  }\n" +
             "  if (PAGE === 'home') {\n" + anlat + "  }\n" +
             copy + "})();\n")
@@ -365,9 +365,9 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     if name not in ("randevu", "hikaye"):
         out += '<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n'
     out += '<script src="/assets/site.js" defer></script>\n'
-    if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out:
+    if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out or 'data-tk' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
-    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out or 'class="jr"' in out:
+    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out or 'class="jr"' in out or 'id="occ"' in out or 'class="pr"' in out:
         out += '<script src="/assets/story.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out
@@ -580,6 +580,17 @@ def game_html(kind, data, label, title, desc):
 
 
 STORIES = {}
+EVID = {}
+
+
+def evidence_html(a):
+    e = EVID.get(a["slug"])
+    if not e:
+        return ""
+    facts = "".join(f'<li><span>{esc(f["t"])}</span><a href="{esc(f["url"])}" target="_blank" rel="noopener">{esc(f["src"])} ↗</a></li>' for f in e["facts"])
+    return (f'<section class="ev"><div class="wrap"><div class="ev-box"><div class="ev-ic">📊</div><div class="ev-main"><div class="label">Araştırmalar ne diyor?</div>'
+            f'<ul>{facts}</ul><p class="ev-lead">{esc(e["lead"])}</p></div>'
+            f'<a class="btn primary dark ev-cta" href="/randevu/">Destek almak için randevu al</a></div></div></section>')
 FIG = ('<svg viewBox="0 0 150 200" aria-hidden="true"><circle cx="75" cy="44" r="27" fill="#f1dcc4"/>'
        '<path d="M75 20c-16 0-26 10-26 22 6-8 16-10 26-10s20 2 26 10c0-12-10-22-26-22z" fill="#2a2421"/>'
        '<path d="M14 200c0-62 24-104 61-104s61 42 61 104z" fill="#e9efe9"/>'
@@ -662,6 +673,7 @@ def area_page(a, posts):
     <div class="cta"><a class="btn primary" href="/randevu/">Randevu al</a><a class="btn ghost" href="tel:{PHONE}">Ara: {PHONE_TXT}</a></div>
   </div>
 </section>
+{evidence_html(a)}
 {play}
 <section class="ca-wrap">
   <div class="wrap lp-grid">
@@ -714,6 +726,9 @@ def main():
     gp = os.path.join(SRC, "games.json")
     if os.path.exists(gp):
         GAMES.update({g["slug"]: g for g in json.load(open(gp, encoding="utf-8"))["games"]})
+    ep = os.path.join(SRC, "evidence.json")
+    if os.path.exists(ep):
+        EVID.update({e["slug"]: e for e in json.load(open(ep, encoding="utf-8"))["evidence"]})
     sp = os.path.join(SRC, "stories.json")
     if os.path.exists(sp):
         STORIES.update({s["slug"]: s for s in json.load(open(sp, encoding="utf-8"))["stories"]})
