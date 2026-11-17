@@ -254,7 +254,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
-      document.querySelectorAll('.game, .sx, .ps').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
+      document.querySelectorAll('.game, .sx, .ps, .jr').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -367,7 +367,7 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     out += '<script src="/assets/site.js" defer></script>\n'
     if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
-    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out:
+    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out or 'class="jr"' in out:
         out += '<script src="/assets/story.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out
