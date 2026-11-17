@@ -26,7 +26,7 @@ MAP_Q = "Kadıköy, İstanbul"
 INSTAGRAM = "https://www.instagram.com/psikologfirkan/"
 GTAG_ID = "GTM-PGC6ZRJ6"  # Google Ads hesabının (475-165-0811) Google etiketi
 GADS_BOOKING = "AW-18580083186/3u30CNa-hrodEPKj1ptF"  # "Randevu rezervasyonu" dönüşümü
-META_PIXEL = ""  # Meta Pixel kimliği; boşken Pixel kodu eklenmez
+META_PIXEL = "1014750304256505"  # Meta Pixel kimliği; boşken Pixel kodu eklenmez
 BOOKING_VALUE = 2000
 
 
