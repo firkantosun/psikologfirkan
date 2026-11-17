@@ -125,6 +125,17 @@
   /* randevu: canlı doluluk (Cal.com) */
   var occ = document.getElementById('occ');
   if (occ && window.fetch) {
+    var nsI = 0;
+    function pickSlot(day, slot, el) {
+      document.querySelectorAll('.occ-day .sel').forEach(function (x) { x.classList.remove('sel'); }); el.classList.add('sel');
+      var box = document.getElementById('calInline');
+      if (box && window.Cal) {
+        box.innerHTML = ''; var ns = 'r' + (++nsI);
+        Cal('init', ns, { origin: 'https://app.cal.com' });
+        Cal.ns[ns]('inline', { elementOrSelector: '#calInline', config: { layout: 'month_view', theme: 'light' }, calLink: 'muhammed-furkan-tosun-9pauv1/randevu?date=' + day + '&slot=' + encodeURIComponent(slot) });
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else location.href = 'https://cal.com/muhammed-furkan-tosun-9pauv1/randevu?date=' + day + '&slot=' + encodeURIComponent(slot);
+    }
     var DAYS = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
     var now = new Date(), start = new Date(now.getFullYear(), now.getMonth(), now.getDate()), end = new Date(start.getTime() + 7 * 864e5);
     function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -146,7 +157,7 @@
             var hh = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
             var past = k === 0 && (now.getHours() * 60 + now.getMinutes()) > m;
             var isFree = (free[key] || []).indexOf(hh) >= 0, s;
-            if (!past && isFree) { s = document.createElement('a'); s.href = 'https://cal.com/muhammed-furkan-tosun-9pauv1/randevu?date=' + key + '&slot=' + encodeURIComponent(new Date(iso[key][hh]).toISOString()); s.target = '_blank'; s.rel = 'noopener'; s.title = hh + ' için randevu al'; }
+            if (!past && isFree) { s = document.createElement('a'); s.href = '#calInline'; s.title = hh + ' için randevu al'; (function (k2, sl) { s.addEventListener('click', function (e) { e.preventDefault(); pickSlot(k2, sl, this); }); })(key, new Date(iso[key][hh]).toISOString()); }
             else s = document.createElement('span');
             s.textContent = hh;
             if (past) { s.className = 'p'; } else { tot++; if (isFree) s.className = 'f'; else { s.className = 'd'; s.title = 'Dolu'; busy++; } }
@@ -205,6 +216,42 @@
     }
     step1();
   }
+
+  /* çalışma alanı: 1 dakikalık egzersiz */
+  document.querySelectorAll('.ex1-box').forEach(function (box) {
+    var k = box.getAttribute('data-k'), stage = box.querySelector('.ex1-stage'), start = box.querySelector('.ex1-start'), msg = box.querySelector('.ex1-msg');
+    function mk(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+    function done(txt) { msg.textContent = txt; start.textContent = 'Tekrar dene'; start.hidden = false; box.classList.add('fin'); }
+    function run() {
+      start.hidden = true; box.classList.remove('fin'); msg.textContent = ''; stage.innerHTML = '';
+      if (k === 'breath') {
+        var c = mk('div', 'ex1-breath'), lab = mk('b', null, 'Nefes al'), cnt = mk('small', null, ''); c.appendChild(lab); c.appendChild(cnt); stage.appendChild(c);
+        var n = 0, cyc = 6; c.classList.add('in');
+        (function loop() { if (n >= cyc) { c.className = 'ex1-breath'; lab.textContent = '🌿'; cnt.textContent = ''; done('Bir dakika boyunca nefesini yavaşlattın. Bedenin alarmının biraz azaldığını fark ettin mi?'); return; }
+          lab.textContent = 'Nefes al'; cnt.textContent = (n + 1) + ' / ' + cyc; c.className = 'ex1-breath in';
+          setTimeout(function () { lab.textContent = 'Nefes ver'; c.className = 'ex1-breath out'; setTimeout(function () { n++; loop(); }, 6000); }, 4000); })();
+      }
+      if (k === 'ground') {
+        var S = [['5', 'şey gör', '👀'], ['4', 'şeye dokun', '✋'], ['3', 'ses duy', '👂'], ['2', 'koku fark et', '👃'], ['1', 'tat fark et', '👅']], i = 0;
+        var card = mk('div', 'ex1-card'); stage.appendChild(card);
+        function show() { card.innerHTML = ''; if (i >= S.length) { card.appendChild(mk('span', 'ex1-big', '🌱')); done('Zihnin şimdiye, bu odaya döndü. Zor anılar geldiğinde bu egzersizi her yerde yapabilirsin.'); return; }
+          card.appendChild(mk('span', 'ex1-big', S[i][2])); var h = mk('p', 'ex1-q'); h.appendChild(mk('b', null, S[i][0])); h.appendChild(document.createTextNode(' ' + S[i][1])); card.appendChild(h);
+          var dots = mk('div', 'ex1-dots'); for (var j = 0; j < +S[i][0]; j++) { var d = mk('button', 'ex1-dot'); d.type = 'button'; d.setAttribute('aria-label', 'işaretle'); d.addEventListener('click', function () { this.classList.add('on'); if (dots.querySelectorAll('.on').length === dots.children.length) { i++; setTimeout(show, 400); } }); dots.appendChild(d); } card.appendChild(dots);
+          card.appendChild(mk('small', null, 'Her birini bulunca bir noktaya dokun')); card.classList.remove('pop'); void card.offsetWidth; card.classList.add('pop'); }
+        show();
+      }
+      if (k === 'cards') {
+        var C = JSON.parse(box.getAttribute('data-c')), q = 0; var cd = mk('div', 'ex1-card'); stage.appendChild(cd);
+        function nx() { cd.innerHTML = ''; if (q >= C.length) { cd.appendChild(mk('span', 'ex1-big', '🌱')); done(box.getAttribute('data-end')); return; }
+          cd.appendChild(mk('small', null, (q + 1) + ' / ' + C.length)); cd.appendChild(mk('p', 'ex1-hot', '“' + C[q][0] + '”'));
+          var flip = mk('button', 'btn primary dark', 'Daha dengeli hâlini gör'); flip.type = 'button';
+          flip.addEventListener('click', function () { flip.remove(); cd.appendChild(mk('p', 'ex1-cool', '“' + C[q][1] + '”')); var go = mk('button', 'btn ghost-dark', q < C.length - 1 ? 'Sonraki →' : 'Bitir'); go.type = 'button'; go.addEventListener('click', function () { q++; nx(); }); cd.appendChild(go); });
+          cd.appendChild(flip); cd.classList.remove('pop'); void cd.offsetWidth; cd.classList.add('pop'); }
+        nx();
+      }
+    }
+    start.addEventListener('click', run);
+  });
 
   /* ana sayfa: dönen kelime */
   var rw = document.querySelector('.h-rot');

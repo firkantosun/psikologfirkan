@@ -22,163 +22,213 @@
    "slug": "iliski-sorunlari",
    "facts": [
     {
-     "t": "58 çalışmayı ve 2.000'i aşkın çifti kapsayan bir meta-analizde çift terapisinin ilişki doyumu üzerinde büyük bir etkisi olduğu, kazanımların izlem dönemlerinde de genellikle korunduğu bulunmuştur.",
-     "src": "Roddy ve ark., J Consult Clin Psychol, 2020",
-     "url": "https://pubmed.ncbi.nlm.nih.gov/32551734/"
+     "t": "İlişkide sık tartışmak, uzaklaşmak ya da aynı kavgayı tekrar tekrar yaşamak çok yaygındır. Bu, senin ya da ilişkinin başarısız olduğu anlamına gelmez; çoğu ilişki zaman zaman zorlanır."
+    },
+    {
+     "t": "Tartışmalar uykunu, işini ya da genel ruh hâlini etkilemeye başladıysa, ya da kendini hep aynı döngünün içinde buluyorsan destek almanın zamanı gelmiş olabilir."
+    },
+    {
+     "t": "Bireysel görüşmelerde ilişkilerinde tekrar eden örüntüleri fark etmek, ihtiyaçlarını daha net ifade etmek ve sınırlarını korumak üzerine birlikte çalışabiliriz."
     }
    ],
-   "lead": "Yani zorlanan bir ilişki, birlikte emek verildiğinde yeniden güçlenebilir."
+   "lead": "Yani ilişkilerindeki döngüleri fark etmek, onları değiştirmenin ilk adımı olabilir.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "kaygi-bozukluklari",
    "facts": [
     {
-     "t": "Dünya Sağlık Örgütü'ne göre kaygı bozuklukları için oldukça etkili tedaviler vardır ve psikolojik müdahaleler bu tedavilerin temel parçasıdır; en güçlü kanıt BDT temelli yaklaşımlardadır.",
-     "src": "DSÖ Kaygı Bozuklukları Bilgi Notu",
-     "url": "https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders"
+     "t": "Endişelenmek, içinin rahat etmemesi, olmayacak şeyleri düşünüp durmak çok yaygındır. Kaygı aslında seni korumaya çalışır; bazen sadece fazla çalışır. Bu zayıflık değildir."
     },
     {
-     "t": "NICE, yaygın anksiyete bozukluğunda yoğun psikolojik müdahale olarak BDT ya da uygulamalı gevşeme önerir; bu çalışma genellikle 12-15 haftalık seanstan oluşur.",
-     "src": "NICE CG113, 2011",
-     "url": "https://nice.org.uk/guidance/cg113/chapter/1-guidance"
+     "t": "Kaygı gününün büyük kısmını kaplıyor, uykunu bölüyor, işine odaklanmanı zorlaştırıyor ya da bazı yerlerden, insanlardan kaçmana yol açıyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Kaygı için etkili psikolojik yöntemler var; bilişsel davranışçı terapi bu konuda dünyada en çok önerilen yöntemler arasında. Kaygıyla baş etmenin yollarını adım adım birlikte öğrenebiliriz.",
+     "src": "Kaynak: DSÖ ve NICE kılavuzu",
+     "url": "https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders"
     }
    ],
-   "lead": "Yani kaygı yönetilebilir bir sorun; doğru yöntemlerle hayatınızdaki ağırlığı azalabilir."
+   "lead": "Yani kaygı hayatının direksiyonuna geçmek zorunda değil; onunla baş etmeyi öğrenebilirsin.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "panik-atak",
    "facts": [
     {
-     "t": "NICE, panik bozuklukta BDT kullanılmasını önerir; önerilen toplam süre genellikle 7-14 saattir ve çoğu kişide en fazla 4 ay içinde tamamlanır.",
-     "src": "NICE CG113, 2011",
-     "url": "https://nice.org.uk/guidance/cg113/chapter/1-guidance"
+     "t": "Aniden gelen çarpıntı, nefes darlığı, kontrolü kaybedecekmiş gibi hissetmek çok korkutucudur ama sandığından yaygındır. Panik atak, bedenin alarm sisteminin yanlış zamanda çalmasıdır; zayıflık değildir."
     },
     {
-     "t": "İskoçya ulusal sağlık sisteminin psikolojik terapiler kanıt özeti, panik bozuklukta BDT'yi en yüksek kanıt düzeyinde (A) değerlendirir.",
-     "src": "NHS Education for Scotland, Psychological Therapies Matrix",
-     "url": "https://matrix.nhs.scot/evidence-summaries/mental-health-difficulties-across-the-lifespan/panic-disorder"
+     "t": "Ataklar tekrarlıyor, \"ya yine olursa\" korkusu günlerini dolduruyor ya da bazı yerlere gitmekten, yalnız kalmaktan kaçınmaya başladıysan destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Bilişsel davranışçı terapi, panik atak için dünyada en çok önerilen yöntemler arasında. Bedenindeki alarmı anlamayı ve ondan korkmamayı adım adım birlikte öğrenebiliriz.",
+     "src": "Kaynak: NICE kılavuzu",
+     "url": "https://nice.org.uk/guidance/cg113/chapter/1-guidance"
     }
    ],
-   "lead": "Yani panik ataklar korkutucu olsa da öğrenilebilir becerilerle kontrol altına alınabilir."
+   "lead": "Yani panik ataklar korkutucu olsa da onlarla baş etmeyi öğrenmek mümkün.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "depresyon",
    "facts": [
     {
-     "t": "Dünya Sağlık Örgütü'ne göre hafif, orta ve ağır depresyon için etkili tedaviler vardır; psikolojik tedaviler depresyonda ilk başvurulan tedavilerdir ve BDT bunlar arasında yer alır.",
-     "src": "DSÖ Depresyon Bilgi Notu",
-     "url": "https://www.who.int/News-Room/Fact-Sheets/Detail/Depression"
+     "t": "Uzun süren isteksizlik, hiçbir şeyden keyif alamamak, yorgunluk ve \"yetersizim\" düşünceleri çok yaygındır. Depresyon bir karakter zayıflığı değil, birçok insanın yaşadığı bir durumdur."
     },
     {
-     "t": "NICE, hem daha hafif hem daha ağır depresyonda bireysel BDT'yi ilk basamak tedavi seçenekleri arasında sayar.",
-     "src": "NICE NG222, 2022",
+     "t": "Bu hâl haftalardır sürüyor, sabah kalkmak, işe gitmek ya da sevdiklerinle vakit geçirmek zorlaşıyorsa destek almanın zamanı gelmiştir. Kendine zarar verme düşüncen varsa hemen yardım iste."
+    },
+    {
+     "t": "Depresyonda konuşma terapileri ilk başvurulan yollar arasında; bilişsel davranışçı terapi de bunlardan biri. Küçük adımlarla yeniden harekete geçmeyi birlikte planlayabiliriz.",
+     "src": "Kaynak: DSÖ ve NICE kılavuzu",
      "url": "https://www.nice.org.uk/guidance/NG222/chapter/recommendations"
     }
    ],
-   "lead": "Yani depresyon bir karakter zayıflığı değil, tedavi edilebilir bir durum; yeniden iyi hissetmek mümkün."
+   "lead": "Yani bu karanlık kalıcı olmak zorunda değil; adım adım iyileşmek mümkün.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "stres-ve-tukenmislik",
    "facts": [
     {
-     "t": "36 deneysel çalışmayı inceleyen bir meta-analizde iş stresi yönetimi programlarının anlamlı etkisi bulunmuş; bilişsel-davranışçı programlar diğer yaklaşımlara göre tutarlı biçimde daha büyük etkiler göstermiştir.",
-     "src": "Richardson ve Rothstein, J Occup Health Psychol, 2008",
-     "url": "https://pubmed.ncbi.nlm.nih.gov/18211170/"
+     "t": "Sürekli yorgun hissetmek, işe karşı soğumak, eskiden kolayca yaptıklarını zorlukla yapmak çok yaygındır. Tükenmişlik tembellik ya da zayıflık değil, uzun süre fazla yük taşımanın sonucudur."
     },
     {
-     "t": "Öğretmenlerde tükenmişlik müdahalelerini inceleyen bir meta-analizde bilişsel-davranışçı müdahaleler, incelenen yaklaşımlar arasında en iyi etkiyi göstermiş ve duygusal tükenmeyi azaltmıştır.",
-     "src": "Li ve ark., Behavioral Sciences, 2023",
-     "url": "https://mdpi.com/2076-328X/13/10/803"
+     "t": "Dinlensen de toparlanamıyorsan; uykun, sağlığın ya da sevdiklerinle ilişkin etkilenmeye başladıysa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Araştırmalar, stres ve tükenmişlikte bilişsel davranışçı yaklaşımların öne çıkan yöntemler arasında olduğunu gösteriyor. Yükünü fark etmeyi ve hafifletmeyi birlikte çalışabiliriz.",
+     "src": "Kaynak: Richardson ve Rothstein meta-analizi",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18211170/"
     }
    ],
-   "lead": "Yani tükenmişlik bir son değil, bir uyarı; yükü hafifletmeyi öğrenmek mümkün."
+   "lead": "Yani tükenmişlik bir son değil, bir uyarı; yükü hafifletmeyi öğrenmek mümkün.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "ozguven-sorunlari",
    "facts": [
     {
-     "t": "Düşük benlik saygısına yönelik BDT müdahalelerini inceleyen bir meta-analiz, bu müdahalelerin benlik saygısını artırmada etkili olabileceğini göstermiştir; araştırma alanı henüz gelişmektedir.",
-     "src": "Kolubinski ve ark., Psychiatry Research, 2018",
+     "t": "Kendini yetersiz görmek, sürekli başkalarıyla kıyaslamak, iç sesinin hep eleştirmesi çok yaygındır. Bu bir kusur değil; çoğu zaman geçmiş deneyimlerden öğrenilmiş bir bakış açısıdır."
+    },
+    {
+     "t": "Kendine bakışın kararlarını, işini ya da ilişkilerini kısıtlıyor; fırsatlardan kaçmana ya da hep geri planda kalmana yol açıyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Araştırmalar, bilişsel davranışçı yaklaşımların kendine bakışı güçlendirmede faydalı olabileceğini gösteriyor. İç sesinle daha şefkatli bir ilişki kurmayı birlikte çalışabiliriz.",
+     "src": "Kaynak: Kolubinski ve ark. meta-analizi",
      "url": "https://pubmed.ncbi.nlm.nih.gov/30201116/"
     }
    ],
-   "lead": "Yani kendinize bakışınız sabit değil; adım adım daha şefkatli bir hale gelebilir."
+   "lead": "Yani kendine bakışın sabit değil; adım adım daha şefkatli bir hâl alabilir.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "obsesif-kompulsif-bozukluk",
    "facts": [
     {
-     "t": "NICE, obsesif kompulsif bozukluğu olan yetişkinlere maruz bırakma ve tepki önleme (ERP) içeren BDT önerir; orta düzeyde etkilenmede BDT, ilaç tedavisiyle birlikte seçenekler arasındadır.",
-     "src": "NICE CG31, 2005",
+     "t": "İstemediğin düşüncelerin aklına takılması, içini rahatlatmak için kontrol etmek ya da bazı şeyleri tekrar tekrar yapmak sandığından yaygındır. Bu düşünceler kim olduğunu göstermez."
+    },
+    {
+     "t": "Takıntılar ve tekrarlar gününün önemli bir kısmını alıyor; işini, evdeki düzenini ya da ilişkilerini zorlaştırıyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Maruz bırakma ve tepki önleme içeren bilişsel davranışçı terapi, bu konuda dünyada en çok önerilen yöntemler arasında. Kaygıya teslim olmadan durmayı adım adım birlikte öğrenebiliriz.",
+     "src": "Kaynak: NICE kılavuzu",
      "url": "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations"
     }
    ],
-   "lead": "Yani takıntılar sizi tanımlamaz; doğru yöntemle onlarla aranıza mesafe koymak mümkün."
+   "lead": "Yani takıntılar seni tanımlamaz; onlarla arana mesafe koymak mümkün.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "sosyal-kaygi",
    "facts": [
     {
-     "t": "NICE, sosyal anksiyete bozukluğu olan yetişkinlere ilk seçenek olarak, bu soruna özgü geliştirilmiş bireysel BDT önerir.",
-     "src": "NICE CG159, 2013",
+     "t": "Kalabalık önünde konuşurken kızarmak, yargılanacağını düşünmek, bir davetten önce günlerce gerilmek çok yaygındır. Bu zayıflık değil; zihninin seni yargılanmaktan korumaya çalışmasıdır."
+    },
+    {
+     "t": "Bu korku yüzünden toplantılardan, davetlerden ya da yeni insanlarla tanışmaktan kaçıyorsan; işin, okulun ya da ilişkilerin etkileniyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Sosyal kaygıya özel bilişsel davranışçı terapi, bu konuda ilk önerilen yöntemler arasında. İnsanların arasında daha rahat olmayı küçük adımlarla birlikte deneyebiliriz.",
+     "src": "Kaynak: NICE kılavuzu",
      "url": "https://www.nice.org.uk/guidance/CG159/chapter/Key-priorities-for-implementation"
     }
    ],
-   "lead": "Yani insanların arasında daha rahat hissetmek öğrenilebilir bir beceri."
+   "lead": "Yani insanların arasında daha rahat hissetmek öğrenilebilir bir beceri.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "uyku-sorunlari",
    "facts": [
     {
-     "t": "Amerikan Uyku Tıbbı Akademisi (AASM), yetişkinlerde kronik uykusuzluk tedavisinde çok bileşenli uykusuzluk için BDT'yi (BDT-I) güçlü düzeyde önerir.",
-     "src": "AASM Klinik Uygulama Kılavuzu, 2021",
+     "t": "Uykuya dalamamak, gece sık uyanmak ya da sabah dinlenmeden kalkmak çok yaygındır. Stresli dönemlerde uykunun bozulması normaldir; bu, bir şeyi yanlış yaptığın anlamına gelmez."
+    },
+    {
+     "t": "Uyku sorunu haftalardır sürüyor; gün içinde yorgunluk, dikkat dağınıklığı ya da huzursuzluk yaşıyorsan ve işin ya da ilişkilerin etkileniyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Uykusuzluğa özel bilişsel davranışçı terapi, bu konuda güçlü biçimde önerilen ilaçsız bir yöntem. Uykuyla ilgili alışkanlıklarını ve düşüncelerini birlikte yeniden düzenleyebiliriz.",
+     "src": "Kaynak: Amerikan Uyku Tıbbı Akademisi kılavuzu",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203"
     }
    ],
-   "lead": "Yani dinlendirici uyku yeniden öğrenilebilir; ilaçsız yöntemler de güçlü bir seçenek."
+   "lead": "Yani dinlendirici uyku yeniden öğrenilebilir; ilaçsız yöntemler de güçlü bir seçenek.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "is-ve-kariyer",
    "facts": [
     {
-     "t": "57 çalışmayı inceleyen bir meta-analizde kariyer müdahalelerinin en belirgin etkisi karar verme öz-yeterliğinde görülmüş; danışman desteği kritik unsurlardan biri olarak öne çıkmıştır.",
-     "src": "Whiston ve ark., 2017 (Wang ve ark. 2024 derlemesinde)",
-     "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1461503/full"
+     "t": "İşte mutsuz olmak, yön bulamamak, karar verememek ya da sürekli baskı altında hissetmek çok yaygındır. Bu başarısızlık değil; çoğu insan kariyerinin bir döneminde buradan geçer."
     },
     {
-     "t": "İş stresi yönetimi programlarını inceleyen bir meta-analizde bilişsel-davranışçı programların diğer müdahale türlerine göre tutarlı biçimde daha büyük etkiler ürettiği bulunmuştur.",
-     "src": "Richardson ve Rothstein, J Occup Health Psychol, 2008",
-     "url": "https://pubmed.ncbi.nlm.nih.gov/18211170/"
+     "t": "İş kaygısı eve taşınıyor; uykunu, sağlığını ya da ilişkilerini etkiliyorsa veya bir karar karşısında aylardır yerinde sayıyorsan destek almanın zamanı gelmiş olabilir."
+    },
+    {
+     "t": "Görüşmelerde güçlü yanlarını, değerlerini ve seni zorlayan düşünceleri birlikte ele alabiliriz. Bu, karar verirken kendine daha çok güvenmene yardımcı olabilir."
     }
    ],
-   "lead": "Yani iş hayatındaki tıkanıklıklar, doğru destekle yeni bir yön bulmanın başlangıcı olabilir."
+   "lead": "Yani iş hayatındaki tıkanıklıklar, yeni bir yön bulmanın başlangıcı olabilir.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "yas-ve-kayip",
    "facts": [
     {
-     "t": "22 çalışmayı ve 2.602 yas tutan yetişkini kapsayan bir meta-analiz, yasa odaklı BDT'lerin uzamış yas belirtilerini azaltmada etkili olduğunu ve etkinin izlemde de sürdüğünü göstermiştir.",
-     "src": "Komischke-Konnerup ve ark., J Consult Clin Psychol, 2024",
+     "t": "Kayıptan sonra derin üzüntü, öfke, suçluluk, inanamama ya da bazen hiçbir şey hissetmemek çok yaygındır. Yasın doğru bir yolu ya da süresi yoktur; yaşadıkların sevginin bir parçasıdır."
+    },
+    {
+     "t": "Zaman geçtiği hâlde acı hiç hafiflemiyor; günlük işlerini yapmak, uyumak ya da insanlarla bağ kurmak giderek zorlaşıyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Araştırmalar, yasa odaklı bilişsel davranışçı terapinin uzun süren yas belirtilerini azaltmada faydalı olduğunu gösteriyor. Kaybını unutmadan taşımayı birlikte öğrenebiliriz.",
+     "src": "Kaynak: Komischke-Konnerup ve ark. meta-analizi",
      "url": "https://pubmed.ncbi.nlm.nih.gov/38573714/"
     }
    ],
-   "lead": "Yani kaybın acısı unutulmasa da taşınabilir hale gelebilir; bu yolda yalnız değilsiniz."
+   "lead": "Yani kaybın acısı unutulmasa da taşınabilir hâle gelebilir; bu yolda yalnız değilsin.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "ofke-kontrolu",
    "facts": [
     {
-     "t": "96 çalışmayı birleştiren bir meta-analiz, psikolojik tedavilerin öfke sorunlarında genel olarak etkili olduğunu ortaya koymuştur.",
-     "src": "Saini, J Am Acad Psychiatry Law, 2009",
-     "url": "https://pubmed.ncbi.nlm.nih.gov/20018996/"
+     "t": "Çabuk parlamak, sonra söylediklerine pişman olmak ya da öfkeni içinde biriktirmek çok yaygındır. Öfke doğal bir duygudur; mesele duygunun kendisi değil, onu nasıl ifade ettiğindir."
     },
     {
-     "t": "Öfkeye yönelik BDT üzerine 42 çalışmayı inceleyen sistematik bir derleme, bulguların BDT'nin etkinliğini ve klinik uygulamada işe yaradığını desteklediğini bildirmiştir.",
-     "src": "Fernandez ve ark., Behav Cogn Psychother, 2018",
-     "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/21st-century-cognitive-behavioural-therapy-for-anger-a-systematic-review-of-research-design-methodology-and-outcome/B50841332C2F33B666BA18A53DF11892"
+     "t": "Öfken ilişkilerine, işine ya da sağlığına zarar vermeye başladıysa, sevdiklerin senden çekinir hâle geldiyse destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Araştırmalar, psikolojik desteğin ve özellikle bilişsel davranışçı terapinin öfkeyle baş etmede işe yaradığını gösteriyor. Öfkenin işaretlerini erken fark etmeyi birlikte çalışabiliriz.",
+     "src": "Kaynak: Saini meta-analizi",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20018996/"
     }
    ],
-   "lead": "Yani öfke bastırılması gereken değil, yönetilmeyi öğrenilebilen bir duygu."
+   "lead": "Yani öfke bastırılması gereken değil, yönetmeyi öğrenebileceğin bir duygu.",
+   "title": "Bilmen gerekenler"
   }
  ]
 }

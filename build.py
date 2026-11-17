@@ -367,7 +367,7 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     out += '<script src="/assets/site.js" defer></script>\n'
     if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out or 'data-tk' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
-    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out or 'class="jr"' in out or 'id="occ"' in out or 'class="pr"' in out:
+    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out or 'class="jr"' in out or 'id="occ"' in out or 'class="pr' in out or 'class="ex1"' in out:
         out += '<script src="/assets/story.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out
@@ -583,6 +583,38 @@ STORIES = {}
 EVID = {}
 
 
+EX = {
+    "travma-sonrasi-stres": ("ground", "5-4-3-2-1 topraklama", "Zor bir anı geldiğinde zihni şimdiye geri getiren kısa bir egzersiz. Etrafında gördüğün, duyduğun ve hissettiğin şeyleri tek tek bul."),
+    "panik-atak": ("breath", "Paniği yavaşlatan nefes", "4 saniye nefes al, 6 saniye ver. Uzun nefes vermek bedenin alarmını yavaşlatır. Daireyi takip et."),
+    "kaygi-bozukluklari": ("breath", "Kaygıyı yatıştıran nefes", "Endişe yükseldiğinde nefes hızlanır. Daireyle birlikte yavaşla: 4 saniye al, 6 saniye ver."),
+    "stres-ve-tukenmislik": ("breath", "Bir dakikalık mola", "Ekrandan başını kaldır, omuzlarını gevşet ve daireyle birlikte nefes al. Bir dakika kendine ait olsun."),
+    "ofke-kontrolu": ("breath", "Patlamadan önce bir dakika", "Öfke yükselirken birkaç yavaş nefes, tepki ile cevap arasına zaman koyar. Daireyle birlikte nefes al."),
+    "uyku-sorunlari": ("breath", "Uykuya hazırlayan nefes", "Yatağa uzan, ışığı kıs. Daireyle birlikte 4 saniye nefes al, 6 saniye ver."),
+}
+EXC = {
+    "iliski-sorunlari": ("“Ben dili”ne çevir", [["Sen hep telefonla meşgulsün, beni hiç dinlemiyorsun.", "Konuşurken telefona baktığında kendimi önemsiz hissediyorum; birkaç dakika sadece birbirimize odaklanmak istiyorum."], ["Zaten hiçbir şeyi umursamıyorsun.", "Planımız iptal olunca çok üzüldüm; bunu birlikte konuşmak istiyorum."], ["Her şeyi ben yapıyorum, sen hiçbir şey yapmıyorsun.", "Ev işleri bende birikince yoruluyorum; işleri birlikte paylaşmak istiyorum."]], "Suçlayan cümle savunma getirir; ihtiyacını anlatan cümle konuşmayı açar."),
+    "depresyon": ("Düşünceyi yumuşat", [["Hiçbir şey değişmeyecek.", "Şu an böyle hissediyorum; ama küçük adımlar zamanla bir şeyleri değiştirebilir."], ["Ben bir yüküm.", "Zor bir dönemdeyim; zorlanmak beni değersiz yapmaz."], ["Hiçbir şeyden keyif almıyorum, denemenin anlamı yok.", "Keyif çoğu zaman yaptıktan sonra gelir; 10 dakikalık bir şey deneyebilirim."]], "Depresyon düşünceleri kesin gerçek gibi görünür; onları fark etmek ilk adımdır."),
+    "ozguven-sorunlari": ("Arkadaş gözüyle bak", [["Yeterince iyi değilim.", "Bazı konularda zorlanıyorum; bu benim değerimi belirlemez."], ["Herkes benden daha başarılı.", "Başkalarının sadece vitrinini görüyorum; kendi yolumda ilerliyorum."], ["Hata yaparsam rezil olurum.", "Herkes hata yapar; hatalar öğrenmenin parçası."]], "Kendine, çok sevdiğin bir arkadaşına konuştuğun gibi konuşmayı dene."),
+    "sosyal-kaygi": ("Zihin okuma tuzağı", [["Herkes titreyen sesimi fark etti.", "Çoğu kişi kendi derdiyle meşgul; fark edenler de muhtemelen umursamadı."], ["Konuşursam aptalca bir şey söylerim.", "Söylediğim her şey kusursuz olmak zorunda değil; çoğu sohbet sıradandır."], ["Kimse benimle konuşmak istemez.", "Bunu bilemem; bir kişiyle kısa bir sohbet bile denemeye değer."]], "Başkalarının ne düşündüğünü bildiğimizi sanırız; çoğu zaman bildiğimiz şey kendi korkumuzdur."),
+    "obsesif-kompulsif-bozukluk": ("Şüpheye farklı bak", [["Ocağı kapatmadıysam ev yanar, kontrol etmeliyim.", "Bu bir şüphe düşüncesi; kontrol etmeden kaygının kendiliğinden azalmasına izin verebilirim."], ["Bu düşünceyi düşündüysem kötü biriyim.", "Düşünce, davranış ya da niyet değildir; bu düşünceden rahatsız olmam değerlerimi gösterir."], ["Tam doğru hissedene kadar tekrar etmeliyim.", "“Tam doğru” hissi gelmeyebilir; belirsizlikle kalmayı öğrenebilirim."]], "OKB'de amaç düşünceyi yok etmek değil, ona farklı tepki vermektir."),
+    "is-ve-kariyer": ("Geri bildirimi tart", [["Yöneticim eleştirdi, demek ki işimi beceremiyorum.", "Bir konuda geri bildirim aldım; bu tüm işimin kötü olduğu anlamına gelmez."], ["Bu terfiyi alamazsam kariyerim biter.", "Bu bir fırsat; tek fırsat değil."], ["Hayır dersem işimi kaybederim.", "Nazik ve net bir sınır çoğu zaman saygıyla karşılanır."]], "İş hayatındaki tek bir an, bütün kariyerini tanımlamaz."),
+    "yas-ve-kayip": ("Yasla nazikçe kal", [["Artık geçmiş olmalıydı, neden hâlâ üzülüyorum?", "Yasın bir takvimi yok; özlem, sevginin devam eden hâli."], ["Gülersem ona saygısızlık etmiş olurum.", "Hem özleyip hem gülebilirim; onu yaşatmanın bir yolu da güzel anıları anmak."], ["Kimse beni anlamıyor.", "Birine bu duyguyu anlatmayı deneyebilirim; yasın yalnız taşınması zorunlu değil."]], "Yasın amacı unutmak değil, kaybı hayatın içine taşıyabilmektir."),
+}
+
+
+def exercise_html(a):
+    s = a["slug"]
+    if s in EX:
+        k, h, d = EX[s]; attrs = f'data-k="{k}"'
+    elif s in EXC:
+        h, c, end = EXC[s]; k = "cards"; d = "Seni zorlayan bir düşünceyi gör, sonra dokunarak daha dengeli hâlini aç."
+        attrs = f'data-k="cards" data-c="{esc(json.dumps(c, ensure_ascii=False))}" data-end="{esc(end)}"'
+    else:
+        return ""
+    return (f'<section class="ex1"><div class="wrap"><div class="ex1-box" {attrs}><div class="ex1-txt"><div class="label">Şimdi 1 dakika dene</div><h2>{esc(h)}</h2><p>{esc(d)}</p>'
+            f'<button type="button" class="btn primary dark ex1-start">Başla</button><p class="ex1-msg" aria-live="polite"></p></div><div class="ex1-stage"></div></div></div></section>')
+
+
 def evidence_html(a):
     e = EVID.get(a["slug"])
     if not e:
@@ -674,6 +706,7 @@ def area_page(a, posts):
   </div>
 </section>
 {evidence_html(a)}
+{exercise_html(a)}
 {play}
 <section class="ca-wrap">
   <div class="wrap lp-grid">
