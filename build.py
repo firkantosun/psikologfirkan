@@ -22,19 +22,19 @@ PHONE = "+905384840141"
 PHONE_TXT = "0538 484 01 41"
 BIZ_NAME = "Psikolog Muhammed Furkan Tosun"
 HOURS = [(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "17:00", "21:00"), (["Sunday"], "10:00", "16:00")]
-MAP_Q = "Koşuyolu, Kadıköy, İstanbul"
+MAP_Q = "Kadıköy, İstanbul"
 INSTAGRAM = "https://www.instagram.com/psikologfirkan/"
 MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
 
 PAGES = {
     "home": {"path": "/", "title": "Psikolog Muhammed Furkan Tosun | Psikolog Firkan",
-             "desc": "Psikolog Muhammed Furkan Tosun: kaygı, panik, stres ve iş hayatına dair zorluklarda BDT temelli yüz yüze (Koşuyolu) ve online görüşme."},
+             "desc": "Psikolog Muhammed Furkan Tosun: kaygı, panik, stres ve iş hayatına dair zorluklarda BDT temelli yüz yüze (Kadıköy) ve online görüşme."},
     "yaklasim": {"path": "/terapi-yaklasimim/", "title": "Terapi Yaklaşımım: Bilişsel Davranışçı Terapi (BDT)",
                  "desc": "Bilişsel davranışçı terapi (BDT) nedir, terapi nasıl ilerler, seanslarda neler yapılır? Terapi yaklaşımım ve kısa bir düşünce çalışması."},
     "ozgecmis": {"path": "/ozgecmis/", "title": "Eğitim ve Deneyim | Psikolog Muhammed Furkan Tosun",
                  "desc": "Psikolog Muhammed Furkan Tosun'un eğitimi ve deneyimi: İstanbul Kent Üniversitesi Psikoloji, Marmara Üniversitesi Endüstri ve Örgüt Psikolojisi YL, BDT."},
     "alanlar": {"path": "/calisma-alanlari/", "title": "Çalışma Alanları | Psikolog Muhammed Furkan Tosun",
-                "desc": "Kaygı, panik atak, depresyon, stres, özgüven, OKB, uyku ve ilişki sorunlarında BDT temelli yüz yüze (Koşuyolu) ve online görüşme."},
+                "desc": "Kaygı, panik atak, depresyon, stres, özgüven, OKB, uyku ve ilişki sorunlarında BDT temelli yüz yüze (Kadıköy) ve online görüşme."},
     "blog": {"path": "/blog/", "title": "Blog: Psikoloji Yazıları | Psikolog Firkan",
              "desc": "Kaygı, panik, depresyon, stres ve gündelik hayata dair bilimsel temelli, Türkiye odaklı psikoloji yazıları. Psikolog Muhammed Furkan Tosun."},
     "randevu": {"path": "/randevu/", "title": "Randevu Al | Psikolog Muhammed Furkan Tosun",
@@ -388,7 +388,7 @@ def blog_post(p, posts):
     ar = AREA_FOR.get(p["category"])
     if ar:
         rel = (f'<div class="b-rel"><div class="label">Çalışma alanı</div><a href="/calisma-alanlari/{ar["slug"]}/">{esc(ar["name"])}: birlikte nasıl çalışıyoruz?</a>'
-               f'<p>{esc(ar["short"])} Yüz yüze (Koşuyolu) ya da online görüşme.</p></div>')
+               f'<p>{esc(ar["short"])} Yüz yüze (Kadıköy) ya da online görüşme.</p></div>')
     else:
         rel = (f'<div class="b-rel"><div class="label">Görüşme</div><a href="{lp[0]}">{esc(lp[1])}</a><p>{esc(lp[2])}</p></div>')
     more = ('<div class="b-more"><div class="label">İlgili yazılar</div><div class="b-grid">' + "".join(card(x) for x in others) + "</div></div>") if others else ""
@@ -417,7 +417,7 @@ def blog_post(p, posts):
 """
 
 
-LANDING_DEFAULT = ("/kadikoy-psikolog/", "Koşuyolu'nda yüz yüze ya da online görüşme", "Kadıköy Koşuyolu'nda ofiste ya da görüntülü görüşmeyle; görüşmelerin nasıl ilerlediğini bu sayfada anlattım.")
+LANDING_DEFAULT = ("/kadikoy-psikolog/", "Kadıköy'de yüz yüze ya da online görüşme", "Kadıköy'de ofiste ya da görüntülü görüşmeyle; görüşmelerin nasıl ilerlediğini bu sayfada anlattım.")
 LANDING_FOR = {
     "İş yaşamı": ("/online-psikolog/", "Yoğun tempoda online görüşme", "Mesai ve yol süresi düzenli görüşmeyi zorlaştırıyorsa online görüşme nasıl yürüyor, nasıl hazırlanılır?"),
     "Stres": ("/online-psikolog/", "Yoğun tempoda online görüşme", "Mesai ve yol süresi düzenli görüşmeyi zorlaştırıyorsa online görüşme nasıl yürüyor, nasıl hazırlanılır?"),
@@ -448,9 +448,9 @@ def landing_html(pg, all_pages):
     mp = ""
     if pg.get("map"):
         q = html.escape(MAP_Q.replace(" ", "+"))
-        mp = (f'<div class="lp-map"><iframe title="Koşuyolu haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" '
+        mp = (f'<div class="lp-map"><iframe title="Kadıköy haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" '
               f'src="https://www.google.com/maps?q={q}&amp;z=15&amp;output=embed"></iframe></div>'
-              f'<p class="lp-note">Harita semtin konumunu gösterir; açık adres randevu onayıyla iletilir.</p>')
+              f'<p class="lp-note">Harita ilçenin konumunu gösterir; açık adres randevu onayıyla iletilir.</p>')
     others = "".join(f'<a href="{o["path"]}">{esc(o["h1"])} →</a>' for o in all_pages if o["key"] != pg["key"])
     return f"""<div class="view page" data-view="lp">
 <section class="lp">
@@ -588,7 +588,7 @@ def area_page(a, posts):
       <h2>Sık sorulan sorular</h2>
       <div class="faq">{faq}</div>
       {rel_html}
-      <div class="ca-cta"><div><b>{esc(a["name"])} için ilk adım</b><span>Takvimden sana uygun saati seç; Koşuyolu'nda yüz yüze ya da online.</span></div><a class="btn primary" href="/randevu/">Uygun saatleri gör</a></div>
+      <div class="ca-cta"><div><b>{esc(a["name"])} için ilk adım</b><span>Takvimden sana uygun saati seç; Kadıköy'de yüz yüze ya da online.</span></div><a class="btn primary" href="/randevu/">Uygun saatleri gör</a></div>
       {pn}
       <p class="b-disc">Bu sayfa bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.</p>
     </div>
