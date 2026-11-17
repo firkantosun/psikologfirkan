@@ -1,0 +1,245 @@
+{
+ "traps": [
+  {
+   "k": "felaket",
+   "e": "🌋",
+   "n": "Felaketleştirme",
+   "d": "En kötüsünü kesin sanmak"
+  },
+  {
+   "k": "zihin",
+   "e": "🔮",
+   "n": "Zihin okuma",
+   "d": "Başkasının ne düşündüğünü bildiğini sanmak"
+  },
+  {
+   "k": "hephic",
+   "e": "⚫",
+   "n": "Ya hep ya hiç",
+   "d": "Ara tonları görmemek"
+  },
+  {
+   "k": "etiket",
+   "e": "🏷️",
+   "n": "Etiketleme",
+   "d": "Tek olaydan kendine damga vurmak"
+  },
+  {
+   "k": "meli",
+   "e": "📏",
+   "n": "-meli / -malı",
+   "d": "Katı kurallarla kendini yargılamak"
+  },
+  {
+   "k": "falci",
+   "e": "🎱",
+   "n": "Falcılık",
+   "d": "Geleceği olumsuz tahmin etmek"
+  }
+ ],
+ "cards": [
+  {
+   "t": "Sunumda sesim titrerse herkes beni yeteneksiz sanacak.",
+   "k": "zihin",
+   "why": "Başkalarının ne düşüneceğini kanıt olmadan biliyormuş gibi davranıyorsun.",
+   "re": "Sesim titreyebilir; çoğu kişi bunu fark etmez, fark edense heyecan olarak görür."
+  },
+  {
+   "t": "Kalbim hızlandı, kesin kalp krizi geçiriyorum.",
+   "k": "felaket",
+   "why": "Zararsız bir bedensel duyuyu en kötü ihtimalle açıklıyorsun.",
+   "re": "Kalbim hızlandı; heyecan ve kaygı da bunu yapar. Birkaç dakika içinde yatışabilir."
+  },
+  {
+   "t": "Diyetimi bugün bozdum, zaten hiçbir şeyi beceremiyorum.",
+   "k": "hephic",
+   "why": "Tek bir aksaklığı tümden başarısızlık gibi görüyorsun.",
+   "re": "Bugün plandan saptım; yarın kaldığım yerden devam edebilirim."
+  },
+  {
+   "t": "Sınavdan kaldım, ben aptalın tekiyim.",
+   "k": "etiket",
+   "why": "Bir sonucu kim olduğunla ilgili kalıcı bir etikete dönüştürüyorsun.",
+   "re": "Bu sınav kötü geçti; neyin eksik kaldığına bakıp yeniden hazırlanabilirim."
+  },
+  {
+   "t": "İyi bir anne olsaydım çocuğuma hiç sinirlenmemeliydim.",
+   "k": "meli",
+   "why": "Kendine ulaşılması imkânsız, katı bir kural koyuyorsun.",
+   "re": "Her ebeveyn bazen sinirlenir; önemli olan sonra onarmak."
+  },
+  {
+   "t": "Bu iş görüşmesi de kötü geçecek, belli.",
+   "k": "falci",
+   "why": "Henüz olmamış bir şeyin sonucunu kesinmiş gibi tahmin ediyorsun.",
+   "re": "Nasıl geçeceğini bilmiyorum; hazırlanabileceğim şeylere odaklanabilirim."
+  },
+  {
+   "t": "Mesajıma cevap vermedi, demek ki benden sıkıldı.",
+   "k": "zihin",
+   "why": "Karşındakinin aklından geçenleri okuduğunu varsayıyorsun.",
+   "re": "Cevap vermemesinin birçok nedeni olabilir; belki sadece meşgul."
+  },
+  {
+   "t": "Ya bu baş ağrısı ciddi bir hastalıksa? Kesin öyledir.",
+   "k": "felaket",
+   "why": "Belirsiz bir durumu en korkutucu ihtimale bağlıyorsun.",
+   "re": "Baş ağrısının çoğu zaman sıradan nedenleri olur; geçmezse doktora danışırım."
+  },
+  {
+   "t": "Toplantıda bir hata yaptım, tam bir beceriksizim.",
+   "k": "etiket",
+   "why": "Tek bir hatadan kendin hakkında genel bir hüküm çıkarıyorsun.",
+   "re": "Bir hata yaptım; herkes yapar ve bunu düzeltebilirim."
+  },
+  {
+   "t": "Her zaman güçlü görünmeliyim, ağlamak zayıflıktır.",
+   "k": "meli",
+   "why": "Duygularına izin vermeyen katı bir kural koyuyorsun.",
+   "re": "Zor bir dönemde duygularımı göstermem insan olmamın parçası."
+  },
+  {
+   "t": "Ya mükemmel olur ya da hiç yapmam.",
+   "k": "hephic",
+   "why": "Sadece iki uç seçenek görüp aradaki yolları siliyorsun.",
+   "re": "Yeterince iyi bir başlangıç, hiç başlamamaktan iyidir."
+  },
+  {
+   "t": "Partiye gidersem kimse benimle konuşmayacak.",
+   "k": "falci",
+   "why": "Geleceği olumsuz biçimde kesin biliyormuş gibi davranıyorsun.",
+   "re": "Kiminle ne konuşacağımı bilmiyorum; bir kişiyle kısa bir sohbet bile yeter."
+  }
+ ],
+ "yaklasim": [
+  {
+   "tab": "Cevapsız mesaj",
+   "title": "Cevapsız mesaj: döngüyü sen kır",
+   "scene": {
+    "emoji": "📱",
+    "text": "Bir arkadaşına öğlen mesaj attın. Akşam oldu, mesaj görüldü ama cevap yok."
+   },
+   "thought": "Kesin bana kızgın, bir şey yaptım herhalde.",
+   "emotion": {
+    "name": "Kaygı",
+    "level": 75,
+    "emoji": "😟"
+   },
+   "body": [
+    "Midede düğüm",
+    "Sürekli telefona bakma isteği",
+    "Gerginlik"
+   ],
+   "behavior": "Telefonu elinden bırakamıyor, son konuşmanızı tekrar tekrar okuyorsun.",
+   "short": "Okudukça bir ipucu bulacakmış gibi hissediyorsun.",
+   "long": "Her kontrol, düşünceyi daha önemli gösteriyor; bir dahaki cevapsız mesaj daha da korkutucu oluyor.",
+   "choices": [
+    {
+     "label": "Ona ‘Bana kızgın mısın?’ diye üst üste mesaj atarım.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Belirsizliğe dayanamayıp güvence aramak kısa süre rahatlatır ama kaygıyı besler; bir sonraki sefer yine güvence gerekir."
+    },
+    {
+     "label": "Belki yoğundur; akşam cevap yazmazsa yarın normal bir şekilde sorarım.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Diğer açıklamaları da hesaba kattın ve belirsizliğe biraz alan açtın. Kaygı azalır, ilişki de zarar görmez."
+    },
+    {
+     "label": "Hiç önemli değil, umurumda bile değil.",
+     "type": "gercekdisi",
+     "level": 65,
+     "feedback": "Önemsediğin bir şeyi önemsiz saymak çoğu zaman inandırıcı gelmez; duygu bastırılır ama geçmez."
+    }
+   ],
+   "takeaway": "Durum değişmedi; değişen, ona yüklediğin anlam. Görüşmelerde bu farkı adım adım birlikte çalışırız."
+  },
+  {
+   "tab": "Yarınki sunum",
+   "title": "Yarınki sunum: döngüyü sen kır",
+   "scene": {
+    "emoji": "📊",
+    "text": "Yarın ekibin önünde sunum yapacaksın. Akşam slaytlara bakarken içini bir sıkıntı kaplıyor."
+   },
+   "thought": "Rezil olacağım, herkes yetersiz olduğumu anlayacak.",
+   "emotion": {
+    "name": "Korku",
+    "level": 80,
+    "emoji": "😰"
+   },
+   "body": [
+    "Kalp çarpıntısı",
+    "Terleyen eller",
+    "Uykuya dalamama"
+   ],
+   "behavior": "Sunumu başkasına devretmenin bir yolunu arıyorsun.",
+   "short": "Kaçma ihtimali düşünülünce bir an rahatlıyorsun.",
+   "long": "Kaçındıkça ‘yapamazdım zaten’ inancı güçlenir; bir sonraki sunum daha da büyük görünür.",
+   "choices": [
+    {
+     "label": "Ben bu işi yapamam, en iyisi hasta olduğumu söyleyeyim.",
+     "type": "kacinma",
+     "level": 45,
+     "feedback": "Kaçınmak o akşamı rahatlatır ama korkunun yanlış olduğunu öğrenme fırsatını elinden alır."
+    },
+    {
+     "label": "Mükemmel olacak, hiç heyecanlanmayacağım.",
+     "type": "gercekdisi",
+     "level": 70,
+     "feedback": "Gerçekçi olmayan bir beklenti; ilk heyecan anında ‘olmadı’ diye düşündürüp korkuyu artırabilir."
+    },
+    {
+     "label": "Heyecanlanmam normal; birkaç kez prova eder, takılırsam notlarıma bakarım.",
+     "type": "dengeli",
+     "level": 40,
+     "feedback": "Heyecanı kabul ettin ve elindeki yolları gördün. Korku tamamen gitmez ama yönetilebilir hâle gelir."
+    }
+   ],
+   "takeaway": "Kaçınmak yerine küçük ve planlı adımlar atmak korkuyu zamanla küçültür. Görüşmelerde bunu birlikte planlarız."
+  },
+  {
+   "tab": "Gece 03:00",
+   "title": "Gece 03:00: döngüyü sen kır",
+   "scene": {
+    "emoji": "🌙",
+    "text": "Gece uyandın. Saat 03:00. Yarınki işler, faturalar, bitmemiş konular aklına doluşuyor."
+   },
+   "thought": "Hiçbir şeyi yetiştiremeyeceğim, her şey üst üste yığılıyor.",
+   "emotion": {
+    "name": "Endişe",
+    "level": 78,
+    "emoji": "😣"
+   },
+   "body": [
+    "Göğüste sıkışma",
+    "Zihinde hızlanma",
+    "Kaslarda gerginlik"
+   ],
+   "behavior": "Yatakta dönüp duruyor, telefondan e-postalara bakıyorsun.",
+   "short": "Bir şeyler yapıyormuş gibi hissediyorsun.",
+   "long": "Yatak giderek ‘endişelenme yeri’ olur; ertesi gece de aynı saatte uyanmak kolaylaşır.",
+   "choices": [
+    {
+     "label": "Hepsini şimdi çözmem lazım, kalkıp çalışmaya başlayayım.",
+     "type": "gercekdisi",
+     "level": 72,
+     "feedback": "Gece yarısı zihin sorunları olduğundan büyük gösterir; şimdi çözmeye çalışmak çoğu zaman endişeyi büyütür."
+    },
+    {
+     "label": "Gece her şey daha büyük görünür; aklımdakileri kâğıda yazıp sabaha bırakırım.",
+     "type": "dengeli",
+     "level": 38,
+     "feedback": "Düşüncelerini erteledin, yok saymadın. Zihin ‘unutmayacağım’ güvencesini alınca sakinleşebilir."
+    },
+    {
+     "label": "Telefonda bir şeyler izleyip düşünmemeye çalışırım.",
+     "type": "kacinma",
+     "level": 58,
+     "feedback": "Dikkat dağıtmak kısa süre işe yarar ama ışık ve uyaranlar uykuyu daha da uzaklaştırabilir."
+    }
+   ],
+   "takeaway": "Düşünceyle kavga etmek yerine ona yer ve zaman vermek döngüyü gevşetir. Uyku sorunlarında bunu birlikte çalışırız."
+  }
+ ]
+}

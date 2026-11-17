@@ -1,0 +1,520 @@
+{
+ "games": [
+  {
+   "slug": "kaygi-bozukluklari",
+   "title": "Cevapsız bir mesaj: kaygı döngüsünü sen kır",
+   "scene": {
+    "emoji": "📱",
+    "text": "Annenden 'Müsait olunca ara' mesajı gelmiş. İki saattir toplantıdasın ve arayamadın."
+   },
+   "thought": "Kesin kötü bir şey oldu, hemen öğrenmem lazım",
+   "emotion": {
+    "name": "Kaygı",
+    "level": 80,
+    "emoji": "😟"
+   },
+   "body": [
+    "Göğüste sıkışma",
+    "Midede düğüm",
+    "Toplantıya odaklanamama"
+   ],
+   "behavior": "Toplantıdan çıkıp art arda arıyor, bir yandan haberlere bakıyorsun.",
+   "short": "Annen telefonu açınca bir anda rahatlıyorsun.",
+   "long": "Zihin 'kontrol ettim, felaketi önledim' sonucunu çıkarıyor; bir sonraki belirsizlikte kaygı daha hızlı yükseliyor.",
+   "choices": [
+    {
+     "label": "Hiçbir şey olmaz, her şey mükemmel.",
+     "type": "gercekdisi",
+     "level": 65,
+     "feedback": "İnanmadığın bir cümle kaygıyı susturmaz; zihin hemen 'ya olduysa?' diye karşılık verir."
+    },
+    {
+     "label": "Annem çoğu zaman sohbet için 'ara' yazar. Toplantı bitince sakince ararım.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Geçmiş deneyimine dayanan gerçekçi bir bakış, belirsizliği felakete çevirmeden taşımana yardım eder."
+    },
+    {
+     "label": "Toplantıdan çıkıp hemen arka arkaya ararım.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Rahatlama gerçek ama kısa sürer; her acil kontrol, belirsizliğe dayanamayacağın inancını besler."
+    }
+   ],
+   "takeaway": "Kaygı, belirsizliği felakete çevirdiğinde büyür. Görüşmelerde senin felaket senaryolarını ve kanıtlarını adım adım birlikte inceliyoruz."
+  },
+  {
+   "slug": "panik-atak",
+   "title": "Metroda bir panik anı: döngüyü sen kır",
+   "scene": {
+    "emoji": "🚇",
+    "text": "Metro iki istasyon arasında durdu. Kalabalıkta kalbinin hızlandığını fark ediyorsun."
+   },
+   "thought": "Kalp krizi geçiriyorum, burada bayılacağım",
+   "emotion": {
+    "name": "Korku",
+    "level": 90,
+    "emoji": "😨"
+   },
+   "body": [
+    "Çarpıntı",
+    "Nefes alamıyormuş hissi",
+    "Baş dönmesi"
+   ],
+   "behavior": "İlk durakta inip bir daha metroya binmemeye karar veriyorsun.",
+   "short": "Dışarı çıkınca belirtiler azalıyor ve rahatlıyorsun.",
+   "long": "'Metro tehlikeli' inancı güçleniyor; kaçındığın yerlerin listesi giderek uzuyor.",
+   "choices": [
+    {
+     "label": "Bundan sonra hep taksiyle giderim.",
+     "type": "kacinma",
+     "level": 50,
+     "feedback": "Kısa vadede güvende hissettirir ama beyin metroda aslında güvende olduğunu öğrenme fırsatını kaçırır."
+    },
+    {
+     "label": "Bu çarpıntıyı tanıyorum; dalgalanıp birkaç dakikada iner. Nefesimi yavaşça verip durağıma kadar kalırım.",
+     "type": "dengeli",
+     "level": 40,
+     "feedback": "Belirtileri tehlike değil, geçici bir alarm olarak görmek korkunun kendi kendine azaldığını deneyimletir."
+    },
+    {
+     "label": "Hiçbir şey hissetmiyorum, tamamen sakinim.",
+     "type": "gercekdisi",
+     "level": 75,
+     "feedback": "Bedenin verdiği sinyali inkâr etmek, dikkatini belirtilere daha çok çeker."
+    }
+   ],
+   "takeaway": "Panik, beden duyumlarını tehlike sanmakla büyür. Görüşmelerde bu duyumlarla güvenle tanışmayı adım adım birlikte çalışıyoruz; belirtiler yeniyse önce hekim kontrolü de önemli."
+  },
+  {
+   "slug": "depresyon",
+   "title": "Pazar sabahı yataktan kalkmak: döngüyü sen kır",
+   "scene": {
+    "emoji": "🛏️",
+    "text": "Pazar sabahı arkadaşın kahvaltıya çağırıyor. Sen hâlâ yataktasın ve hiçbir şey yapmak istemiyorsun."
+   },
+   "thought": "Gitsem de keyif almam, zaten kimse beni özlemez",
+   "emotion": {
+    "name": "Hüzün",
+    "level": 75,
+    "emoji": "😔"
+   },
+   "body": [
+    "Bedende ağırlık",
+    "Yorgunluk",
+    "Yataktan kalkmakta zorlanma"
+   ],
+   "behavior": "'Başka zaman' yazıp günü yatakta telefonla geçiriyorsun.",
+   "short": "Çaba göstermek zorunda kalmadığın için bir an rahatlıyorsun.",
+   "long": "Keyif veren şeyler azaldıkça 'hiçbir şey zevk vermiyor' düşüncesi kanıtlanmış gibi görünüyor.",
+   "choices": [
+    {
+     "label": "Hadi, mutlu ol! Bugün harika bir gün.",
+     "type": "gercekdisi",
+     "level": 70,
+     "feedback": "Kendine neşeli olmayı emretmek, olamayınca daha suçlu hissettirebilir."
+    },
+    {
+     "label": "Kendimi hazır hissettiğimde giderim.",
+     "type": "kacinma",
+     "level": 65,
+     "feedback": "Mantıklı görünür ama enerji çoğu zaman beklerken gelmez; beklemek döngüyü sürdürür."
+    },
+    {
+     "label": "Keyif almayı beklemeden bir saatliğine giderim; isteğin çoğu zaman harekete geçtikten sonra geldiğini biliyorum.",
+     "type": "dengeli",
+     "level": 45,
+     "feedback": "Küçük ve somut bir adım, 'hiçbir şey zevk vermiyor' düşüncesini gerçek bir deneyimle sınamanı sağlar."
+    }
+   ],
+   "takeaway": "Hüzünlü dönemlerde küçük adımlar büyük kararlardan daha çok iş görür. Görüşmelerde sana uygun küçük adımları adım adım birlikte planlıyoruz."
+  },
+  {
+   "slug": "stres-ve-tukenmislik",
+   "title": "Gece 23.00'te gelen iş mesajı: döngüyü sen kır",
+   "scene": {
+    "emoji": "💼",
+    "text": "Saat 23.00, yöneticinden mesaj: 'Sabaha şu sunuma bir göz atar mısın?' Zaten bütün gün yoğundun."
+   },
+   "thought": "Hayır dersem işimi kaybederim, her şeye yetişmek zorundayım",
+   "emotion": {
+    "name": "Bunalmışlık",
+    "level": 85,
+    "emoji": "😩"
+   },
+   "body": [
+    "Omuz ve boyunda gerginlik",
+    "Baş ağrısı",
+    "Uykuya dalamama"
+   ],
+   "behavior": "Gece 02.00'ye kadar sunum üzerinde çalışıyorsun.",
+   "short": "Yöneticin memnun; bir an her şeyi kontrol altında tutuyormuş gibi hissediyorsun.",
+   "long": "Yorgunluk birikiyor; sınır koymadıkça talepler artıyor ve tükenmişlik derinleşiyor.",
+   "choices": [
+    {
+     "label": "Ben yorulmam, daha fazlasını da kaldırırım.",
+     "type": "gercekdisi",
+     "level": 80,
+     "feedback": "Sınırsız enerji varsaymak bedenin uyarılarını görmezden gelmektir; yorgunluk yine de birikir."
+    },
+    {
+     "label": "Mesajı görmezden gelip sabah hiç bahsetmem.",
+     "type": "kacinma",
+     "level": 65,
+     "feedback": "Konu ertelenince kafanda dönmeye devam eder ve sabahki kaygı büyür."
+    },
+    {
+     "label": "Kısa bir mesajla yarın 10.00'da bakabileceğimi yazarım; bir gecelik sınır işimi kaybettirmez.",
+     "type": "dengeli",
+     "level": 40,
+     "feedback": "Net ve kibar bir sınır, hem işi hem dinlenmeni korur; çoğu zaman beklenenden olumlu karşılanır."
+    }
+   ],
+   "takeaway": "Tükenmişlik çoğu zaman sınır koyamamakla beslenir. Görüşmelerde senin iş koşullarına uygun sınırları adım adım birlikte çalışıyoruz."
+  },
+  {
+   "slug": "ozguven-sorunlari",
+   "title": "Toplantıda söz sırası: döngüyü sen kır",
+   "scene": {
+    "emoji": "🙋",
+    "text": "Toplantıda aklında güzel bir fikir var. Yönetici 'Eklemek isteyen var mı?' diye soruyor."
+   },
+   "thought": "Saçma bir şey söylerim, herkes beceriksiz olduğumu anlar",
+   "emotion": {
+    "name": "Utanç",
+    "level": 70,
+    "emoji": "😳"
+   },
+   "body": [
+    "Yüzde kızarma",
+    "Seste titreme",
+    "Kalp çarpıntısı"
+   ],
+   "behavior": "'Benim eklemem yok' deyip susuyorsun.",
+   "short": "Riskten kurtulduğun için rahatlıyorsun.",
+   "long": "Fikrini hiç sınamadığın için 'yetersizim' inancı sorgulanmadan kalıyor; başkası aynı fikri söyleyince daha da küçülüyorsun.",
+   "choices": [
+    {
+     "label": "Fikrimi sonra e-postayla gönderirim.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Daha az ürkütücü bir yol, ama yüz yüze konuşma korkusu olduğu gibi yerinde kalır."
+    },
+    {
+     "label": "Mükemmel olmak zorunda değil; fikrimi bir cümleyle söyleyip tepkilere bakarım.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Küçük bir risk almak, korkulan sonucun çoğu zaman gerçekleşmediğini kendi deneyiminle görmeni sağlar."
+    },
+    {
+     "label": "Odadaki en zeki kişi benim, herkes bana hayran kalacak.",
+     "type": "gercekdisi",
+     "level": 65,
+     "feedback": "Abartılı övgü ilk küçük eleştiride çöker; özgüven kusursuzluk değil, kusurlarınla da değerli hissetmektir."
+    }
+   ],
+   "takeaway": "Özgüven kendini kanıtlamaktan değil, küçük riskler aldıkça biriken deneyimden büyür. Görüşmelerde bu küçük adımları senin hızına göre birlikte planlıyoruz."
+  },
+  {
+   "slug": "obsesif-kompulsif-bozukluk",
+   "title": "Ocağı kapattım mı? Döngüyü sen kır",
+   "scene": {
+    "emoji": "🔥",
+    "text": "Evden çıktın, otobüs durağına yürüyorsun. Aklına birden 'Ocağı kapattım mı?' sorusu takılıyor."
+   },
+   "thought": "Ya açık kaldıysa ve bir şey olursa? Hepsi benim suçum olur",
+   "emotion": {
+    "name": "Kaygı",
+    "level": 85,
+    "emoji": "😰"
+   },
+   "body": [
+    "İç huzursuzluk",
+    "Kaslarda gerginlik",
+    "Aklın sürekli eve gitmesi"
+   ],
+   "behavior": "Geri dönüp ocağı üç kez kontrol ediyorsun, işe geç kalıyorsun.",
+   "short": "Kapalı olduğunu görünce kaygın düşüyor.",
+   "long": "Her kontrol 'bakmazsam felaket olur' inancını güçlendiriyor; şüphe ertesi gün yine geliyor ve kontroller artıyor.",
+   "choices": [
+    {
+     "label": "Bu bir şüphe düşüncesi, gerçek bir tehlike işareti değil. Kaygının kendiliğinden inmesine izin verip yoluma devam ederim.",
+     "type": "dengeli",
+     "level": 45,
+     "feedback": "İlk dakikalar zordur; ama kontrol etmeden bekledikçe beyin kaygının kendiliğinden azaldığını öğrenir."
+    },
+    {
+     "label": "Bu düşünceyi bir daha asla aklıma getirmeyeceğim.",
+     "type": "gercekdisi",
+     "level": 80,
+     "feedback": "Bir düşünceyi bastırmaya çalışmak onu daha sık akla getirir."
+    },
+    {
+     "label": "Komşuma mesaj atıp ocağa baktırırım.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Güvence istemek de bir kontrol biçimidir; rahatlama kısa sürer, ertesi gün daha fazla güvence gerekir."
+    }
+   ],
+   "takeaway": "Bu döngüyü sürdüren, düşüncenin kendisinden çok onu yatıştırmak için yapılan kontrollerdir. Görüşmelerde bu kontrolleri senin hızına göre adım adım birlikte azaltmayı çalışıyoruz."
+  },
+  {
+   "slug": "sosyal-kaygi",
+   "title": "Yeni işte ilk öğle yemeği: döngüyü sen kır",
+   "scene": {
+    "emoji": "🍽️",
+    "text": "Yeni işinde ilk haftan. Öğle yemeğinde ekip masasına oturuyorsun, herkes kendi arasında sohbet ediyor."
+   },
+   "thought": "Ne desem tuhaf kaçar, herkes beni garip bulacak",
+   "emotion": {
+    "name": "Kaygı",
+    "level": 80,
+    "emoji": "😬"
+   },
+   "body": [
+    "Terleme",
+    "Yüzde kızarma",
+    "Boğaz kuruması"
+   ],
+   "behavior": "Telefonuna gömülüp kimseyle göz teması kurmuyorsun.",
+   "short": "Kimse sana bir şey sormadığı için rahatlıyorsun.",
+   "long": "Mesafeli göründüğün için insanlar az yaklaşıyor; bu da 'beni sevmiyorlar' inancını doğruluyormuş gibi görünüyor.",
+   "choices": [
+    {
+     "label": "Herkes beni kesinlikle sevecek, hiç gerilmeyeceğim.",
+     "type": "gercekdisi",
+     "level": 70,
+     "feedback": "Hiç gerilmemeyi beklemek, ilk heyecanda 'başaramadım' hissine yol açar."
+    },
+    {
+     "label": "Herkes kendi derdinde, beni o kadar izlemiyorlar. Yanımdakine bir soru sorarım; biraz gerilsem de olur.",
+     "type": "dengeli",
+     "level": 40,
+     "feedback": "Küçük bir temas, korkunun abartıldığını görmeni sağlar; gerginlik konuştukça azalır."
+    },
+    {
+     "label": "Yemeği masamda tek başıma yerim.",
+     "type": "kacinma",
+     "level": 50,
+     "feedback": "Kaygı hemen düşer ama korkunun doğru olup olmadığını sınama fırsatını kaçırırsın."
+    }
+   ],
+   "takeaway": "Sosyal kaygı kaçındıkça büyür; küçük temaslar korkunun abartıldığını fark ettirir. Görüşmelerde bu temasları adım adım birlikte planlıyoruz."
+  },
+  {
+   "slug": "uyku-sorunlari",
+   "title": "Sunumdan önceki gece: döngüyü sen kır",
+   "scene": {
+    "emoji": "🌙",
+    "text": "Saat 01.30. Yarın sabah önemli bir sunumun var ve bir türlü uyuyamıyorsun."
+   },
+   "thought": "Uyuyamazsam yarın her şeyi berbat edeceğim",
+   "emotion": {
+    "name": "Kaygı",
+    "level": 75,
+    "emoji": "😣"
+   },
+   "body": [
+    "Yatakta dönüp durma",
+    "Hızlı kalp atışı",
+    "Zihinde yarışan düşünceler"
+   ],
+   "behavior": "Saate tekrar tekrar bakıp telefonda uyku ipuçları okuyorsun.",
+   "short": "Bir şey yapıyormuş gibi hissedip biraz oyalanıyorsun.",
+   "long": "Yatak uyanıklık ve endişeyle eşleşiyor; uyumaya çabaladıkça uyku daha da uzaklaşıyor.",
+   "choices": [
+    {
+     "label": "Yarın sunumu ertelemek için bir bahane bulurum.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Sunum kaygısı geçer ama 'uykusuzken başaramam' inancı güçlenir; sonraki gecelerde baskı artar."
+    },
+    {
+     "label": "Tamamen dinç uyanacağım, hiç sorun yok.",
+     "type": "gercekdisi",
+     "level": 70,
+     "feedback": "İnanmadığın bir cümle zihni sakinleştirmez; düşünceler gerçek endişeye geri döner."
+    },
+    {
+     "label": "Bir gece az uyusam da yarın idare edebilirim. Uyuyamazsam kalkıp loş ışıkta sakin bir şey yaparım.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Uykuyu zorlamayı bırakmak baskıyı azaltır; bedenin kendi uyku isteğine alan açar."
+    }
+   ],
+   "takeaway": "Uykuyu zorlamak onu uzaklaştırır, uykuya alan açmak işe yarar. Görüşmelerde uyku alışkanlıklarını ve gece düşüncelerini adım adım birlikte çalışıyoruz."
+  },
+  {
+   "slug": "iliski-sorunlari",
+   "title": "Görüldü ama cevap yok: döngüyü sen kır",
+   "scene": {
+    "emoji": "💬",
+    "text": "Partnerine öğlen mesaj attın. Mesaj görüldü ama üç saattir cevap gelmedi."
+   },
+   "thought": "Artık beni önemsemiyor, kesin benden sıkıldı",
+   "emotion": {
+    "name": "Kırgınlık",
+    "level": 75,
+    "emoji": "😞"
+   },
+   "body": [
+    "Midede sıkışma",
+    "Sürekli telefona bakma isteği",
+    "Huzursuzluk"
+   ],
+   "behavior": "Akşam soğuk davranıp 'Bir şey yok' diyorsun.",
+   "short": "Kendini korumuş gibi hissediyorsun.",
+   "long": "Soğukluğuna o da mesafeyle karşılık veriyor; 'beni önemsemiyor' inancı doğrulanmış gibi oluyor ve aradaki mesafe büyüyor.",
+   "choices": [
+    {
+     "label": "Ben de ona cevap vermeyerek ödeşirim.",
+     "type": "kacinma",
+     "level": 65,
+     "feedback": "Kırgınlığı söylemek yerine geri çekilmek, karşı tarafın seni anlamasını zorlaştırır."
+    },
+    {
+     "label": "İlişkimiz kusursuz, hiçbir şey hissetmemeliyim.",
+     "type": "gercekdisi",
+     "level": 70,
+     "feedback": "Duyguyu yok saymak onu yok etmez; konuşulmayan kırgınlık birikir."
+    },
+    {
+     "label": "Yoğun bir günü olabilir. Akşam sakince 'Mesajıma dönmeyince kırıldım' derim.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Zihin okumak yerine duyguyu açıkça söylemek, yakınlaşmaya kapı açar."
+    }
+   ],
+   "takeaway": "İlişkilerde zihin okumak yerine duyguyu açıkça söylemek döngüyü değiştirebilir. Görüşmelerde bu konuşmaları adım adım birlikte çalışıyoruz."
+  },
+  {
+   "slug": "is-ve-kariyer",
+   "title": "Performans görüşmesinden sonra: döngüyü sen kır",
+   "scene": {
+    "emoji": "📊",
+    "text": "Performans görüşmesinde yöneticin 'Raporlarda daha dikkatli olmalısın' dedi. Odana dönüyorsun."
+   },
+   "thought": "Başarısızım, bu işte asla ilerleyemeyeceğim",
+   "emotion": {
+    "name": "Hayal kırıklığı",
+    "level": 75,
+    "emoji": "😓"
+   },
+   "body": [
+    "Göğüste ağırlık",
+    "Boğazda düğüm",
+    "Yorgunluk"
+   ],
+   "behavior": "Yeni projelere gönüllü olmayı bırakıp iş ilanlarına bakmaya başlıyorsun.",
+   "short": "Yeni bir eleştiri riskinden uzak durduğun için rahatlıyorsun.",
+   "long": "Görünürlüğün azaldıkça gelişme fırsatları da azalıyor; 'ilerleyemiyorum' inancı kendi kendini doğruluyor.",
+   "choices": [
+    {
+     "label": "Eleştiri haksızdı, ben zaten kusursuz çalışıyorum.",
+     "type": "gercekdisi",
+     "level": 60,
+     "feedback": "Kendini korur gibi görünse de geri bildirimden yararlanma şansını elinden alır."
+    },
+    {
+     "label": "Bu bir konudaki geri bildirim, tüm kariyerim hakkında hüküm değil. Yöneticime somut örnek sorup bir plan yaparım.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Geri bildirimi kişiliğine değil davranışa yönelik okumak, onu üzerinde çalışılabilir bir şeye çevirir."
+    },
+    {
+     "label": "Bir daha dikkat çekmeyeyim, sadece işimi yapayım.",
+     "type": "kacinma",
+     "level": 55,
+     "feedback": "Görünmez kalmak eleştiriden korur ama gelişme ve takdir edilme fırsatlarını da azaltır."
+    }
+   ],
+   "takeaway": "Geri bildirimi kişiliğe değil davranışa yönelik okumak kariyer kaygısını hafifletebilir. Görüşmelerde bu düşünce kalıplarını iş hayatından örneklerle adım adım birlikte çalışıyoruz."
+  },
+  {
+   "slug": "yas-ve-kayip",
+   "title": "Bayram sabahı boş bir sandalye: döngüyü sen kır",
+   "scene": {
+    "emoji": "🕯️",
+    "text": "Bayram sabahı ailece kahvaltıdasın. Dedenin her yıl oturduğu sandalye bu yıl boş."
+   },
+   "thought": "Onsuz bu bayramın anlamı yok, gülersem ona saygısızlık olur",
+   "emotion": {
+    "name": "Hüzün",
+    "level": 80,
+    "emoji": "😢"
+   },
+   "body": [
+    "Boğazda düğüm",
+    "Göğüste ağırlık",
+    "Gözlerin dolması"
+   ],
+   "behavior": "Bir bahaneyle odana çekilip ailenden uzak duruyorsun.",
+   "short": "Gözyaşlarını kimse görmediği için bir an rahatlıyorsun.",
+   "long": "Yası tek başına taşıdıkça yalnızlık artıyor; aile de ondan söz etmekten çekiniyor ve acı paylaşılamıyor.",
+   "choices": [
+    {
+     "label": "Bu bayram hiç kutlamayalım, onu hatırlatan her şeyi kaldıralım.",
+     "type": "kacinma",
+     "level": 60,
+     "feedback": "Hatırlatıcılardan uzak durmak kısa vadede acıyı azaltır ama yas sürecini dondurabilir."
+    },
+    {
+     "label": "Artık üzülmemeliyim, hayat devam ediyor.",
+     "type": "gercekdisi",
+     "level": 75,
+     "feedback": "Yasın bir takvimi yok; üzülmeyi yasaklamak onu bastırır, geçirmez."
+    },
+    {
+     "label": "Hem özlemek hem gülmek olabilir. Masada onun bir hikâyesini anlatırım.",
+     "type": "dengeli",
+     "level": 45,
+     "feedback": "Onu birlikte anmak kaybı paylaşılabilir kılar; hüzün kalır ama yalnız taşınmaz."
+    }
+   ],
+   "takeaway": "Yas sevginin bir yansımasıdır; amaç unutmak değil, kayıpla birlikte yaşamayı öğrenmektir. Görüşmelerde bu süreci senin hızına göre adım adım birlikte yürüyoruz."
+  },
+  {
+   "slug": "ofke-kontrolu",
+   "title": "Yine yıkanmamış bulaşıklar: döngüyü sen kır",
+   "scene": {
+    "emoji": "🍽️",
+    "text": "Yorgun argın eve geldin. Lavabo yine bulaşık dolu, evdekiler dizi izliyor."
+   },
+   "thought": "Her şey hep bana kalıyor, kimse beni umursamıyor",
+   "emotion": {
+    "name": "Öfke",
+    "level": 80,
+    "emoji": "😠"
+   },
+   "body": [
+    "Yüzde ısınma",
+    "Çenede sıkma",
+    "Hızlı nefes"
+   ],
+   "behavior": "Sesini yükseltip söyleniyorsun.",
+   "short": "İçindekini dökünce bir an boşalmış hissediyorsun.",
+   "long": "Karşı taraf savunmaya geçiyor, asıl ihtiyacın konuşulmuyor; bir sonraki sefer öfke daha hızlı yükseliyor.",
+   "choices": [
+    {
+     "label": "Hiç sinirlenmemeliyim, her şey güzel.",
+     "type": "gercekdisi",
+     "level": 75,
+     "feedback": "Öfkeyi yok saymak onu ortadan kaldırmaz; içte birikir ve başka bir anda çıkar."
+    },
+    {
+     "label": "Hiçbir şey demem, kendim yıkarım.",
+     "type": "kacinma",
+     "level": 60,
+     "feedback": "Tartışma olmaz ama ihtiyacın görünmez kalır; biriken öfke bir gün daha büyük taşar."
+    },
+    {
+     "label": "Haklı bir ihtiyacım var. Önce birkaç nefes alıp sakin bir anda 'Ev işlerini paylaşmak istiyorum' derim.",
+     "type": "dengeli",
+     "level": 35,
+     "feedback": "Öfkenin altındaki ihtiyacı sakin bir anda söylemek, karşı tarafın seni duymasını kolaylaştırır."
+    }
+   ],
+   "takeaway": "Öfke çoğu zaman karşılanmamış bir ihtiyacın sinyalidir. Görüşmelerde öfkeyi fark etme ve ihtiyacını sakin ifade etme yollarını adım adım birlikte çalışıyoruz."
+  }
+ ]
+}

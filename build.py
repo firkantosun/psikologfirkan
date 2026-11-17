@@ -253,6 +253,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
+      document.querySelectorAll('.game').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -274,7 +275,7 @@ def build_js(js):
 """
     return ("(function () {\n" + prelude + common +
             "  if (PAGE === 'hikaye') {\n" + home + home_extra + "  }\n" +
-            "  if (PAGE === 'yaklasim') {\n" + yontem + tr + "  }\n" +
+            "  if (PAGE === 'yaklasim') {\n" + tr + "  }\n" +
             "  if (PAGE === 'randevu') {\n" + randevu + "  }\n" +
             "  if (PAGE === 'home') {\n" + anlat + "  }\n" +
             copy + "})();\n")
@@ -362,7 +363,10 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     out += fix_links(body_view) + fix_links(footer) + "\n" + lightbox
     if name not in ("randevu", "hikaye"):
         out += '<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n'
-    out += '<script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
+    out += '<script src="/assets/site.js" defer></script>\n'
+    if 'data-game=' in out or "data-auto" in out:
+        out += '<script src="/assets/game.js" defer></script>\n'
+    out += '</body>\n</html>\n'
     return out
 
 
@@ -562,6 +566,23 @@ def cycle(icon):
     return f'<div class="cyc" aria-label="Bilişsel davranışçı modelde düşünce, duygu, beden ve davranış döngüsü"><div class="cyc-ring"></div><div class="cyc-c">{ic(icon)}<small>Durum</small></div>{n}</div>'
 
 
+GAMES = {}
+GX = {}
+
+
+def game_html(kind, data, label, title, desc):
+    js = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    return (f'<section class="game" data-game="{kind}"><div class="game-head"><div class="label">{esc(label)}</div><h2>{esc(title)}</h2><p>{esc(desc)}</p></div>'
+            f'<div class="game-box"></div><script type="application/json">{js}</script></section>')
+
+
+def video_html(slug):
+    if not os.path.exists(os.path.join(SRC, "video", slug + ".mp4")):
+        return ""
+    return (f'<figure class="vid"><video src="/video/{slug}.mp4" poster="/video/{slug}.jpg" muted playsinline loop controls preload="none" data-auto></video>'
+            f'<figcaption>1 dakikada: kısa animasyonlu anlatım</figcaption></figure>')
+
+
 def area_page(a, posts):
     c1, c2 = area_colors(a)
     secs = sections(a["body"])
@@ -570,7 +591,8 @@ def area_page(a, posts):
         h = f"<h2>{esc(s['h'])}</h2>" if s["h"] else ""
         has_ul = any("ul" in b for b in s["items"])
         if "BDT" in s["h"] or "bilişsel" in s["h"].lower() or (i == 2 and not any("ul" in b for b in s["items"])):
-            inner = paras(s["items"]) + cycle(a["icon"])
+            g = GAMES.get(a["slug"])
+            inner = paras(s["items"]) + (game_html("cycle", [g], "Oyun · 1 dakika", "Döngüyü sen kır", "Bir anı adım adım izle, sonra döngüyü kırmak için bir yol seç.") if g else cycle(a["icon"])) + video_html(a["slug"])
         elif has_ul and i >= 3:
             inner = paras([b for b in s["items"] if "p" in b][:0]) + tools(s["items"]) + paras(s["items"], 0)
         elif has_ul:
@@ -659,6 +681,10 @@ def main():
     css, fonts, nav, hud, views, footer, lightbox, js = ctx
     posts = json.load(open(os.path.join(SRC, "posts.json"), encoding="utf-8"))["posts"]
     posts.sort(key=lambda p: p["date"], reverse=True)
+    gp = os.path.join(SRC, "games.json")
+    if os.path.exists(gp):
+        GAMES.update({g["slug"]: g for g in json.load(open(gp, encoding="utf-8"))["games"]})
+    GX.update(json.load(open(os.path.join(SRC, "games-extra.json"), encoding="utf-8")))
     AREAS[:] = json.load(open(os.path.join(SRC, "areas.json"), encoding="utf-8"))["areas"]
     for a in AREAS:
         assert re.fullmatch(r"[a-z0-9-]+", a["slug"])
@@ -682,7 +708,11 @@ def main():
             shutil.copy(os.path.join(SRC, f), os.path.join(DIST, f))
 
     base = "body { margin: 0; }\nimg { max-width: 100%; }\n:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }\n"
-    open(os.path.join(DIST, "assets", "site.css"), "w", encoding="utf-8").write(base + fix_links(css))
+    gcss = open(os.path.join(SRC, "game.css"), encoding="utf-8").read()
+    open(os.path.join(DIST, "assets", "site.css"), "w", encoding="utf-8").write(base + fix_links(css) + "\n" + gcss)
+    shutil.copy(os.path.join(SRC, "game.js"), os.path.join(DIST, "assets", "game.js"))
+    if os.path.isdir(os.path.join(SRC, "video")):
+        shutil.copytree(os.path.join(SRC, "video"), os.path.join(DIST, "video"))
     open(os.path.join(DIST, "assets", "site.js"), "w", encoding="utf-8").write(build_js(js))
 
     written = []
@@ -700,6 +730,9 @@ def main():
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": "Psikolog Firkan", "url": SITE + "/", "inLanguage": "tr-TR"}
     write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest).replace("<!--ALAN-KARTLARI-->", home_cards), ctx,
                     ld=[person_ld(), business_ld(), website] + ([faq_ld(home_faq)] if home_faq else [])))
+    views["yaklasim"] = (views["yaklasim"]
+        .replace("<!--GAME-YAKLASIM-->", video_html("bdt") + game_html("cycle", GX["yaklasim"], "Bilişsel model · oyun", "Bir anın içinde neler oluyor?", "Bir örnek seç, döngüyü adım adım izle ve onu kırmak için bir yol seç."))
+        .replace("<!--GAME-DEDEKTIF-->", game_html("detective", {"traps": GX["traps"], "cards": GX["cards"]}, "Oyun · Düşünce dedektifi", "Bu düşünce hangi tuzağa düştü?", "Her kartta bir düşünce var. Hangi düşünce tuzağına benzediğini seç; doğru cevabı ve daha dengeli hâlini gör.")))
     for key, crumb in [("yaklasim", "Terapi yaklaşımım"), ("ozgecmis", "Eğitim ve deneyim"), ("iletisim", "İletişim"), ("randevu", "Randevu al")]:
         write(PAGES[key]["path"], page(key, views[key], ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), (crumb, PAGES[key]["path"])])]))
     write("/calisma-alanlari/", page("alanlar", area_index(), ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), ("Çalışma alanları", "/calisma-alanlari/")]),
