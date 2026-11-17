@@ -1,0 +1,680 @@
+{
+ "stories": [
+  {
+   "slug": "bdt",
+   "title": "Bir düşünce, bir günü nasıl değiştirir?",
+   "emoji": "📱",
+   "emotion": "Kırgınlık",
+   "level": 70,
+   "low": 30,
+   "thought": "Önerim kimsenin umurunda değil, beni istemiyorlar",
+   "alt": "Herkes gün içinde meşgul olabilir; akşam bir kez daha yazarım.",
+   "body": [
+    "Midede sıkışma",
+    "Omuzlarda gerginlik",
+    "Boğazda düğüm"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "BDT neye bakar?",
+     "p": "Bilişsel Davranışçı Terapi, olayın kendisinden çok onu nasıl yorumladığına bakar. Düşünce, duygu, beden ve davranış birbirine bağlıdır; biri değişince ötekiler de değişir."
+    },
+    {
+     "k": "scene",
+     "h": "Görüldü ama cevap yok",
+     "p": "Arkadaş grubuna hafta sonu için bir buluşma önerdin. Mesajın görüldü, saatler geçti ama kimse yazmadı."
+    },
+    {
+     "k": "thought",
+     "h": "Zihin boşluğu doldurur",
+     "p": "Sessizlik belirsizdir ve zihin onu hızla bir anlamla doldurur: 'Önerim kimsenin umurunda değil.' Bu düşünce kendiliğinden gelir, gerçek gibi hissettirir."
+    },
+    {
+     "k": "feel",
+     "h": "Duygu ve beden eşlik eder",
+     "p": "Düşünceyle birlikte kırgınlık yükselir. Midende bir sıkışma, omuzlarında gerginlik belirir; beden, düşünceyi doğru kabul etmiş gibi tepki verir."
+    },
+    {
+     "k": "act",
+     "h": "Geri çekilirsin",
+     "p": "Mesajı sileyim mi diye düşünür, sonra gruba bir daha yazmamaya karar verirsin. Böylece reddedilme ihtimalinden uzaklaşır, kısa bir an rahatlarsın."
+    },
+    {
+     "k": "loop",
+     "h": "Döngü kendini besler",
+     "p": "Sen yazmadıkça grupla temasın azalır, davetler seyrekleşir. Bu da ilk düşünceyi doğruluyormuş gibi görünür ve bir sonraki sessizlikte kırgınlık daha hızlı gelir."
+    },
+    {
+     "k": "break",
+     "h": "Döngüyü gevşetmek",
+     "p": "BDT'de önce düşünceyi fark eder, ardından kanıtlarına bakar ve daha dengeli bir yorumu küçük bir davranışla sınarız. Görüşmelerde kendi döngülerini bu şekilde birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "kaygi-bozukluklari",
+   "title": "Kaygı nasıl bir döngüye dönüşür?",
+   "emoji": "📱",
+   "emotion": "Kaygı",
+   "level": 80,
+   "low": 35,
+   "thought": "Kesin kötü bir şey oldu, hemen öğrenmem lazım",
+   "alt": "Annem çoğu zaman sohbet için 'ara' yazar. Toplantı bitince ararım.",
+   "body": [
+    "Göğüste sıkışma",
+    "Midede düğüm",
+    "Dağılan dikkat"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Kaygı ne zaman yorar?",
+     "p": "Kaygı, bizi olası tehlikelere hazırlayan doğal bir alarmdır. Alarm belirsizlik karşısında sık ve şiddetli çalmaya başladığında, günlük hayatı yormaya başlar."
+    },
+    {
+     "k": "scene",
+     "h": "Kısa bir mesaj",
+     "p": "Annenden 'Müsait olunca ara' mesajı gelmiş. İki saattir toplantıdasın ve henüz arayamadın."
+    },
+    {
+     "k": "thought",
+     "h": "Belirsizlik felakete döner",
+     "p": "Mesajda kötü bir şey yazmıyor ama zihin boşluğu en kötü ihtimalle doldurur: 'Kesin kötü bir şey oldu.' Bu düşünce bir tahmindir, yine de bilgi gibi hissettirir."
+    },
+    {
+     "k": "feel",
+     "h": "Beden alarma geçer",
+     "p": "Kaygı hızla yükselir. Göğsünde bir sıkışma, midende bir düğüm hissedersin; toplantıda konuşulanlar artık kulağına girmez."
+    },
+    {
+     "k": "act",
+     "h": "Hemen kontrol edersin",
+     "p": "Toplantıdan çıkıp art arda ararsın, bir yandan haberlere bakarsın. Annen telefonu açıp sesi neşeli gelince, rahatlama bir anda yayılır."
+    },
+    {
+     "k": "loop",
+     "h": "Rahatlama dersi pekiştirir",
+     "p": "Zihin 'kontrol ettim, felaketi önledim' sonucunu çıkarır. Belirsizliğe katlanmayı öğrenme fırsatı kaçar ve bir sonraki mesajda kaygı daha da hızlı yükselir."
+    },
+    {
+     "k": "break",
+     "h": "Belirsizlikle kalabilmek",
+     "p": "BDT'de felaket düşüncesini fark edip kanıtlarına bakar, kontrolü adım adım erteleyerek kaygının kendiliğinden indiğini deneyimleriz. Görüşmelerde bu adımları sana uygun hızda birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "panik-atak",
+   "title": "Panik atak nasıl kendini büyütür?",
+   "emoji": "🚇",
+   "emotion": "Korku",
+   "level": 90,
+   "low": 40,
+   "thought": "Kalp krizi geçiriyorum, burada bayılacağım",
+   "alt": "Bu çarpıntıyı tanıyorum; dalgalanıp iner. Nefesimi verip durağıma kadar kalırım.",
+   "body": [
+    "Çarpıntı",
+    "Nefes daralması",
+    "Baş dönmesi"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Panik atak nedir?",
+     "p": "Panik atak, ortada gerçek bir tehlike yokken bedenin alarm sisteminin aniden ve yoğun biçimde çalışmasıdır. Herkesin zaman zaman hissettiği gerginlikten farkı, şiddeti ve beklenmedik gelişidir."
+    },
+    {
+     "k": "scene",
+     "h": "Tünelde duran metro",
+     "p": "Metro iki istasyon arasında durdu. Vagon kalabalık, hava ağır; kalbinin hızlandığını fark ediyorsun."
+    },
+    {
+     "k": "thought",
+     "h": "Duyum tehlike sanılır",
+     "p": "Zihin bu çarpıntıyı yanlış okur: 'Kalp krizi geçiriyorum, burada bayılacağım.' Normal bir beden tepkisi, bir anda felaketin işareti gibi görünür."
+    },
+    {
+     "k": "feel",
+     "h": "Korku korkuyu çağırır",
+     "p": "Korku yükseldikçe kalp daha hızlı atar, nefesin daralır, başın döner. Her yeni belirti ilk düşünceyi doğruluyormuş gibi gelir ve dalga büyür."
+    },
+    {
+     "k": "act",
+     "h": "İlk durakta inersin",
+     "p": "İlk durakta kendini dışarı atarsın. Belirtiler azalınca rahatlarsın ve bir daha metroya binmemeye karar verirsin."
+    },
+    {
+     "k": "loop",
+     "h": "Kaçınma alanı daraltır",
+     "p": "Zihin 'metrodan çıktığım için kurtuldum' sonucunu çıkarır. Metro, ardından otobüs, sonra kalabalık yerler; kaçındığın yerlerin listesi sessizce uzar."
+    },
+    {
+     "k": "break",
+     "h": "Duyumlarla güvenle tanışmak",
+     "p": "İlk kez yaşanan göğüs ağrısında önce hekim değerlendirmesi önemlidir. BDT'de ardından duyumları geçici bir alarm olarak tanır, kaçındığın yerlere küçük adımlarla döneriz; görüşmelerde bunu birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "depresyon",
+   "title": "Çekilmek hüznü nasıl derinleştirir?",
+   "emoji": "🛏️",
+   "emotion": "Hüzün",
+   "level": 75,
+   "low": 40,
+   "thought": "Gitsem de keyif almam, zaten kimse beni özlemez",
+   "alt": "Keyif almayı beklemeden bir saatliğine giderim; istek çoğu zaman sonra gelir.",
+   "body": [
+    "Bedende ağırlık",
+    "Yorgunluk",
+    "İsteksizlik"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Hüzün ne zaman ağırlaşır?",
+     "p": "Hüzün, kayıplara ve zorluklara verilen doğal bir tepkidir. Haftalarca sürdüğünde, eskiden keyif veren şeyler tat vermemeye ve günler ağırlaşmaya başladığında farklı bir döngüye dönüşebilir."
+    },
+    {
+     "k": "scene",
+     "h": "Bir kahvaltı daveti",
+     "p": "Pazar sabahı arkadaşın kahvaltıya çağırıyor. Sen hâlâ yataktasın ve hiçbir şey yapmak istemiyorsun."
+    },
+    {
+     "k": "thought",
+     "h": "Önceden verilen hüküm",
+     "p": "Daha kalkmadan zihin sonucu yazar: 'Gitsem de keyif almam, zaten kimse beni özlemez.' Bu düşünce bir tahmindir ama yorgun bir anda kesin bir bilgi gibi görünür."
+    },
+    {
+     "k": "feel",
+     "h": "Beden de ağırlaşır",
+     "p": "Hüzün koyulaşır. Bedeninde bir ağırlık, derin bir yorgunluk hissedersin; yataktan kalkmak bile büyük bir iş gibi gelir."
+    },
+    {
+     "k": "act",
+     "h": "Başka zamana bırakırsın",
+     "p": "'Başka zaman' yazıp günü yatakta telefonla geçirirsin. Çaba göstermek zorunda kalmadığın için o an bir hafiflik hissedersin."
+    },
+    {
+     "k": "loop",
+     "h": "Keyif kaynakları azalır",
+     "p": "Davetleri erteledikçe gün içinde iyi gelen anlar azalır. Bu boşluk 'hiçbir şey zevk vermiyor' düşüncesini kanıtlanmış gibi gösterir ve hüzün derinleşir."
+    },
+    {
+     "k": "break",
+     "h": "Önce küçük bir adım",
+     "p": "BDT'de isteği beklemeden küçük ve somut etkinlikler planlar, ardından gerçekte nasıl hissettirdiğine birlikte bakarız. Görüşmelerde sana uygun bu küçük adımları birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "stres-ve-tukenmislik",
+   "title": "Stres nasıl tükenmişliğe dönüşür?",
+   "emoji": "💼",
+   "emotion": "Bunalmışlık",
+   "level": 85,
+   "low": 40,
+   "thought": "Hayır dersem işimi kaybederim, her şeye yetişmek zorundayım",
+   "alt": "Yarın 10.00'da bakabileceğimi yazarım; bir gecelik sınır işimi kaybettirmez.",
+   "body": [
+    "Omuzlarda gerginlik",
+    "Baş ağrısı",
+    "Uykuya dalamama"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Stresten tükenmişliğe",
+     "p": "Kısa süreli stres, bizi harekete geçiren doğal bir tepkidir. Dinlenmeye fırsat kalmadan aylarca sürdüğünde enerji, istek ve verim yavaş yavaş tükenmeye başlar."
+    },
+    {
+     "k": "scene",
+     "h": "Gece 23.00'te bir mesaj",
+     "p": "Saat 23.00, yöneticinden mesaj geliyor: 'Sabaha şu sunuma bir göz atar mısın?' Zaten bütün gün yoğundun."
+    },
+    {
+     "k": "thought",
+     "h": "Her şey zorunluluğa döner",
+     "p": "Zihin hemen bir kural koyar: 'Hayır dersem işimi kaybederim, her şeye yetişmek zorundayım.' Bu düşünce bir seçeneği, kaçınılmaz bir zorunluluk gibi gösterir."
+    },
+    {
+     "k": "feel",
+     "h": "Beden yükü taşır",
+     "p": "Bunalmışlık yükselir. Omuzların gerilir, başın ağrır; yorgun olduğun hâlde zihnin uykuya geçmeyi reddeder."
+    },
+    {
+     "k": "act",
+     "h": "Gece yarısını geçersin",
+     "p": "Gece 02.00'ye kadar sunum üzerinde çalışırsın. Sabah yöneticin memnundur ve bir an her şeyi kontrol altında tutuyormuş gibi hissedersin."
+    },
+    {
+     "k": "loop",
+     "h": "Sınırsızlık yük ekler",
+     "p": "Her 'evet' talebin normal olduğunu öğretir; talepler artar, dinlenme azalır. Yorgunluk birikir ve 'yetişmek zorundayım' düşüncesi daha da güçlenir."
+    },
+    {
+     "k": "break",
+     "h": "Sınırı sınamak",
+     "p": "BDT'de 'zorundayım' düşüncesinin kanıtlarına bakar, küçük bir sınırı deneyip gerçekte ne olduğunu gözlemleriz. Görüşmelerde dinlenmeye de yer açan bu adımları birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "ozguven-sorunlari",
+   "title": "Susmak özgüveni nasıl küçültür?",
+   "emoji": "🙋",
+   "emotion": "Utanç",
+   "level": 70,
+   "low": 35,
+   "thought": "Saçma bir şey söylerim, herkes beceriksiz olduğumu anlar",
+   "alt": "Fikrim mükemmel olmak zorunda değil; bir cümleyle söyler, tepkilere bakarım.",
+   "body": [
+    "Yüzde kızarma",
+    "Seste titreme",
+    "Kalp çarpıntısı"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Özgüven ne zaman sarsılır?",
+     "p": "Herkes zaman zaman kendinden şüphe eder. Bu şüphe 'yetersizim' inancına dönüşüp seni sürekli geri çektiğinde, özgüven bir döngü içinde küçülmeye başlar."
+    },
+    {
+     "k": "scene",
+     "h": "Toplantıda bir fikir",
+     "p": "Toplantıda aklında güzel bir fikir var. Yönetici 'Eklemek isteyen var mı?' diye soruyor ve masa bir an sessizleşiyor."
+    },
+    {
+     "k": "thought",
+     "h": "İç eleştirmen konuşur",
+     "p": "Tam o anda tanıdık bir ses yükselir: 'Saçma bir şey söylerim, herkes beceriksiz olduğumu anlar.' Henüz söylenmemiş bir fikir, baştan yargılanmış olur."
+    },
+    {
+     "k": "feel",
+     "h": "Utanç bedene yansır",
+     "p": "Utanç yükselir. Yüzünün kızardığını, sesinin titreyeceğini hissedersin; kalbin hızlanır ve konuşmak daha da zor görünür."
+    },
+    {
+     "k": "act",
+     "h": "Susmayı seçersin",
+     "p": "'Benim eklemem yok' deyip susarsın. Göz önüne çıkmadığın için gerginlik hemen azalır, kısa bir rahatlama hissedersin."
+    },
+    {
+     "k": "loop",
+     "h": "İnanç sınanmadan kalır",
+     "p": "Fikrini hiç sınamadığın için 'yetersizim' inancı sorgulanmaz. Başkası aynı fikri söyleyip takdir gördüğünde kendini daha da küçük hissedersin."
+    },
+    {
+     "k": "break",
+     "h": "Kanıt toplamak",
+     "p": "BDT'de iç eleştirmenin cümlelerini fark eder, kanıtlarına bakar ve küçük adımlarla kendini ifade etmeyi deneriz. Görüşmelerde bu deneyimleri sana uygun hızda birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "obsesif-kompulsif-bozukluk",
+   "title": "Şüphe ve kontrol nasıl kısır döngü olur?",
+   "emoji": "🔥",
+   "emotion": "Kaygı",
+   "level": 85,
+   "low": 35,
+   "thought": "Ocak açık kalmış olabilir, bir şey olursa suçu benim",
+   "alt": "Bu bir şüphe düşüncesi, tehlike işareti değil. Kaygının inmesine izin veririm.",
+   "body": [
+    "İç huzursuzluk",
+    "Kaslarda gerginlik",
+    "Aklın evde kalması"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Takıntı ve kontrol",
+     "p": "Herkesin aklına zaman zaman 'kapıyı kilitledim mi' gibi şüpheler gelir. OKB'de bu şüpheler yoğun ve ısrarcıdır; kaygıyı yatıştırmak için tekrar tekrar yapılan davranışlar gün içinde çok yer kaplar."
+    },
+    {
+     "k": "scene",
+     "h": "Durağa giden yol",
+     "p": "Evden çıktın, otobüs durağına yürüyorsun. Aklına birden ocağı kapatıp kapatmadığın takılıyor."
+    },
+    {
+     "k": "thought",
+     "h": "Şüphe tehlike gibi görünür",
+     "p": "Zihin şüpheyi bir uyarı gibi okur: 'Ocak açık kalmış olabilir, bir şey olursa suçu benim.' Bu düşünce bir olasılıktır ama yoğun bir sorumluluk duygusuyla gelir."
+    },
+    {
+     "k": "feel",
+     "h": "Kaygı yükselir",
+     "p": "Kaygı hızla tırmanır. İçinde bir huzursuzluk, kaslarında gerginlik hissedersin; yürüyorsun ama aklın sürekli evde kalır."
+    },
+    {
+     "k": "act",
+     "h": "Geri dönüp kontrol edersin",
+     "p": "Eve dönüp ocağı üç kez kontrol edersin ve işe geç kalırsın. Düğmenin kapalı olduğunu görünce kaygı bir anda düşer."
+    },
+    {
+     "k": "loop",
+     "h": "Kontrol şüpheyi besler",
+     "p": "Her kontrol 'bakmasaydım felaket olurdu' inancını güçlendirir. Şüphe ertesi gün yine gelir, kontroller sayıca ve süre olarak artar."
+    },
+    {
+     "k": "break",
+     "h": "Kaygıyla kalmayı öğrenmek",
+     "p": "BDT'de şüpheye kontrolle cevap vermeden kaygının kendiliğinden indiğini, küçük adımlarla ve planlı biçimde deneyimleriz. Görüşmelerde bu adımları sana uygun hızda birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "sosyal-kaygi",
+   "title": "Sosyal kaygı nasıl mesafe yaratır?",
+   "emoji": "🍽️",
+   "emotion": "Kaygı",
+   "level": 80,
+   "low": 35,
+   "thought": "Ne desem tuhaf kaçar, herkes beni garip bulacak",
+   "alt": "Herkes kendi derdinde. Yanımdakine bir soru sorarım; biraz gerilsem de olur.",
+   "body": [
+    "Terleme",
+    "Yüzde kızarma",
+    "Boğaz kuruması"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Sosyal kaygı nedir?",
+     "p": "Yeni ortamlarda biraz gerilmek oldukça doğaldır. Sosyal kaygıda ise başkalarınca olumsuz değerlendirilme korkusu o kadar güçlüdür ki insanlarla birlikte olmak sürekli bir sınav gibi gelir."
+    },
+    {
+     "k": "scene",
+     "h": "İlk haftada öğle yemeği",
+     "p": "Yeni işinde ilk haftan. Öğle yemeğinde ekip masasına oturuyorsun; herkes kendi arasında sohbet ediyor."
+    },
+    {
+     "k": "thought",
+     "h": "Zihin seni izlemeye başlar",
+     "p": "Dikkat birden kendine döner: 'Ne desem tuhaf kaçar, herkes beni garip bulacak.' Başkalarının ne düşündüğünü bildiğini sanmak, bu düşünceyi gerçek gibi gösterir."
+    },
+    {
+     "k": "feel",
+     "h": "Beden ele verecek gibi",
+     "p": "Kaygı yükselir. Terlemeye başlar, yüzünün kızardığını, boğazının kuruduğunu hissedersin; bunların görüneceği düşüncesi kaygıyı artırır."
+    },
+    {
+     "k": "act",
+     "h": "Telefona sığınırsın",
+     "p": "Telefonuna gömülüp kimseyle göz teması kurmazsın. Kimse sana dönmediği için gerginlik biraz azalır."
+    },
+    {
+     "k": "loop",
+     "h": "Mesafe inancı doğrular",
+     "p": "Mesafeli göründüğün için insanlar da daha az yaklaşır. Bu durum 'beni sevmiyorlar' inancını doğruluyormuş gibi görünür ve sonraki yemek daha zor gelir."
+    },
+    {
+     "k": "break",
+     "h": "Küçük temaslar",
+     "p": "BDT'de dikkatin nereye gittiğini fark eder, tahminlerini küçük sosyal adımlarla gerçeğe karşı sınarız. Görüşmelerde bu adımları sana uygun hızda birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "uyku-sorunlari",
+   "title": "Uyumaya çabalamak uykuyu nasıl kaçırır?",
+   "emoji": "🌙",
+   "emotion": "Kaygı",
+   "level": 75,
+   "low": 30,
+   "thought": "Uyuyamazsam yarın her şeyi berbat edeceğim",
+   "alt": "Bir gece az uyusam da idare ederim. Uyuyamazsam kalkıp loş ışıkta dinlenirim.",
+   "body": [
+    "Dönüp durma",
+    "Hızlı kalp atışı",
+    "Yarışan düşünceler"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Uyku ne zaman sorun olur?",
+     "p": "Herkes ara sıra uykusuz bir gece geçirir. Uykuya dalmak ya da uykuyu sürdürmek haftalarca zorlaştığında, uykunun kendisi bir kaygı kaynağına dönüşebilir."
+    },
+    {
+     "k": "scene",
+     "h": "Önemli bir günün gecesi",
+     "p": "Saat 01.30. Yarın sabah önemli bir sunumun var ve bir türlü uyuyamıyorsun."
+    },
+    {
+     "k": "thought",
+     "h": "Yarın bu geceye taşınır",
+     "p": "Zihin yarına atlar: 'Uyuyamazsam yarın her şeyi berbat edeceğim.' Uykusuzluk artık bir rahatsızlık değil, bir felaketin başlangıcı gibi görünür."
+    },
+    {
+     "k": "feel",
+     "h": "Beden uyanık kalır",
+     "p": "Kaygı yükseldikçe kalbin hızlanır, düşüncelerin yarışır. Yatakta dönüp durursun; uyumak için gereken gevşeme uzaklaşır."
+    },
+    {
+     "k": "act",
+     "h": "Saate bakarsın",
+     "p": "Saate tekrar tekrar bakıp telefonda uyku ipuçları okursun. Bir şey yapıyor olmak, o an çaresizliği biraz hafifletir."
+    },
+    {
+     "k": "loop",
+     "h": "Yatak uyanıklığı öğrenir",
+     "p": "Yatak zamanla uyanıklık ve endişeyle eşleşir. Uyumaya çabaladıkça uyku daha da uzaklaşır ve sonraki gece kaygı daha erken başlar."
+    },
+    {
+     "k": "break",
+     "h": "Yatakla bağı yeniden kurmak",
+     "p": "BDT'de uykuyla ilgili düşünceleri gözden geçirir, yatağı yeniden uykuyla eşleştiren düzenli alışkanlıklar kurarız. Görüşmelerde bu adımları senin düzenine göre birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "iliski-sorunlari",
+   "title": "Kırgınlık ilişkide nasıl mesafe olur?",
+   "emoji": "💬",
+   "emotion": "Kırgınlık",
+   "level": 75,
+   "low": 35,
+   "thought": "Artık beni önemsemiyor, benden sıkıldı",
+   "alt": "Yoğun bir günü olabilir. Akşam sakince 'Dönmeyince kırıldım' derim.",
+   "body": [
+    "Midede sıkışma",
+    "Telefona bakma isteği",
+    "Huzursuzluk"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "İlişkide döngüler",
+     "p": "Her ilişkide kırgınlıklar ve yanlış anlaşılmalar olur. Sorun, iki kişinin birbirinin tepkisini besleyen bir döngüye girip asıl ihtiyaçları konuşamaz hâle gelmesiyle büyür."
+    },
+    {
+     "k": "scene",
+     "h": "Görüldü, cevap yok",
+     "p": "Partnerine öğlen bir mesaj attın. Mesaj görüldü ama üç saattir cevap gelmedi."
+    },
+    {
+     "k": "thought",
+     "h": "Sessizliğe anlam yüklenir",
+     "p": "Zihin sessizliği bir mesaj gibi okur: 'Artık beni önemsemiyor, benden sıkıldı.' Tek bir gecikme, ilişkinin tamamı hakkında bir hükme dönüşür."
+    },
+    {
+     "k": "feel",
+     "h": "Kırgınlık bedene yerleşir",
+     "p": "Kırgınlık büyür. Midende bir sıkışma, içinde bir huzursuzluk hissedersin; elin ikide bir telefona gider."
+    },
+    {
+     "k": "act",
+     "h": "Soğuk bir akşam",
+     "p": "Akşam karşılaştığınızda soğuk davranır, 'Bir şey yok' dersin. Kırgınlığını göstermemek seni o an korunmuş hissettirir."
+    },
+    {
+     "k": "loop",
+     "h": "Mesafe mesafeyi doğurur",
+     "p": "Soğukluğuna o da mesafeyle karşılık verir. 'Beni önemsemiyor' inancı doğrulanmış gibi olur ve aradaki mesafe sessizce büyür."
+    },
+    {
+     "k": "break",
+     "h": "İhtiyacı söze dökmek",
+     "p": "BDT'de yorumunu fark edip kanıtlarına bakar, kırgınlığını suçlamadan ifade etmenin yollarını deneriz. Görüşmelerde bu iletişim adımlarını birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "is-ve-kariyer",
+   "title": "Bir geri bildirim nasıl hükme dönüşür?",
+   "emoji": "📊",
+   "emotion": "Hayal kırıklığı",
+   "level": 75,
+   "low": 35,
+   "thought": "Başarısızım, bu işte asla ilerleyemeyeceğim",
+   "alt": "Bu tek konuda bir geri bildirim. Yöneticime örnek sorup bir plan yaparım.",
+   "body": [
+    "Göğüste ağırlık",
+    "Boğazda düğüm",
+    "Yorgunluk"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "İş hayatında düşünceler",
+     "p": "İş hayatında geri bildirim, belirsizlik ve kariyer kaygısı herkesin karşılaştığı konulardır. Zorlanma, bu deneyimler kişinin kendi değeri hakkında kesin hükümlere dönüştüğünde başlar."
+    },
+    {
+     "k": "scene",
+     "h": "Performans görüşmesi",
+     "p": "Performans görüşmesinde yöneticin 'Raporlarda daha dikkatli olmalısın' dedi. Odana dönüyorsun."
+    },
+    {
+     "k": "thought",
+     "h": "Tek cümle genellenir",
+     "p": "Zihin tek bir yorumu bütün kariyerine yayar: 'Başarısızım, bu işte asla ilerleyemeyeceğim.' Somut bir geri bildirim, kalıcı bir etikete dönüşür."
+    },
+    {
+     "k": "feel",
+     "h": "Hayal kırıklığı çöker",
+     "p": "Hayal kırıklığı ağırlaşır. Göğsünde bir ağırlık, boğazında bir düğüm hissedersin; gün bir anda yorucu görünür."
+    },
+    {
+     "k": "act",
+     "h": "Görünmez olursun",
+     "p": "Yeni projelere gönüllü olmayı bırakır, iş ilanlarına bakmaya başlarsın. Yeniden eleştirilme ihtimalinden uzaklaşmak o an rahatlatır."
+    },
+    {
+     "k": "loop",
+     "h": "Fırsatlar azalır",
+     "p": "Görünürlüğün azaldıkça gelişme fırsatları da azalır. 'İlerleyemiyorum' inancı böylece kendi kendini doğrular."
+    },
+    {
+     "k": "break",
+     "h": "Geri bildirimi işe çevirmek",
+     "p": "BDT'de genelleyen düşünceyi fark edip kanıtlarına bakar, geri bildirimi somut ve küçük adımlara çeviririz. Görüşmelerde kariyerinle ilgili bu adımları birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "yas-ve-kayip",
+   "title": "Yas tek başına taşındığında ne olur?",
+   "emoji": "🕯️",
+   "emotion": "Hüzün",
+   "level": 80,
+   "low": 45,
+   "thought": "Onsuz bu bayramın anlamı yok, gülersem ona saygısızlık olur",
+   "alt": "Hem özlemek hem gülmek olabilir. Masada onun bir hikâyesini anlatırım.",
+   "body": [
+    "Boğazda düğüm",
+    "Göğüste ağırlık",
+    "Gözlerin dolması"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Yas, sevginin devamı",
+     "p": "Yas, kaybedilen birine duyulan sevginin doğal bir devamıdır ve herkes onu kendi temposunda yaşar. Zorlanma, acının paylaşılamayıp hayatın geri kalanını uzun süre durdurmasıyla artar."
+    },
+    {
+     "k": "scene",
+     "h": "Boş kalan sandalye",
+     "p": "Bayram sabahı ailece kahvaltıdasın. Dedenin her yıl oturduğu sandalye bu yıl boş."
+    },
+    {
+     "k": "thought",
+     "h": "Sevinç yasak gibi gelir",
+     "p": "Zihin bir kural koyar: 'Onsuz bu bayramın anlamı yok, gülersem ona saygısızlık olur.' Özlem ile hayata katılmak, birbirine zıtmış gibi görünür."
+    },
+    {
+     "k": "feel",
+     "h": "Hüzün bedende yükselir",
+     "p": "Hüzün dalga gibi gelir. Boğazında bir düğüm, göğsünde bir ağırlık hissedersin; gözlerin dolar."
+    },
+    {
+     "k": "act",
+     "h": "Odana çekilirsin",
+     "p": "Bir bahaneyle odana çekilip ailenden uzak durursun. Kimsenin önünde ağlamak zorunda kalmamak o an bir nefes aldırır."
+    },
+    {
+     "k": "loop",
+     "h": "Acı paylaşılamaz",
+     "p": "Yası tek başına taşıdıkça yalnızlık artar. Aile de ondan söz etmekten çekinir ve özlem konuşulamadan içeride birikir."
+    },
+    {
+     "k": "break",
+     "h": "Yasa alan açmak",
+     "p": "BDT'de yasla ilgili katı kuralları fark eder, kaybettiğin kişiyi anmanın ve hayata yeniden katılmanın yollarını birlikte ararız. Görüşmelerde bu süreci senin temponla birlikte çalışıyoruz."
+    }
+   ]
+  },
+  {
+   "slug": "ofke-kontrolu",
+   "title": "Öfke nasıl hızla tırmanır?",
+   "emoji": "🍽️",
+   "emotion": "Öfke",
+   "level": 80,
+   "low": 35,
+   "thought": "Her şey hep bana kalıyor, kimse beni umursamıyor",
+   "alt": "Haklı bir ihtiyacım var. Birkaç nefes alıp sakin bir anda paylaşmayı isterim.",
+   "body": [
+    "Yüzde ısınma",
+    "Çenede sıkma",
+    "Hızlı nefes"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Öfke ne anlatır?",
+     "p": "Öfke, karşılanmayan bir ihtiyaca ya da haksızlık algısına verilen doğal bir tepkidir. Hızlı ve sık yükseldiğinde, asıl ihtiyacı anlatmak yerine ilişkileri yıpratmaya başlar."
+    },
+    {
+     "k": "scene",
+     "h": "Dolu lavabo",
+     "p": "Yorgun argın eve geldin. Lavabo yine bulaşık dolu, evdekiler dizi izliyor."
+    },
+    {
+     "k": "thought",
+     "h": "Genelleyen bir cümle",
+     "p": "Zihin anı bir hükme çevirir: 'Her şey hep bana kalıyor, kimse beni umursamıyor.' 'Hep' ve 'kimse' gibi kelimeler öfkeyi bir anda büyütür."
+    },
+    {
+     "k": "feel",
+     "h": "Beden hazırlanır",
+     "p": "Öfke tırmanır. Yüzün ısınır, çenen kasılır, nefesin hızlanır; beden bir çatışmaya hazırlanır gibidir."
+    },
+    {
+     "k": "act",
+     "h": "Sesini yükseltirsin",
+     "p": "Sesini yükseltip söylenirsin. İçindeki gerginliği dışarı vermek o an bir boşalma hissi verir."
+    },
+    {
+     "k": "loop",
+     "h": "Asıl ihtiyaç kaybolur",
+     "p": "Karşı taraf savunmaya geçer, konu bulaşıklardan kimin haklı olduğuna kayar. Asıl ihtiyacın konuşulmaz ve bir sonraki sefer öfke daha hızlı yükselir."
+    },
+    {
+     "k": "break",
+     "h": "Araya bir duraklama",
+     "p": "BDT'de öfkenin erken işaretlerini ve genelleyen düşünceleri fark eder, ihtiyacını sakin bir dille ifade etmeyi deneriz. Görüşmelerde bu adımları birlikte çalışıyoruz."
+    }
+   ]
+  }
+ ]
+}

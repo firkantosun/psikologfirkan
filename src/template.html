@@ -712,7 +712,7 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
   .copy.bottom { bottom: 12vh; }
 }
 /* ana sayfa (danışan odaklı) */
-.page-home { padding-top: 0; }
+.view.page-home { padding-top: 0; }
 .h-hero { background: var(--band); color: var(--band-ink); padding-top: 56px; }
 .h-hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
 .h-hero .label { color: var(--glow); }
@@ -1163,6 +1163,38 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   .ed-ph img { height: 260px; }
   .cv-img { width: 96px; height: 96px; }
 }
+/* hareketli giriş */
+.h-hero { position: relative; overflow: hidden; }
+.h-hero .wrap { position: relative; z-index: 1; }
+.h-bg { position: absolute; inset: 0; pointer-events: none; }
+.h-bg i { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .5; animation: hdrift 18s ease-in-out infinite alternate; }
+.h-bg .o1 { width: 420px; height: 420px; left: -120px; top: -80px; background: #2c7a74; }
+.h-bg .o2 { width: 360px; height: 360px; right: 8%; top: 30%; background: #c08a2e; opacity: .28; animation-duration: 22s; }
+.h-bg .o3 { width: 300px; height: 300px; left: 35%; bottom: -120px; background: #3d6f96; opacity: .3; animation-duration: 26s; }
+@keyframes hdrift { to { transform: translate(60px, 40px) scale(1.15); } }
+.h-bg .fl { position: absolute; bottom: -40px; font-size: 26px; opacity: 0; animation: hfloat 14s linear infinite; }
+.h-bg .f1 { left: 8%; } .h-bg .f2 { left: 26%; animation-delay: 3s; font-size: 22px; } .h-bg .f3 { left: 47%; animation-delay: 6s; font-size: 18px; } .h-bg .f4 { left: 62%; animation-delay: 9s; font-size: 20px; } .h-bg .f5 { left: 88%; animation-delay: 1.5s; }
+@keyframes hfloat { 0% { transform: translateY(0) rotate(0); opacity: 0; } 12% { opacity: .55; } 80% { opacity: .35; } 100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; } }
+.h-wave { position: absolute; left: 0; bottom: -1px; width: 200%; height: 70px; fill: rgba(238,242,238,.05); animation: hwave 16s linear infinite; }
+@keyframes hwave { to { transform: translateX(-50%); } }
+.h-copy > * { animation: hup .9s cubic-bezier(.2,.8,.2,1) both; }
+.h-copy > :nth-child(2) { animation-delay: .12s; } .h-copy > :nth-child(3) { animation-delay: .24s; } .h-copy > :nth-child(4) { animation-delay: .36s; } .h-copy > :nth-child(5) { animation-delay: .48s; }
+@keyframes hup { from { opacity: 0; transform: translateY(18px); } }
+.h-rot { margin: -10px 0 24px; color: var(--band-muted); font-size: 15px; }
+.h-rot span { display: inline-block; color: var(--glow); font-weight: 700; padding: 2px 10px; border-radius: 99px; background: rgba(228,176,98,.14); transition: opacity .35s, transform .35s; }
+.h-rot span.out { opacity: 0; transform: translateY(-8px); }
+.h-photo { animation: hphoto 7s ease-in-out infinite; }
+@keyframes hphoto { 50% { transform: translateY(-8px); } }
+.h-chip { position: absolute; z-index: 2; padding: 9px 14px; border-radius: 99px; background: rgba(238,242,238,.95); color: #172526; font-size: 14px; font-weight: 600; box-shadow: 0 14px 26px -14px rgba(0,0,0,.6); animation: hchip 5s ease-in-out infinite; }
+.h-chip.c1 { left: -38px; top: 18%; } .h-chip.c2 { right: -30px; top: 42%; animation-delay: -1.6s; } .h-chip.c3 { left: -26px; bottom: 26%; animation-delay: -3.2s; }
+@keyframes hchip { 50% { transform: translateY(-10px) rotate(-2deg); } }
+@media (max-width: 860px) {
+  .h-chip { font-size: 12px; padding: 7px 11px; }
+  .h-chip.c1 { left: 12px; top: auto; bottom: 34%; } .h-chip.c2 { right: 12px; top: 30%; } .h-chip.c3 { left: auto; right: 16px; bottom: 16%; }
+  .h-rot { margin: -8px 0 18px; font-size: 14px; }
+  .h-photo { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) { .h-bg i, .h-bg .fl, .h-wave, .h-copy > *, .h-photo, .h-chip { animation: none !important; } .h-bg .fl { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -1193,11 +1225,14 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 
 <div class="view page page-home" data-view="home" hidden>
 <section class="h-hero">
+  <div class="h-bg" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i><span class="fl f1">💭</span><span class="fl f2">🌱</span><span class="fl f3">✨</span><span class="fl f4">💭</span><span class="fl f5">🌿</span>
+    <svg class="h-wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 70 C240 20 480 120 720 70 C960 20 1200 120 1440 70 V120 H0Z"/></svg></div>
   <div class="wrap">
     <div class="h-copy">
       <div class="label h-eyebrow">Psikolog · Kadıköy ve online</div>
       <h1 class="h-display">Zorlandığın yerden, birlikte bakalım.</h1>
       <p class="h-lead">Bilişsel davranışçı terapiyle, senin hızında.</p>
+      <p class="h-rot" data-words="Kaygı|Panik atak|Depresyon|Stres|Özgüven|Uyku|İlişkiler|Yas">Birlikte çalıştığımız konular: <span>Kaygı</span></p>
       <div class="cta">
         <a class="btn primary" href="#randevu">Randevu al</a>
         <a class="btn ghost" href="/calisma-alanlari/">Çalışma alanları</a>
@@ -1206,6 +1241,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     <figure class="h-photo">
       <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
       <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog</span></figcaption>
+      <span class="h-chip c1">💭 Düşünce</span><span class="h-chip c2">❤️ Duygu</span><span class="h-chip c3">🌱 Değişim</span>
     </figure>
   </div>
 </section>

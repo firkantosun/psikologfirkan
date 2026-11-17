@@ -253,7 +253,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
-      document.querySelectorAll('.game').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
+      document.querySelectorAll('.game, .sx').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -364,8 +364,10 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     if name not in ("randevu", "hikaye"):
         out += '<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n'
     out += '<script src="/assets/site.js" defer></script>\n'
-    if 'data-game=' in out or "data-auto" in out or 'data-full=' in out:
+    if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
+    if 'class="sx"' in out or 'h-rot' in out:
+        out += '<script src="/assets/story.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out
 
@@ -576,6 +578,30 @@ def game_html(kind, data, label, title, desc):
             f'<div class="game-box"></div><script type="application/json">{js}</script></section>')
 
 
+STORIES = {}
+FIG = ('<svg viewBox="0 0 150 200" aria-hidden="true"><circle cx="75" cy="44" r="27" fill="#f1dcc4"/>'
+       '<path d="M75 20c-16 0-26 10-26 22 6-8 16-10 26-10s20 2 26 10c0-12-10-22-26-22z" fill="#2a2421"/>'
+       '<path d="M14 200c0-62 24-104 61-104s61 42 61 104z" fill="#e9efe9"/>'
+       '<path class="sx-heart" d="M75 140c-14-9-22-16-22-25 0-6 5-11 11-11 5 0 9 3 11 7 2-4 6-7 11-7 6 0 11 5 11 11 0 9-8 16-22 25z" fill="#e8735a"/></svg>')
+LABELS = ["Nedir?", "Bir an", "Düşünce", "Duygu ve beden", "Davranış", "Döngü", "Döngüyü kırmak"]
+
+
+def story_html(st, head_label, head_title, head_desc):
+    js = json.dumps({"thought": st["thought"], "alt": st["alt"], "level": st["level"], "low": st["low"]}, ensure_ascii=False).replace("</", "<\\/")
+    chips = "".join(f"<span>{esc(b)}</span>" for b in st["body"][:3])
+    steps = "".join(f'<div class="sx-step"><div class="sx-card"><small>{i + 1} · {LABELS[i]}</small><h3>{esc(b["h"])}</h3><p>{esc(b["p"])}</p></div></div>' for i, b in enumerate(st["beats"]))
+    return (f'<section class="sx" aria-label="{esc(st["title"])}"><script type="application/json">{js}</script>'
+            f'<div class="sx-head"><div class="label">{esc(head_label)}</div><h2>{esc(head_title)}</h2><p>{esc(head_desc)}</p></div>'
+            f'<div class="sx-in"><div class="sx-stage" data-s="0" aria-hidden="true"><div class="sx-sky"><div class="sx-sun"></div>'
+            f'<div class="sx-cloud sx-c1"></div><div class="sx-cloud sx-c2"></div><div class="sx-cloud sx-c3"></div></div>'
+            f'<div class="sx-meter"><span>{esc(st["emotion"])}</span><div><i></i></div><b>0</b></div>'
+            f'<div class="sx-dots">{"<span></span>" * 7}</div><div class="sx-ground"></div><div class="sx-ring"></div>'
+            f'<div class="sx-emo">{esc(st["emoji"])}</div><div class="sx-fig">{FIG}</div><div class="sx-sprout">🌱</div>'
+            f'<div class="sx-chips">{chips}</div><div class="sx-bub"><p></p></div><div class="sx-cap"></div></div>'
+            f'<div class="sx-steps">{steps}</div></div>'
+            f'<div class="sx-end"><p>Bu döngüyle, görüşmelerde senin hızında birlikte çalışırız.</p><a class="btn primary" href="/randevu/">Randevu al</a></div></section>')
+
+
 def video_html(slug):
     if not os.path.exists(os.path.join(SRC, "video", slug + ".mp4")):
         return ""
@@ -609,8 +635,8 @@ def area_page(a, posts):
     tl = "".join(f'<button type="button" role="tab" id="t-{i}" aria-controls="p-{i}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}">{esc(n)}</button>' for i, (n, _) in enumerate(html_s))
     tp = "".join(f'<div class="ca-panel" role="tabpanel" id="p-{i}" aria-labelledby="t-{i}"{"" if i == 0 else " hidden"}>{x}</div>' for i, (_, x) in enumerate(html_s))
     body = f'<div class="ca-tabs"><div class="ca-tablist" role="tablist" aria-label="{esc(a["name"])} hakkında">{tl}</div>{tp}</div>'
-    g = GAMES.get(a["slug"])
-    play = (f'<section class="ca-play"><div class="wrap">' + game_html("cycle", [g], "Oyun · 1 dakika", "Döngüyü sen kır", "Bir anı yaşa: düşünceyi yakala, duyguyu ölç, sonra döngüyü kırmak için bir yol seç.") + '</div></section>') if g else ""
+    st = STORIES.get(a["slug"])
+    play = story_html(st, "Kaydır ve izle · 1 dakika", st["title"], "Aşağı kaydırdıkça sahne ilerler: bir anın içinde neler olduğunu ve döngünün nasıl gevşediğini izle.") if st else ""
     faq = "".join(f"<details><summary>{esc(f['q'])}</summary><p>{esc(f['a'])}</p></details>" for f in a["faq"])
     cats = a.get("cats", [])
     rel = sorted([p for p in posts if p["category"] in cats], key=lambda p: cats.index(p["category"]))[:3]
@@ -687,6 +713,9 @@ def main():
     gp = os.path.join(SRC, "games.json")
     if os.path.exists(gp):
         GAMES.update({g["slug"]: g for g in json.load(open(gp, encoding="utf-8"))["games"]})
+    sp = os.path.join(SRC, "stories.json")
+    if os.path.exists(sp):
+        STORIES.update({s["slug"]: s for s in json.load(open(sp, encoding="utf-8"))["stories"]})
     GX.update(json.load(open(os.path.join(SRC, "games-extra.json"), encoding="utf-8")))
     AREAS[:] = json.load(open(os.path.join(SRC, "areas.json"), encoding="utf-8"))["areas"]
     for a in AREAS:
@@ -711,7 +740,8 @@ def main():
             shutil.copy(os.path.join(SRC, f), os.path.join(DIST, f))
 
     base = "body { margin: 0; }\nimg { max-width: 100%; }\n:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }\n"
-    gcss = open(os.path.join(SRC, "game.css"), encoding="utf-8").read()
+    gcss = open(os.path.join(SRC, "game.css"), encoding="utf-8").read() + "\n" + open(os.path.join(SRC, "story.css"), encoding="utf-8").read()
+    shutil.copy(os.path.join(SRC, "story.js"), os.path.join(DIST, "assets", "story.js"))
     open(os.path.join(DIST, "assets", "site.css"), "w", encoding="utf-8").write(base + fix_links(css) + "\n" + gcss)
     shutil.copy(os.path.join(SRC, "game.js"), os.path.join(DIST, "assets", "game.js"))
 
@@ -733,7 +763,7 @@ def main():
     write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest).replace("<!--ALAN-KARTLARI-->", home_cards), ctx,
                     ld=[person_ld(), business_ld(), website] + ([faq_ld(home_faq)] if home_faq else [])))
     views["yaklasim"] = (views["yaklasim"]
-        .replace("<!--GAME-YAKLASIM-->", game_html("cycle", GX["yaklasim"], "Bilişsel model · oyun", "Bir anın içinde neler oluyor?", "Bir örnek seç, döngüyü adım adım izle ve onu kırmak için bir yol seç."))
+        .replace("<!--GAME-YAKLASIM-->", '</div></section>' + story_html(STORIES["bdt"], "Bilişsel model · kaydır ve izle", STORIES["bdt"]["title"], "Aşağı kaydırdıkça sahne ilerler: düşünce, duygu, beden ve davranış nasıl birbirini besler, BDT bu döngüyle nasıl çalışır?") + '<section class="method method-2"><div class="wrap">')
         .replace("<!--GAME-DEDEKTIF-->", game_html("detective", {"traps": GX["traps"], "cards": GX["cards"]}, "Oyun · Düşünce dedektifi", "Bu düşünce hangi tuzağa düştü?", "Her kartta bir düşünce var. Hangi düşünce tuzağına benzediğini seç; doğru cevabı ve daha dengeli hâlini gör.")))
     for key, crumb in [("yaklasim", "Terapi yaklaşımım"), ("ozgecmis", "Eğitim ve deneyim"), ("iletisim", "İletişim"), ("randevu", "Randevu al")]:
         write(PAGES[key]["path"], page(key, views[key], ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), (crumb, PAGES[key]["path"])])]))
