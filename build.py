@@ -580,7 +580,7 @@ def video_html(slug):
     if not os.path.exists(os.path.join(SRC, "video", slug + ".mp4")):
         return ""
     return (f'<figure class="vid"><video src="/video/{slug}.mp4" poster="/video/{slug}.jpg" muted playsinline loop controls preload="none" data-auto></video>'
-            f'<figcaption>1 dakikada: kısa animasyonlu anlatım</figcaption></figure>')
+            f'<figcaption>30 saniyede: kısa animasyonlu anlatım</figcaption></figure>')
 
 
 def area_page(a, posts):
