@@ -22,7 +22,7 @@ PHONE = "+905384840141"
 PHONE_TXT = "0538 484 01 41"
 BIZ_NAME = "Psikolog Muhammed Furkan Tosun"
 HOURS = [(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "17:00", "21:00"), (["Sunday"], "10:00", "16:00")]
-MAP_Q = "Koşuyolu, Üsküdar, İstanbul"
+MAP_Q = "Koşuyolu, Kadıköy, İstanbul"
 INSTAGRAM = "https://www.instagram.com/psikologfirkan/"
 MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
 
@@ -40,7 +40,7 @@ PAGES = {
     "randevu": {"path": "/randevu/", "title": "Randevu Al | Psikolog Muhammed Furkan Tosun",
                 "desc": "Psikolog Muhammed Furkan Tosun ile online ya da yüz yüze görüşme için randevu al. Hafta içi 17:00–21:00, pazar 10:00–16:00."},
     "iletisim": {"path": "/iletisim/", "title": "İletişim | Psikolog Muhammed Furkan Tosun",
-                 "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: telefon, e-posta ve Instagram. Koşuyolu'nda (Üsküdar) yüz yüze ve online görüşme."},
+                 "desc": "Psikolog Muhammed Furkan Tosun ile iletişim: telefon, e-posta ve Instagram. Kadıköy'de yüz yüze ve online görüşme."},
 }
 HREFS = {"#basla": "/", "#film": "/ozgecmis/", "#yaklasim": "/terapi-yaklasimim/", "#ozgecmis": "/ozgecmis/",
          "#blog": "/blog/", "#iletisim": "/iletisim/", "#randevu": "/randevu/"}
@@ -255,8 +255,8 @@ def business_ld():
         "@context": "https://schema.org", "@type": "MedicalBusiness", "@id": SITE + "/#isletme",
         "name": BIZ_NAME, "alternateName": "Psikolog Firkan", "url": SITE + "/", "image": SITE + "/img/portre.jpg",
         "telephone": PHONE, "email": EMAIL, "sameAs": [INSTAGRAM],
-        "description": "Bilişsel davranışçı terapi temelli yüz yüze (Koşuyolu, Üsküdar) ve online psikolojik danışmanlık.",
-        "address": {"@type": "PostalAddress", "addressLocality": "Üsküdar", "addressRegion": "İstanbul", "addressCountry": "TR"},
+        "description": "Bilişsel davranışçı terapi temelli yüz yüze (Kadıköy, İstanbul) ve online psikolojik danışmanlık.",
+        "address": {"@type": "PostalAddress", "addressLocality": "Kadıköy", "addressRegion": "İstanbul", "addressCountry": "TR"},
         "areaServed": [{"@type": "City", "name": "İstanbul"}, {"@type": "AdministrativeArea", "name": "Kadıköy"}, {"@type": "AdministrativeArea", "name": "Üsküdar"}],
         "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": d, "opens": o, "closes": c} for d, o, c in HOURS],
         "founder": {"@id": SITE + "/#psikolog"},
@@ -417,7 +417,7 @@ def blog_post(p, posts):
 """
 
 
-LANDING_DEFAULT = ("/kadikoy-psikolog/", "Koşuyolu'nda yüz yüze ya da online görüşme", "Kadıköy sınırındaki Koşuyolu'nda ofiste ya da görüntülü görüşmeyle; görüşmelerin nasıl ilerlediğini bu sayfada anlattım.")
+LANDING_DEFAULT = ("/kadikoy-psikolog/", "Koşuyolu'nda yüz yüze ya da online görüşme", "Kadıköy Koşuyolu'nda ofiste ya da görüntülü görüşmeyle; görüşmelerin nasıl ilerlediğini bu sayfada anlattım.")
 LANDING_FOR = {
     "İş yaşamı": ("/online-psikolog/", "Yoğun tempoda online görüşme", "Mesai ve yol süresi düzenli görüşmeyi zorlaştırıyorsa online görüşme nasıl yürüyor, nasıl hazırlanılır?"),
     "Stres": ("/online-psikolog/", "Yoğun tempoda online görüşme", "Mesai ve yol süresi düzenli görüşmeyi zorlaştırıyorsa online görüşme nasıl yürüyor, nasıl hazırlanılır?"),
@@ -469,7 +469,7 @@ def landing_html(pg, all_pages):
       </div>
       <aside class="lp-side" aria-label="İletişim bilgileri">
         <h2>{BIZ_NAME}</h2>
-        <dl><dt>Konum</dt><dd>Koşuyolu, Üsküdar / İstanbul</dd><dt>Görüşme</dt><dd>Yüz yüze ve online</dd>
+        <dl><dt>Konum</dt><dd>Kadıköy, İstanbul</dd><dt>Görüşme</dt><dd>Yüz yüze ve online</dd>
         <dt>Saatler</dt><dd>Hafta içi 17:00–21:00<br>Pazar 10:00–16:00<br>Cumartesi kapalı</dd>
         <dt>Telefon</dt><dd><a href="tel:{PHONE}">{PHONE_TXT}</a></dd><dt>E-posta</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd></dl>
         <a class="btn primary dark" href="/randevu/">Randevu al</a>
@@ -546,7 +546,7 @@ def area_page(a, posts):
         elif has_ul:
             inner = paras(s["items"]) + checks(s["items"])
         elif "online" in s["h"].lower() or "yüz yüze" in s["h"].lower():
-            inner = (f'<div class="ca-modes"><div>{ic("konum")}<b>Yüz yüze</b><span>Koşuyolu, Üsküdar · Kadıköy sınırı</span></div>'
+            inner = (f'<div class="ca-modes"><div>{ic("konum")}<b>Yüz yüze</b><span>Kadıköy, İstanbul</span></div>'
                      f'<div>{ic("video")}<b>Online</b><span>Görüntülü görüşme, Türkiye\'nin her yerinden</span></div>'
                      f'<div>{ic("saat")}<b>Saatler</b><span>Hafta içi 17:00–21:00 · Pazar 10:00–16:00</span></div></div>') + paras(s["items"], 0)
         elif i == len(secs) - 1:
@@ -593,7 +593,7 @@ def area_page(a, posts):
       <p class="b-disc">Bu sayfa bilgilendirme amaçlıdır; tanı ya da tedavi yerine geçmez. Acil bir durumdaysan 112'yi ara.</p>
     </div>
     <aside class="ca-side">
-      <div class="ca-box"><img class="ca-box-img" src="/img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"><h2>Randevu ve iletişim</h2><p>{esc(a["name"])} konusunda görüşme planlayabiliriz. Hafta içi 17:00–21:00, pazar 10:00–16:00.</p><a class="ca-tel" href="tel:{PHONE}">{PHONE_TXT}</a><a class="btn primary" href="/randevu/">Randevu al</a><p>Koşuyolu, Üsküdar · yüz yüze ve online</p></div>
+      <div class="ca-box"><img class="ca-box-img" src="/img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"><h2>Randevu ve iletişim</h2><p>{esc(a["name"])} konusunda görüşme planlayabiliriz. Hafta içi 17:00–21:00, pazar 10:00–16:00.</p><a class="ca-tel" href="tel:{PHONE}">{PHONE_TXT}</a><a class="btn primary" href="/randevu/">Randevu al</a><p>Kadıköy, İstanbul · yüz yüze ve online</p></div>
       <nav class="ca-list" aria-label="Çalışma alanları"><h2>Çalışma alanları</h2>{lst}</nav>
     </aside>
   </div>
