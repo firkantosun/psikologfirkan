@@ -131,11 +131,10 @@
     fetch('https://api.cal.com/v2/slots?eventTypeSlug=randevu&username=muhammed-furkan-tosun-9pauv1&timeZone=Europe/Istanbul&start=' + ymd(start) + '&end=' + ymd(end), { headers: { 'cal-api-version': '2024-09-04' } })
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
       .then(function (j) {
-        var data = (j && j.data) || {}, free = {}, step = 45;
+        var data = (j && j.data) || {}, free = {}, iso = {}, step = 60;
         Object.keys(data).forEach(function (d) {
-          var arr = data[d].map(function (s) { var x = typeof s === 'string' ? s : s.start; return x.slice(11, 16); });
-          free[d] = arr;
-          for (var i = 1; i < arr.length; i++) { var a = arr[i - 1].split(':'), b = arr[i].split(':'), df = (b[0] * 60 + +b[1]) - (a[0] * 60 + +a[1]); if (df > 0 && df < step) step = df; }
+          free[d] = []; iso[d] = {};
+          data[d].forEach(function (s) { var x = typeof s === 'string' ? s : s.start, hm = x.slice(11, 16); free[d].push(hm); iso[d][hm] = x; });
         });
         var grid = document.getElementById('occGrid'), tot = 0, busy = 0;
         for (var k = 0; k < 7; k++) {
@@ -146,9 +145,11 @@
           for (var m = o[0]; m + 45 <= o[1]; m += step) {
             var hh = String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
             var past = k === 0 && (now.getHours() * 60 + now.getMinutes()) > m;
-            var isFree = (free[key] || []).indexOf(hh) >= 0, s = document.createElement('span');
+            var isFree = (free[key] || []).indexOf(hh) >= 0, s;
+            if (!past && isFree) { s = document.createElement('a'); s.href = 'https://cal.com/muhammed-furkan-tosun-9pauv1/randevu?date=' + key + '&slot=' + encodeURIComponent(new Date(iso[key][hh]).toISOString()); s.target = '_blank'; s.rel = 'noopener'; s.title = hh + ' için randevu al'; }
+            else s = document.createElement('span');
             s.textContent = hh;
-            if (past) { s.className = 'p'; } else { tot++; if (isFree) s.className = 'f'; else { s.className = 'd'; busy++; } }
+            if (past) { s.className = 'p'; } else { tot++; if (isFree) s.className = 'f'; else { s.className = 'd'; s.title = 'Dolu'; busy++; } }
             col.appendChild(s);
           }
           grid.appendChild(col);
@@ -158,6 +159,51 @@
         document.getElementById('occSum').textContent = left <= 0 ? 'Bu hafta boş saat kalmadı; gelecek haftaya bakabilirsin.' : 'Bu hafta ' + tot + ' saatin ' + busy + ' tanesi dolu, ' + left + ' boş saat kaldı.';
         occ.hidden = false;
       }).catch(function () {});
+  }
+
+  /* ana sayfa: bugün nasılsın? */
+  var bn = document.getElementById('bnBox');
+  if (bn) {
+    var MOODS = [['☀️', 'İyiyim', 'Bunu duymak güzel. Yine de aklını kurcalayan bir şey varsa birlikte bakabiliriz.'], ['⛅', 'İdare eder', 'Bazı günler böyle geçer; bunu fark etmen bile önemli.'], ['🌧️', 'Zorlanıyorum', 'Zorlandığını söylemek kolay değil. Bunu paylaştığın için teşekkür ederim.'], ['⛈️', 'Çok kötüyüm', 'Şu an çok ağır bir yükün olabilir. Yalnız taşımak zorunda değilsin.']];
+    var BREATH = { k: 'breath', t: '1 dakikalık nefes', d: 'Dairenin büyümesiyle burnundan 4 saniye nefes al, küçülmesiyle ağzından 6 saniye ver. Uzun nefes vermek bedenin alarmını yavaşlatır.' };
+    var TOP = [
+      ['🛡️', 'Yaşadığım zor bir olay', 'travma-sonrasi-stres', { k: 'ground', t: '5-4-3-2-1 topraklama', d: 'Etrafında gördüğün 5 şeyi, dokunabildiğin 4 şeyi, duyduğun 3 sesi, kokladığın 2 şeyi ve tadabildiğin 1 şeyi say. Zihni "şimdi ve burada"ya geri getirir.' }],
+      ['💞', 'İlişkilerim', 'iliski-sorunlari', { k: 'text', t: '“Ben dili” ile bir cümle', d: '“Sen hep…” yerine “… olduğunda ben … hissediyorum, … ihtiyacım var” diye bir cümle kur. Suçlamadan ihtiyacını anlatmak konuşmayı yumuşatır.' }],
+      ['🌫️', 'Sürekli endişe', 'kaygi-bozukluklari', BREATH],
+      ['💓', 'Ani korku, panik', 'panik-atak', BREATH],
+      ['🌧️', 'Mutsuzluk, isteksizlik', 'depresyon', { k: 'text', t: 'Küçük bir adım', d: 'Bugün 5 dakikalık, küçük ve yapılabilir bir şey seç: pencereyi açmak, kısa bir yürüyüş, birine mesaj atmak. Hareket çoğu zaman motivasyondan önce gelir.' }],
+      ['🔋', 'Stres, tükenmişlik', 'stres-ve-tukenmislik', BREATH],
+      ['⭐', 'Kendimi yetersiz hissetmek', 'ozguven-sorunlari', { k: 'text', t: 'Arkadaş gözüyle bak', d: 'Kendine söylediğin en sert cümleyi düşün. Aynı şeyi çok sevdiğin bir arkadaşın söylese ona ne derdin? Şimdi o cümleyi kendine söyle.' }],
+      ['🌙', 'Uyku', 'uyku-sorunlari', { k: 'text', t: 'Endişeleri kâğıda bırak', d: 'Yatmadan önce aklındakileri bir kâğıda yaz ve "yarın 18:00\'de bakacağım" diye not düş. Zihin unutmayacağını bilince bırakması kolaylaşır.' }],
+      ['🍂', 'Bir kayıp, yas', 'yas-ve-kayip', { k: 'text', t: 'Bir anı yaz', d: 'Kaybettiğin kişiyle ilgili sevdiğin bir anıyı birkaç cümleyle yaz. Yas, sevginin devam eden hâlidir; ona yer açmak iyi gelebilir.' }],
+      ['🔥', 'Öfke', 'ofke-kontrolu', BREATH]
+    ];
+    var mood = null;
+    function mk2(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+    function step1() {
+      bn.innerHTML = ''; var w = mk2('div', 'bn-step bn-pop'); w.appendChild(mk2('p', 'bn-q', 'Bugün kendini nasıl hissediyorsun?'));
+      var g = mk2('div', 'bn-moods'); MOODS.forEach(function (m) { var b = mk2('button', 'bn-mood'); b.type = 'button'; b.appendChild(mk2('span', null, m[0])); b.appendChild(mk2('b', null, m[1])); b.addEventListener('click', function () { mood = m; step2(); }); g.appendChild(b); });
+      w.appendChild(g); bn.appendChild(w);
+    }
+    function step2() {
+      bn.innerHTML = ''; var w = mk2('div', 'bn-step bn-pop'); w.appendChild(mk2('p', 'bn-echo', mood[0] + ' ' + mood[2])); w.appendChild(mk2('p', 'bn-q', 'Şu sıralar en çok ne yoruyor?'));
+      var g = mk2('div', 'bn-topics'); TOP.forEach(function (tp) { var b = mk2('button', 'bn-topic'); b.type = 'button'; b.appendChild(mk2('span', null, tp[0])); b.appendChild(mk2('b', null, tp[1])); b.addEventListener('click', function () { result(tp); }); g.appendChild(b); });
+      var back = mk2('button', 'bn-back', '← Geri'); back.type = 'button'; back.addEventListener('click', step1);
+      w.appendChild(g); w.appendChild(back); bn.appendChild(w);
+    }
+    function result(tp) {
+      bn.innerHTML = ''; var w = mk2('div', 'bn-step bn-pop bn-res'), ex = tp[3];
+      var l = mk2('div', 'bn-ex'); l.appendChild(mk2('small', null, 'Şimdi 1 dakika')); l.appendChild(mk2('h3', null, ex.t));
+      if (ex.k === 'breath') { var c = mk2('div', 'bn-breath'); var lab = mk2('span', null, 'Nefes al'); c.appendChild(lab); l.appendChild(c); var on = true; var iv = setInterval(function () { if (!document.body.contains(c)) { clearInterval(iv); return; } on = !on; lab.textContent = on ? 'Nefes al' : 'Nefes ver'; }, 5000); }
+      if (ex.k === 'ground') { var gl = mk2('div', 'bn-ground'); [['5', 'gör'], ['4', 'dokun'], ['3', 'duy'], ['2', 'kokla'], ['1', 'tat']].forEach(function (x, i) { var s = mk2('span'); s.appendChild(mk2('b', null, x[0])); s.appendChild(document.createTextNode(x[1])); s.style.animationDelay = (i * .25) + 's'; gl.appendChild(s); }); l.appendChild(gl); }
+      l.appendChild(mk2('p', null, ex.d));
+      var r = mk2('div', 'bn-next'); r.appendChild(mk2('p', 'bn-echo', tp[0] + ' ' + tp[1] + (mood[1] === 'Çok kötüyüm' || mood[1] === 'Zorlanıyorum' ? ': Bunu bir süredir yaşıyorsan, bir görüşmede birlikte bakmak iyi gelebilir.' : ': Bu konuda nasıl çalıştığımızı merak edersen kısa bir göz atabilirsin.')));
+      var a1 = mk2('a', 'btn primary dark', 'Bu konuda nasıl çalışıyoruz? →'); a1.href = '/calisma-alanlari/' + tp[2] + '/'; r.appendChild(a1);
+      var a2 = mk2('a', 'btn ghost-dark', 'Randevu al'); a2.href = '/randevu/'; r.appendChild(a2);
+      var again = mk2('button', 'bn-back', 'Baştan başla'); again.type = 'button'; again.addEventListener('click', step1); r.appendChild(again);
+      w.appendChild(l); w.appendChild(r); bn.appendChild(w);
+    }
+    step1();
   }
 
   /* ana sayfa: dönen kelime */

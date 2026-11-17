@@ -4,17 +4,19 @@
    "slug": "travma-sonrasi-stres",
    "facts": [
     {
-     "t": "İngiltere'nin ulusal sağlık kılavuzu NICE, travma sonrası stres bozukluğu tanısı alan yetişkinlere bireysel travma odaklı BDT önerir; belirli durumlarda EMDR de önerilen seçenekler arasındadır.",
-     "src": "NICE NG116, 2018",
-     "url": "https://www.nice.org.uk/guidance/ng116"
+     "t": "Zor bir olaydan sonra kâbuslar, irkilmeler, o anın aklına gelmesi ya da bir şeylerden kaçınmak çok yaygındır. Bunlar zayıflık değil, zihnin yaşananı sindirmeye çalıştığının işaretleridir."
     },
     {
-     "t": "Amerikan Psikoloji Derneği'nin TSSB kılavuzu, BDT, bilişsel işleme terapisi, bilişsel terapi ve uzun süreli maruz bırakma terapisini güçlü düzeyde önerir.",
-     "src": "APA TSSB Klinik Uygulama Kılavuzu, 2017",
-     "url": "https://www.apa.org/monitor/2017/11/ptsd-guideline"
+     "t": "Çoğu kişide bu tepkiler zamanla azalır. Haftalar ve aylar geçtiği hâlde azalmıyor, uykunu, işini ya da ilişkilerini etkiliyorsa destek almanın zamanı gelmiştir."
+    },
+    {
+     "t": "Travmaya odaklanan terapiler, bu konuda dünyada en çok önerilen yöntemler arasında. Yaşadıklarını senin hızında, güvenli bir şekilde ele aldığımızda o anın gücü giderek azalır.",
+     "src": "Kaynak: NICE ve APA kılavuzları",
+     "url": "https://www.nice.org.uk/guidance/ng116"
     }
    ],
-   "lead": "Yani travmanın izleri kalıcı olmak zorunda değil; doğru destekle toparlanmak mümkün."
+   "lead": "Yani yaşadığın şey seni tanımlamak zorunda değil; doğru destekle toparlanmak mümkün.",
+   "title": "Bilmen gerekenler"
   },
   {
    "slug": "iliski-sorunlari",

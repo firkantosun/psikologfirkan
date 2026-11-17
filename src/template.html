@@ -1284,42 +1284,12 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   </div>
 </section>
 
-<section class="sec an-sec" id="anlat">
+<section class="sec bn-sec" id="anlat">
   <div class="wrap">
-    <div class="an" id="an">
-      <div class="an-head">
-        <div class="label">Anlat · 1 dakika</div>
-        <h2>Seni ne zorluyor?</h2>
-        <p>Üç kısa soru. Yazdıkların hiçbir yere gönderilmez, yalnızca bu sayfada kalır.</p>
-      </div>
-      <button type="button" class="btn primary an-start" id="anStart">Başla</button>
-      <div class="an-body" id="anBody" hidden>
-      <div class="tr-crisis" id="anCrisis" hidden role="alert"><b>Bunu yazmak kolay değil.</b> Şu an kendine zarar verme ya da yaşamına son verme düşüncelerin varsa lütfen hemen <b>112</b>'yi ara ya da güvendiğin birine ulaş. Yalnız değilsin.</div>
-      <div class="an-step" data-s="0">
-        <p class="an-q">En çok hangisi sana yakın?</p>
-        <div class="tr-chips" id="anTopic" role="group" aria-label="Konu">
-          <button type="button" data-k="travma">Yaşadığım zor bir olay, travma</button><button type="button" data-k="iliski">İlişkilerimde yaşadığım sorunlar</button><button type="button" data-k="kaygi">Sürekli endişe</button><button type="button" data-k="panik">Ani korku, panik</button><button type="button" data-k="stres">Stres, tükenmişlik</button><button type="button" data-k="mod">Mutsuzluk, isteksizlik</button><button type="button" data-k="ozguven">Kendimi yetersiz hissetmek</button><button type="button" data-k="is">İş, kariyer</button><button type="button" data-k="uyku">Uyku</button><button type="button" data-k="diger">Başka bir şey</button>
-        </div>
-      </div>
-      <div class="an-step" data-s="1" hidden>
-        <label class="an-q" for="anText">Biraz anlatır mısın? <small>İstersen boş bırakabilirsin.</small></label>
-        <textarea id="anText" rows="3" placeholder="Aklından geçenleri nasıl geliyorsa öyle yaz."></textarea>
-        <p class="an-q small">Ne zamandır böyle?</p>
-        <div class="tr-chips" id="anTime" role="group" aria-label="Süre"><button type="button">Birkaç haftadır</button><button type="button">Birkaç aydır</button><button type="button">Bir yıldan fazla</button></div>
-      </div>
-      <div class="an-step" data-s="2" hidden>
-        <p class="an-q">Günlük hayatını ne kadar etkiliyor?</p>
-        <div class="tr-chips" id="anImpact" role="group" aria-label="Etki"><button type="button" data-v="1">Biraz</button><button type="button" data-v="2">Epey</button><button type="button" data-v="3">Çok, zorlanıyorum</button></div>
-      </div>
-      <div class="an-step an-res" data-s="3" hidden aria-live="polite">
-        <p class="an-quote" id="anQuote" hidden></p>
-        <p class="an-echo" id="anEcho"></p>
-        <p id="anInfo"></p>
-        <p id="anHow"></p>
-        <div class="cta"><a class="btn primary" href="#randevu">Randevu al</a><button type="button" class="btn ghost an-btn" id="anAgain">Baştan başla</button></div>
-      </div>
-      <div class="an-nav" id="anNav"><button type="button" class="an-link" id="anBack" hidden>← Geri</button><button type="button" class="an-next" id="anNext" disabled>Devam</button></div>
-      </div>
+    <div class="bn" id="bn">
+      <div class="bn-head"><div class="label">1 dakika · sadece senin için</div><h2>Bugün nasılsın?</h2><p>İki dokunuş. Sonunda o an için kısa bir egzersiz ve bu konuda nasıl çalıştığımızı göreceksin. Seçimlerin hiçbir yere gönderilmez.</p></div>
+      <div class="bn-box" id="bnBox"></div>
+      <p class="bn-crisis">Kendine zarar verme düşüncelerin varsa ya da acil bir durumdaysan hemen <b>112</b>'yi ara.</p>
     </div>
   </div>
 </section>
@@ -1382,6 +1352,14 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 </div>
 
 <div class="view page" data-view="yaklasim" hidden>
+    <section class="pr pr-first" aria-label="Terapi adım adım nasıl ilerler?">
+      <div class="sx-head"><div class="label">Süreç · kaydır ve izle</div><h2>Terapi adım adım nasıl ilerler?</h2><p>Aşağı kaydırdıkça yol ilerler; her durakta o aşamada neler yaptığımızı anlatıyorum.</p></div>
+      <div class="sx-in"><div class="pr-stage" data-s="0" aria-hidden="true">
+        <svg class="pr-road" viewBox="0 0 400 600" preserveAspectRatio="none"><path class="pr-base" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/><path class="pr-done" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/></svg>
+        <div class="pr-m pr-m0"><span>01</span></div><div class="pr-m pr-m1"><span>02</span></div><div class="pr-m pr-m2"><span>03</span></div><div class="pr-m pr-m3"><span>04</span></div><div class="pr-m pr-m4"><span>05</span></div><div class="pr-m pr-m5"><span>06</span></div>
+        <div class="pr-big"><span class="pr-e">🤝</span><b class="pr-t">Tanışma ve değerlendirme</b><small class="pr-w">İlk görüşmeler</small></div>
+      </div><div class="sx-steps"><div class="sx-step pr-step" data-e="🤝" data-w="İlk görüşmeler"><div class="sx-card"><small>01 · İlk görüşmeler</small><h3>Tanışma ve değerlendirme</h3><p>İlk görüşmelerde ne yaşadığını, ne zamandır sürdüğünü ve hayatının hangi alanlarını etkilediğini birlikte anlarız. Hazır olmadığın hiçbir şeyi anlatmak zorunda değilsin.</p></div></div><div class="sx-step pr-step" data-e="🗺️" data-w="Başlangıç"><div class="sx-card"><small>02 · Başlangıç</small><h3>Kişisel harita</h3><p>Zorluğun nasıl başladığını ve bugün neyin sürdürdüğünü gösteren bir harita çıkarırız: tetikleyiciler, otomatik düşünceler, inançlar ve davranışlar. Gerektiğinde geçmiş deneyimlerin ve ilişki örüntülerinin izine de bakarız.</p></div></div><div class="sx-step pr-step" data-e="🎯" data-w="Başlangıç"><div class="sx-card"><small>03 · Başlangıç</small><h3>Somut hedefler</h3><p>“Daha iyi hissetmek” yerine ölçülebilir hedefler koyarız: “toplantıda söz alabilmek”, “haftada üç gün dışarı çıkmak” gibi. Hedefler senin önceliklerine göre belirlenir.</p></div></div><div class="sx-step pr-step" data-e="🗓️" data-w="Süreç boyunca"><div class="sx-card"><small>04 · Süreç boyunca</small><h3>Yapılandırılmış seanslar</h3><p>Her seansın bir gündemi vardır: geçen haftaya bakar, tek bir odakta derinleşir, öğrendiklerini pekiştiririz. Seans 45 dakika sürer.</p></div></div><div class="sx-step pr-step" data-e="📝" data-w="Süreç boyunca"><div class="sx-card"><small>05 · Süreç boyunca</small><h3>Seans arası çalışmalar</h3><p>Düşünce kayıtları ve küçük davranışsal deneylerle seansta konuştuklarını gerçek hayatta denersin. Değişimin önemli bir kısmı burada, senin hayatının içinde olur.</p></div></div><div class="sx-step pr-step" data-e="🌱" data-w="Son aşama"><div class="sx-card"><small>06 · Son aşama</small><h3>Sonlandırma ve nüks önleme</h3><p>Öğrendiklerini pekiştirir, zorlanma işaretleri için bir plan yaparız. Amaç, zamanla kendi terapistin olabilmen. Görüşmeleri ne zaman bitireceğine birlikte karar veririz.</p></div></div></div></div>
+    </section>
 <section class="method" id="p-yaklasim">
   <div class="wrap">
     <div class="m-head">
@@ -1400,18 +1378,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="tk-box" id="tkBox"></div>
     </div>
 
-    <!--GAME-DEDEKTIF-->
 
-    </div></section>
-    <section class="pr" aria-label="Terapi adım adım nasıl ilerler?">
-      <div class="sx-head"><div class="label">Süreç · kaydır ve izle</div><h2>Terapi adım adım nasıl ilerler?</h2><p>Aşağı kaydırdıkça yol ilerler; her durakta o aşamada neler yaptığımızı anlatıyorum.</p></div>
-      <div class="sx-in"><div class="pr-stage" data-s="0" aria-hidden="true">
-        <svg class="pr-road" viewBox="0 0 400 600" preserveAspectRatio="none"><path class="pr-base" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/><path class="pr-done" d="M200 40 C 330 90, 330 150, 200 160 S 70 240, 200 280 S 330 370, 200 400 S 70 480, 200 560"/></svg>
-        <div class="pr-m pr-m0"><span>01</span></div><div class="pr-m pr-m1"><span>02</span></div><div class="pr-m pr-m2"><span>03</span></div><div class="pr-m pr-m3"><span>04</span></div><div class="pr-m pr-m4"><span>05</span></div><div class="pr-m pr-m5"><span>06</span></div>
-        <div class="pr-big"><span class="pr-e">🤝</span><b class="pr-t">Tanışma ve değerlendirme</b><small class="pr-w">İlk görüşmeler</small></div>
-      </div><div class="sx-steps"><div class="sx-step pr-step" data-e="🤝" data-w="İlk görüşmeler"><div class="sx-card"><small>01 · İlk görüşmeler</small><h3>Tanışma ve değerlendirme</h3><p>İlk görüşmelerde ne yaşadığını, ne zamandır sürdüğünü ve hayatının hangi alanlarını etkilediğini birlikte anlarız. Hazır olmadığın hiçbir şeyi anlatmak zorunda değilsin.</p></div></div><div class="sx-step pr-step" data-e="🗺️" data-w="Başlangıç"><div class="sx-card"><small>02 · Başlangıç</small><h3>Kişisel harita</h3><p>Zorluğun nasıl başladığını ve bugün neyin sürdürdüğünü gösteren bir harita çıkarırız: tetikleyiciler, otomatik düşünceler, inançlar ve davranışlar. Gerektiğinde geçmiş deneyimlerin ve ilişki örüntülerinin izine de bakarız.</p></div></div><div class="sx-step pr-step" data-e="🎯" data-w="Başlangıç"><div class="sx-card"><small>03 · Başlangıç</small><h3>Somut hedefler</h3><p>“Daha iyi hissetmek” yerine ölçülebilir hedefler koyarız: “toplantıda söz alabilmek”, “haftada üç gün dışarı çıkmak” gibi. Hedefler senin önceliklerine göre belirlenir.</p></div></div><div class="sx-step pr-step" data-e="🗓️" data-w="Süreç boyunca"><div class="sx-card"><small>04 · Süreç boyunca</small><h3>Yapılandırılmış seanslar</h3><p>Her seansın bir gündemi vardır: geçen haftaya bakar, tek bir odakta derinleşir, öğrendiklerini pekiştiririz. Seans 45 dakika sürer.</p></div></div><div class="sx-step pr-step" data-e="📝" data-w="Süreç boyunca"><div class="sx-card"><small>05 · Süreç boyunca</small><h3>Seans arası çalışmalar</h3><p>Düşünce kayıtları ve küçük davranışsal deneylerle seansta konuştuklarını gerçek hayatta denersin. Değişimin önemli bir kısmı burada, senin hayatının içinde olur.</p></div></div><div class="sx-step pr-step" data-e="🌱" data-w="Son aşama"><div class="sx-card"><small>06 · Son aşama</small><h3>Sonlandırma ve nüks önleme</h3><p>Öğrendiklerini pekiştirir, zorlanma işaretleri için bir plan yaparız. Amaç, zamanla kendi terapistin olabilmen. Görüşmeleri ne zaman bitireceğine birlikte karar veririz.</p></div></div></div></div>
-    </section>
-    <section class="method method-2"><div class="wrap">
 
     <!-- teknikler -->
     <div class="m-block">
@@ -1535,7 +1502,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     <div class="occ" id="occ" hidden aria-live="polite">
       <div class="occ-head"><div><div class="label">Bu haftanın doluluk durumu</div><b class="occ-sum" id="occSum"></b></div><div class="occ-leg"><span class="f">Boş</span><span class="d">Dolu</span></div></div>
       <div class="occ-grid" id="occGrid"></div>
-      <p class="occ-note">Takvimden canlı alınır; boş saatler alındıkça kapanır.</p>
+      <p class="occ-note">Takvimden canlı alınır. Boş bir saate dokunarak doğrudan o saat için randevu alabilirsin; alınan saat hemen kapanır.</p>
     </div>
     <div class="gcal">
       <div class="gcal-frame">

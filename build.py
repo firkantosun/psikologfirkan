@@ -254,7 +254,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
-      document.querySelectorAll('.game, .sx, .ps, .jr, .pr, .tk').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
+      document.querySelectorAll('.game, .sx, .ps, .jr, .pr, .tk, .bn').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -587,8 +587,8 @@ def evidence_html(a):
     e = EVID.get(a["slug"])
     if not e:
         return ""
-    facts = "".join(f'<li><span>{esc(f["t"])}</span><a href="{esc(f["url"])}" target="_blank" rel="noopener">{esc(f["src"])} ↗</a></li>' for f in e["facts"])
-    return (f'<section class="ev"><div class="wrap"><div class="ev-box"><div class="ev-ic">📊</div><div class="ev-main"><div class="label">Araştırmalar ne diyor?</div>'
+    facts = "".join(f'<li><span>{esc(f["t"])}</span>' + (f'<a href="{esc(f["url"])}" target="_blank" rel="noopener">{esc(f["src"])} ↗</a>' if f.get("url") else "") + '</li>' for f in e["facts"])
+    return (f'<section class="ev"><div class="wrap"><div class="ev-box"><div class="ev-ic">{"💬" if e.get("title") else "📊"}</div><div class="ev-main"><div class="label">{esc(e.get("title", "Araştırmalar ne diyor?"))}</div>'
             f'<ul>{facts}</ul><p class="ev-lead">{esc(e["lead"])}</p></div>'
             f'<a class="btn primary dark ev-cta" href="/randevu/">Destek almak için randevu al</a></div></div></section>')
 FIG = ('<svg viewBox="0 0 150 200" aria-hidden="true"><circle cx="75" cy="44" r="27" fill="#f1dcc4"/>'
