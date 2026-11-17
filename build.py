@@ -24,6 +24,36 @@ BIZ_NAME = "Psikolog Muhammed Furkan Tosun"
 HOURS = [(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "17:00", "21:00"), (["Sunday"], "10:00", "16:00")]
 MAP_Q = "Kadıköy, İstanbul"
 INSTAGRAM = "https://www.instagram.com/psikologfirkan/"
+GTAG_ID = "GTM-PGC6ZRJ6"  # Google Ads hesabının (475-165-0811) Google etiketi
+GADS_BOOKING = "AW-18580083186/3u30CNa-hrodEPKj1ptF"  # "Randevu rezervasyonu" dönüşümü
+META_PIXEL = ""  # Meta Pixel kimliği; boşken Pixel kodu eklenmez
+BOOKING_VALUE = 2000
+
+
+def tracking_head():
+    s = (f'<script async src="https://www.googletagmanager.com/gtm.js?id={GTAG_ID}"></script>\n'
+         "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());</script>\n")
+    if META_PIXEL:
+        s += ("<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};"
+              "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];"
+              "s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');"
+              f"fbq('init','{META_PIXEL}');fbq('track','PageView');</script>\n")
+    return s
+
+
+def thanks_view():
+    return f"""<div class="view page"><section class="sec"><div class="wrap" style="padding-block:120px">
+<div class="label">Randevu</div>
+<h1 style="font-size:clamp(30px,4vw,46px);margin:12px 0 16px">Randevun alındı.</h1>
+<p style="max-width:60ch">Onay e-postası birkaç dakika içinde adresine ulaşır. Online görüşmelerde bağlantı bu e-postada yer alır; yüz yüze görüşmelerde açık adresi ayrıca iletirim.</p>
+<p style="max-width:60ch;margin-top:12px">Planın değişirse onay e-postasındaki bağlantıdan randevunu yeniden planlayabilir ya da bana yazabilirsin.</p>
+<div class="cta" style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn primary dark" href="/">Ana sayfaya dön</a><a class="btn ghost-dark" href="/blog/">Blog yazılarına göz at</a></div>
+</div></section></div>
+<script>(function(){{try{{if(sessionStorage.getItem('pf_booked')!=='1')return;sessionStorage.removeItem('pf_booked');}}catch(e){{return;}}
+gtag('event','conversion',{{'send_to':'{GADS_BOOKING}','value':{BOOKING_VALUE},'currency':'TRY'}});
+if(window.fbq)fbq('track','Schedule');}})();</script>
+"""
+
 MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
 
 PAGES = {
@@ -313,7 +343,7 @@ def head(title, desc, path, ld, fonts, og_type="website", image="/img/portre.jpg
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {fonts}
 <link rel="stylesheet" href="/assets/site.css">
-{"".join('<script type="application/ld+json">' + json.dumps(x, ensure_ascii=False).replace("</", "<\\/") + '</script>' + chr(10) for x in (ld if isinstance(ld, list) else [ld]))}
+{tracking_head()}{"".join('<script type="application/ld+json">' + json.dumps(x, ensure_ascii=False).replace("</", "<\\/") + '</script>' + chr(10) for x in (ld if isinstance(ld, list) else [ld]))}
 </head>
 """
 
@@ -711,6 +741,12 @@ def main():
               title="Sayfa bulunamadı | Psikolog Firkan", desc="Sayfa bulunamadı.", path="/404")
     nf = nf.replace('aria-current="page" ', "").replace('<link rel="canonical" href="https://psikologfirkan.com/404">\n', '<meta name="robots" content="noindex">\n')
     open(os.path.join(DIST, "404.html"), "w", encoding="utf-8").write(nf)
+
+    ty = page("tesekkur", thanks_view(), ctx, title="Randevun alındı | Psikolog Firkan", desc="Randevu onayı.", path="/tesekkurler/")
+    ty = ty.replace('<link rel="canonical" href="https://psikologfirkan.com/tesekkurler/">\n', '<meta name="robots" content="noindex">\n')
+    ty = ty.replace('<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n', "")
+    os.makedirs(os.path.join(DIST, "tesekkurler"), exist_ok=True)
+    open(os.path.join(DIST, "tesekkurler", "index.html"), "w", encoding="utf-8").write(ty)
 
     today = date.today().isoformat()
     urls = written
