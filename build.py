@@ -126,6 +126,7 @@ ICONS = {
     "ofke": ["M12 21c-3.6 0-6-2.4-6-5.6 0-3.6 3-5.4 3.6-9.4 2.4 1.6 3 3.6 2.6 5.6 1.2-.6 2-1.8 2.2-3.2 2 1.6 3.6 4 3.6 7 0 3.2-2.4 5.6-6 5.6z"],
     "terapi": ["M3.5 5h11v8h-7l-4 3z", "M17.5 9h3v8l-3-2h-6v-2"],
     "okb": ["M20 12a8 8 0 1 1-2.3-5.6", "M20 4v4h-4"],
+    "travma": ["M12 3l7.5 3v5.5c0 4.6-3.1 8.2-7.5 9.5-4.4-1.3-7.5-4.9-7.5-9.5V6z", "M12 16c-2.6-1.7-4-3.1-4-4.8a2.1 2.1 0 0 1 4-1 2.1 2.1 0 0 1 4 1c0 1.7-1.4 3.1-4 4.8z"],
     "takvim": ["M4 6h16v14H4z", "M4 10h16", "M8 3v4M16 3v4", "M8 14h3v3H8z"],
     "yol": ["M4 19h4v-4h4v-4h4V7h4"],
     "tel": ["M6.5 3.5h3l1.5 4-2 1.2a11 11 0 0 0 6.3 6.3l1.2-2 4 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"],
@@ -143,7 +144,7 @@ CAT_STYLE = {
     "Kariyer": ("is", "#6b7341", "#3c4122"), "İş yaşamı": ("is", "#6b7341", "#3c4122"), "Stres": ("stres", "#c0703a", "#6f3d1a"),
     "İlişkiler": ("iliski", "#a2546f", "#5b2a3c"), "Yalnızlık": ("iliski", "#a2546f", "#5b2a3c"), "Ebeveynlik": ("iliski", "#a2546f", "#5b2a3c"),
     "Çocuk": ("iliski", "#a2546f", "#5b2a3c"), "Şiddet": ("iliski", "#a2546f", "#5b2a3c"),
-    "Bağımlılık": ("bagimlilik", "#6c4d8a", "#38264c"), "Travma": ("yas", "#4f7a52", "#28432a"), "Yas": ("yas", "#4f7a52", "#28432a"),
+    "Bağımlılık": ("bagimlilik", "#6c4d8a", "#38264c"), "Travma": ("travma", "#4a6f8a", "#243a4a"), "Yas": ("yas", "#4f7a52", "#28432a"),
     "Eğitim": ("egitim", "#3d6f96", "#1e3b54"), "Gençlik": ("egitim", "#3d6f96", "#1e3b54"), "Öfke": ("ofke", "#b04a3a", "#5e221a"),
     "OKB": ("okb", "#5d5795", "#2f2b56"), "Terapi": ("terapi", "#2f6f6a", "#173d3b"),
 }
@@ -253,7 +254,7 @@ def build_js(js):
       var nearEnd = scEnd && scEnd.getBoundingClientRect().top < window.innerHeight - 40;
       var anEl = document.getElementById('an'), inAn = false;
       if (anEl) {{ var r = anEl.getBoundingClientRect(); inAn = r.top < window.innerHeight && r.bottom > 80; }}
-      document.querySelectorAll('.game, .sx').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
+      document.querySelectorAll('.game, .sx, .ps').forEach(function (g) {{ var q = g.getBoundingClientRect(); if (q.top < window.innerHeight && q.bottom > 80) inAn = true; }});
       sc.classList.toggle('show', past && !nearEnd && !inAn);
     }};
     window.addEventListener('scroll', scTick, {{ passive: true }}); scTick();
@@ -366,7 +367,7 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     out += '<script src="/assets/site.js" defer></script>\n'
     if 'data-game=' in out or 'ca-tabs' in out or 'data-full=' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
-    if 'class="sx"' in out or 'h-rot' in out:
+    if 'class="sx"' in out or 'h-rot' in out or 'class="ps"' in out:
         out += '<script src="/assets/story.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out

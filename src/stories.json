@@ -675,6 +675,58 @@
      "p": "BDT'de öfkenin erken işaretlerini ve genelleyen düşünceleri fark eder, ihtiyacını sakin bir dille ifade etmeyi deneriz. Görüşmelerde bu adımları birlikte çalışıyoruz."
     }
    ]
+  },
+  {
+   "slug": "travma-sonrasi-stres",
+   "title": "Geçmiş bir an, bugünü nasıl sarsar?",
+   "emoji": "🏢",
+   "emotion": "Korku",
+   "level": 85,
+   "low": 35,
+   "thought": "Yine oluyor, bina sallanıyor, hemen çıkmalıyım",
+   "alt": "Bu bir hatırlatıcı; o an geçti. Ayaklarım yerde, şu an güvendeyim.",
+   "body": [
+    "Çarpıntı",
+    "Kaslarda kasılma",
+    "Sıçrama tepkisi"
+   ],
+   "beats": [
+    {
+     "k": "intro",
+     "h": "Travma sonrası stres nedir?",
+     "p": "Zorlayıcı bir olaydan sonra zihin o anı geçmişte kalmış bir anı gibi değil, hâlâ süren bir tehlike gibi saklayabilir. Bu yüzden küçük bir hatırlatıcı bile güçlü bir alarm başlatabilir."
+    },
+    {
+     "k": "scene",
+     "h": "Ofiste bir titreşim",
+     "p": "Depremin üzerinden aylar geçti. Ofiste otururken yanından ağır bir kamyon geçiyor ve masan hafifçe titriyor."
+    },
+    {
+     "k": "thought",
+     "h": "Alarm geçmişi şimdi sanar",
+     "p": "Zihin bu titreşimi bir anda o güne bağlar: 'Yine oluyor, bina sallanıyor, hemen çıkmalıyım.' Geçmişteki an, şimdi yaşanıyormuş gibi hissettirir."
+    },
+    {
+     "k": "feel",
+     "h": "Beden hazır ola geçer",
+     "p": "Korku bir anda yükselir. Kalbin hızlanır, kasların kasılır, her sese irkilirsin. Beden, tehlike gerçekten varmış gibi kaçmaya hazırlanır."
+    },
+    {
+     "k": "act",
+     "h": "Dışarı çıkarsın",
+     "p": "Kimseye bir şey demeden dışarı çıkar, bir süre binaya dönemezsin. Sonraki günlerde yüksek katlardan ve kalabalık binalardan uzak durmaya başlarsın."
+    },
+    {
+     "k": "loop",
+     "h": "Kaçınma alarmı canlı tutar",
+     "p": "Zihin 'dışarı çıktığım için güvende kaldım' sonucunu çıkarır. Kaçındığın yerler çoğaldıkça alarm sınanma fırsatı bulamaz ve bir sonraki titreşimde daha hızlı çalar."
+    },
+    {
+     "k": "break",
+     "h": "Güvenle, adım adım",
+     "p": "Travma odaklı BDT'de önce topraklamayla şimdiye dönmeyi öğrenir, olaya ilişkin düşünceleri gözden geçirir, kaçındıklarına hazır olduğun hızda yaklaşırız. Görüşmelerde bunu güvenli biçimde, adım adım birlikte çalışıyoruz."
+    }
+   ]
   }
  ]
 }

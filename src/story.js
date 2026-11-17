@@ -27,6 +27,19 @@
     window.addEventListener('resize', tick); tick();
   });
 
+  /* fotoğraf hikâyesi */
+  document.querySelectorAll('.ps').forEach(function (ps) {
+    var imgs = ps.querySelectorAll('.ps-stage img'), steps = ps.querySelectorAll('.ps-step'), num = ps.querySelector('.ps-count b'), bar = ps.querySelector('.ps-bar i'), cur = -1;
+    function tick() {
+      var vh = window.innerHeight, mid = vh * (window.innerWidth < 861 ? .78 : .55), s = 0;
+      for (var i = 0; i < steps.length; i++) if (steps[i].getBoundingClientRect().top < mid) s = i;
+      if (s !== cur) { cur = s; Array.prototype.forEach.call(imgs, function (im, i) { im.classList.toggle('on', i === s); }); Array.prototype.forEach.call(steps, function (x, i) { x.classList.toggle('on', i === s); }); num.textContent = s + 1; }
+      var r = ps.getBoundingClientRect(); bar.style.width = (Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - vh))) * 100) + '%';
+    }
+    var raf = 0; window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(function () { raf = 0; tick(); }); }, { passive: true });
+    window.addEventListener('resize', tick); tick();
+  });
+
   /* ana sayfa: dönen kelime */
   var rw = document.querySelector('.h-rot');
   if (rw && !reduce) {

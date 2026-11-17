@@ -305,6 +305,7 @@ body.autoplay #hudPlay { color: var(--glow); }
 .contact .handle .hk { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--glow); min-width: 84px; }
 .contact .handle span { overflow-wrap: anywhere; }
 .contact .hc-copy { margin-left: 0; }
+a.hc-copy { text-decoration: none; text-align: center; }
 .contact .handle a, .hc-row a.hc-v { color: var(--band-ink); text-decoration: none; overflow-wrap: anywhere; }
 /* PSYCONNECT */
 .s-pc .stage { background: radial-gradient(circle at 75% 45%, #2C4A2C, #142218 55%, var(--night) 90%); }
@@ -927,7 +928,7 @@ footer .f-meta { grid-column: 1 / -1; border-top: 1px solid rgba(238,242,238,.12
   .faq summary { padding: 14px 16px; font-size: 15px; }
   .faq details p { padding: 0 16px 16px; font-size: 15px; }
   .contact .wrap { padding-block: 44px; gap: 22px; }
-  .contact .hc-copy { display: none; }
+  .contact .hc-copy { display: inline-block; }
   .contact h2, .contact h1 { font-size: 28px; }
   .b-card { padding: 16px 18px; gap: 6px; }
   .b-card h3 { font-size: 19px; }
@@ -1232,7 +1233,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="label h-eyebrow">Psikolog · Kadıköy ve online</div>
       <h1 class="h-display">Zorlandığın yerden, birlikte bakalım.</h1>
       <p class="h-lead">Bilişsel davranışçı terapiyle, senin hızında.</p>
-      <p class="h-rot" data-words="Kaygı|Panik atak|Depresyon|Stres|Özgüven|Uyku|İlişkiler|Yas">Birlikte çalıştığımız konular: <span>Kaygı</span></p>
+      <p class="h-rot" data-words="Travma|İlişkiler|Kaygı|Panik atak|Depresyon|Stres|Özgüven|Uyku|Yas">Birlikte çalıştığımız konular: <span>Travma</span></p>
       <div class="cta">
         <a class="btn primary" href="#randevu">Randevu al</a>
         <a class="btn ghost" href="/calisma-alanlari/">Çalışma alanları</a>
@@ -1289,7 +1290,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="an-step" data-s="0">
         <p class="an-q">En çok hangisi sana yakın?</p>
         <div class="tr-chips" id="anTopic" role="group" aria-label="Konu">
-          <button type="button" data-k="kaygi">Sürekli endişe</button><button type="button" data-k="panik">Ani korku, panik</button><button type="button" data-k="stres">Stres, tükenmişlik</button><button type="button" data-k="mod">Mutsuzluk, isteksizlik</button><button type="button" data-k="ozguven">Kendimi yetersiz hissetmek</button><button type="button" data-k="iliski">İlişkiler</button><button type="button" data-k="is">İş, kariyer</button><button type="button" data-k="uyku">Uyku</button><button type="button" data-k="diger">Başka bir şey</button>
+          <button type="button" data-k="travma">Yaşadığım zor bir olay, travma</button><button type="button" data-k="iliski">İlişkilerimde yaşadığım sorunlar</button><button type="button" data-k="kaygi">Sürekli endişe</button><button type="button" data-k="panik">Ani korku, panik</button><button type="button" data-k="stres">Stres, tükenmişlik</button><button type="button" data-k="mod">Mutsuzluk, isteksizlik</button><button type="button" data-k="ozguven">Kendimi yetersiz hissetmek</button><button type="button" data-k="is">İş, kariyer</button><button type="button" data-k="uyku">Uyku</button><button type="button" data-k="diger">Başka bir şey</button>
         </div>
       </div>
       <div class="an-step" data-s="1" hidden>
@@ -1340,10 +1341,10 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     <div class="sec-head"><div class="label">Sık sorulanlar</div><h2>Aklına takılabilecekler</h2></div>
     <div class="faq">
       <details><summary>Terapiye başlamak için durumumun çok ağır olması mı gerekiyor?</summary><p>Hayır. Birçok kişi “bu kadarı için gidilir mi?” diye düşünüp yıllarca bekliyor. Seni zorlayan, günlük hayatını etkileyen ya da bir süredir aklından çıkmayan bir şey varsa bu, konuşmak için yeterli bir sebep.</p></details>
-      <details><summary>İlk görüşmede ne olacak?</summary><p>Tanışırız. Seni neyin getirdiğini, hayatının nasıl gittiğini ve neyin değişmesini istediğini konuşuruz. Hazır olmadığın hiçbir şeyi anlatmak zorunda değilsin. Sonunda nasıl bir yol izleyebileceğimizi birlikte konuşuruz.</p></details>
+      <details><summary>İlk görüşmede ne olacak?</summary><p>İlk görüşme yaklaşık 50 dakika sürer ve bir değerlendirme görüşmesidir. Seni bugün buraya getiren şeyi, ne zamandır sürdüğünü, uykun, işin, ilişkilerin gibi hayatının hangi alanlarını etkilediğini ve görüşmelerden ne beklediğini konuşuruz. Hazır olmadığın hiçbir konuyu anlatmak zorunda değilsin. Görüşmenin sonunda sana neyin iyi gelebileceğine dair ilk izlenimimi paylaşır, hedefleri ve görüşme sıklığını birlikte belirleriz. Gizlilik ve randevu kurallarını da bu görüşmede netleştiririz.</p></details>
       <details><summary>Online görüşme yüz yüze kadar işe yarar mı?</summary><p>Araştırmalar, bilişsel davranışçı terapinin online yürütüldüğünde de etkili olabildiğini gösteriyor. Sessiz ve rahat konuşabileceğin bir ortam, iyi bir internet bağlantısı yeterli. Yüz yüzeyi tercih edersen o da mümkün.</p></details>
       <details><summary>Konuştuklarımız gizli kalır mı?</summary><p>Evet. Görüşmelerde konuşulanlar meslek etiği gereği gizli tutulur. Yalnızca senin ya da bir başkasının hayatının ciddi risk altında olduğu durumlar ve yasal zorunluluklar bunun istisnasıdır; bunu ilk görüşmede de açıkça konuşuruz.</p></details>
-      <details><summary>Kaç seans sürer?</summary><p>Kişiden kişiye değişir. Bilişsel davranışçı terapi hedef odaklı bir yaklaşım; hedeflerini birlikte belirler, belli aralıklarla nerede olduğumuza birlikte bakarız. Ne zaman bırakacağına sen karar verirsin.</p></details>
+      <details><summary>Kaç seans sürer?</summary><p>Seans sayısı kişiden kişiye değişir; yaşadığın zorluğa, ne zamandır sürdüğüne ve hedeflerine göre farklılık gösterir. Bilişsel davranışçı terapi hedef odaklı bir yaklaşım olduğu için belli aralıklarla nerede olduğumuza birlikte bakar, gerekirse planı güncelleriz. Görüşmeleri ne zaman bitireceğine sen karar verirsin.</p></details>
       <details><summary>Ücret ve randevu değişikliği</summary><p>Online görüşme 2.000 TL, yüz yüze görüşme 2.800 TL'dir; görüşmeler 45 dakika sürer. Randevunu değiştirmen gerekirse onay e-postandaki bağlantıyı kullanabilir ya da bana yazabilirsin.</p></details>
     </div>
   </div>
@@ -1359,14 +1360,14 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
       <div class="c-acts">
         <a href="tel:+905384840141"><i data-ic="tel"></i><span>Ara</span></a>
-        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>E-posta</span></a>
+        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>Mail at</span></a>
         <a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener"><i data-ic="insta"></i><span>Instagram</span></a>
       </div>
     </div>
     <div class="contact-list">
-      <div class="handle"><span class="hk">E-posta</span><span id="hMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="hMail">Kopyala</button></div>
-      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="hTel">0538 484 01 41</a><button type="button" class="hc-copy" data-copy="hTel">Kopyala</button></div>
-      <div class="handle"><span class="hk">Instagram</span><span id="hHandle">@psikologfirkan</span><button type="button" class="hc-copy" data-copy="hHandle">Kopyala</button></div>
+      <div class="handle"><span class="hk">E-posta</span><a href="mailto:psikologfurkantosun@gmail.com" id="hMail">psikologfurkantosun@gmail.com</a><a class="hc-copy" href="mailto:psikologfurkantosun@gmail.com">Mail at</a></div>
+      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="hTel">0538 484 01 41</a><a class="hc-copy" href="tel:+905384840141">Ara</a></div>
+      <div class="handle"><span class="hk">Instagram</span><a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener" id="hHandle">@psikologfirkan</a><a class="hc-copy" href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener">Takip et</a></div>
     </div>
   </div>
 </section>
@@ -1511,9 +1512,13 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 </div>
 
 <div class="view page" data-view="ozgecmis" hidden>
+<section class="ps" aria-label="Gönüllü psikososyal destek çalışmaları">
+  <div class="sx-head"><div class="label">Eğitim ve deneyim · gönüllü çalışmalar</div><h1 style="color:var(--band-ink);font-size:clamp(28px,3.6vw,44px);margin:8px 0 6px">Köy okullarında gönüllü psikososyal destek</h1><p>Aşağı kaydırdıkça fotoğraflar akar. Çocukların yüzleri gizlilik için bulanıklaştırılmıştır.</p></div>
+  <div class="sx-in"><div class="ps-stage"><img src="img/erzurum.jpg" alt="Köy okullarında çocuklarla" loading="lazy" data-k="0" class=on><img src="img/sinif-grup.jpg" alt="Sınıfta, çocukların yanında" loading="lazy" data-k="1"><img src="img/elbistan.jpg" alt="Depremden sonra, konteyner okulda" loading="lazy" data-k="2"><img src="img/spor-salonu.jpg" alt="Oyunla, hareketle, birlikte" loading="lazy" data-k="3"><img src="img/arhavi-kursu.jpg" alt="Gençlerle ve ailelerle seminerler" loading="lazy" data-k="4" style="object-position:85% 40%"><img src="img/merdiven.jpg" alt="Bir gülümseme, bir sohbet" loading="lazy" data-k="5"><img src="img/koy-cocuklar.jpg" alt="Sahada öğrendiklerim, terapi odasında" loading="lazy" data-k="6"><div class="ps-count"><b>1</b> / 7</div><div class="ps-bar"><i></i></div></div><div class="sx-steps"><div class="ps-step"><div class="sx-card"><small>Gönüllü psikososyal destek</small><h3>Köy okullarında çocuklarla</h3><p>Lisans yıllarım boyunca Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarına gittim; çocuk ve gençlerle atölyeler yaptım, gönüllü psikososyal destek verdim.</p></div></div><div class="ps-step"><div class="sx-card"><small>Erzurum</small><h3>Sınıfta, çocukların yanında</h3><p>Duyguları tanımak, adını koymak ve paylaşmak üzerine oyunlu atölyeler. Bazen bir çizim, bazen bir hikâye; amaç çocukların kendini anlatabildiği güvenli bir alan açmaktı.</p></div></div><div class="ps-step"><div class="sx-card"><small>Kahramanmaraş · Elbistan</small><h3>Depremden sonra, konteyner okulda</h3><p>Depremden etkilenen bölgede konteyner sınıflarda öğrencilerle bir araya geldik. Yaşananları konuşabilmek, korkuyu ve kaygıyı normal karşılamak ve günlük düzene dönmek üzerine çalıştık.</p></div></div><div class="ps-step"><div class="sx-card"><small>Atölyeler</small><h3>Oyunla, hareketle, birlikte</h3><p>Minderlerin üstünde, çemberde, oyunun içinde… Çocuklar için en anlaşılır dil oyun. Nefes, beden farkındalığı ve duygu düzenleme çalışmalarını oyunlaştırarak yaptık.</p></div></div><div class="ps-step"><div class="sx-card"><small>Artvin · Arhavi</small><h3>Gençlerle ve ailelerle seminerler</h3><p>Okul salonlarında öğrenciler, öğretmenler ve ailelerle sınav kaygısı, duygular ve iletişim üzerine konuştuk.</p></div></div><div class="ps-step"><div class="sx-card"><small>Okul koridorlarında</small><h3>Bir gülümseme, bir sohbet</h3><p>Atölye bittiğinde bile koridorda, merdiven başında süren sohbetler… Bu çalışmalar bana dinlemenin ne kadar iyileştirici olabileceğini en yakından gösterdi.</p></div></div><div class="ps-step"><div class="sx-card"><small>Bugün</small><h3>Sahada öğrendiklerim, terapi odasında</h3><p>O çocuklardan ve gençlerden öğrendiklerimi bugün danışanlarımla çalışırken de taşıyorum: merak, sabır ve herkesin kendi hızında değişebileceğine olan inanç.</p></div></div></div></div>
+</section>
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
-    <div class="sec-head"><div class="label">Hakkımda</div><h1>Eğitim ve deneyim</h1><p class="ed-lead">Psikoloji eğitimim, klinik ve kurumsal deneyimim, sertifikalarım.</p></div>
+    <div class="sec-head"><div class="label">Hakkımda</div><h2>Eğitim ve deneyim</h2><p class="ed-lead">Psikoloji eğitimim, klinik ve kurumsal deneyimim, sertifikalarım.</p></div>
     <div class="ed-car" aria-label="Fotoğraflar"><button type="button" class="ed-ph zoomable" data-full="/img/hero.jpg" data-cap="III. Psikoloji Günleri “Sarmaşık”ta konuşma"><img src="img/hero.jpg" alt="III. Psikoloji Günleri “Sarmaşık”ta konuşma" loading="lazy"><span>III. Psikoloji Günleri “Sarmaşık”ta konuşma</span></button><button type="button" class="ed-ph zoomable" data-full="/img/mezuniyet.jpg" data-cap="İstanbul Kent Üniversitesi psikoloji mezuniyeti"><img src="img/mezuniyet.jpg" alt="İstanbul Kent Üniversitesi psikoloji mezuniyeti" loading="lazy"><span>İstanbul Kent Üniversitesi psikoloji mezuniyeti</span></button><button type="button" class="ed-ph zoomable" data-full="/img/capa.jpg" data-cap="İstanbul Tıp Fakültesi (Çapa) stajı"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi (Çapa) stajı" loading="lazy"><span>İstanbul Tıp Fakültesi (Çapa) stajı</span></button><button type="button" class="ed-ph zoomable" data-full="/img/kulup-ekip.jpg" data-cap="Psikoloji Kulübü ekibi"><img src="img/kulup-ekip.jpg" alt="Psikoloji Kulübü ekibi" loading="lazy"><span>Psikoloji Kulübü ekibi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/kulup-odul2.jpg" data-cap="Psikoloji Kulübü etkinliğinde ödül takdimi"><img src="img/kulup-odul2.jpg" alt="Psikoloji Kulübü etkinliğinde ödül takdimi" loading="lazy"><span>Psikoloji Kulübü etkinliğinde ödül takdimi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/tarim-atolyesi.jpg" data-cap="Atölye çalışması"><img src="img/tarim-atolyesi.jpg" alt="Atölye çalışması" loading="lazy"><span>Atölye çalışması</span></button><button type="button" class="ed-ph zoomable" data-full="/img/savunma.jpg" data-cap="Savunma sanayinde kurumsal psikoloji danışmanlığı"><img src="img/savunma.jpg" alt="Savunma sanayinde kurumsal psikoloji danışmanlığı" loading="lazy"><span>Savunma sanayinde kurumsal psikoloji danışmanlığı</span></button><button type="button" class="ed-ph zoomable" data-full="/img/arhavi-sahne.jpg" data-cap="Seminer"><img src="img/arhavi-sahne.jpg" alt="Seminer" loading="lazy"><span>Seminer</span></button><button type="button" class="ed-ph zoomable" data-full="/img/plaket.jpg" data-cap="Plaket takdimi"><img src="img/plaket.jpg" alt="Plaket takdimi" loading="lazy"><span>Plaket takdimi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/bdt-sertifika.jpg" data-cap="Bilişsel Davranışçı Terapi uygulayıcı sertifikası"><img src="img/bdt-sertifika.jpg" alt="Bilişsel Davranışçı Terapi uygulayıcı sertifikası" loading="lazy"><span>Bilişsel Davranışçı Terapi uygulayıcı sertifikası</span></button></div>
     <p class="ed-hint">Fotoğrafa dokun, tam boyutunu gör; yana kaydırarak gez.</p>
     <div class="cv">
@@ -1646,14 +1651,14 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="cta" style="margin-top:22px"><a class="btn primary" href="#randevu">Randevu al</a></div>
       <div class="c-acts">
         <a href="tel:+905384840141"><i data-ic="tel"></i><span>Ara</span></a>
-        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>E-posta</span></a>
+        <a href="mailto:psikologfurkantosun@gmail.com"><i data-ic="mail"></i><span>Mail at</span></a>
         <a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener"><i data-ic="insta"></i><span>Instagram</span></a>
       </div>
     </div>
     <div class="contact-list">
-      <div class="handle"><span class="hk">E-posta</span><span id="cMail">psikologfurkantosun@gmail.com</span><button type="button" class="hc-copy" data-copy="cMail">Kopyala</button></div>
-      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="cTel">0538 484 01 41</a><button type="button" class="hc-copy" data-copy="cTel">Kopyala</button></div>
-      <div class="handle"><span class="hk">Instagram</span><span id="handle">@psikologfirkan</span><button type="button" class="hc-copy" data-copy="handle">Kopyala</button></div>
+      <div class="handle"><span class="hk">E-posta</span><a href="mailto:psikologfurkantosun@gmail.com" id="cMail">psikologfurkantosun@gmail.com</a><a class="hc-copy" href="mailto:psikologfurkantosun@gmail.com">Mail at</a></div>
+      <div class="handle"><span class="hk">Telefon</span><a href="tel:+905384840141" id="cTel">0538 484 01 41</a><a class="hc-copy" href="tel:+905384840141">Ara</a></div>
+      <div class="handle"><span class="hk">Instagram</span><a href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener" id="handle">@psikologfirkan</a><a class="hc-copy" href="https://www.instagram.com/psikologfirkan/" target="_blank" rel="noopener">Takip et</a></div>
     </div>
   </div>
 </section>
@@ -2223,12 +2228,13 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     var text = document.getElementById('anText'), crisis = document.getElementById('anCrisis');
     var st = { s: 0, topic: null, label: '', time: '', impact: 0 };
     var T = {
+      travma: ['Deprem, kaza, bir kayıp ya da tanık olduğun zor bir olay… Aradan zaman geçse de o anın görüntüleri, sesleri ya da bedendeki gerginlik geri gelebilir. Bunlar, zihnin yaşananı hâlâ işlemeye çalıştığının işaretleri; zayıflık değil.', 'Önce kendini güvende hissedebileceğin bir zemin kurar, sonra yaşadıklarını senin hızında ve adım adım ele alırız. Kaçındığın anılar, yerler ve duygularla güvenli bir şekilde yeniden bağ kurmayı birlikte çalışırız.'],
       kaygi: ['Sürekli tetikte olmak, “ya kötü bir şey olursa” diye düşünmek insanı çok yorar. Kaygı aslında bizi korumaya çalışan bir sistem; sorun, alarmın gereğinden sık ve yüksek sesle çalması.', 'Birlikte, endişeyi besleyen düşünce kalıplarını fark eder, kaçınmaların kaygıyı nasıl büyüttüğüne bakar ve belirsizlikle daha rahat kalabilmeyi çalışırız.'],
-      panik: ['Kalbin çarpması, nefesin daralması, “bir şey oluyor” hissi… Panik atak çok korkutucu ama tehlikeli değildir; beden, olmayan bir tehlikeye karşı alarm verir.', 'Bedendeki belirtilerin nasıl yorumlandığını birlikte inceler, atak korkusunun döngüsünü adım adım kırmayı çalışırız. Panik, bilişsel davranışçı terapinin en iyi sonuç verdiği konulardan biri.'],
+      panik: ['Kalbin çarpması, nefesin daralması, “bir şey oluyor” hissi… Panik atak çok korkutucu ama tehlikeli değildir; beden, olmayan bir tehlikeye karşı alarm verir.', 'Bedendeki belirtilerin nasıl yorumlandığını birlikte inceler, atak korkusunun döngüsünü adım adım kırmayı çalışırız. Panik, bilişsel davranışçı terapinin sık kullanıldığı konulardan biri.'],
       stres: ['Hep bir yerlere yetişmeye çalışıp hiç dinlenememek, bir noktadan sonra bedeni de zihni de tüketir. Bu bir zayıflık değil, uzun süre fazla yük taşımanın doğal sonucu.', 'Yükün nereden geldiğine, sınır koymayı neyin zorlaştırdığına ve kendine nasıl alan açabileceğine birlikte bakarız.'],
       mod: ['Eskiden keyif aldığın şeylerden tat alamamak, her şeyin ağır gelmesi… Bu hâl, insana “hep böyle kalacak” diye fısıldar. Ama ruh hâli değişebilir.', 'Küçük, yapılabilir adımlarla hayatına yeniden canlılık katmayı ve seni aşağı çeken düşünceleri birlikte sorgulamayı çalışırız.'],
       ozguven: ['İçimizdeki eleştirel ses çoğu zaman başkalarından çok daha acımasızdır. “Yeterince iyi değilim” bir gerçek değil, zamanla öğrenilmiş bir düşünce.', 'Bu sesin nereden geldiğini, hangi durumlarda yükseldiğini fark eder; kendine daha adil ve şefkatli bakmayı birlikte çalışırız.'],
-      iliski: ['İlişkilerdeki zorluklar en derin yerimize dokunur; yakınımızdaki insanlarla yaşanan çatışmalar ya da yalnızlık hissi bütün günü etkileyebilir.', 'İlişkilerde tekrar eden kalıpları, beklentileri ve kendini ifade etme biçimini birlikte ele alırız.'],
+      iliski: ['İlişkilerdeki zorluklar en derin yerimize dokunur. Tekrar eden kavgalar, anlaşılmamak, kırgınlık ya da yakınındayken bile yalnız hissetmek bütün günü etkileyebilir.', 'İlişkilerinde tekrar eden kalıpları, beklentilerini ve ihtiyacını nasıl dile getirdiğini birlikte ele alırız; sınır koymak ve sakin kalarak konuşabilmek üzerine çalışırız.'],
       is: ['İş hayatı; performans baskısı, belirsizlik ve ilişkilerle birlikte hayatımızın büyük bir kısmını kaplıyor. Burada yaşanan zorluk sadece işte kalmıyor.', 'Endüstri ve örgüt psikolojisi birikimimle; iş yerindeki zorlanmaları, kararsızlıkları ve kariyer sorularını birlikte netleştiririz.'],
       uyku: ['Gece zihnin susmaması, saatlerce dönüp durmak ertesi günü de etkiler. Uyku sorunları çoğu zaman düşünce ve alışkanlık döngüleriyle beslenir.', 'Uykusuzlukta bilişsel davranışçı yaklaşım ilk tercih edilen yöntemlerden; gece düşüncelerini ve uyku alışkanlıklarını birlikte düzenleriz.'],
       diger: ['Yaşadığın şeyin bir adı olmak zorunda değil. Bazen sadece bir şeylerin yolunda gitmediğini hissederiz ve bu da konuşmak için yeterli bir sebep.', 'İlk görüşmede seni neyin zorladığını birlikte anlamaya çalışır, sonra nasıl bir yol izleyebileceğimize beraber karar veririz.']
@@ -2271,7 +2277,7 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   })();
 
   /* kopyala */
-  document.querySelectorAll('.hc-copy').forEach(function (btn) {
+  document.querySelectorAll('button.hc-copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var el = document.getElementById(btn.getAttribute('data-copy')), old = btn.textContent;
       function done() { btn.textContent = 'Kopyalandı'; setTimeout(function () { btn.textContent = old; }, 1600); }

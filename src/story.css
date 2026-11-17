@@ -93,3 +93,21 @@
   .sx-stage[data-s="4"] .sx-fig { transform: translateX(-46px) scale(.92); }
 }
 @media (prefers-reduced-motion: reduce) { .sx-fig, .sx-heart, .sx-stage[data-s="5"] .sx-ring, .sx-stage[data-s="3"] .sx-fig { animation: none; } }
+/* fotoğraf hikâyesi */
+.ps { background: linear-gradient(180deg, #0b2427, #0f2f33 40%, #0b2427); color: var(--band-ink); }
+.ps-stage { position: sticky; top: 70px; height: calc(100vh - 90px); max-height: 760px; min-height: 460px; margin: 20px 0; border-radius: 22px; overflow: hidden; background: #081b1d; box-shadow: 0 40px 70px -40px rgba(0,0,0,.8); }
+.ps-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.12); transition: opacity 1s ease, transform 6s ease-out; }
+.ps-stage img.on { opacity: 1; transform: scale(1); }
+.ps-stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(6,12,13,.55)); pointer-events: none; }
+.ps-count { position: absolute; right: 16px; bottom: 16px; z-index: 2; font: 600 13px var(--f-mono); color: rgba(255,255,255,.85); }
+.ps-count b { color: var(--glow); font-size: 18px; }
+.ps-bar { position: absolute; left: 16px; right: 80px; bottom: 22px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.2); z-index: 2; }
+.ps-bar i { display: block; height: 100%; width: 0; border-radius: 4px; background: var(--glow); transition: width .3s; }
+.ps-step { min-height: 78vh; display: flex; align-items: center; }
+.ps-step.on .sx-card { opacity: 1; transform: none; border-color: color-mix(in srgb, var(--glow) 60%, transparent); }
+@media (max-width: 860px) {
+  .ps-stage { top: 58px; height: 52vh; min-height: 340px; margin: 10px 0 0; border-radius: 18px; z-index: 1; }
+  .ps-step { min-height: 70vh; align-items: flex-end; }
+  .ps-step .sx-card { background: rgba(11,36,39,.92); opacity: 0; }
+  .ps-step.on .sx-card { opacity: 1; }
+}
