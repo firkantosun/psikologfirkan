@@ -364,7 +364,7 @@ def page(name, body_view, ctx, title=None, desc=None, path=None, ld=None, og_typ
     if name not in ("randevu", "hikaye"):
         out += '<a class="sticky-cta" id="stickyCta" href="/randevu/">Randevu al <small>· online / yüz yüze</small></a>\n'
     out += '<script src="/assets/site.js" defer></script>\n'
-    if 'data-game=' in out or "data-auto" in out:
+    if 'data-game=' in out or "data-auto" in out or 'data-full=' in out:
         out += '<script src="/assets/game.js" defer></script>\n'
     out += '</body>\n</html>\n'
     return out
@@ -587,12 +587,12 @@ def area_page(a, posts):
     c1, c2 = area_colors(a)
     secs = sections(a["body"])
     html_s = []
+    TAB = ["Nedir?", "Belirtiler", "BDT bakışı", "Neler yapıyoruz?", "Görüşme", "Ne zaman destek?"]
     for i, s in enumerate(secs):
         h = f"<h2>{esc(s['h'])}</h2>" if s["h"] else ""
         has_ul = any("ul" in b for b in s["items"])
         if "BDT" in s["h"] or "bilişsel" in s["h"].lower() or (i == 2 and not any("ul" in b for b in s["items"])):
-            g = GAMES.get(a["slug"])
-            inner = paras(s["items"]) + (game_html("cycle", [g], "Oyun · 1 dakika", "Döngüyü sen kır", "Bir anı adım adım izle, sonra döngüyü kırmak için bir yol seç.") if g else cycle(a["icon"])) + video_html(a["slug"])
+            inner = paras(s["items"]) + ("" if GAMES.get(a["slug"]) else cycle(a["icon"]))
         elif has_ul and i >= 3:
             inner = paras([b for b in s["items"] if "p" in b][:0]) + tools(s["items"]) + paras(s["items"], 0)
         elif has_ul:
@@ -605,8 +605,12 @@ def area_page(a, posts):
             inner = f'<div class="ca-note">{ic("terapi")}<div>{paras(s["items"])}</div></div>'
         else:
             inner = paras(s["items"])
-        html_s.append(f'<section class="ca-sec">{h}{inner}</section>')
-    body = "\n".join(html_s)
+        html_s.append((TAB[i] if i < len(TAB) else s["h"], f'<section class="ca-sec">{h}{inner}</section>'))
+    tl = "".join(f'<button type="button" role="tab" id="t-{i}" aria-controls="p-{i}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}">{esc(n)}</button>' for i, (n, _) in enumerate(html_s))
+    tp = "".join(f'<div class="ca-panel" role="tabpanel" id="p-{i}" aria-labelledby="t-{i}"{"" if i == 0 else " hidden"}>{x}</div>' for i, (_, x) in enumerate(html_s))
+    body = f'<div class="ca-tabs"><div class="ca-tablist" role="tablist" aria-label="{esc(a["name"])} hakkında">{tl}</div>{tp}</div>'
+    g = GAMES.get(a["slug"])
+    play = (f'<section class="ca-play"><div class="wrap">' + game_html("cycle", [g], "Oyun · 1 dakika", "Döngüyü sen kır", "Bir anı yaşa: düşünceyi yakala, duyguyu ölç, sonra döngüyü kırmak için bir yol seç.") + '</div></section>') if g else ""
     faq = "".join(f"<details><summary>{esc(f['q'])}</summary><p>{esc(f['a'])}</p></details>" for f in a["faq"])
     cats = a.get("cats", [])
     rel = sorted([p for p in posts if p["category"] in cats], key=lambda p: cats.index(p["category"]))[:3]
@@ -629,14 +633,13 @@ def area_page(a, posts):
     <h1>{esc(a["h1"])}</h1>
     <p>{esc(a["intro"])}</p>
     <div class="cta"><a class="btn primary" href="/randevu/">Randevu al</a><a class="btn ghost" href="tel:{PHONE}">Ara: {PHONE_TXT}</a></div>
-    <div class="ca-by"><img src="/img/portre.jpg" alt="" width="44" height="44"><span>Psikolog Muhammed Furkan Tosun<small>Bilişsel davranışçı terapi · yüz yüze ve online</small></span></div>
   </div>
 </section>
+{play}
 <section class="ca-wrap">
   <div class="wrap lp-grid">
     <div class="ca-body">
 {body}
-      {flow}
       <h2>Sık sorulan sorular</h2>
       <div class="faq">{faq}</div>
       {rel_html}
@@ -711,8 +714,7 @@ def main():
     gcss = open(os.path.join(SRC, "game.css"), encoding="utf-8").read()
     open(os.path.join(DIST, "assets", "site.css"), "w", encoding="utf-8").write(base + fix_links(css) + "\n" + gcss)
     shutil.copy(os.path.join(SRC, "game.js"), os.path.join(DIST, "assets", "game.js"))
-    if os.path.isdir(os.path.join(SRC, "video")):
-        shutil.copytree(os.path.join(SRC, "video"), os.path.join(DIST, "video"))
+
     open(os.path.join(DIST, "assets", "site.js"), "w", encoding="utf-8").write(build_js(js))
 
     written = []
@@ -731,7 +733,7 @@ def main():
     write("/", page("home", views["home"].replace("<!--SON-YAZILAR-->", latest).replace("<!--ALAN-KARTLARI-->", home_cards), ctx,
                     ld=[person_ld(), business_ld(), website] + ([faq_ld(home_faq)] if home_faq else [])))
     views["yaklasim"] = (views["yaklasim"]
-        .replace("<!--GAME-YAKLASIM-->", video_html("bdt") + game_html("cycle", GX["yaklasim"], "Bilişsel model · oyun", "Bir anın içinde neler oluyor?", "Bir örnek seç, döngüyü adım adım izle ve onu kırmak için bir yol seç."))
+        .replace("<!--GAME-YAKLASIM-->", game_html("cycle", GX["yaklasim"], "Bilişsel model · oyun", "Bir anın içinde neler oluyor?", "Bir örnek seç, döngüyü adım adım izle ve onu kırmak için bir yol seç."))
         .replace("<!--GAME-DEDEKTIF-->", game_html("detective", {"traps": GX["traps"], "cards": GX["cards"]}, "Oyun · Düşünce dedektifi", "Bu düşünce hangi tuzağa düştü?", "Her kartta bir düşünce var. Hangi düşünce tuzağına benzediğini seç; doğru cevabı ve daha dengeli hâlini gör.")))
     for key, crumb in [("yaklasim", "Terapi yaklaşımım"), ("ozgecmis", "Eğitim ve deneyim"), ("iletisim", "İletişim"), ("randevu", "Randevu al")]:
         write(PAGES[key]["path"], page(key, views[key], ctx, ld=[person_ld(), crumbs_ld([("Ana sayfa", "/"), (crumb, PAGES[key]["path"])])]))

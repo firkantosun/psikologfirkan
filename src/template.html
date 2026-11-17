@@ -717,6 +717,8 @@ footer .wrap { padding-block: 22px 32px; display: flex; justify-content: space-b
 .h-hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
 .h-hero .label { color: var(--glow); }
 .h-hero h1.h-seo { font-size: 12px; margin: 0; line-height: 1.6; max-width: 46em; color: var(--glow); }
+.h-eyebrow { color: var(--glow); }
+.h-hero h1.h-display { font-weight: 400; }
 .h-display { font-family: var(--f-display); font-size: clamp(36px, 5.4vw, 62px); line-height: 1.08; margin: 14px 0 18px; color: var(--band-ink); }
 .h-lead { color: var(--band-muted); font-size: clamp(17px, 1.5vw, 19px); max-width: 34em; margin: 0 0 26px; }
 .h-hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -1147,6 +1149,20 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
   .h-about .wrap > img.h-about-img { width: calc(100% - 12px); aspect-ratio: 4 / 3; box-shadow: 10px 10px 0 -1px var(--bg), 10px 10px 0 0 var(--warm); margin-bottom: 10px; object-position: 50% 70%; }
   .h-photo::before, .h-photo .h-stamp { display: none; }
 }
+.ed-car { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 10px; margin: 6px 0 4px; scrollbar-width: thin; }
+.ed-ph { flex: 0 0 240px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; background: var(--band); }
+.ed-ph img { width: 100%; height: 300px; object-fit: cover; object-position: 50% 30%; display: block; transition: transform .4s; }
+.ed-ph:hover img { transform: scale(1.04); }
+.ed-ph span { display: block; padding: 10px 12px; font-size: 13.5px; color: var(--band-ink); line-height: 1.35; }
+.ed-hint { margin: 0 0 34px; font-size: 13.5px; color: var(--muted); }
+.cv-img { width: 120px; height: 120px; border-radius: 10px; overflow: hidden; }
+.cv-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.h-strip figure[data-full]:focus-visible { outline: 3px solid var(--glow); }
+@media (max-width: 860px) {
+  .ed-ph { flex-basis: 70%; }
+  .ed-ph img { height: 260px; }
+  .cv-img { width: 96px; height: 96px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ring, .orbit, .psi-glow, .pulse-c, .dust span, .lampglow, .scroll-hint::before { animation: none; }
 }
@@ -1179,23 +1195,17 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 <section class="h-hero">
   <div class="wrap">
     <div class="h-copy">
-      <h1 class="label h-seo">Psikolog Muhammed Furkan Tosun · Kadıköy, İstanbul ve online psikolojik danışmanlık</h1>
-      <p class="h-display">Zorlandığın yerden, birlikte bakalım.</p>
-      <p class="h-lead">Kaygı, panik, depresyon ve stres gibi zorluklarda bilişsel davranışçı terapiyle; seninle, senin hızında.</p>
+      <div class="label h-eyebrow">Psikolog · Kadıköy ve online</div>
+      <h1 class="h-display">Zorlandığın yerden, birlikte bakalım.</h1>
+      <p class="h-lead">Bilişsel davranışçı terapiyle, senin hızında.</p>
       <div class="cta">
         <a class="btn primary" href="#randevu">Randevu al</a>
         <a class="btn ghost" href="/calisma-alanlari/">Çalışma alanları</a>
       </div>
-      <ul class="h-chips">
-        <li><a href="/kadikoy-psikolog/"><i data-ic="konum"></i>Kadıköy</a></li>
-        <li><a href="/online-psikolog/"><i data-ic="video"></i>Online</a></li>
-        <li><i data-ic="saat"></i>Hft. içi 17–21 · Pz 10–16</li>
-      </ul>
     </div>
     <figure class="h-photo">
       <img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" fetchpriority="high">
-      <span class="h-stamp">2023<small>'ten beri danışanlarla</small></span>
-      <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog · Bilişsel davranışçı terapi</span></figcaption>
+      <figcaption><b>Muhammed Furkan Tosun</b><span>Psikolog</span></figcaption>
     </figure>
   </div>
 </section>
@@ -1212,12 +1222,12 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
     </div>
   </div>
   <div class="h-strip" aria-label="Fotoğraflar">
-    <figure><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
-    <figure><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
-    <figure><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
-    <figure class="fit"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
-    <figure><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
-    <figure><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
+    <figure data-full="/img/hero.jpg" data-cap="Seminerler" tabindex="0" role="button"><img src="img/g/hero.jpg" alt="Seminerde konuşurken" loading="lazy"><figcaption>Seminerler</figcaption></figure>
+    <figure data-full="/img/tarim-atolyesi.jpg" data-cap="Atölyeler" tabindex="0" role="button"><img src="img/g/tarim-atolyesi.jpg" alt="Atölyede anlatırken" loading="lazy"><figcaption>Atölyeler</figcaption></figure>
+    <figure data-full="/img/capa.jpg" data-cap="Klinik staj · Çapa" tabindex="0" role="button"><img src="img/g/capa.jpg" alt="İstanbul Tıp Fakültesi Esnaf Hastanesi klinikleri önünde" loading="lazy"><figcaption>Klinik staj · Çapa</figcaption></figure>
+    <figure class="fit" data-full="/img/bdt-sertifika.jpg" data-cap="BDT sertifikası" tabindex="0" role="button"><img src="img/g/bdt-sertifika.jpg" alt="Bilişsel davranışçı terapi uygulayıcı sertifikası" loading="lazy"><figcaption>BDT sertifikası</figcaption></figure>
+    <figure data-full="/img/kulup-odul2.jpg" data-cap="Psikoloji kulübü" tabindex="0" role="button"><img src="img/g/kulup-odul2.jpg" alt="Psikoloji kulübü ödül töreni" loading="lazy"><figcaption>Psikoloji kulübü</figcaption></figure>
+    <figure data-full="/img/mezuniyet.jpg" data-cap="Mezuniyet" tabindex="0" role="button"><img src="img/g/mezuniyet.jpg" alt="Mezuniyet günü" loading="lazy"><figcaption>Mezuniyet</figcaption></figure>
   </div>
 </section>
 
@@ -1468,27 +1478,28 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
 <section class="sec" id="p-ozgecmis">
   <div class="wrap">
     <div class="sec-head"><div class="label">Hakkımda</div><h1>Eğitim ve deneyim</h1><p class="ed-lead">Psikoloji eğitimim, klinik ve kurumsal deneyimim, sertifikalarım.</p></div>
-    <div class="ed-photos"><img src="img/hero.jpg" alt="Psikoloji Günleri'nde konuşurken" loading="lazy" style="object-position:50% 60%"><img src="img/mezuniyet.jpg" alt="Mezuniyet töreninde" loading="lazy"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></div>
+    <div class="ed-car" aria-label="Fotoğraflar"><button type="button" class="ed-ph zoomable" data-full="/img/hero.jpg" data-cap="III. Psikoloji Günleri “Sarmaşık”ta konuşma"><img src="img/hero.jpg" alt="III. Psikoloji Günleri “Sarmaşık”ta konuşma" loading="lazy"><span>III. Psikoloji Günleri “Sarmaşık”ta konuşma</span></button><button type="button" class="ed-ph zoomable" data-full="/img/mezuniyet.jpg" data-cap="İstanbul Kent Üniversitesi psikoloji mezuniyeti"><img src="img/mezuniyet.jpg" alt="İstanbul Kent Üniversitesi psikoloji mezuniyeti" loading="lazy"><span>İstanbul Kent Üniversitesi psikoloji mezuniyeti</span></button><button type="button" class="ed-ph zoomable" data-full="/img/capa.jpg" data-cap="İstanbul Tıp Fakültesi (Çapa) stajı"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi (Çapa) stajı" loading="lazy"><span>İstanbul Tıp Fakültesi (Çapa) stajı</span></button><button type="button" class="ed-ph zoomable" data-full="/img/kulup-ekip.jpg" data-cap="Psikoloji Kulübü ekibi"><img src="img/kulup-ekip.jpg" alt="Psikoloji Kulübü ekibi" loading="lazy"><span>Psikoloji Kulübü ekibi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/kulup-odul2.jpg" data-cap="Psikoloji Kulübü etkinliğinde ödül takdimi"><img src="img/kulup-odul2.jpg" alt="Psikoloji Kulübü etkinliğinde ödül takdimi" loading="lazy"><span>Psikoloji Kulübü etkinliğinde ödül takdimi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/tarim-atolyesi.jpg" data-cap="Atölye çalışması"><img src="img/tarim-atolyesi.jpg" alt="Atölye çalışması" loading="lazy"><span>Atölye çalışması</span></button><button type="button" class="ed-ph zoomable" data-full="/img/savunma.jpg" data-cap="Savunma sanayinde kurumsal psikoloji danışmanlığı"><img src="img/savunma.jpg" alt="Savunma sanayinde kurumsal psikoloji danışmanlığı" loading="lazy"><span>Savunma sanayinde kurumsal psikoloji danışmanlığı</span></button><button type="button" class="ed-ph zoomable" data-full="/img/arhavi-sahne.jpg" data-cap="Seminer"><img src="img/arhavi-sahne.jpg" alt="Seminer" loading="lazy"><span>Seminer</span></button><button type="button" class="ed-ph zoomable" data-full="/img/plaket.jpg" data-cap="Plaket takdimi"><img src="img/plaket.jpg" alt="Plaket takdimi" loading="lazy"><span>Plaket takdimi</span></button><button type="button" class="ed-ph zoomable" data-full="/img/bdt-sertifika.jpg" data-cap="Bilişsel Davranışçı Terapi uygulayıcı sertifikası"><img src="img/bdt-sertifika.jpg" alt="Bilişsel Davranışçı Terapi uygulayıcı sertifikası" loading="lazy"><span>Bilişsel Davranışçı Terapi uygulayıcı sertifikası</span></button></div>
+    <p class="ed-hint">Fotoğrafa dokun, tam boyutunu gör; yana kaydırarak gez.</p>
     <div class="cv">
       <div class="cv-group">
         <h3>Eğitim</h3>
         <ul class="cv-list">
           <li class="cv-item"><div class="when">2024–2025</div><div class="what"><div class="title">Endüstri ve Örgüt Psikolojisi Yüksek Lisansı</div><div class="org">Marmara Üniversitesi</div><div class="desc">İş yaşamı, çalışan psikolojisi, ekipler ve kurumlar üzerine uzmanlaşma.</div></div></li>
-          <li class="cv-item has-img"><div class="when">2019–2023</div><div class="what"><div class="title">Psikoloji Lisansı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Psikoloji Kulübü Başkanı. Çapa Tıp Fakültesi'nde staj.</div></div><img class="cv-img" src="img/mezuniyet.jpg" alt="Mezuniyet töreni" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">2019–2023</div><div class="what"><div class="title">Psikoloji Lisansı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Psikoloji Kulübü Başkanı. Çapa Tıp Fakültesi'nde staj.</div></div><button type="button" class="cv-img zoomable" data-full="/img/mezuniyet.jpg" data-cap="Mezuniyet töreni"><img src="img/mezuniyet.jpg" alt="Mezuniyet töreni" loading="lazy"></button></li>
         </ul>
       </div>
       <div class="cv-group">
         <h3>Deneyim</h3>
         <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">6 ay</div><div class="what"><div class="title">Kurumsal psikoloji danışmanlığı</div><div class="org">Köprüören · savunma sanayi</div><div class="desc">Bir savunma sanayi fabrikasında endüstri ve örgüt psikolojisi alanında danışmanlık.</div></div><img class="cv-img" src="img/savunma.jpg" alt="Köprüören tesisi önünde" loading="lazy"></li>
-          <li class="cv-item has-img"><div class="when">Staj</div><div class="what"><div class="title">Psikoloji stajyeri</div><div class="org">İstanbul Üniversitesi Çapa Tıp Fakültesi</div><div class="desc">Klinik ortamda gözlem ve uygulama deneyimi.</div></div><img class="cv-img" src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></li>
-          <li class="cv-item has-img"><div class="when">2023 – günümüz</div><div class="what"><div class="title">Psikolog</div><div class="org">Bilişsel davranışçı terapi temelli çalışma</div><div class="desc">Danışanlarla bireysel çalışma; @psikologfirkan hesabında bilimsel temelli psikoloji içerikleri.</div></div><img class="cv-img" src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">6 ay</div><div class="what"><div class="title">Kurumsal psikoloji danışmanlığı</div><div class="org">Köprüören · savunma sanayi</div><div class="desc">Bir savunma sanayi fabrikasında endüstri ve örgüt psikolojisi alanında danışmanlık.</div></div><button type="button" class="cv-img zoomable" data-full="/img/savunma.jpg" data-cap="Köprüören tesisi önünde"><img src="img/savunma.jpg" alt="Köprüören tesisi önünde" loading="lazy"></button></li>
+          <li class="cv-item has-img"><div class="when">Staj</div><div class="what"><div class="title">Psikoloji stajyeri</div><div class="org">İstanbul Üniversitesi Çapa Tıp Fakültesi</div><div class="desc">Klinik ortamda gözlem ve uygulama deneyimi.</div></div><button type="button" class="cv-img zoomable" data-full="/img/capa.jpg" data-cap="İstanbul Tıp Fakültesi önünde"><img src="img/capa.jpg" alt="İstanbul Tıp Fakültesi önünde" loading="lazy"></button></li>
+          <li class="cv-item has-img"><div class="when">2023 – günümüz</div><div class="what"><div class="title">Psikolog</div><div class="org">Bilişsel davranışçı terapi temelli çalışma</div><div class="desc">Danışanlarla bireysel çalışma; @psikologfirkan hesabında bilimsel temelli psikoloji içerikleri.</div></div><button type="button" class="cv-img zoomable" data-full="/img/portre.jpg" data-cap="Psikolog Muhammed Furkan Tosun"><img src="img/portre.jpg" alt="Psikolog Muhammed Furkan Tosun" loading="lazy"></button></li>
         </ul>
       </div>
       <div class="cv-group">
         <h3>Girişimler</h3>
         <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">Kurucu</div><div class="what"><div class="title">PSYCONNECT</div><div class="org">Online terapi ve grup terapisi platformu</div><div class="desc">Psikolojik destek arayan insanları psikologlarla online bireysel seans ve grup terapisi için buluşturan mobil uygulama.</div></div><img class="cv-img" src="img/pc-home.jpg" alt="PSYCONNECT uygulaması" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">Kurucu</div><div class="what"><div class="title">PSYCONNECT</div><div class="org">Online terapi ve grup terapisi platformu</div><div class="desc">Psikolojik destek arayan insanları psikologlarla online bireysel seans ve grup terapisi için buluşturan mobil uygulama.</div></div><button type="button" class="cv-img zoomable" data-full="/img/pc-home.jpg" data-cap="PSYCONNECT uygulaması"><img src="img/pc-home.jpg" alt="PSYCONNECT uygulaması" loading="lazy"></button></li>
         </ul>
       </div>
       <div class="cv-group">
@@ -1500,8 +1511,8 @@ footer .f-links b { color: var(--band-ink); font-weight: 600; font-size: 13px; l
       <div class="cv-group">
         <h3>Liderlik ve gönüllülük</h3>
         <ul class="cv-list">
-          <li class="cv-item has-img"><div class="when">2022–2023</div><div class="what"><div class="title">Psikoloji Kulübü Başkanı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Etkinlik ve seminerler; III. Psikoloji Günleri “Sarmaşık” (20–21 Mayıs 2023).</div></div><img class="cv-img" src="img/kulup-ekip.jpg" alt="Psikoloji kulübü ekibi" loading="lazy"></li>
-          <li class="cv-item has-img"><div class="when">Lisans dönemi</div><div class="what"><div class="title">Gönüllü psikososyal destek</div><div class="org">Sosyal girişim · köy okulları</div><div class="desc">Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuk ve gençlerle atölye ve psikososyal destek çalışmaları.</div></div><img class="cv-img" src="img/sinif-grup.jpg" alt="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır" loading="lazy"></li>
+          <li class="cv-item has-img"><div class="when">2022–2023</div><div class="what"><div class="title">Psikoloji Kulübü Başkanı</div><div class="org">İstanbul Kent Üniversitesi</div><div class="desc">Etkinlik ve seminerler; III. Psikoloji Günleri “Sarmaşık” (20–21 Mayıs 2023).</div></div><button type="button" class="cv-img zoomable" data-full="/img/kulup-ekip.jpg" data-cap="Psikoloji kulübü ekibi"><img src="img/kulup-ekip.jpg" alt="Psikoloji kulübü ekibi" loading="lazy"></button></li>
+          <li class="cv-item has-img"><div class="when">Lisans dönemi</div><div class="what"><div class="title">Gönüllü psikososyal destek</div><div class="org">Sosyal girişim · köy okulları</div><div class="desc">Artvin, Kahramanmaraş, Erzurum ve Bursa'daki köy okullarında çocuk ve gençlerle atölye ve psikososyal destek çalışmaları.</div></div><button type="button" class="cv-img zoomable" data-full="/img/sinif-grup.jpg" data-cap="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır"><img src="img/sinif-grup.jpg" alt="Köy okulunda çocuklarla; yüzler bulanıklaştırılmıştır" loading="lazy"></button></li>
         </ul>
       </div>
     </div>
