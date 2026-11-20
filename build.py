@@ -771,6 +771,10 @@ def main():
         assert re.fullmatch(r"[a-z0-9-]+", a["slug"])
         for c in a.get("cats", []):
             AREA_FOR.setdefault(c, a)
+    for a in AREAS:
+        cs = a.get("cats", [])
+        if cs and AREA_FOR.get(cs[0], {}).get("cats", [None])[0] != cs[0]:
+            AREA_FOR[cs[0]] = a
     slugs = [p["slug"] for p in posts]
     assert len(slugs) == len(set(slugs)), "Aynı slug iki kez kullanılmış"
     for p in posts:
