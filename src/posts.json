@@ -1,6 +1,316 @@
 {
  "posts": [
   {
+   "slug": "kiskanclik-nasil-gecer",
+   "date": "2026-11-22",
+   "updated": "2026-11-22",
+   "category": "İlişkiler",
+   "title": "Kıskançlık nasıl geçer? Aşırı kıskançlıkla baş etmek",
+   "excerpt": "Kıskançlık nasıl geçer? Aşırı kıskançlığın kaynağını, kontrol etme döngüsünü, BDT temelli somut adımları ve ne zaman destek alman gerektiğini anlattım.",
+   "minutes": 8,
+   "body": [
+    {
+     "p": "Kıskançlık nasıl geçer sorusunun kısa cevabı şu: Kıskançlık tamamen yok edilmesi gereken bir duygu değildir; asıl hedef, onu fark edip yatıştırabilmek ve seni kontrol eden davranışlara dönüşmesini engellemektir. Kıskançlık; içindeki tehdit hissini kanıtlarla karşılaştırmayı, kontrol etme dürtüsünü geciktirmeyi ve ilişkideki belirsizliğe tahammülü öğrendikçe yumuşar."
+    },
+    {
+     "p": "Bu yazıda kıskançlığın nereden geldiğini, ne zaman sıradan bir duygu olmaktan çıkıp ilişkini yıpratan bir yüke dönüştüğünü ve bilişsel davranışçı terapi (BDT) bakışıyla bu döngüyü nasıl kırabileceğini anlatıyorum. Bir tanı aracı değil; kendini biraz daha iyi tanıman için bir rehber."
+    },
+    {
+     "h": "Bir bildirim sesiyle başlayan gece"
+    },
+    {
+     "p": "Akşam yemeğindesiniz. Partnerinin telefonu masada titriyor, ekrana bakıp gülümsüyor ve telefonu ters çeviriyor. Senin içinde bir şey kasılıyor. Yemeğin geri kalanında konuşulanları duymuyorsun bile; zihnin o mesajın kimden geldiğini, neden gülümsediğini, neden telefonu çevirdiğini tartıyor. Eve dönünce “Kimdi o?” diye sesini sakin tutmaya çalışarak soruyorsun. Cevap “İş arkadaşım, bir şaka göndermiş” oluyor. Bir süre rahatlıyorsun ama gece yarısı uyanıp aynı soruyu kendine tekrar soruyorsun."
+    },
+    {
+     "p": "Bu sahne pek çok kişiye tanıdık gelir. Önemli olan, sahnedeki olay değil; o olayın içinde nasıl bir anlam taşıdığı ve bu anlamın seni hangi davranışlara ittiğidir."
+    },
+    {
+     "h": "Kıskançlık neden olur?"
+    },
+    {
+     "p": "Kıskançlık, değer verdiğin bir ilişkinin ya da o ilişkideki yerinin tehdit altında olduğunu hissettiğinde ortaya çıkan bir duygudur. İrlanda sağlık hizmeti HSE de kıskançlığı mutluluk, üzüntü ya da öfke gibi sıradan bir insan duygusu olarak tanımlıyor ve en çok yakın ilişkilerde görüldüğünü belirtiyor. Kıskançlık ile haset sık karıştırılır: Haset, başkasında olanı istemektir; kıskançlık ise sahip olduğun bir bağı kaybetme korkusudur."
+    },
+    {
+     "p": "Kıskançlığı besleyen birkaç ortak kaynak vardır:"
+    },
+    {
+     "ul": [
+      "Kendine değer verme sorunları: “Ben yeterince iyi değilim, er geç daha iyisini bulur” düşüncesi, her yeni kişiyi bir rakip gibi göstermeye başlar.",
+      "Geçmiş ilişkilerdeki yaralar: Aldatılmak ya da terk edilmek, zihne “Yine olacak” beklentisini yerleştirebilir. HSE, geçmişteki güvensizlik deneyimlerinin bugünkü ilişkide de aynı şeyi beklemeye yol açabileceğine dikkat çekiyor.",
+      "Bağlanma kaygısı: Yakınlıkta kendini güvende hissetmekte zorlanan kişiler, mesafeyi ve sessizliği hızla reddedilme olarak yorumlayabilir.",
+      "Kaygıya yatkınlık: Belirsizliğe tahammülü düşük olan zihin, boşlukları en kötü ihtimalle doldurur.",
+      "İlişkideki gerçek sorunlar: Bazen kıskançlık, gerçekten konuşulması gereken bir güven kırılmasının işaretidir; her kıskançlık “kafanda kurduğun” bir şey değildir."
+     ]
+    },
+    {
+     "p": "Psikodinamik bir pencereden bakarsak, kıskançlık çoğu zaman bugünden çok eskiye ait bir soruyu da taşır: “Sevilmeye ve seçilmeye değer miyim?” Çocuklukta sevginin koşullu ya da öngörülemez olduğu ortamlarda büyümek, yetişkinlikte bu sorunun çok daha yüksek sesle sorulmasına neden olabilir."
+    },
+    {
+     "p": "Gündelik hayatın küçük alışkanlıkları da bu duyguyu kışkırtabilir. 2025'te Frontiers in Psychology dergisinde yayımlanan bir meta-analiz, partnerin birlikteyken telefona dalarak karşısındakini görmezden gelmesinin (İngilizcede “phubbing” deniyor) ilişkide daha fazla çatışma ve kıskançlıkla ilişkili olduğunu bildiriyor. Yani kıskançlık bazen yalnızca senin içindeki bir sorun değil, ilişkinin birlikte bakması gereken bir alanıdır."
+    },
+    {
+     "h": "Normal kıskançlık mı, aşırı kıskançlık mı?"
+    },
+    {
+     "p": "Ara sıra kıskanmak, bir ilişkiye önem verdiğini gösterebilir. Sorun, duygunun sıklığı, yoğunluğu ve seni neler yapmaya ittiğiyle başlar. Aşağıdaki işaretlerden birkaçı uzun süredir hayatındaysa kıskançlık artık sıradan bir duygu olmaktan çıkmış olabilir:"
+    },
+    {
+     "ul": [
+      "Partnerinin telefonunu, sosyal medyasını ya da konumunu sık sık kontrol etmek ya da kontrol etme dürtüsüyle boğuşmak.",
+      "Somut bir kanıt olmadan sürekli aldatıldığını düşünmek, olası senaryoları saatlerce zihninde döndürmek.",
+      "Partnerinin arkadaşlarıyla görüşmesini, giyimini ya da işini kısıtlamaya çalışmak.",
+      "Aynı soruları tekrar tekrar sorup güvence istemek ve aldığın cevabın rahatlatıcılığının kısa sürmesi.",
+      "Kıskançlık yüzünden uyku, iştah ve odaklanma sorunları yaşamak; HSE yoğun kıskançlığın çarpıntı, terleme, uykusuzluk ve sürekli endişe gibi bedensel ve zihinsel etkiler yaratabileceğini belirtiyor.",
+      "Partnerinin senin kıskançlığın yüzünden kendini sürekli açıklamak, savunmak ya da diken üstünde hissetmek zorunda kalması."
+     ]
+    },
+    {
+     "p": "HSE'nin önerdiği üç soru iyi bir ayna olabilir: Bu duygu gündelik hayatımı aksatıyor mu? Kıskançlığım sevdiğim birini incitiyor mu? Kıskançlığımı ben mi yönetiyorum, yoksa o mu beni yönetiyor?"
+    },
+    {
+     "p": "Bir not daha: Kıskançlık hiçbir zaman şiddetin, tehdidin, para ya da telefon üzerinden kontrolün gerekçesi değildir. Eğer ilişkinde “seni çok sevdiğim için kıskanıyorum” sözleriyle izlendiğini, kısıtlandığını ya da korktuğunu fark ediyorsan, bu durum kıskançlığın ötesine geçmiş olabilir. Blogdaki psikolojik şiddet belirtileri yazısı bu ayrımı yapmana yardımcı olabilir; kendini tehlikede hissettiğin bir anda 112'yi aramaktan çekinme."
+    },
+    {
+     "h": "Kıskançlık döngüsü: BDT ile nasıl işler?"
+    },
+    {
+     "p": "BDT'de kıskançlığa bir olay, bir düşünce, bir duygu ve bir davranıştan oluşan bir döngü olarak bakarız. Akşam yemeği sahnesine geri dönelim:"
+    },
+    {
+     "ul": [
+      "Tetikleyici: Partnerin bir mesaja gülümseyip telefonu ters çeviriyor.",
+      "Otomatik düşünce: “Benden bir şey saklıyor. Biriyle yazışıyor. Er geç beni bırakacak.”",
+      "Duygu ve beden: Kaygı, öfke, aşağılanmışlık; midede düğüm, kalp atışında hızlanma.",
+      "Davranış: Soru sormak, gece telefonuna bakmak, sosyal medyada o kişiyi aramak, soğuk ve mesafeli davranmak.",
+      "Kısa vadeli sonuç: Bir an rahatlama ya da “İşte, şüphelenmekte haklıydım” hissi.",
+      "Uzun vadeli sonuç: Kontrol ettikçe kaygı azalmıyor, artıyor; partner kendini suçlanmış hissedip uzaklaşıyor; bu uzaklık da yeni bir “kanıt” gibi okunuyor."
+     ]
+    },
+    {
+     "p": "Döngünün en sinsi yanı güvence arama ve kontrol etme davranışlarıdır. Telefona bakmak o an kaygıyı düşürür, ama zihne “Kontrol etmeseydin bir felaket olacaktı” mesajını verir. Böylece bir dahaki sefere dürtü daha güçlü gelir. Kıskançlığın geçmesi, bu davranışların yerine başka bir şey koymayı öğrenmekle başlar."
+    },
+    {
+     "h": "Kıskançlıkla baş etmek için 6 somut adım"
+    },
+    {
+     "ul": [
+      "Duyguyu adlandır ama hemen eyleme geçme: “Şu an kıskanıyorum, içimde bir tehdit hissi var” demek, duyguyu bastırmadan ona alan açar. Kendine dürtüye uymadan önce yirmi dakikalık bir bekleme süresi koy; çoğu zaman dalganın tepe noktası bu sürede geçer.",
+      "Düşünceyi bir hipotez gibi incele: “Benden bir şey saklıyor” düşüncesini lehine ve aleyhine kanıtlarla bir kâğıda yaz. Cleveland Clinic'teki psikologların da önerdiği gibi, algılanan tehdit ile gerçek olguları birbirinden ayırmak duygunun yoğunluğunu azaltabilir.",
+      "Kontrol davranışlarını kademeli azalt: Bugün beş kez bakıyorsan önce üçe indir. Bakmadığın her seferde kaygının ne olduğunu not et; çoğu kişi, kontrol etmeden de kaygının kendiliğinden azaldığını ilk kez deneyimler.",
+      "Tetikleyicilerini haritala: Kıskançlık en çok ne zaman geliyor? Yorgunken, yalnızken, partnerin bir arkadaşından bahsettiğinde mi? Örüntüyü görmek, kendini önceden hazırlamanı sağlar.",
+      "Suçlamadan konuş: “Hep birileriyle yazışıyorsun” yerine “Telefonun ters çevrildiğinde içimde bir güvensizlik beliriyor, bunu seninle konuşmak istiyorum” demek, karşındakini savunmaya değil, anlamaya davet eder. HSE de bu konuşmayı sakin ve tarafsız bir zamanda yapmayı öneriyor.",
+      "Belirsizliği kabul etmeyi çalış: Hiçbir ilişkide yüzde yüz kesinlik yoktur; başka birinin zihnini ve duygularını kontrol edemezsin. Kendine “Bilmiyorum ve bilmemekle de yaşayabilirim” demek ilk başta zor gelir ama kıskançlığın temelini oluşturan belirsizlik korkusunu zamanla gevşetir."
+     ]
+    },
+    {
+     "p": "Bunlara ek olarak, kendine değerini yalnızca ilişkiden almadığın alanlar kurmak da önemlidir: arkadaşlıklar, uğraşlar, bedenine iyi gelen şeyler. Hayatının merkezinde tek bir ilişki olduğunda, o ilişkiye yönelik her tehdit varoluşsal bir tehdit gibi hissedilir."
+    },
+    {
+     "h": "Kıskanılan taraf için öneriler"
+    },
+    {
+     "p": "Eğer bu yazıyı kıskanç bir partnerin yanında yaşayan biri olarak okuyorsan, senin de bazı sınırlara ve dengelere ihtiyacın var:"
+    },
+    {
+     "ul": [
+      "Açık ve tutarlı ol, ama sonsuz güvence vermek zorunda değilsin: Her soruya ayrıntılı açıklama yapmak kısa vadede yatıştırır, uzun vadede güvence döngüsünü besler.",
+      "Duyguyu küçümseme: “Saçmalıyorsun” demek yerine “Bunun sana zor geldiğini görüyorum” demek, konuşmanın kapısını açık tutar.",
+      "Sınırını net söyle: Telefonunun karıştırılması, arkadaşlarınla görüşmenin yasaklanması gibi durumlar kabul edilebilir değilse bunu sakin ama kararlı bir dille ifade et.",
+      "Güvenliğini öncele: Kıskançlık tehdide, korkutmaya ya da şiddete dönüşüyorsa bu bir iletişim sorunu değil, güvenlik meselesidir; destek almaktan ve gerekirse 112'yi aramaktan çekinme."
+     ]
+    },
+    {
+     "h": "Kıskançlık için ne zaman destek almalı?"
+    },
+    {
+     "p": "Kıskançlık uzun süredir gündelik hayatını, uykunu ve işini etkiliyorsa, kontrol etme davranışlarını bırakmak istediğin hâlde bırakamıyorsan, aynı örüntü ilişkiden ilişkiye tekrar ediyorsa ya da partnerin senin kıskançlığın yüzünden ilişkiden uzaklaşıyorsa bir ruh sağlığı uzmanıyla görüşmek iyi bir adım olabilir. Terapide yalnızca bugünkü kıskançlık anlarını değil, onları besleyen inançları, geçmişin izlerini ve ilişkideki iletişim kalıplarını birlikte ele alırız. Bazen bireysel çalışma, bazen de çiftin birlikte geldiği görüşmeler daha uygun olabilir."
+    },
+    {
+     "p": "Kıskançlık, sürekli kavgalar ve güven sorunları üzerine nasıl çalıştığımı çalışma alanları sayfasındaki İlişki Sorunları bölümünde anlattım; görüşmeleri yüz yüze ya da online yapabiliyoruz."
+    },
+    {
+     "h": "Sık sorulan sorular"
+    },
+    {
+     "ul": [
+      "Kıskançlık sevgi göstergesi midir? Ara sıra hissedilen kıskançlık bir bağa önem verdiğini gösterebilir; ancak sevgi kontrol etmeyi, kısıtlamayı ya da korkutmayı gerektirmez. Yoğun ve sürekli kıskançlık çoğu zaman sevgiden çok kaybetme korkusu ve güvensizlik hakkında bilgi verir.",
+      "Kıskançlık tamamen geçer mi? Kıskançlığı hiç hissetmemek gerçekçi bir hedef değil; ama tetiklendiğinde onu fark etmek, kontrol dürtüsüne uymadan yatıştırmak ve ilişkiye zarar vermeden konuşmak öğrenilebilir bir beceridir.",
+      "Partnerim çok kıskanç, ne yapmalıyım? Duygusunu küçümsemeden ama sınırlarını da koruyarak konuşmayı dene; kıskançlık sana yönelik izleme, tehdit ya da şiddete dönüşüyorsa bu bir güvenlik meselesidir ve destek almak önemlidir."
+     ]
+    },
+    {
+     "p": "Kıskançlık, içindeki bir korkunun sesidir; o sesi susturmak yerine ne söylediğini anlamaya başladığında, ilişkine ve kendine daha şefkatli bakabilirsin. Bu duygu seni ve sevdiklerini yoruyorsa, bu yükü tek başına taşımak zorunda değilsin; destek istemek, ilişkine verdiğin önemin bir parçası olabilir."
+    }
+   ],
+   "sources": [
+    {
+     "title": "HSE (Health Service Executive) – Jealousy",
+     "url": "https://www2.hse.ie/mental-health/life-situations-events/jealousy/"
+    },
+    {
+     "title": "Cleveland Clinic – How To Deal With Jealousy",
+     "url": "https://health.clevelandclinic.org/how-to-deal-with-jealousy"
+    },
+    {
+     "title": "Ni N. ve ark. (2025) – A meta-analytic study of partner phubbing and its antecedents and consequences, Frontiers in Psychology",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12106345"
+    }
+   ]
+  },
+  {
+   "slug": "hicbir-sey-yapmak-istemiyorum",
+   "date": "2026-11-22",
+   "updated": "2026-11-22",
+   "category": "Depresyon",
+   "title": "Hiçbir şey yapmak istemiyorum: İsteksizlik mi, depresyon mu?",
+   "excerpt": "Hiçbir şey yapmak istemiyorum diyorsan bu yorgunluk mu, isteksizlik mi, depresyon mu? Farkları, küçük adımlarla başlamayı ve destek zamanını anlattım.",
+   "minutes": 8,
+   "body": [
+    {
+     "p": "“Hiçbir şey yapmak istemiyorum” hissi çoğu zaman yorgunluğun, stresin ya da zor bir dönemin geçici bir yansımasıdır; birkaç gün dinlenmek ve küçük şeylere yeniden başlamakla hafifler. Ancak hiçbir şey yapmak istememe hâli iki haftadan uzun sürüyor, eskiden keyif aldığın şeylerden de zevk alamıyorsan ve günlük hayatını aksatıyorsa bu, depresyonun bir işareti olabilir ve bir uzmanla değerlendirilmeyi hak eder."
+    },
+    {
+     "p": "Bu yazıda isteksizliğin nereden gelebileceğini, sıradan bir durgunluk ile depresyonu nasıl ayırt edebileceğini ve bilişsel davranışçı terapinin “önce hareket, sonra motivasyon” ilkesini gündelik hayatına nasıl taşıyabileceğini anlatıyorum."
+    },
+    {
+     "h": "Pazar öğleden sonrası, açılmayan bir perde"
+    },
+    {
+     "p": "Saat öğleden sonra üç. Uyanalı birkaç saat oldu ama hâlâ yataktasın. Telefonda ekranı aşağı kaydırıyorsun, ne izlediğini sonra hatırlamayacaksın. Mutfakta bulaşık var, bir arkadaşının mesajı iki gündür cevapsız, haftalardır “bu hafta başlarım” dediğin yürüyüş yine olmayacak. Kalkmayı düşünmek bile yorucu geliyor. Bir yandan da içinden bir ses konuşuyor: “Tembelsin. Herkes bir şeyler yapıyor, sen yatıyorsun.”"
+    },
+    {
+     "p": "Bu sahnede iki ayrı yük var: Birincisi enerjinin ve isteğin gerçekten düşmüş olması. İkincisi, bunun üstüne eklenen suçluluk ve kendini yargılama. Çoğu zaman ikinci yük, birincisinden daha ağır gelir."
+    },
+    {
+     "h": "Hiçbir şey yapmak istememek neden olur?"
+    },
+    {
+     "p": "İsteksizliğin tek bir nedeni yoktur. Avustralya'nın resmî sağlık bilgi kaynağı healthdirect, ilgi ve isteği kaybetmenin kısa süreli nedenleri arasında aşırı çalışmayı, tükenmişliği, yorgunluğu, ilişki sorunlarını ve sıkılmayı sayıyor; daha uzun süren durumlarda ise depresyon, süregiden stres, yas, travmaya bağlı sorunlar ve madde kullanımı gibi nedenlerin rol oynayabileceğini belirtiyor."
+    },
+    {
+     "p": "Ayrıca bazı bedensel durumlar ve ilaç yan etkileri de enerjiyi ve duygudurumu etkileyebilir. NHS bu yüzden uzun süren düşük duygudurumda fiziksel nedenlerin de dışlanmasının önemli olduğunu vurguluyor. Yani “hiçbir şey yapmak istemiyorum” hissi her zaman psikolojik değildir; kapsamlı bir değerlendirme için hekim muayenesi de gerekebilir."
+    },
+    {
+     "p": "Psikolojik açıdan baktığımızda isteksizlik bazen bir korunma biçimidir. Uzun süre zorlandığın, başarısız olduğunu hissettiğin ya da çabanın karşılık bulmadığı bir dönemin ardından zihin, enerjiyi korumak için “geri çekil” sinyali verebilir. Psikodinamik bakış ise bazen isteksizliğin altında ifade edilememiş bir öfke, yas ya da hayal kırıklığı yatabileceğini hatırlatır: Hissetmek çok acı verdiğinde, hiçbir şey hissetmemek daha güvenli görünebilir."
+    },
+    {
+     "h": "Normal isteksizlik mi, depresyon mu?"
+    },
+    {
+     "p": "Herkesin “hiçbir şey yapasım yok” dediği günler olur. NHS, düşük duygudurumun genellikle zor olayların ya da büyük değişikliklerin ardından ortaya çıktığını ve çoğu zaman birkaç gün ya da birkaç hafta içinde geçtiğini belirtiyor. Dünya Sağlık Örgütü'ne göre ise depresif bir dönemden söz edebilmek için çökkün duygudurumun ya da etkinliklerden zevk alamamanın günün büyük kısmında, neredeyse her gün ve en az iki hafta boyunca sürmesi gerekir."
+    },
+    {
+     "p": "Aşağıdaki işaretler bir aradaysa ve iki haftadan uzun süredir devam ediyorsa, yaşadığın şey sıradan bir durgunluktan fazlası olabilir:"
+    },
+    {
+     "ul": [
+      "Eskiden keyif aldığın şeylerden artık zevk alamamak; sevdiğin dizi, yemek ya da buluşma bile anlamsız gelmek.",
+      "Günün büyük bölümünde kendini boş, mutsuz, hissiz ya da çabuk sinirlenen biri gibi hissetmek.",
+      "Uykunun bozulması: ya çok az ya da çok fazla uyumak, ama dinlenmiş uyanamamak.",
+      "İştahta ve kiloda belirgin değişiklikler.",
+      "Odaklanmakta, karar vermekte, okuduğunu takip etmekte zorlanmak.",
+      "Aşırı suçluluk, değersizlik ya da umutsuzluk duyguları.",
+      "İnsanlardan geri çekilmek, mesajlara ve aramalara cevap vermemek.",
+      "Ölüm ya da yaşamına son verme düşünceleri."
+     ]
+    },
+    {
+     "p": "Bu liste bir tanı aracı değildir; tanı ancak bir ruh sağlığı uzmanının değerlendirmesiyle konabilir. Ama kendine dürüstçe bakmak için bir başlangıç noktası olabilir. DSÖ verilerine göre dünyada yetişkinlerin yaklaşık yüzde 5,2'si depresyon yaşıyor; yani bu deneyim sanıldığından çok daha yaygın ve bunu yaşamak bir karakter zayıflığı değil."
+    },
+    {
+     "h": "İsteksizlik döngüsü: BDT nasıl bakar?"
+    },
+    {
+     "p": "BDT'de depresyonla ilişkili isteksizliği çoğu zaman kendini besleyen bir döngü olarak ele alırız. Pazar öğleden sonrası sahnesini bu döngüye yerleştirelim:"
+    },
+    {
+     "ul": [
+      "Durum: Bulaşıklar birikmiş, cevaplanmamış mesajlar var, yürüyüşe çıkılmamış.",
+      "Düşünce: “Hiçbir şeyin anlamı yok. Kalksam da bir şey değişmeyecek. Ben zaten tembelim.”",
+      "Duygu ve beden: Ağırlık, bitkinlik, suçluluk, umutsuzluk.",
+      "Davranış: Yatakta kalmak, telefona gömülmek, arkadaşına cevap vermemek.",
+      "Sonuç: Gün boşa geçmiş gibi hissediliyor, iş yükü artıyor, insanlarla bağ zayıflıyor; bu da “Gerçekten de beceriksizim” düşüncesini güçlendiriyor ve ertesi gün kalkmak daha da zorlaşıyor."
+     ]
+    },
+    {
+     "p": "Bu döngüde gözden kaçan bir nokta vardır: Çoğumuz harekete geçmek için önce istek duymayı bekleriz. Oysa depresif duygudurumda istek çoğu zaman eylemden önce değil, eylemden sonra gelir. Davranışsal aktivasyon adı verilen yaklaşım tam olarak bu ilke üzerine kuruludur. İngiltere'nin klinik rehber kurumu NICE, davranışsal aktivasyonu; yapılan etkinliklerle duygudurum arasındaki bağı fark etmeye odaklanan, hedef odaklı ve yapılandırılmış bir yöntem olarak tanımlıyor ve depresyon yüzünden insanlardan uzaklaşan ya da daha az şey yapmaya başlayan kişilere yardımcı olabileceğini belirtiyor. DSÖ de davranışsal aktivasyonu depresyonda kullanılan psikolojik yaklaşımlar arasında sayıyor."
+    },
+    {
+     "h": "Hiçbir şey yapmak istemediğinde ne yapmalı? 6 küçük adım"
+    },
+    {
+     "ul": [
+      "Motivasyonu bekleme, en küçük adımı seç: “Evi toplayacağım” yerine “Yalnızca üç bardağı yıkayacağım” de. Amaç başarmak değil, döngüye küçük bir çatlak açmak. Çoğu zaman başlamak, devam etmekten daha zordur.",
+      "Bir etkinlik ve duygudurum günlüğü tut: Gün içinde ne yaptığını ve o sırada ruh hâlini 0-10 arasında puanlayarak yaz. Bir hafta sonra hangi etkinliklerin seni biraz da olsa iyi hissettirdiğini göreceksin; davranışsal aktivasyonun ilk adımı tam olarak budur.",
+      "Eskiden sevdiğin şeylerin bir listesini yap: NHS, eskiden keyif aldığın etkinlikleri listeleyip en kolaylarından başlayarak her gün birkaçını yapmayı öneriyor. Keyif hemen gelmeyebilir; yine de yapmak, “zevk alma” kasını yeniden çalıştırır.",
+      "Bedenini hareket ettir, ama küçük: Bina etrafında on dakikalık bir yürüyüş, merdiven çıkmak, birkaç esneme hareketi. DSÖ de kısa bir yürüyüş bile olsa düzenli hareketin iyi geldiğini belirtiyor.",
+      "Uyku ve yemek düzenine bir çapa koy: Her gün aynı saatte kalkmak ve en azından iki öğünü düzenli yemek, gün içinde tutunacak bir iskelet oluşturur. Alkol, ruh hâlini daha da düşürebileceği için uzak durmak ya da azaltmak iyi olur.",
+      "Bir kişiye kısa bir mesaj at: Uzun bir sohbet şart değil. “Bugünlerde biraz zorlanıyorum” demek, geri çekilme döngüsünü kırmanın en etkili yollarından biridir."
+     ]
+    },
+    {
+     "p": "Bu adımları uygularken içindeki eleştirel sese de dikkat et. “Tembelim” düşüncesini “Şu an enerjim düşük ve bu bir dönem” düşüncesiyle değiştirmeyi dene. Kendine bir arkadaşına davranacağın gibi davranmak, BDT'de üzerinde en çok çalıştığımız becerilerden biridir."
+    },
+    {
+     "h": "Yakınların için öneriler"
+    },
+    {
+     "p": "Sevdiğin biri uzun süredir hiçbir şey yapmak istemiyorsa, onu harekete geçirmek için baskı yapmak çoğu zaman suçluluğu artırır. Bunun yerine:"
+    },
+    {
+     "ul": [
+      "“Kendini toparla” yerine “Son zamanlarda zorlandığını fark ediyorum, yanındayım” demeyi dene.",
+      "Birlikte yapılacak küçük şeyler öner: kısa bir yürüyüş, birlikte yemek hazırlamak, bir kahve.",
+      "Uzun süredir böyleyse destek almasını nazikçe teşvik et; istersen randevu bulma gibi pratik konularda yardım teklif et.",
+      "Ölüm ya da kendine zarar verme düşüncelerinden bahsederse bunu ciddiye al, yalnız bırakma ve profesyonel destek almasına yardım et."
+     ]
+    },
+    {
+     "h": "Ne zaman profesyonel destek almalı?"
+    },
+    {
+     "p": "Hiçbir şey yapmak istememe hâli iki haftadan uzun sürüyorsa, işini, okulunu ya da ilişkilerini aksatmaya başladıysa, eskiden sevdiğin her şeye karşı ilgini kaybettiysen ya da kendini umutsuz hissediyorsan bir ruh sağlığı uzmanıyla görüşmek önemlidir. Fiziksel nedenleri dışlamak için bir hekim muayenesi de yararlı olabilir. NICE, depresyonda davranışsal aktivasyon, bilişsel davranışçı terapi ve yönlendirilmiş kendi kendine yardım gibi farklı psikolojik seçenekleri tanımlıyor; hangisinin sana uygun olduğu birlikte değerlendirilebilir. İlaç gerekip gerekmediğine yalnızca bir psikiyatri hekimi karar verebilir."
+    },
+    {
+     "p": "Terapide isteksizliği bir kusur olarak değil, anlaşılması gereken bir sinyal olarak ele alırız: Neyin enerjini tükettiğini, hangi düşüncelerin seni yerinde tuttuğunu ve hangi küçük adımların hayatına yeniden renk katabileceğini birlikte keşfederiz. Depresyon ve isteksizlik üzerine nasıl çalıştığımı çalışma alanları sayfasındaki Depresyon bölümünde ayrıntılı olarak anlattım; görüşmeleri yüz yüze ya da online yapabiliyoruz."
+    },
+    {
+     "p": "Eğer şu an yaşamına son verme ya da kendine zarar verme düşünceleri yaşıyorsan, lütfen bunu yalnız taşıma. Güvendiğin biriyle hemen konuş; acil bir durumda vakit kaybetmeden 112'yi ara. Bu düşünceler ne kadar güçlü olursa olsun, yardım almak mümkün ve bu duygular zamanla değişebilir."
+    },
+    {
+     "h": "Sık sorulan sorular"
+    },
+    {
+     "ul": [
+      "Hiçbir şey yapmak istememek depresyon mu? Her zaman değil; yorgunluk, stres ya da zor bir dönem de geçici isteksizlik yaratabilir. Ancak bu hâl iki haftadan uzun sürüyor ve zevk alamama, umutsuzluk ya da uyku değişiklikleri eşlik ediyorsa depresyon açısından bir uzmanla değerlendirilmesi iyi olur.",
+      "Tembellik ile depresyon arasındaki fark nedir? Tembellik çoğu zaman belirli bir işe karşı isteksizliktir ve sevdiğin şeylere ilgin sürer; depresyonda ise isteksizlik hayatın geneline yayılır, eskiden keyif aldığın şeyler de anlamsızlaşır ve buna suçluluk, değersizlik gibi duygular eşlik eder.",
+      "Motivasyonum yokken nasıl başlarım? Motivasyonun gelmesini beklemeden, beş dakikada bitebilecek kadar küçük bir adımla başla; depresif dönemlerde istek çoğu zaman eylemin arkasından gelir."
+     ]
+    },
+    {
+     "p": "Hiçbir şey yapmak istemediğin günler, senin hakkında son sözü söylemez. Bugün yalnızca bir pencereyi açmak ya da tek bir mesaja cevap vermek bile, yeniden harekete geçmenin başlangıcı olabilir. Bu ağırlık uzun süredir seninleyse, bir uzmandan destek istemek kendine gösterebileceğin en gerçek özenlerden biridir."
+    }
+   ],
+   "sources": [
+    {
+     "title": "World Health Organization – Depressive disorder (depression) fact sheet",
+     "url": "https://www.who.int/en/news-room/fact-sheets/detail/Depression"
+    },
+    {
+     "title": "NHS Every Mind Matters – Low mood and depression",
+     "url": "https://www.nhs.uk/every-mind-matters/mental-health-issues/low-mood/"
+    },
+    {
+     "title": "NICE – Depression in adults: treatment and management (NG222), Recommendations",
+     "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations"
+    },
+    {
+     "title": "healthdirect Australia – Losing interest",
+     "url": "https://www.healthdirect.gov.au/amp/article/losing-interest"
+    }
+   ]
+  },
+  {
    "slug": "cocukluk-travmasi-belirtileri",
    "date": "2026-11-21",
    "updated": "2026-11-21",
